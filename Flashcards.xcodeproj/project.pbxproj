@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C990278EDF7500A2637B /* AppDelegate.swift */; };
 		0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C992278EDF7500A2637B /* SceneDelegate.swift */; };
-		0102C995278EDF7500A2637B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C994278EDF7500A2637B /* ViewController.swift */; };
+		0102C995278EDF7500A2637B /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C994278EDF7500A2637B /* DeckController.swift */; };
 		0102C998278EDF7500A2637B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0102C996278EDF7500A2637B /* Main.storyboard */; };
 		0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0102C999278EDF7500A2637B /* Flashcards.xcdatamodeld */; };
 		0102C99D278EDF7600A2637B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0102C99C278EDF7600A2637B /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 		0102C98D278EDF7500A2637B /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0102C990278EDF7500A2637B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0102C992278EDF7500A2637B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0102C994278EDF7500A2637B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0102C994278EDF7500A2637B /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
 		0102C997278EDF7500A2637B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0102C99A278EDF7500A2637B /* Flashcards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flashcards.xcdatamodel; sourceTree = "<group>"; };
 		0102C99C278EDF7600A2637B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0102C9AA278EE27F00A2637B /* DecksList.swift */,
-				0102C994278EDF7500A2637B /* ViewController.swift */,
+				0102C994278EDF7500A2637B /* DeckController.swift */,
 				0102C9AC278EE4C800A2637B /* FlashcardsList.swift */,
 			);
 			path = Controllers;
@@ -182,7 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0102C995278EDF7500A2637B /* ViewController.swift in Sources */,
+				0102C995278EDF7500A2637B /* DeckController.swift in Sources */,
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
 				0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */,
