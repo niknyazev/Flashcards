@@ -15,6 +15,7 @@
 		0102C99D278EDF7600A2637B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0102C99C278EDF7600A2637B /* Assets.xcassets */; };
 		0102C9A0278EDF7600A2637B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0102C99E278EDF7600A2637B /* LaunchScreen.storyboard */; };
 		0102C9AB278EE27F00A2637B /* DecksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9AA278EE27F00A2637B /* DecksList.swift */; };
+		0102C9AD278EE4C800A2637B /* FlashcardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9AC278EE4C800A2637B /* FlashcardsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0102C99F278EDF7600A2637B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0102C9A1278EDF7600A2637B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0102C9AA278EE27F00A2637B /* DecksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksList.swift; sourceTree = "<group>"; };
+		0102C9AC278EE4C800A2637B /* FlashcardsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				0102C9AA278EE27F00A2637B /* DecksList.swift */,
 				0102C994278EDF7500A2637B /* ViewController.swift */,
+				0102C9AC278EE4C800A2637B /* FlashcardsList.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
 				0102C9AB278EE27F00A2637B /* DecksList.swift in Sources */,
+				0102C9AD278EE4C800A2637B /* FlashcardsList.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
