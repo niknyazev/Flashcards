@@ -14,7 +14,7 @@
 		0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0102C999278EDF7500A2637B /* Flashcards.xcdatamodeld */; };
 		0102C99D278EDF7600A2637B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0102C99C278EDF7600A2637B /* Assets.xcassets */; };
 		0102C9A0278EDF7600A2637B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0102C99E278EDF7600A2637B /* LaunchScreen.storyboard */; };
-		0102C9AB278EE27F00A2637B /* DesksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9AA278EE27F00A2637B /* DesksList.swift */; };
+		0102C9AB278EE27F00A2637B /* DecksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9AA278EE27F00A2637B /* DecksList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		0102C99C278EDF7600A2637B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0102C99F278EDF7600A2637B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0102C9A1278EDF7600A2637B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0102C9AA278EE27F00A2637B /* DesksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesksList.swift; sourceTree = "<group>"; };
+		0102C9AA278EE27F00A2637B /* DecksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 		0102C9A8278EE09400A2637B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0102C9AA278EE27F00A2637B /* DesksList.swift */,
+				0102C9AA278EE27F00A2637B /* DecksList.swift */,
 				0102C994278EDF7500A2637B /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -171,7 +171,7 @@
 				0102C995278EDF7500A2637B /* ViewController.swift in Sources */,
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
-				0102C9AB278EE27F00A2637B /* DesksList.swift in Sources */,
+				0102C9AB278EE27F00A2637B /* DecksList.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

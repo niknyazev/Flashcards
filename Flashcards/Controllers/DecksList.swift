@@ -1,13 +1,13 @@
 //
-//  DesksList.swift
-//  DesksList
+//  DecksList.swift
+//  DecksList
 //
 //  Created by Николай on 12.01.2022.
 //
 
 import UIKit
 
-class DesksList: UITableViewController {
+class DecksList: UITableViewController {
 
     let testData = [
         "String 1",
