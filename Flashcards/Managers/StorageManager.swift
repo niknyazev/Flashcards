@@ -27,7 +27,7 @@ class StorageManager {
     
     private init() { }
     
-    func fetchData(completion: (Result<[Deck], Error>) -> Void) {
+    func fetchDecks(completion: (Result<[Deck], Error>) -> Void) {
         let fetchRequest = Deck.fetchRequest()
         
         do {
@@ -38,15 +38,36 @@ class StorageManager {
         }
     }
     
-    func save(_ entityName: String, completion: (Deck) -> Void) {
+    func fetchFlashcards(deck: Deck, completion: (Result<[Flashcard], Error>) -> Void) {
+        let fetchRequest = Flashcard.fetchRequest()
+        
+        do {
+            let entities = try viewContext.fetch(fetchRequest)
+            completion(.success(entities))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
+    
+    func saveDeck(_ entityName: String, completion: (Deck) -> Void) {
         let entity = Deck(context: viewContext)
         entity.title = entityName
         completion(entity)
         saveContext()
     }
     
-    func edit(_ entity: Deck, newName: String) {
+    func saveFlashcard(_ entityName: String, completion: (Flashcard) -> Void) {
+        let entity = Flashcard(context: viewContext)
+        completion(entity)
+        saveContext()
+    }
+    
+    func editDeck(_ entity: Deck, newName: String) {
         entity.title = newName
+        saveContext()
+    }
+    
+    func editFlashcard(_ entity: Flashcard, newName: String) {
         saveContext()
     }
     
