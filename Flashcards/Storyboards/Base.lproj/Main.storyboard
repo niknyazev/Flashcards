@@ -59,6 +59,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ecS-XM-KnX" kind="show" id="85z-4O-fXu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -71,6 +74,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgD-E3-mxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1313" y="-204"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="59E-qA-qr1">
+            <objects>
+                <viewController id="ecS-XM-KnX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fwV-Ov-JeA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="p6T-ee-YCs">
+                                <rect key="frame" x="20" y="118" width="374" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Front side" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-E6-ytE">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <nil key="textColor"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Back side" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsl-nP-LFD">
+                                        <rect key="frame" x="0.0" y="54" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hV8-E6-ytE" secondAttribute="trailing" id="0da-EF-Age"/>
+                                    <constraint firstItem="xsl-nP-LFD" firstAttribute="leading" secondItem="p6T-ee-YCs" secondAttribute="leading" id="AUU-9D-iBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="xsl-nP-LFD" secondAttribute="trailing" id="OJ6-si-tQc"/>
+                                    <constraint firstItem="hV8-E6-ytE" firstAttribute="leading" secondItem="p6T-ee-YCs" secondAttribute="leading" id="PlJ-Kr-qwu"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ViF-Cx-TbQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p6T-ee-YCs" firstAttribute="leading" secondItem="ViF-Cx-TbQ" secondAttribute="leading" constant="20" id="NLC-hL-xCe"/>
+                            <constraint firstItem="p6T-ee-YCs" firstAttribute="top" secondItem="ViF-Cx-TbQ" secondAttribute="top" constant="30" id="NYf-Km-pM4"/>
+                            <constraint firstItem="ViF-Cx-TbQ" firstAttribute="trailing" secondItem="p6T-ee-YCs" secondAttribute="trailing" constant="20" id="Piv-0O-akm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tug-xe-M2h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mGV-xy-ICU"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I2o-sw-jIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="-204"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HVN-kN-jaX">
@@ -109,7 +158,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Aym-Bk-AUe">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="OxG-NT-pbi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OxG-NT-pbi"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd3-aP-dJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
