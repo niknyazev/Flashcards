@@ -58,16 +58,40 @@
 		0102C98F278EDF7500A2637B /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				0102C990278EDF7500A2637B /* AppDelegate.swift */,
-				0102C992278EDF7500A2637B /* SceneDelegate.swift */,
-				0102C994278EDF7500A2637B /* ViewController.swift */,
-				0102C996278EDF7500A2637B /* Main.storyboard */,
-				0102C99C278EDF7600A2637B /* Assets.xcassets */,
-				0102C99E278EDF7600A2637B /* LaunchScreen.storyboard */,
-				0102C9A1278EDF7600A2637B /* Info.plist */,
-				0102C999278EDF7500A2637B /* Flashcards.xcdatamodeld */,
+				0102C9A8278EE09400A2637B /* Controllers */,
+				0102C9A7278EE07D00A2637B /* App */,
+				0102C9A9278EE0C100A2637B /* Storyboards */,
 			);
 			path = Flashcards;
+			sourceTree = "<group>";
+		};
+		0102C9A7278EE07D00A2637B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0102C9A1278EDF7600A2637B /* Info.plist */,
+				0102C99C278EDF7600A2637B /* Assets.xcassets */,
+				0102C999278EDF7500A2637B /* Flashcards.xcdatamodeld */,
+				0102C990278EDF7500A2637B /* AppDelegate.swift */,
+				0102C992278EDF7500A2637B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0102C9A8278EE09400A2637B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0102C994278EDF7500A2637B /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0102C9A9278EE0C100A2637B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0102C996278EDF7500A2637B /* Main.storyboard */,
+				0102C99E278EDF7600A2637B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +319,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PWX29GY82U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Flashcards/Info.plist;
+				INFOPLIST_FILE = Flashcards/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -323,7 +347,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PWX29GY82U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Flashcards/Info.plist;
+				INFOPLIST_FILE = Flashcards/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
