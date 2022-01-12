@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DeckViewController.swift
 //  Flashcards
 //
 //  Created by Николай on 12.01.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DeckViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

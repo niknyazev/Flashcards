@@ -11,7 +11,7 @@
         <!--Root View Controller-->
         <scene sceneID="mIJ-Mj-qo6">
             <objects>
-                <tableViewController id="k2t-Zc-nUF" customClass="DecksList" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="k2t-Zc-nUF" customClass="DecksListViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aee-u4-L7D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="231" y="94"/>
         </scene>
-        <!--Flashcards List-->
+        <!--Flashcard View Controller-->
         <scene sceneID="DQU-Ge-Wqo">
             <objects>
-                <tableViewController id="PuN-6C-Mf7" customClass="FlashcardsList" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PuN-6C-Mf7" customClass="FlashcardViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W7z-c7-srj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="1313" y="-204"/>
         </scene>
-        <!--View Controller-->
+        <!--Flashcard View Controller-->
         <scene sceneID="59E-qA-qr1">
             <objects>
-                <viewController id="ecS-XM-KnX" sceneMemberID="viewController">
+                <viewController id="ecS-XM-KnX" customClass="FlashcardViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fwV-Ov-JeA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Front side" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-E6-ytE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Back side" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsl-nP-LFD">
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="2168" y="-204"/>
         </scene>
-        <!--View Controller-->
+        <!--Deck View Controller-->
         <scene sceneID="HVN-kN-jaX">
             <objects>
-                <viewController id="5jh-8N-zN8" sceneMemberID="viewController">
+                <viewController id="5jh-8N-zN8" customClass="DeckViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="erQ-w7-QC0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,14 +134,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="XoG-MZ-qyZ">
-                                <rect key="frame" x="20" y="192" width="148.5" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="XoG-MZ-qyZ">
+                                <rect key="frame" x="20" y="192" width="374" height="31"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-hm-eyt">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbM-0l-i1c">
-                                        <rect key="frame" x="82" y="0.0" width="66.5" height="31"/>
+                                        <rect key="frame" x="82" y="0.0" width="292" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -152,8 +152,11 @@
                         <viewLayoutGuide key="safeArea" id="XQJ-6H-lA8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="XQJ-6H-lA8" firstAttribute="trailing" secondItem="XoG-MZ-qyZ" secondAttribute="trailing" constant="20" id="6x9-H1-B2a"/>
                             <constraint firstItem="b5X-qK-Ex0" firstAttribute="top" secondItem="XQJ-6H-lA8" secondAttribute="top" constant="40" id="E9b-ZO-CKr"/>
+                            <constraint firstItem="XoG-MZ-qyZ" firstAttribute="leading" secondItem="XQJ-6H-lA8" secondAttribute="leading" constant="20" id="ePA-dU-egU"/>
                             <constraint firstItem="b5X-qK-Ex0" firstAttribute="leading" secondItem="XQJ-6H-lA8" secondAttribute="leading" constant="20" id="m3u-UU-wXz"/>
+                            <constraint firstItem="XoG-MZ-qyZ" firstAttribute="top" secondItem="b5X-qK-Ex0" secondAttribute="bottom" constant="30" id="tGa-ms-bcR"/>
                             <constraint firstItem="XQJ-6H-lA8" firstAttribute="trailing" secondItem="b5X-qK-Ex0" secondAttribute="trailing" constant="20" id="z71-cG-nMN"/>
                         </constraints>
                     </view>

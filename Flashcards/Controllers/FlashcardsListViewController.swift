@@ -1,18 +1,18 @@
 //
-//  DecksList.swift
-//  DecksList
+//  FlashcardsList.swift
+//  Flashcards
 //
 //  Created by Николай on 12.01.2022.
 //
 
 import UIKit
 
-class DecksList: UITableViewController {
+class FlashcardsListViewController: UITableViewController {
 
-    let testData = [
-        "String 1",
-        "String 2",
-        "String 3"
+    let flashcards = [
+        "Flashcard 1",
+        "Flashcard 2",
+        "Flashcard 3"
     ]
     
     override func viewDidLoad() {
@@ -20,19 +20,20 @@ class DecksList: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        testData.count
+        flashcards.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "desk", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath)
 
         var content = cell.defaultContentConfiguration()
-        content.text = testData[indexPath.row]
-    
+        content.text = flashcards[indexPath.row]
+        
         cell.contentConfiguration = content
-
+        
         return cell
     }
+    
 
     /*
     // Override to support conditional editing of the table view.
