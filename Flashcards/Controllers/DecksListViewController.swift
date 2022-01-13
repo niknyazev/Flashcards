@@ -9,11 +9,16 @@ import UIKit
 
 class DecksListViewController: UITableViewController {
 
-    let testData = [
+    private let testData = [
         "String 1",
         "String 2",
         "String 3"
     ]
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let deckVC = segue.destination as? DeckViewController else { return }
+        deckVC.deck = nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +33,17 @@ class DecksListViewController: UITableViewController {
 
         var content = cell.defaultContentConfiguration()
         content.text = testData[indexPath.row]
+        content.secondaryText = "Flashcards: \(indexPath.row)"
+        content.image = UIImage(systemName: "rectangle.portrait")
     
         cell.contentConfiguration = content
-
+        cell.accessoryType = .disclosureIndicator
+        
         return cell
+    }
+    
+    @IBAction func addDeck(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "deck", sender: nil)
     }
 
     /*

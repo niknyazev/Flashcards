@@ -1,5 +1,5 @@
 //
-//  FlashcardsList.swift
+//  FlashcardsListViewController.swift
 //  Flashcards
 //
 //  Created by Николай on 12.01.2022.
@@ -9,7 +9,7 @@ import UIKit
 
 class FlashcardsListViewController: UITableViewController {
 
-    let flashcards = [
+    private let flashcards = [
         "Flashcard 1",
         "Flashcard 2",
         "Flashcard 3"

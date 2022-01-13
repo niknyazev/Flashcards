@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Decks-->
         <scene sceneID="mIJ-Mj-qo6">
             <objects>
                 <tableViewController id="k2t-Zc-nUF" customClass="DecksListViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,13 @@
                             <outlet property="delegate" destination="k2t-Zc-nUF" id="zw3-ai-bSy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="kbj-ST-ByB"/>
+                    <navigationItem key="navigationItem" title="Decks" id="kbj-ST-ByB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vLP-pE-va3">
+                            <connections>
+                                <action selector="addDeck:" destination="k2t-Zc-nUF" id="ybk-EV-zs8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="5jh-8N-zN8" kind="show" identifier="deck" id="FtU-Am-hCz"/>
                     </connections>
@@ -43,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="231" y="94"/>
         </scene>
-        <!--Flashcard View Controller-->
+        <!--Flashcards-->
         <scene sceneID="DQU-Ge-Wqo">
             <objects>
-                <tableViewController id="PuN-6C-Mf7" customClass="FlashcardViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PuN-6C-Mf7" customClass="FlashcardsListViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W7z-c7-srj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +66,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ecS-XM-KnX" kind="show" id="85z-4O-fXu"/>
+                                    <segue destination="ecS-XM-KnX" kind="show" id="WhB-Sx-THq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,7 +75,7 @@
                             <outlet property="delegate" destination="PuN-6C-Mf7" id="dOM-SH-KI9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kVN-qz-L40"/>
+                    <navigationItem key="navigationItem" title="Flashcards" id="kVN-qz-L40"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgD-E3-mxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="p6T-ee-YCs">
-                                <rect key="frame" x="20" y="118" width="374" height="88"/>
+                                <rect key="frame" x="20" y="170" width="374" height="88"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Front side" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-E6-ytE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -130,12 +136,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Deck title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5X-qK-Ex0">
-                                <rect key="frame" x="20" y="128" width="374" height="34"/>
+                                <rect key="frame" x="20" y="180" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="XoG-MZ-qyZ">
-                                <rect key="frame" x="20" y="192" width="374" height="31"/>
+                                <rect key="frame" x="20" y="244" width="374" height="31"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-hm-eyt">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -172,8 +178,8 @@
         <scene sceneID="YgB-fc-Yme">
             <objects>
                 <navigationController id="ioJ-7q-TMK" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i1K-70-9JZ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="i1K-70-9JZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

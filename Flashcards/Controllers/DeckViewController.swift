@@ -9,6 +9,8 @@ import UIKit
 
 class DeckViewController: UIViewController {
 
+    public var deck: Deck!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
