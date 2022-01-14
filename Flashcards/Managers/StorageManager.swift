@@ -49,10 +49,14 @@ class StorageManager {
         }
     }
     
-    func saveDeck(_ entityName: String, completion: (Deck) -> Void) {
+    func saveDeck(_ entityName: String, completion: ((Deck) -> Void)?) {
         let entity = Deck(context: viewContext)
         entity.title = entityName
-        completion(entity)
+        
+        if let completion = completion {
+            completion(entity)
+        }
+                
         saveContext()
     }
     

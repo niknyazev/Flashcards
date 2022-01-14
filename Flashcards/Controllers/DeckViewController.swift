@@ -9,28 +9,34 @@ import UIKit
 
 class DeckViewController: UIViewController {
     
+    var delegate: DecksUpdater!
+    
     @IBOutlet weak var deckTitle: UITextField!
     
-    public var deck: Deck!
+    public var deck: Deck?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadDeckData()
     }
-
+    
     @IBAction func saveDeck() {
         
-        if deck != nil {
-            // if deck already exist
+        if let deck = deck {
+            StorageManager.shared.editDeck(deck, newName: deckTitle.text ?? "")
         } else {
-            
-            guard let title = deckTitle.text else { return }
-            
-            StorageManager.shared.saveDeck(title) { _ in
-                dismiss(animated: true, completion: nil)
-            }
+            StorageManager.shared.saveDeck(deckTitle.text ?? "", completion: nil)
         }
         
+        delegate.updateDecksList()
+        
+        dismiss(animated: true, completion: nil)
     }
+    
+    private func loadDeckData() {
+        guard let currentDeck = deck else { return }
+        deckTitle.text = currentDeck.title
+    }
+    
 }
 
