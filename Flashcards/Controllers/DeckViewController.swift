@@ -8,7 +8,9 @@
 import UIKit
 
 class DeckViewController: UIViewController {
-
+    
+    @IBOutlet weak var deckTitle: UITextField!
+    
     public var deck: Deck!
     
     override func viewDidLoad() {
@@ -16,6 +18,19 @@ class DeckViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func saveDeck() {
+        
+        if deck != nil {
+            // if deck already exist
+        } else {
+            
+            guard let title = deckTitle.text else { return }
+            
+            StorageManager.shared.saveDeck(title) { _ in
+                dismiss(animated: true, completion: nil)
+            }
+        }
+        
+    }
 }
 
