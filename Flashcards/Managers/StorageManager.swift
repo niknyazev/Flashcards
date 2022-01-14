@@ -40,6 +40,7 @@ class StorageManager {
     
     func fetchFlashcards(deck: Deck, completion: (Result<[Flashcard], Error>) -> Void) {
         let fetchRequest = Flashcard.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "deck == %@", deck)
         
         do {
             let entities = try viewContext.fetch(fetchRequest)
@@ -60,9 +61,10 @@ class StorageManager {
         saveContext()
     }
     
-    func saveFlashcard(_ entityName: String, completion: (Flashcard) -> Void) {
+    func saveFlashcard(deck: Deck, entityName: String) {
         let entity = Flashcard(context: viewContext)
-        completion(entity)
+        entity.frontSide = entityName
+        entity.deck = deck
         saveContext()
     }
     

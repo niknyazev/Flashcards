@@ -9,6 +9,24 @@ import UIKit
 
 class FlashcardViewController: UIViewController {
 
+    var deck: Deck!
+    var delegate: FlashcardsUpdater!
+    
+    @IBOutlet weak var textFieldFrontSide: UITextField!
+    
+    @IBAction func saveFlashcard(_ sender: Any) {
+        
+        StorageManager.shared.saveFlashcard(
+            deck: deck,
+            entityName: textFieldFrontSide.text ?? ""
+        )
+        
+        delegate.updateFlashcards()
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

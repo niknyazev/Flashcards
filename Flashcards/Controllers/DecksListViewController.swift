@@ -28,9 +28,12 @@ class DecksListViewController: UITableViewController {
             }
             
         } else if segue.identifier == "flashcards" {
-            guard let flashcardsVC = segue.destination as? FlashcardsListViewController else { return }
+            guard let flashcardsVC = segue.destination as? FlashcardsListViewController,
+                  let currentRow = tableView.indexPathForSelectedRow?.row else { return }
                        
-            flashcardsVC.deck = decks[0]
+            flashcardsVC.deck = decks[currentRow]
+            flashcardsVC.delegate = self
+            
         } else {
             fatalError()
         }
@@ -50,7 +53,7 @@ class DecksListViewController: UITableViewController {
 
         var content = cell.defaultContentConfiguration()
         content.text = decks[indexPath.row].title
-        content.secondaryText = "Flashcards: \(indexPath.row)"
+        content.secondaryText = "Flashcards: \(decks[indexPath.row].flashcards?.count ?? 0)"
         content.image = UIImage(systemName: "rectangle.portrait")
     
         cell.contentConfiguration = content
