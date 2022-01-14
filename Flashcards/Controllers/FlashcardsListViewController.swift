@@ -14,6 +14,7 @@ protocol FlashcardsUpdater {
 class FlashcardsListViewController: UITableViewController {
 
     var deck: Deck!
+    var delegate: DecksUpdater!
     
     private var flashcards: [Flashcard]!
     private let storageManager = StorageManager.shared
@@ -47,6 +48,12 @@ class FlashcardsListViewController: UITableViewController {
                 print(error)
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let flashcardVC = segue.destination as? FlashcardViewController else { return }
+        flashcardVC.deck = deck
+        flashcardVC.delegate = self
     }
     
 
@@ -99,6 +106,7 @@ class FlashcardsListViewController: UITableViewController {
 
 extension FlashcardsListViewController: FlashcardsUpdater {
     func updateFlashcards() {
+        delegate.updateDecksList()
         fetchFlashcards()
         tableView.reloadData()
     }

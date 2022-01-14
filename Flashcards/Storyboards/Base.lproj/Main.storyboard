@@ -65,9 +65,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="ecS-XM-KnX" kind="push" id="WhB-Sx-THq"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -75,7 +72,13 @@
                             <outlet property="delegate" destination="PuN-6C-Mf7" id="dOM-SH-KI9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Flashcards" id="kVN-qz-L40"/>
+                    <navigationItem key="navigationItem" title="Flashcards" id="kVN-qz-L40">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QIL-J5-Rzb">
+                            <connections>
+                                <segue destination="ecS-XM-KnX" kind="presentation" id="gor-E4-bb6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgD-E3-mxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,11 +89,11 @@
             <objects>
                 <viewController id="ecS-XM-KnX" customClass="FlashcardViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fwV-Ov-JeA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="p6T-ee-YCs">
-                                <rect key="frame" x="20" y="170" width="374" height="88"/>
+                                <rect key="frame" x="20" y="30" width="374" height="88"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Front side" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-E6-ytE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -110,18 +113,35 @@
                                     <constraint firstItem="hV8-E6-ytE" firstAttribute="leading" secondItem="p6T-ee-YCs" secondAttribute="leading" id="PlJ-Kr-qwu"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-W5-W8T">
+                                <rect key="frame" x="179.5" y="163" width="55.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveFlashcard:" destination="ecS-XM-KnX" eventType="touchUpInside" id="XoE-hp-wJc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ViF-Cx-TbQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Fxk-W5-W8T" firstAttribute="centerX" secondItem="fwV-Ov-JeA" secondAttribute="centerX" id="EJM-HG-3Os"/>
                             <constraint firstItem="p6T-ee-YCs" firstAttribute="leading" secondItem="ViF-Cx-TbQ" secondAttribute="leading" constant="20" id="NLC-hL-xCe"/>
                             <constraint firstItem="p6T-ee-YCs" firstAttribute="top" secondItem="ViF-Cx-TbQ" secondAttribute="top" constant="30" id="NYf-Km-pM4"/>
                             <constraint firstItem="ViF-Cx-TbQ" firstAttribute="trailing" secondItem="p6T-ee-YCs" secondAttribute="trailing" constant="20" id="Piv-0O-akm"/>
+                            <constraint firstItem="Fxk-W5-W8T" firstAttribute="top" secondItem="p6T-ee-YCs" secondAttribute="bottom" constant="45" id="mtt-7f-QEN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tug-xe-M2h">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mGV-xy-ICU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mGV-xy-ICU">
+                            <connections>
+                                <action selector="saveFlashcard:" destination="ecS-XM-KnX" id="LjF-H4-4pd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textFieldFrontSide" destination="hV8-E6-ytE" id="aCx-xu-U67"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2o-sw-jIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
