@@ -16,12 +16,23 @@ class DecksListViewController: UITableViewController {
     private var decks: [Deck] = []
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let deckVC = segue.destination as? DeckViewController else { return }
-       
-        deckVC.delegate = self
         
-        if let deck = sender as? Deck {
-            deckVC.deck = deck
+        if segue.identifier == "deck" {
+            
+            guard let deckVC = segue.destination as? DeckViewController else { return }
+           
+            deckVC.delegate = self
+            
+            if let deck = sender as? Deck {
+                deckVC.deck = deck
+            }
+            
+        } else if segue.identifier == "flashcards" {
+            guard let flashcardsVC = segue.destination as? FlashcardsListViewController else { return }
+                       
+            flashcardsVC.deck = decks[0]
+        } else {
+            fatalError()
         }
     }
     

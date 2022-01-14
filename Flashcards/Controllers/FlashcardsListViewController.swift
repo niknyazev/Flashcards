@@ -7,16 +7,20 @@
 
 import UIKit
 
+protocol FlashcardsUpdater {
+    func updateFlashcards()
+}
+
 class FlashcardsListViewController: UITableViewController {
 
-    private let flashcards = [
-        "Flashcard 1",
-        "Flashcard 2",
-        "Flashcard 3"
-    ]
+    var deck: Deck!
+    
+    private var flashcards: [Flashcard]!
+    private let storageManager = StorageManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchFlashcards()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,11 +31,22 @@ class FlashcardsListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath)
 
         var content = cell.defaultContentConfiguration()
-        content.text = flashcards[indexPath.row]
-        
+        content.text = flashcards[indexPath.row].frontSide
+
         cell.contentConfiguration = content
-        
+
         return cell
+    }
+    
+    private func fetchFlashcards() {
+        storageManager.fetchFlashcards(deck: deck) { result in
+            switch result {
+            case .success(let flashcardsResult):
+                self.flashcards = flashcardsResult
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 
@@ -80,4 +95,11 @@ class FlashcardsListViewController: UITableViewController {
     }
     */
 
+}
+
+extension FlashcardsListViewController: FlashcardsUpdater {
+    func updateFlashcards() {
+        fetchFlashcards()
+        tableView.reloadData()
+    }
 }
