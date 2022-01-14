@@ -3,14 +3,16 @@
     <entity name="Deck" representedClassName="Deck" syncable="YES" codeGenerationType="class">
         <attribute name="isDeactived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flashcard"/>
     </entity>
     <entity name="Flashcard" representedClassName="Flashcard" syncable="YES" codeGenerationType="class">
         <attribute name="backSide" optional="YES" attributeType="String"/>
         <attribute name="frontSide" optional="YES" attributeType="String"/>
         <attribute name="isLearned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck"/>
     </entity>
     <elements>
-        <element name="Flashcard" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="Deck" positionX="-54" positionY="18" width="128" height="59"/>
+        <element name="Flashcard" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Deck" positionX="-54" positionY="18" width="128" height="74"/>
     </elements>
 </model>
