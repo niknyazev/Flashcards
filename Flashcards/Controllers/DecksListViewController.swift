@@ -7,13 +7,22 @@
 
 import UIKit
 
+protocol DecksUpdater {
+    func updateDecksList()
+}
+
 class DecksListViewController: UITableViewController {
 
     private var decks: [Deck] = []
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let deckVC = segue.destination as? DeckViewController else { return }
-        deckVC.deck = nil
+       
+        deckVC.delegate = self
+        
+        if let deck = sender as? Deck {
+            deckVC.deck = deck
+        }
     }
     
     override func viewDidLoad() {
@@ -39,6 +48,18 @@ class DecksListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
+            performSegue(withIdentifier: "deck", sender: decks[indexPath.row])
+        }
+        
+        let actions = UISwipeActionsConfiguration(actions: [action])
+        
+        return actions
+        
+    }
+
     @IBAction func addDeck(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "deck", sender: nil)
     }
@@ -54,4 +75,11 @@ class DecksListViewController: UITableViewController {
         }
     }
 
+}
+
+extension DecksListViewController: DecksUpdater {
+    func updateDecksList() {
+        fetchDecks()
+        tableView.reloadData()
+    }
 }
