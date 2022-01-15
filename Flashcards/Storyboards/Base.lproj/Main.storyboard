@@ -103,9 +103,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="ckK-jP-oeC">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="4"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </progressView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flashcard" rowHeight="80" id="Qzu-nQ-NaU">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flashcard" rowHeight="80" id="Qzu-nQ-NaU" customClass="FlashcardTableViewCell" customModule="Flashcards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="48.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzu-nQ-NaU" id="whL-PL-dfj">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -236,19 +240,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-sz-iwj">
-                                <rect key="frame" x="87" y="50" width="240" height="240"/>
+                                <rect key="frame" x="87" y="64" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kpe-sz-iwj" secondAttribute="height" multiplier="1:1" id="8wo-jA-1Dn"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-Yd-JqW">
-                                <rect key="frame" x="158" y="350" width="98.5" height="27.5"/>
+                                <rect key="frame" x="158" y="364" width="98.5" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-3V-K8s">
-                                <rect key="frame" x="144.5" y="407.5" width="125" height="31"/>
+                                <rect key="frame" x="144.5" y="421.5" width="125" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Show back side"/>
                                 <connections>
@@ -256,7 +260,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="136" translatesAutoresizingMaskIntoConstraints="NO" id="RM8-hC-UGz">
-                                <rect key="frame" x="42" y="488.5" width="330" height="31"/>
+                                <rect key="frame" x="42" y="502.5" width="330" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-UB-Bjr">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="31"/>
@@ -276,19 +280,25 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-4k-IV8">
+                                <rect key="frame" x="0.0" y="30" width="414" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eTu-sT-fNy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dZK-4k-IV8" firstAttribute="leading" secondItem="eTu-sT-fNy" secondAttribute="leading" id="2cT-Yi-It5"/>
                             <constraint firstItem="RM8-hC-UGz" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="9dF-u7-gjE"/>
-                            <constraint firstItem="Kpe-sz-iwj" firstAttribute="top" secondItem="eTu-sT-fNy" secondAttribute="top" constant="50" id="CR0-Rf-pPp"/>
+                            <constraint firstItem="dZK-4k-IV8" firstAttribute="top" secondItem="eTu-sT-fNy" secondAttribute="top" constant="30" id="FbO-sx-fPw"/>
                             <constraint firstItem="Kpe-sz-iwj" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="Kaf-lY-8wh"/>
+                            <constraint firstItem="dZK-4k-IV8" firstAttribute="trailing" secondItem="eTu-sT-fNy" secondAttribute="trailing" id="NsZ-9c-QHg"/>
                             <constraint firstItem="H0s-3V-K8s" firstAttribute="top" secondItem="qNR-Yd-JqW" secondAttribute="bottom" constant="30" id="QiG-aK-OLu"/>
                             <constraint firstItem="qNR-Yd-JqW" firstAttribute="top" secondItem="Kpe-sz-iwj" secondAttribute="bottom" constant="60" id="UG5-vM-JG9"/>
                             <constraint firstItem="qNR-Yd-JqW" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="VON-pN-6RH"/>
                             <constraint firstItem="RM8-hC-UGz" firstAttribute="top" secondItem="H0s-3V-K8s" secondAttribute="bottom" constant="50" id="YQb-qY-T7H"/>
                             <constraint firstItem="H0s-3V-K8s" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="Yq0-vn-Dg0"/>
                             <constraint firstItem="Kpe-sz-iwj" firstAttribute="width" secondItem="x7C-d2-oJV" secondAttribute="width" multiplier="0.57971" id="qqZ-W8-Z6n"/>
+                            <constraint firstItem="Kpe-sz-iwj" firstAttribute="top" secondItem="dZK-4k-IV8" secondAttribute="bottom" constant="30" id="uCJ-q6-CAM"/>
                         </constraints>
                     </view>
                     <connections>

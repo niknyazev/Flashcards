@@ -20,6 +20,7 @@
 		0102C9B627908E8B00A2637B /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9B527908E8B00A2637B /* FlashcardViewController.swift */; };
 		0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */; };
 		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
+		01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0102C9B527908E8B00A2637B /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewerViewController.swift; sourceTree = "<group>"; };
+		01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		0102C9BA2792CE4200A2637B /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
+				01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */,
 				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
 				0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */,
 				0102C9B527908E8B00A2637B /* FlashcardViewController.swift */,
@@ -217,6 +220,7 @@
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 				0102C9B627908E8B00A2637B /* FlashcardViewController.swift in Sources */,
 				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
+				01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
