@@ -18,6 +18,8 @@
 		0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */; };
 		0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9AE278EF0CD00A2637B /* StorageManager.swift */; };
 		0102C9B627908E8B00A2637B /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9B527908E8B00A2637B /* FlashcardViewController.swift */; };
+		0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */; };
+		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsListViewController.swift; sourceTree = "<group>"; };
 		0102C9AE278EF0CD00A2637B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0102C9B527908E8B00A2637B /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
+		0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
+		0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +93,8 @@
 		0102C9A8278EE09400A2637B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0102C9AA278EE27F00A2637B /* DecksListViewController.swift */,
-				0102C994278EDF7500A2637B /* DeckViewController.swift */,
-				0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */,
-				0102C9B527908E8B00A2637B /* FlashcardViewController.swift */,
+				0102C9B92792CE3300A2637B /* Decks */,
+				0102C9BA2792CE4200A2637B /* Flashcards */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +114,26 @@
 				0102C9AE278EF0CD00A2637B /* StorageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		0102C9B92792CE3300A2637B /* Decks */ = {
+			isa = PBXGroup;
+			children = (
+				0102C9AA278EE27F00A2637B /* DecksListViewController.swift */,
+				0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */,
+				0102C994278EDF7500A2637B /* DeckViewController.swift */,
+			);
+			path = Decks;
+			sourceTree = "<group>";
+		};
+		0102C9BA2792CE4200A2637B /* Flashcards */ = {
+			isa = PBXGroup;
+			children = (
+				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
+				0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */,
+				0102C9B527908E8B00A2637B /* FlashcardViewController.swift */,
+			);
+			path = Flashcards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,11 +210,13 @@
 				0102C995278EDF7500A2637B /* DeckViewController.swift in Sources */,
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
+				0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */,
 				0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */,
 				0102C9AB278EE27F00A2637B /* DecksListViewController.swift in Sources */,
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 				0102C9B627908E8B00A2637B /* FlashcardViewController.swift in Sources */,
+				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

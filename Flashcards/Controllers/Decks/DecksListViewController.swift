@@ -34,6 +34,14 @@ class DecksListViewController: UITableViewController {
             flashcardsVC.deck = decks[currentRow]
             flashcardsVC.delegate = self
             
+        } else if segue.identifier == "flashcardsViewer" {
+         
+            guard let viewerVC = segue.destination as? FlashcardsViewerViewController,
+                  let currentRow = tableView.indexPathForSelectedRow?.row else { return }
+           
+            viewerVC.delegate = self
+            viewerVC.deck = decks[currentRow]
+    
         } else {
             fatalError()
         }
@@ -47,18 +55,16 @@ class DecksListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         decks.count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        CGFloat(80)
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "desk", for: indexPath)
-
-        var content = cell.defaultContentConfiguration()
-        content.text = decks[indexPath.row].title
-        content.secondaryText = "Flashcards: \(decks[indexPath.row].flashcards?.count ?? 0)"
-        content.image = UIImage(systemName: "rectangle.portrait")
-    
-        cell.contentConfiguration = content
-        cell.accessoryType = .disclosureIndicator
+        let cell = tableView.dequeueReusableCell(withIdentifier: "desk", for: indexPath) as! DeckTableViewCell
         
+        cell.configure(with: decks[indexPath.row])
+    
         return cell
     }
     
