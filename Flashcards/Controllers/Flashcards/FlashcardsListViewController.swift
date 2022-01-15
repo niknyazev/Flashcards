@@ -31,12 +31,11 @@ class FlashcardsListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath)
 
-        var content = cell.defaultContentConfiguration()
-        content.text = flashcards[indexPath.row].frontSide
-
-        cell.contentConfiguration = content
-
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        CGFloat(80)
     }
     
     private func fetchFlashcards() {
