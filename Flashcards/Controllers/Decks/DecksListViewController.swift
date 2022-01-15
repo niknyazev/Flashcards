@@ -34,6 +34,14 @@ class DecksListViewController: UITableViewController {
             flashcardsVC.deck = decks[currentRow]
             flashcardsVC.delegate = self
             
+        } else if segue.identifier == "flashcardsViewer" {
+         
+            guard let viewerVC = segue.destination as? FlashcardsViewerViewController,
+                  let currentRow = tableView.indexPathForSelectedRow?.row else { return }
+           
+            viewerVC.delegate = self
+            viewerVC.deck = decks[currentRow]
+    
         } else {
             fatalError()
         }

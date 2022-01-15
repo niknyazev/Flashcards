@@ -25,22 +25,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5Y-7z-a5N">
-                                            <rect key="frame" x="338" y="24.5" width="56" height="31"/>
+                                            <rect key="frame" x="323.5" y="24.5" width="60.5" height="31"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Learn"/>
                                             <connections>
                                                 <action selector="startStudy" destination="5h4-AJ-oF9" eventType="touchUpInside" id="zZb-Fa-QaO"/>
+                                                <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="Pr3-Ru-TfB"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KFc-85-3Ee">
-                                            <rect key="frame" x="20" y="10" width="60" height="60"/>
+                                            <rect key="frame" x="20" y="12.5" width="55" height="55"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="60" id="MaB-AE-mf1"/>
-                                                <constraint firstAttribute="width" constant="60" id="bqg-xQ-bex"/>
+                                                <constraint firstAttribute="height" constant="55" id="MaB-AE-mf1"/>
+                                                <constraint firstAttribute="width" constant="55" id="bqg-xQ-bex"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cTW-IB-Hdn">
-                                            <rect key="frame" x="95" y="16" width="149" height="48"/>
+                                            <rect key="frame" x="90" y="16" width="149" height="48"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-02-LYS">
                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
@@ -59,7 +60,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="KFc-85-3Ee" firstAttribute="leading" secondItem="ev5-Tb-8AR" secondAttribute="leading" constant="20" id="0pf-C8-sbG"/>
-                                        <constraint firstAttribute="trailing" secondItem="t5Y-7z-a5N" secondAttribute="trailing" constant="20" id="1wm-Df-Ela"/>
+                                        <constraint firstAttribute="trailing" secondItem="t5Y-7z-a5N" secondAttribute="trailing" constant="30" id="1wm-Df-Ela"/>
                                         <constraint firstItem="t5Y-7z-a5N" firstAttribute="centerY" secondItem="ev5-Tb-8AR" secondAttribute="centerY" id="68f-KI-nqP"/>
                                         <constraint firstItem="KFc-85-3Ee" firstAttribute="centerY" secondItem="ev5-Tb-8AR" secondAttribute="centerY" id="OCO-fk-Bk1"/>
                                         <constraint firstItem="cTW-IB-Hdn" firstAttribute="leading" secondItem="KFc-85-3Ee" secondAttribute="trailing" constant="15" id="hLt-dd-4WR"/>
@@ -92,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWR-IW-LSE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230.43478260869566" y="93.75"/>
+            <point key="canvasLocation" x="207" y="109"/>
         </scene>
         <!--Flashcards-->
         <scene sceneID="DQU-Ge-Wqo">
@@ -103,11 +104,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="flashcard" id="Qzu-nQ-NaU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flashcard" id="Qzu-nQ-NaU">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzu-nQ-NaU" id="whL-PL-dfj">
-                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -192,6 +193,46 @@
             </objects>
             <point key="canvasLocation" x="2168" y="-204"/>
         </scene>
+        <!--Flashcards Viewer View Controller-->
+        <scene sceneID="m3A-0T-cGv">
+            <objects>
+                <viewController id="j7n-Tl-lnD" customClass="FlashcardsViewerViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x7C-d2-oJV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-sz-iwj">
+                                <rect key="frame" x="87" y="50" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kpe-sz-iwj" secondAttribute="height" multiplier="1:1" id="8wo-jA-1Dn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-Yd-JqW">
+                                <rect key="frame" x="158" y="350" width="98.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eTu-sT-fNy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kpe-sz-iwj" firstAttribute="top" secondItem="eTu-sT-fNy" secondAttribute="top" constant="50" id="CR0-Rf-pPp"/>
+                            <constraint firstItem="Kpe-sz-iwj" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="Kaf-lY-8wh"/>
+                            <constraint firstItem="qNR-Yd-JqW" firstAttribute="top" secondItem="Kpe-sz-iwj" secondAttribute="bottom" constant="60" id="UG5-vM-JG9"/>
+                            <constraint firstItem="qNR-Yd-JqW" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="VON-pN-6RH"/>
+                            <constraint firstItem="Kpe-sz-iwj" firstAttribute="width" secondItem="x7C-d2-oJV" secondAttribute="width" multiplier="0.57971" id="qqZ-W8-Z6n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="flashcardImage" destination="Kpe-sz-iwj" id="Pie-bH-rk7"/>
+                        <outlet property="frontSideLabel" destination="qNR-Yd-JqW" id="Hc5-yA-Dw5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEE-1x-i7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476.81159420289856" y="913.39285714285711"/>
+        </scene>
         <!--Deck View Controller-->
         <scene sceneID="HVN-kN-jaX">
             <objects>
@@ -250,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd3-aP-dJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1245" y="633"/>
+            <point key="canvasLocation" x="1312" y="467"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YgB-fc-Yme">
