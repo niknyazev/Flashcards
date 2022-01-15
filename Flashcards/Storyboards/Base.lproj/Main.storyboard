@@ -30,7 +30,6 @@
                                             <buttonConfiguration key="configuration" style="plain" title="Learn"/>
                                             <connections>
                                                 <action selector="startStudy" destination="5h4-AJ-oF9" eventType="touchUpInside" id="zZb-Fa-QaO"/>
-                                                <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="Pr3-Ru-TfB"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KFc-85-3Ee">
@@ -89,11 +88,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="5jh-8N-zN8" kind="presentation" identifier="deck" id="FtU-Am-hCz"/>
+                        <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="MaY-3I-vJV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWR-IW-LSE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="207" y="109"/>
+            <point key="canvasLocation" x="290" y="94"/>
         </scene>
         <!--Flashcards-->
         <scene sceneID="DQU-Ge-Wqo">
@@ -186,6 +186,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="textFieldBackSide" destination="xsl-nP-LFD" id="dMV-so-fPY"/>
                         <outlet property="textFieldFrontSide" destination="hV8-E6-ytE" id="aCx-xu-U67"/>
                     </connections>
                 </viewController>
@@ -213,14 +214,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-3V-K8s">
+                                <rect key="frame" x="144.5" y="407.5" width="125" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show back side"/>
+                                <connections>
+                                    <action selector="showPressed:" destination="j7n-Tl-lnD" eventType="touchUpInside" id="u2D-1G-wsV"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="136" translatesAutoresizingMaskIntoConstraints="NO" id="RM8-hC-UGz">
+                                <rect key="frame" x="42" y="488.5" width="330" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-UB-Bjr">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Don't know"/>
+                                        <connections>
+                                            <action selector="dontKnowPressed" destination="j7n-Tl-lnD" eventType="touchUpInside" id="Ifu-bJ-05r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-kj-ciV">
+                                        <rect key="frame" x="233" y="0.0" width="97" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Know"/>
+                                        <connections>
+                                            <action selector="knowPressed" destination="j7n-Tl-lnD" eventType="touchUpInside" id="RIf-pK-W5h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eTu-sT-fNy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="RM8-hC-UGz" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="9dF-u7-gjE"/>
                             <constraint firstItem="Kpe-sz-iwj" firstAttribute="top" secondItem="eTu-sT-fNy" secondAttribute="top" constant="50" id="CR0-Rf-pPp"/>
                             <constraint firstItem="Kpe-sz-iwj" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="Kaf-lY-8wh"/>
+                            <constraint firstItem="H0s-3V-K8s" firstAttribute="top" secondItem="qNR-Yd-JqW" secondAttribute="bottom" constant="30" id="QiG-aK-OLu"/>
                             <constraint firstItem="qNR-Yd-JqW" firstAttribute="top" secondItem="Kpe-sz-iwj" secondAttribute="bottom" constant="60" id="UG5-vM-JG9"/>
                             <constraint firstItem="qNR-Yd-JqW" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="VON-pN-6RH"/>
+                            <constraint firstItem="RM8-hC-UGz" firstAttribute="top" secondItem="H0s-3V-K8s" secondAttribute="bottom" constant="50" id="YQb-qY-T7H"/>
+                            <constraint firstItem="H0s-3V-K8s" firstAttribute="centerX" secondItem="x7C-d2-oJV" secondAttribute="centerX" id="Yq0-vn-Dg0"/>
                             <constraint firstItem="Kpe-sz-iwj" firstAttribute="width" secondItem="x7C-d2-oJV" secondAttribute="width" multiplier="0.57971" id="qqZ-W8-Z6n"/>
                         </constraints>
                     </view>

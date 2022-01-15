@@ -13,6 +13,9 @@ class DeckTableViewCell: UITableViewCell {
     @IBOutlet weak var deckName: UILabel!
     @IBOutlet weak var flashcardCount: UILabel!
     
+    var delegate: FlashcardViewerDelegate!
+    private var deck: Deck!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -23,6 +26,8 @@ class DeckTableViewCell: UITableViewCell {
     
     func configure(with deck: Deck) {
       
+        self.deck = deck
+        
         deckImage.image = UIImage(systemName: "rectangle.portrait")
         deckName.text = deck.title
         flashcardCount.text = "Flashcards: \(deck.flashcards?.count ?? 0)"
@@ -30,7 +35,7 @@ class DeckTableViewCell: UITableViewCell {
     }
     
     @IBAction func startStudy() {
-        
+        delegate.openFlashcardViewer(for: deck)
     }
     
 }

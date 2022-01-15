@@ -13,12 +13,14 @@ class FlashcardViewController: UIViewController {
     var delegate: FlashcardsUpdater!
     
     @IBOutlet weak var textFieldFrontSide: UITextField!
+    @IBOutlet weak var textFieldBackSide: UITextField!
     
     @IBAction func saveFlashcard(_ sender: Any) {
         
         StorageManager.shared.saveFlashcard(
             deck: deck,
-            entityName: textFieldFrontSide.text ?? ""
+            frontSide: textFieldFrontSide.text ?? "",
+            backSide: textFieldBackSide.text ?? ""
         )
         
         delegate.updateFlashcards()

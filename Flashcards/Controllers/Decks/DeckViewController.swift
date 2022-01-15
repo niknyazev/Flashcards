@@ -9,7 +9,7 @@ import UIKit
 
 class DeckViewController: UIViewController {
     
-    var delegate: DecksUpdater!
+    var delegate: DecksUpdaterDelegate!
     
     @IBOutlet weak var deckTitle: UITextField!
     

@@ -7,8 +7,12 @@
 
 import UIKit
 
-protocol DecksUpdater {
+protocol DecksUpdaterDelegate {
     func updateDecksList()
+}
+
+protocol FlashcardViewerDelegate {
+    func openFlashcardViewer(for deck: Deck)
 }
 
 class DecksListViewController: UITableViewController {
@@ -37,10 +41,10 @@ class DecksListViewController: UITableViewController {
         } else if segue.identifier == "flashcardsViewer" {
          
             guard let viewerVC = segue.destination as? FlashcardsViewerViewController,
-                  let currentRow = tableView.indexPathForSelectedRow?.row else { return }
-           
+                  let deck = sender as? Deck else { return }
+            
             viewerVC.delegate = self
-            viewerVC.deck = decks[currentRow]
+            viewerVC.deck = deck
     
         } else {
             fatalError()
@@ -64,6 +68,7 @@ class DecksListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "desk", for: indexPath) as! DeckTableViewCell
         
         cell.configure(with: decks[indexPath.row])
+        cell.delegate = self
     
         return cell
     }
@@ -97,9 +102,16 @@ class DecksListViewController: UITableViewController {
 
 }
 
-extension DecksListViewController: DecksUpdater {
+extension DecksListViewController: DecksUpdaterDelegate {
     func updateDecksList() {
         fetchDecks()
         tableView.reloadData()
+    }
+}
+
+extension DecksListViewController: FlashcardViewerDelegate {
+    func openFlashcardViewer(for deck: Deck) {
+        // TODO: figure out about this trick
+        performSegue(withIdentifier: "flashcardsViewer", sender: deck)
     }
 }
