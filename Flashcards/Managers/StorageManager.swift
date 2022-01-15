@@ -61,10 +61,11 @@ class StorageManager {
         saveContext()
     }
     
-    func saveFlashcard(deck: Deck, entityName: String) {
-        let entity = Flashcard(context: viewContext)
-        entity.frontSide = entityName
-        entity.deck = deck
+    func saveFlashcard(deck: Deck, frontSide: String, backSide: String) {
+        let flashcard = Flashcard(context: viewContext)
+        flashcard.frontSide = frontSide
+        flashcard.backSide = backSide
+        flashcard.deck = deck
         saveContext()
     }
     

@@ -10,12 +10,33 @@ import UIKit
 class FlashcardsViewerViewController: UIViewController {
 
     var deck: Deck!
-    var delegate: DecksUpdater!
+    var delegate: DecksUpdaterDelegate!
     
     private var flashcards: [Flashcard] = []
+    private var currentIndex = 0
     
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var frontSideLabel: UILabel!
+    
+    @IBAction func knowPressed() {
+        nextIndex()
+        setupElements(with: flashcards[currentIndex])
+    }
+    
+    @IBAction func dontKnowPressed() {
+        nextIndex()
+        setupElements(with: flashcards[currentIndex])
+    }
+    
+    @IBAction func showPressed(_ sender: UIButton) {
+        sender.setTitle(flashcards[currentIndex].backSide, for: .normal)
+    }
+    
+    private func nextIndex() {
+        currentIndex = (currentIndex == flashcards.count - 1)
+            ? 0
+            : currentIndex + 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

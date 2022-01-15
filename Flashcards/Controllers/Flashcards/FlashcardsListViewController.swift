@@ -14,7 +14,7 @@ protocol FlashcardsUpdater {
 class FlashcardsListViewController: UITableViewController {
 
     var deck: Deck!
-    var delegate: DecksUpdater!
+    var delegate: DecksUpdaterDelegate!
     
     private var flashcards: [Flashcard]!
     private let storageManager = StorageManager.shared

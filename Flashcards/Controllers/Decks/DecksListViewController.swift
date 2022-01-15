@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol DecksUpdater {
+protocol DecksUpdaterDelegate {
     func updateDecksList()
 }
 
@@ -102,7 +102,7 @@ class DecksListViewController: UITableViewController {
 
 }
 
-extension DecksListViewController: DecksUpdater {
+extension DecksListViewController: DecksUpdaterDelegate {
     func updateDecksList() {
         fetchDecks()
         tableView.reloadData()
