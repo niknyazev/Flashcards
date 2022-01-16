@@ -148,6 +148,11 @@
                                         <constraint firstAttribute="trailing" secondItem="64U-ri-u82" secondAttribute="trailing" constant="30" id="pat-28-o52"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backSideLabel" destination="0FJ-Ol-JSl" id="cD0-JS-Lwv"/>
+                                    <outlet property="frontSideLabel" destination="0E0-CQ-Fep" id="HLe-dq-cWj"/>
+                                    <outlet property="isLearnedImage" destination="64U-ri-u82" id="sHe-kn-3Lb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
