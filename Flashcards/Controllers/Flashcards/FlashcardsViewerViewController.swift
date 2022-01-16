@@ -18,6 +18,7 @@ class FlashcardsViewerViewController: UIViewController {
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var frontSideLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var flashcardContentView: UIView!
     
     @IBAction func knowPressed() {
         nextIndex()
@@ -35,6 +36,19 @@ class FlashcardsViewerViewController: UIViewController {
         sender.setTitle(flashcards[currentIndex].backSide, for: .normal)
     }
     
+    private func setupFlashcardView() {
+        flashcardContentView.layer.cornerRadius = 20
+        flashcardContentView.layer.shadowColor = CGColor(
+            red: 30/255,
+            green: 30/255,
+            blue: 30/255,
+            alpha: 1
+        )
+        flashcardContentView.layer.shadowRadius = 6
+        flashcardContentView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        flashcardContentView.layer.shadowOpacity = 0.3
+    }
+    
     private func nextIndex() {
         currentIndex = (currentIndex == flashcards.count - 1)
             ? 0
@@ -50,6 +64,7 @@ class FlashcardsViewerViewController: UIViewController {
         }
         
         setupProgressView(animated: false)
+        setupFlashcardView()
     }
     
     private func setupProgressView(animated: Bool = true) {
