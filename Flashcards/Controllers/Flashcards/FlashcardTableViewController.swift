@@ -1,60 +1,55 @@
 //
-//  FlashcardsListViewController.swift
+//  FlashcardTableViewController.swift
 //  Flashcards
 //
-//  Created by Николай on 12.01.2022.
+//  Created by Николай on 16.01.2022.
 //
 
 import UIKit
 
-protocol FlashcardsUpdater {
-    func updateFlashcards()
-}
+class FlashcardTableViewController: UITableViewController {
 
-class FlashcardsListViewController: UITableViewController {
-
-    var deck: Deck!
-    var delegate: DecksUpdaterDelegate!
-    
-    private var flashcards: [Flashcard]!
-    private let storageManager = StorageManager.shared
+    @IBOutlet weak var frontSideTextField: UITextField!
+    @IBOutlet weak var backSideTextField: UITextField!
+    @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var needPronunciationSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchFlashcards()
-    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        flashcards.count
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    
+    @IBAction func savePressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
+    // MARK: - Table view data source
+
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
+
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath) as! FlashcardTableViewCell
-        cell.configure(with: flashcards[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
-    }
-    
-    private func fetchFlashcards() {
-        storageManager.fetchFlashcards(deck: deck) { result in
-            switch result {
-            case .success(let flashcardsResult):
-                self.flashcards = flashcardsResult
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let flashcardVC = segue.destination as? FlashcardViewController else { return }
-        flashcardVC.deck = deck
-        flashcardVC.delegate = self
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -64,7 +59,7 @@ class FlashcardsListViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -74,7 +69,7 @@ class FlashcardsListViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.
@@ -101,12 +96,4 @@ class FlashcardsListViewController: UITableViewController {
     }
     */
 
-}
-
-extension FlashcardsListViewController: FlashcardsUpdater {
-    func updateFlashcards() {
-        delegate.updateDecksList()
-        fetchFlashcards()
-        tableView.reloadData()
-    }
 }

@@ -7,14 +7,15 @@
     </entity>
     <entity name="Flashcard" representedClassName="Flashcard" syncable="YES" codeGenerationType="class">
         <attribute name="backSide" optional="YES" attributeType="String"/>
-        <attribute name="complexity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="frontSide" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isLearned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="levelOfComplexity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="needPronounce" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashcards" inverseEntity="Deck"/>
     </entity>
     <elements>
         <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="88"/>
-        <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="133"/>
+        <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="134"/>
     </elements>
 </model>

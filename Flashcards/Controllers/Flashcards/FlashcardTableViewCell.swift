@@ -9,15 +9,17 @@ import UIKit
 
 class FlashcardTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var frontSideLabel: UILabel!
+    @IBOutlet weak var backSideLabel: UILabel!
+    @IBOutlet weak var isLearnedImage: UIImageView!
+    
+    func configure(with flashcard: Flashcard) {
+        
+        frontSideLabel.text = flashcard.frontSide
+        backSideLabel.text = flashcard.backSide
+        isLearnedImage.tintColor = flashcard.isLearned
+            ? UIColor(ciColor: .gray)
+            : UIColor(ciColor: .blue)
+
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
