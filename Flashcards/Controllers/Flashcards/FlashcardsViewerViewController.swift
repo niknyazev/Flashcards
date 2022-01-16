@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FlashcardsViewerViewController: UIViewController {
 
@@ -26,23 +27,49 @@ class FlashcardsViewerViewController: UIViewController {
         markFlashcardAsLearned()
         setupElements(with: flashcards[currentIndex])
         setupProgressView()
+        pronounceFlashcard()
     }
-    
     
     @IBAction func changeLevelOfComplexity(_ sender: UISegmentedControl) {
         flashcards[currentIndex].levelOfComplexity = Int16(sender.selectedSegmentIndex)
         storageManager.saveContext()
     }
     
-    
     @IBAction func dontKnowPressed() {
         nextIndex()
         setupElements(with: flashcards[currentIndex])
         setupProgressView()
+        pronounceFlashcard()
     }
     
     @IBAction func showPressed(_ sender: UIButton) {
         sender.setTitle(flashcards[currentIndex].backSide, for: .normal)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchFlashcards()
+        
+        if let flashcard = flashcards.first {
+            setupElements(with: flashcard)
+        }
+        
+        setupProgressView(animated: false)
+        setupFlashcardView()
+        pronounceFlashcard()
+    }
+    
+    private func pronounceFlashcard() {
+        
+        guard let text = flashcards[currentIndex].frontSide else { return }
+        
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        utterance.rate = 0.5
+        
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+        
     }
     
     private func setupFlashcardView() {
@@ -62,18 +89,6 @@ class FlashcardsViewerViewController: UIViewController {
         currentIndex = (currentIndex == flashcards.count - 1)
             ? 0
             : currentIndex + 1
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchFlashcards()
-        
-        if let flashcard = flashcards.first {
-            setupElements(with: flashcard)
-        }
-        
-        setupProgressView(animated: false)
-        setupFlashcardView()
     }
     
     private func setupProgressView(animated: Bool = true) {
