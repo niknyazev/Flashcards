@@ -267,12 +267,27 @@
                                             <action selector="showPressed:" destination="j7n-Tl-lnD" eventType="touchUpInside" id="u2D-1G-wsV"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-xI-L7i">
+                                        <rect key="frame" x="122" y="544" width="130" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="7pM-eD-5X6"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Easy"/>
+                                            <segment title="Hard"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeLevelOfComplexity:" destination="j7n-Tl-lnD" eventType="valueChanged" id="Jzr-Ft-7I5"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SU2-xI-L7i" secondAttribute="bottom" constant="40" id="108-Fz-Gge"/>
                                     <constraint firstItem="qNR-Yd-JqW" firstAttribute="top" secondItem="Kpe-sz-iwj" secondAttribute="bottom" constant="20" id="2E3-S9-RPX"/>
                                     <constraint firstItem="qNR-Yd-JqW" firstAttribute="centerX" secondItem="PaU-4c-srU" secondAttribute="centerX" id="80Y-pE-1M8"/>
                                     <constraint firstItem="Kpe-sz-iwj" firstAttribute="centerX" secondItem="PaU-4c-srU" secondAttribute="centerX" id="EET-H8-vaz"/>
+                                    <constraint firstItem="SU2-xI-L7i" firstAttribute="centerX" secondItem="PaU-4c-srU" secondAttribute="centerX" id="LXy-Oh-dMD"/>
                                     <constraint firstItem="H0s-3V-K8s" firstAttribute="centerX" secondItem="PaU-4c-srU" secondAttribute="centerX" id="iYq-Zm-Wff"/>
                                     <constraint firstItem="Kpe-sz-iwj" firstAttribute="top" secondItem="PaU-4c-srU" secondAttribute="top" constant="40" id="mbi-wc-E3a"/>
                                     <constraint firstItem="H0s-3V-K8s" firstAttribute="top" secondItem="qNR-Yd-JqW" secondAttribute="bottom" constant="40" id="okW-EA-KEK"/>
@@ -331,6 +346,7 @@
                         <outlet property="flashcardContentView" destination="PaU-4c-srU" id="FpZ-jt-6oP"/>
                         <outlet property="flashcardImage" destination="Kpe-sz-iwj" id="Pie-bH-rk7"/>
                         <outlet property="frontSideLabel" destination="qNR-Yd-JqW" id="Hc5-yA-Dw5"/>
+                        <outlet property="levelOfComplexity" destination="SU2-xI-L7i" id="Gvn-t2-dm4"/>
                         <outlet property="progressView" destination="dZK-4k-IV8" id="iVg-ie-Te3"/>
                     </connections>
                 </viewController>

@@ -20,12 +20,20 @@ class FlashcardsViewerViewController: UIViewController {
     @IBOutlet weak var frontSideLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var flashcardContentView: UIView!
-    
+    @IBOutlet weak var levelOfComplexity: UISegmentedControl!
+        
     @IBAction func knowPressed() {
         markFlashcardAsLearned()
         setupElements(with: flashcards[currentIndex])
         setupProgressView()
     }
+    
+    
+    @IBAction func changeLevelOfComplexity(_ sender: UISegmentedControl) {
+        flashcards[currentIndex].levelOfComplexity = Int16(sender.selectedSegmentIndex)
+        storageManager.saveContext()
+    }
+    
     
     @IBAction func dontKnowPressed() {
         nextIndex()
@@ -75,6 +83,8 @@ class FlashcardsViewerViewController: UIViewController {
     
     private func setupElements(with flashcard: Flashcard) {
         frontSideLabel.text = flashcard.frontSide
+        levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity)
+        
     }
     
     private func fetchFlashcards() {
