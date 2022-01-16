@@ -38,9 +38,17 @@ class StorageManager {
         }
     }
     
-    func fetchFlashcards(deck: Deck, completion: (Result<[Flashcard], Error>) -> Void) {
+    func fetchFlashcards(deck: Deck, isLearned: Bool? = nil, completion: (Result<[Flashcard], Error>) -> Void) {
+       
         let fetchRequest = Flashcard.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "deck == %@", deck)
+       
+        if let isLearned = isLearned {
+            fetchRequest.predicate = NSPredicate(format: "deck == %@ AND isLearned == %@",
+                                                 deck,
+                                                 isLearned)
+        } else {
+            fetchRequest.predicate = NSPredicate(format: "deck == %@", deck)
+        }
         
         do {
             let entities = try viewContext.fetch(fetchRequest)

@@ -14,6 +14,7 @@ class FlashcardsViewerViewController: UIViewController {
     
     private var flashcards: [Flashcard] = []
     private var currentIndex = 0
+    private let storageManager = StorageManager.shared
     
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var frontSideLabel: UILabel!
@@ -21,7 +22,7 @@ class FlashcardsViewerViewController: UIViewController {
     @IBOutlet weak var flashcardContentView: UIView!
     
     @IBAction func knowPressed() {
-        nextIndex()
+        markFlashcardAsLearned()
         setupElements(with: flashcards[currentIndex])
         setupProgressView()
     }
@@ -77,7 +78,7 @@ class FlashcardsViewerViewController: UIViewController {
     }
     
     private func fetchFlashcards() {
-        StorageManager.shared.fetchFlashcards(deck: deck) { result in
+        storageManager.fetchFlashcards(deck: deck, isLearned: false) { result in
             switch result {
             case .success(let flashcardsResult):
                 self.flashcards = flashcardsResult
@@ -86,15 +87,14 @@ class FlashcardsViewerViewController: UIViewController {
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func markFlashcardAsLearned() {
+        flashcards[currentIndex].isLearned = true
+        currentIndex = currentIndex == 0
+            ? 0
+            : currentIndex - 1
+        storageManager.saveContext()
+        flashcards = flashcards.filter{ !$0.isLearned }
     }
-    */
 
 }
