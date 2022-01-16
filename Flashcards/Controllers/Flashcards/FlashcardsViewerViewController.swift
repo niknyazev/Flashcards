@@ -17,15 +17,18 @@ class FlashcardsViewerViewController: UIViewController {
     
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var frontSideLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBAction func knowPressed() {
         nextIndex()
         setupElements(with: flashcards[currentIndex])
+        setupProgressView()
     }
     
     @IBAction func dontKnowPressed() {
         nextIndex()
         setupElements(with: flashcards[currentIndex])
+        setupProgressView()
     }
     
     @IBAction func showPressed(_ sender: UIButton) {
@@ -45,6 +48,13 @@ class FlashcardsViewerViewController: UIViewController {
         if let flashcard = flashcards.first {
             setupElements(with: flashcard)
         }
+        
+        setupProgressView(animated: false)
+    }
+    
+    private func setupProgressView(animated: Bool = true) {
+        let progress = Float(currentIndex + 1) / Float(flashcards.count)
+        progressView.setProgress(progress, animated: animated)
     }
     
     private func setupElements(with flashcard: Flashcard) {
