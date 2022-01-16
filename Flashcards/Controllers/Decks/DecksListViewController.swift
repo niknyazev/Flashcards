@@ -69,6 +69,7 @@ class DecksListViewController: UITableViewController {
         
         cell.configure(with: decks[indexPath.row])
         cell.delegate = self
+        cell.accessoryType = .disclosureIndicator
     
         return cell
     }

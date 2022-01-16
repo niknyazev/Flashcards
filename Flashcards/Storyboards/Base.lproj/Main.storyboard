@@ -25,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5Y-7z-a5N">
-                                            <rect key="frame" x="323.5" y="24.5" width="60.5" height="31"/>
+                                            <rect key="frame" x="333.5" y="24.5" width="60.5" height="31"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Learn"/>
                                             <connections>
@@ -59,7 +59,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="KFc-85-3Ee" firstAttribute="leading" secondItem="ev5-Tb-8AR" secondAttribute="leading" constant="20" id="0pf-C8-sbG"/>
-                                        <constraint firstAttribute="trailing" secondItem="t5Y-7z-a5N" secondAttribute="trailing" constant="30" id="1wm-Df-Ela"/>
+                                        <constraint firstAttribute="trailing" secondItem="t5Y-7z-a5N" secondAttribute="trailing" constant="20" id="1wm-Df-Ela"/>
                                         <constraint firstItem="t5Y-7z-a5N" firstAttribute="centerY" secondItem="ev5-Tb-8AR" secondAttribute="centerY" id="68f-KI-nqP"/>
                                         <constraint firstItem="KFc-85-3Ee" firstAttribute="centerY" secondItem="ev5-Tb-8AR" secondAttribute="centerY" id="OCO-fk-Bk1"/>
                                         <constraint firstItem="cTW-IB-Hdn" firstAttribute="leading" secondItem="KFc-85-3Ee" secondAttribute="trailing" constant="15" id="hLt-dd-4WR"/>
