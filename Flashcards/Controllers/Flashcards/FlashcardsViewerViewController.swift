@@ -9,20 +9,33 @@ import UIKit
 import AVFoundation
 
 class FlashcardsViewerViewController: UIViewController {
-
-    var deck: Deck!
-    var delegate: DecksUpdaterDelegate!
-    
-    private var flashcards: [Flashcard] = []
-    private var currentIndex = 0
-    private let storageManager = StorageManager.shared
     
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var frontSideLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var flashcardContentView: UIView!
     @IBOutlet weak var levelOfComplexity: UISegmentedControl!
+    
+    var deck: Deck!
+    var delegate: DecksUpdaterDelegate!
+    
+    private var flashcards: [Flashcard] = []
+    private var currentIndex = 0
+    private let storageManager = StorageManager.shared
         
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchFlashcards()
+        
+        if let flashcard = flashcards.first {
+            setupElements(with: flashcard)
+        }
+        
+        setupProgressView(animated: false)
+        setupFlashcardView()
+        pronounceFlashcard()
+    }
+    
     @IBAction func knowPressed() {
         markFlashcardAsLearned()
         setupElements(with: flashcards[currentIndex])
@@ -45,20 +58,7 @@ class FlashcardsViewerViewController: UIViewController {
     @IBAction func showPressed(_ sender: UIButton) {
         sender.setTitle(flashcards[currentIndex].backSide, for: .normal)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchFlashcards()
         
-        if let flashcard = flashcards.first {
-            setupElements(with: flashcard)
-        }
-        
-        setupProgressView(animated: false)
-        setupFlashcardView()
-        pronounceFlashcard()
-    }
-    
     private func pronounceFlashcard() {
         
         guard let text = flashcards[currentIndex].frontSide else { return }
