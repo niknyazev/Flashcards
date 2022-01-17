@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Deck" representedClassName="Deck" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="deckDescription" optional="YES" attributeType="String"/>
         <attribute name="isDeactived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -16,7 +17,7 @@
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashcards" inverseEntity="Deck"/>
     </entity>
     <elements>
-        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="89"/>
+        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="104"/>
         <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="134"/>
     </elements>
 </model>
