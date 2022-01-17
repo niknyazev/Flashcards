@@ -22,15 +22,7 @@ class DeckViewController: UIViewController {
     
     @IBAction func saveDeck() {
         
-        if let deck = deck {
-            StorageManager.shared.editDeck(deck, newName: deckTitle.text ?? "")
-        } else {
-            StorageManager.shared.saveDeck(deckTitle.text ?? "", completion: nil)
-        }
-        
-        delegate.updateDecksList()
-        
-        dismiss(animated: true, completion: nil)
+
     }
     
     private func loadDeckData() {
