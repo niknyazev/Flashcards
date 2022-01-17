@@ -23,8 +23,9 @@ class DecksListViewController: UITableViewController {
         
         if segue.identifier == "deck" {
             
-            guard let deckVC = segue.destination as? DeckViewController else { return }
-           
+            guard let navigationController = segue.destination as? UINavigationController,
+                  let deckVC = navigationController.viewControllers.first as? DeckTableViewController else { return }
+                       
             deckVC.delegate = self
             
             if let deck = sender as? Deck {
