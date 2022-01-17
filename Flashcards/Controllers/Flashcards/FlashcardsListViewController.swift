@@ -55,6 +55,11 @@ class FlashcardsListViewController: UITableViewController {
         
         flashcardVC.deck = deck
         flashcardVC.delegate = self
+        
+        if let flashcard = sender as? Flashcard {
+            flashcardVC.flashcard = flashcard
+        }
+        
     }
     
 
@@ -77,6 +82,17 @@ class FlashcardsListViewController: UITableViewController {
         }    
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
+            performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
+        }
+        
+        let actions = UISwipeActionsConfiguration(actions: [action])
+        
+        return actions
+        
+    }
 
     /*
     // Override to support rearranging the table view.

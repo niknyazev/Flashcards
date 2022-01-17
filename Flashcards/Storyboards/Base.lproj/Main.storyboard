@@ -163,7 +163,7 @@
                     <navigationItem key="navigationItem" title="Flashcards" id="kVN-qz-L40">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QIL-J5-Rzb">
                             <connections>
-                                <segue destination="OkT-y1-1p1" kind="presentation" id="BCy-Ao-0g3"/>
+                                <segue destination="OkT-y1-1p1" kind="presentation" identifier="flashcard" id="BCy-Ao-0g3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
