@@ -255,14 +255,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complexity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V0-8K-XXx">
-                                                    <rect key="frame" x="20" y="11" width="90" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complexity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V0-8K-XXx">
+                                                    <rect key="frame" x="20" y="11" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hmw-Ac-5rV">
-                                                    <rect key="frame" x="150" y="6" width="150" height="32"/>
+                                                    <rect key="frame" x="244" y="6" width="150" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="YZV-fZ-7aD"/>
                                                     </constraints>
@@ -273,9 +273,9 @@
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hmw-Ac-5rV" secondAttribute="trailing" constant="20" id="Bkh-fh-gkS"/>
                                                 <constraint firstItem="3V0-8K-XXx" firstAttribute="leading" secondItem="T15-RJ-dWE" secondAttribute="leadingMargin" id="awa-8N-94p"/>
                                                 <constraint firstItem="hmw-Ac-5rV" firstAttribute="top" secondItem="T15-RJ-dWE" secondAttribute="top" constant="6" id="b64-e9-N7G"/>
-                                                <constraint firstItem="hmw-Ac-5rV" firstAttribute="leading" secondItem="3V0-8K-XXx" secondAttribute="trailing" constant="40" id="kCd-Yh-rfW"/>
                                                 <constraint firstItem="3V0-8K-XXx" firstAttribute="top" secondItem="T15-RJ-dWE" secondAttribute="topMargin" id="puz-ou-cHO"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -287,20 +287,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronunciation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGT-h1-mvy">
-                                                    <rect key="frame" x="20" y="11" width="110" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronunciation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGT-h1-mvy">
+                                                    <rect key="frame" x="20" y="11" width="105" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALa-gm-fG9">
-                                                    <rect key="frame" x="150" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="345" y="6" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kGT-h1-mvy" firstAttribute="top" secondItem="7VD-0b-G1S" secondAttribute="topMargin" id="Oep-hx-FX9"/>
-                                                <constraint firstItem="ALa-gm-fG9" firstAttribute="leading" secondItem="kGT-h1-mvy" secondAttribute="trailing" constant="20" id="mzR-IA-Apc"/>
                                                 <constraint firstItem="ALa-gm-fG9" firstAttribute="top" secondItem="7VD-0b-G1S" secondAttribute="top" constant="6" id="qzT-zJ-Wyj"/>
+                                                <constraint firstAttribute="trailing" secondItem="ALa-gm-fG9" secondAttribute="trailing" constant="20" id="ra1-D0-3bi"/>
                                                 <constraint firstItem="kGT-h1-mvy" firstAttribute="leading" secondItem="7VD-0b-G1S" secondAttribute="leadingMargin" id="txS-pg-QEa"/>
                                             </constraints>
                                         </tableViewCellContentView>
