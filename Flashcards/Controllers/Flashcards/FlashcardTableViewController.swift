@@ -45,6 +45,10 @@ class FlashcardTableViewController: UITableViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
     private func setupElements() {
         
         guard let flashcard = flashcard else {

@@ -314,6 +314,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Flashcard" id="NFX-AG-4CY">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Plq-wZ-9XT">
+                            <connections>
+                                <action selector="cancelPressed:" destination="Sly-XX-nYI" id="oQj-ev-due"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="xcb-xg-EuP">
                             <connections>
                                 <action selector="savePressed:" destination="Sly-XX-nYI" id="ad8-79-pw5"/>
