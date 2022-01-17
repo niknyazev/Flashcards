@@ -17,6 +17,7 @@ class DeckTableViewController: UITableViewController {
     @IBOutlet var buttonsColor: [UIButton]!
     @IBOutlet var buttonsIcon: [UIButton]!
     
+    private let inactiveAlpha = 0.3
     private let storageManager = StorageManager.shared
     
     override func viewDidLoad() {
@@ -42,22 +43,25 @@ class DeckTableViewController: UITableViewController {
     }
     
     @IBAction func colorPressed(_ sender: UIButton) {
-        
+        for button in buttonsColor {
+            button.alpha = (button == sender ? 1 : inactiveAlpha)
+        }
     }
     
-    
     @IBAction func iconPressed(_ sender: UIButton) {
-
+        for button in buttonsIcon {
+            button.alpha = (button == sender ? 1 : inactiveAlpha)
+        }
     }
     
     private func setupElements() {
         
         guard let deck = deck else {
             for index in 1..<buttonsIcon.count {
-                buttonsIcon[index].alpha = 0.3
+                buttonsIcon[index].alpha = inactiveAlpha
             }
             for index in 1..<buttonsColor.count {
-                buttonsColor[index].alpha = 0.3
+                buttonsColor[index].alpha = inactiveAlpha
             }
             return
         }
@@ -65,6 +69,5 @@ class DeckTableViewController: UITableViewController {
         deckTitleTextField.text = deck.title
         
     }
-
 
 }
