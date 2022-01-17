@@ -14,6 +14,8 @@ class DeckTableViewController: UITableViewController {
     
     @IBOutlet weak var deckTitleTextField: UITextField!
     @IBOutlet weak var deckDescriptionTextField: UITextField!
+    @IBOutlet var buttonsColor: [UIButton]!
+    @IBOutlet var buttonsIcon: [UIButton]!
     
     private let storageManager = StorageManager.shared
     
@@ -39,9 +41,24 @@ class DeckTableViewController: UITableViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func colorPressed(_ sender: UIButton) {
+        
+    }
+    
+    
+    @IBAction func iconPressed(_ sender: UIButton) {
+
+    }
+    
     private func setupElements() {
         
         guard let deck = deck else {
+            for index in 1..<buttonsIcon.count {
+                buttonsIcon[index].alpha = 0.3
+            }
+            for index in 1..<buttonsColor.count {
+                buttonsColor[index].alpha = 0.3
+            }
             return
         }
         

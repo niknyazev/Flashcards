@@ -3,6 +3,7 @@
     <entity name="Deck" representedClassName="Deck" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="deckDescription" optional="YES" attributeType="String"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
         <attribute name="isDeactived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flashcard" inverseName="deck" inverseEntity="Flashcard"/>
@@ -17,7 +18,7 @@
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashcards" inverseEntity="Deck"/>
     </entity>
     <elements>
-        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="104"/>
+        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="119"/>
         <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="134"/>
     </elements>
 </model>
