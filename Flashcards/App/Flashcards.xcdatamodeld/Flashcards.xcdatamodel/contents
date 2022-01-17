@@ -15,7 +15,7 @@
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashcards" inverseEntity="Deck"/>
     </entity>
     <elements>
-        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="88"/>
+        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="74"/>
         <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="134"/>
     </elements>
 </model>

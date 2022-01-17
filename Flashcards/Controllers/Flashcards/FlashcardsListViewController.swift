@@ -50,7 +50,9 @@ class FlashcardsListViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let flashcardVC = segue.destination as? FlashcardViewController else { return }
+        guard let navigationController = segue.destination as? UINavigationController,
+              let flashcardVC = navigationController.viewControllers.first as? FlashcardTableViewController else { return }
+        
         flashcardVC.deck = deck
         flashcardVC.delegate = self
     }
