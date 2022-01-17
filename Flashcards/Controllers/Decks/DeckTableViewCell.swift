@@ -28,7 +28,7 @@ class DeckTableViewCell: UITableViewCell {
       
         self.deck = deck
         
-        deckImage.image = UIImage(systemName: "rectangle.portrait")
+        deckImage.image = UIImage(systemName: deck.iconName ?? "rectangle.portrait")
         deckName.text = deck.title
         flashcardCount.text = "Flashcards: \(deck.flashcards?.count ?? 0)"
         

@@ -19,10 +19,18 @@ class DeckTableViewController: UITableViewController {
     
     private let inactiveAlpha = 0.3
     private let storageManager = StorageManager.shared
+    private var buttonsImages: [UIButton: String] = [:]
+    private var chosenIconName = "doc.richtext.he" //TODO: need to find best way how to cache image
+    private let imageNames = [
+        "doc.richtext.he",
+        "doc.plaintext",
+        "doc.text.below.ecg"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
+        setupButtons()
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
@@ -30,7 +38,11 @@ class DeckTableViewController: UITableViewController {
         if let deck = deck {
             storageManager.editDeck(deck, newName: deckTitleTextField.text ?? "")
         } else {
-            storageManager.saveDeck(deckTitleTextField.text ?? "", completion: nil)
+            storageManager.saveDeck(
+                deckTitleTextField.text ?? "",
+                iconName: chosenIconName,
+                completion: nil
+            )
         }
         
         delegate.updateDecksList()
@@ -52,6 +64,17 @@ class DeckTableViewController: UITableViewController {
         for button in buttonsIcon {
             button.alpha = (button == sender ? 1 : inactiveAlpha)
         }
+        chosenIconName = buttonsImages[sender] ?? chosenIconName
+        deck?.iconName = chosenIconName
+    }
+    
+    private func setupButtons() {
+        
+        for (index, button) in buttonsIcon.enumerated() {
+            buttonsImages[button] = imageNames[index]
+            button.imageView?.image = UIImage(systemName: imageNames[index])
+        }
+        
     }
     
     private func setupElements() {

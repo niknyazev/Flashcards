@@ -58,9 +58,10 @@ class StorageManager {
         }
     }
     
-    func saveDeck(_ entityName: String, completion: ((Deck) -> Void)?) {
+    func saveDeck(_ entityName: String, iconName: String, completion: ((Deck) -> Void)?) {
         let entity = Deck(context: viewContext)
         entity.title = entityName
+        entity.iconName = iconName
         
         if let completion = completion {
             completion(entity)
