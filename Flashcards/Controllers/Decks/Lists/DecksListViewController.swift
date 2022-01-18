@@ -16,7 +16,10 @@ protocol FlashcardViewerDelegate {
 }
 
 class DecksListViewController: UITableViewController {
-
+    
+    @IBOutlet weak var sortingTypeSegmentedControl: UISegmentedControl!
+    
+    private let userDefaults = UserDefaultsManager.shared
     private var decks: [Deck] = []
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,8 +58,9 @@ class DecksListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchDecks()
+        setupSortingType()
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         decks.count
     }
@@ -91,6 +95,34 @@ class DecksListViewController: UITableViewController {
         performSegue(withIdentifier: "deck", sender: nil)
     }
 
+    @IBAction func sortChanged(_ sender: UISegmentedControl) {
+        
+        sortDecks(sortingType: sender.selectedSegmentIndex)
+        tableView.reloadData()
+        userDefaults.saveSortingType(sortingType: sender.selectedSegmentIndex)
+        
+    }
+    
+    private func setupSortingType() {
+        let sortingType = userDefaults.fetchSortingType()
+        sortingTypeSegmentedControl.selectedSegmentIndex = sortingType
+        sortDecks(sortingType: sortingType)
+        tableView.reloadData()
+    }
+    
+    private func sortDecks(sortingType: Int) {
+        
+        //TODO: remove optional type for fields
+       
+        if sortingType == 0 {
+            decks = decks.sorted { $0.title ?? "" < $1.title ?? ""}
+        } else if sortingType == 1 {
+            decks = decks.sorted { $0.flashcards?.count ?? 0 > $1.flashcards?.count ?? 0}
+        } else if sortingType == 2 {
+            decks = decks.sorted { $0.color < $1.color }
+        }
+    }
+    
     private func fetchDecks() {
         StorageManager.shared.fetchDecks { result in
             switch result {

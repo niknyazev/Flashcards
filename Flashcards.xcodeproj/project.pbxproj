@@ -21,6 +21,7 @@
 		01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */; };
 		01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */; };
 		01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */; };
+		01A6A6E92796CD99001A1E46 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E82796CD99001A1E46 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewCell.swift; sourceTree = "<group>"; };
 		01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewController.swift; sourceTree = "<group>"; };
 		01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewController.swift; sourceTree = "<group>"; };
+		01A6A6E82796CD99001A1E46 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0102C9AE278EF0CD00A2637B /* StorageManager.swift */,
+				01A6A6E82796CD99001A1E46 /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
+				01A6A6E92796CD99001A1E46 /* UserDefaultsManager.swift in Sources */,
 				0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */,
 				0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */,
 				0102C9AB278EE27F00A2637B /* DecksListViewController.swift in Sources */,
