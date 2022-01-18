@@ -13,15 +13,18 @@ protocol FlashcardsUpdater {
 
 class FlashcardsListViewController: UITableViewController {
 
+    @IBOutlet weak var progressLearning: UIProgressView!
+    
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
     
     private var flashcards: [Flashcard]!
     private let storageManager = StorageManager.shared
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchFlashcards()
+        setProgressLearning()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,18 +40,7 @@ class FlashcardsListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
     }
-    
-    private func fetchFlashcards() {
-        storageManager.fetchFlashcards(deck: deck) { result in
-            switch result {
-            case .success(let flashcardsResult):
-                self.flashcards = flashcardsResult
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigationController = segue.destination as? UINavigationController,
               let flashcardVC = navigationController.viewControllers.first as? FlashcardTableViewController else { return }
@@ -73,6 +65,25 @@ class FlashcardsListViewController: UITableViewController {
         return actions
         
     }
+    
+    private func fetchFlashcards() {
+        storageManager.fetchFlashcards(deck: deck) { result in
+            switch result {
+            case .success(let flashcardsResult):
+                self.flashcards = flashcardsResult
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func setProgressLearning() {
+        let progress =
+            Float(flashcards.filter { $0.isLearned }.count) /
+                Float(flashcards.count)
+        
+        progressLearning.setProgress(progress, animated: false)
+    }
 
 }
 
@@ -80,6 +91,7 @@ extension FlashcardsListViewController: FlashcardsUpdater {
     func updateFlashcards() {
         delegate.updateDecksList()
         fetchFlashcards()
+        setProgressLearning()
         tableView.reloadData()
     }
 }
