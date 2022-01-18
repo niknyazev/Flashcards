@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FlashcardImageUpdaterDelegate {
+    func updateImage(image: UIImage?)
+}
+
 class FlashcardTableViewController: UITableViewController {
     
     var deck: Deck!
@@ -26,6 +30,19 @@ class FlashcardTableViewController: UITableViewController {
         setupElements()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "choiceImage" {
+            
+            guard let imagesVC = segue.destination as? ChoicerImagesViewController else { return }
+            
+            imagesVC.query = frontSideTextField.text ?? ""
+            imagesVC.delegate = self
+            
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row != 2 {
@@ -43,7 +60,7 @@ class FlashcardTableViewController: UITableViewController {
         }
         
         let webAction = UIAlertAction(title: "Web", style: .default) { _ in
-            //TODO: need implement
+            self.performSegue(withIdentifier: "choiceImage", sender: nil)
         }
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
@@ -119,4 +136,10 @@ extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true)
     }
     
+}
+
+extension FlashcardTableViewController: FlashcardImageUpdaterDelegate {
+    func updateImage(image: UIImage?) {
+        flashcardImage.image = image
+    }
 }

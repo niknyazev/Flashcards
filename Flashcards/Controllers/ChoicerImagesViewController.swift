@@ -9,8 +9,27 @@ import UIKit
 
 class ChoicerImagesViewController: UICollectionViewController {
 
+    var delegate: FlashcardImageUpdaterDelegate!
+    var query = ""
+    
+    private let itemsPerRow: CGFloat = 2
+    private let sectionInserts = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchImages()
+    }
+    
+    private func fetchImages() {
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        delegate.updateImage(image: UIImage(systemName: "photo.artframe"))
+        
+        dismiss(animated: true)
+        
     }
 
     /*
@@ -27,19 +46,19 @@ class ChoicerImagesViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 30
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath)
     
-        // Configure the cell
+        cell.backgroundColor = .red
     
         return cell
     }
@@ -75,4 +94,27 @@ class ChoicerImagesViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension ChoicerImagesViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let paddingWidth = sectionInserts.left * (itemsPerRow + 1)
+        let availableWidth = collectionView.frame.width - paddingWidth
+        let widthPerItem = availableWidth / itemsPerRow
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInserts
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInserts.left
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInserts.left
+    }
 }

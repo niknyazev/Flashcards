@@ -349,7 +349,7 @@
                         <outlet property="flashcardImage" destination="pO8-zX-YLU" id="cbZ-2C-XOJ"/>
                         <outlet property="frontSideTextField" destination="vSu-5u-d6N" id="Bg8-Wp-iKU"/>
                         <outlet property="needPronunciationSwitch" destination="ALa-gm-fG9" id="6Kp-4L-r3V"/>
-                        <segue destination="hB9-nB-GV2" kind="show" identifier="choiceImage" id="4VV-Cl-GAz"/>
+                        <segue destination="hB9-nB-GV2" kind="presentation" identifier="choiceImage" id="4VV-Cl-GAz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zJ-nb-Q4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
