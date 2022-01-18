@@ -25,7 +25,7 @@ class StorageManager {
         persistentContainer.viewContext
     }
     
-    private init() { }
+    private init() {}
     
     func fetchDecks(completion: (Result<[Deck], Error>) -> Void) {
         let fetchRequest = Deck.fetchRequest()

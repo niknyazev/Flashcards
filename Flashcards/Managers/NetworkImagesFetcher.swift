@@ -9,6 +9,10 @@ import Foundation
 
 class NetworkImagesFetcher {
     
+    let shared = NetworkImagesFetcher()
+    
+    private init() {}
+    
     func request(query: String, completion: @escaping (Data?, Error?) -> Void)  {
         
         let queryParameters = queryParameters(query: query)
