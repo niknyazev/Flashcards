@@ -19,10 +19,41 @@ class FlashcardTableViewController: UITableViewController {
     @IBOutlet weak var backSideTextField: UITextField!
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var needPronunciationSwitch: UISwitch!
+    @IBOutlet weak var flashcardImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row != 2 {
+            return
+        }
+        
+        let alertController = UIAlertController(
+            title: "Choose source of image",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+
+        let photosAction = UIAlertAction(title: "Photos", style: .default) { _ in
+            self.choosePhoto()
+        }
+        
+        let webAction = UIAlertAction(title: "Web", style: .default) { _ in
+            //TODO: need implement
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+
+        alertController.addAction(photosAction)
+        alertController.addAction(webAction)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
+        
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
@@ -51,6 +82,9 @@ class FlashcardTableViewController: UITableViewController {
     
     private func setupElements() {
         
+        flashcardImage.contentMode = .scaleAspectFit
+        flashcardImage.clipsToBounds = true
+        
         guard let flashcard = flashcard else {
             return
         }
@@ -58,6 +92,31 @@ class FlashcardTableViewController: UITableViewController {
         frontSideTextField.text = flashcard.frontSide
         backSideTextField.text = flashcard.backSide
         
+        if let imageData = flashcard.image {
+            flashcardImage.image = UIImage(data: imageData)
+        } else {
+            flashcardImage.image = UIImage(systemName: "photo.artframe")
+        }
+        
     }
 
+}
+
+extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func choosePhoto() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as? UIImage
+        flashcardImage.image = image
+        flashcard?.image = image?.pngData()
+        dismiss(animated: true)
+    }
+    
 }

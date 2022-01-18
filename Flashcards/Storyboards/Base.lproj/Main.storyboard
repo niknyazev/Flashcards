@@ -345,6 +345,7 @@
                     <connections>
                         <outlet property="backSideTextField" destination="iBt-G7-GOm" id="aEn-Rq-F9U"/>
                         <outlet property="complexitySegmentedControl" destination="hmw-Ac-5rV" id="B6R-yC-zaF"/>
+                        <outlet property="flashcardImage" destination="pO8-zX-YLU" id="cbZ-2C-XOJ"/>
                         <outlet property="frontSideTextField" destination="vSu-5u-d6N" id="Bg8-Wp-iKU"/>
                         <outlet property="needPronunciationSwitch" destination="ALa-gm-fG9" id="6Kp-4L-r3V"/>
                     </connections>
