@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C990278EDF7500A2637B /* AppDelegate.swift */; };
 		0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C992278EDF7500A2637B /* SceneDelegate.swift */; };
-		0102C995278EDF7500A2637B /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C994278EDF7500A2637B /* DeckViewController.swift */; };
 		0102C998278EDF7500A2637B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0102C996278EDF7500A2637B /* Main.storyboard */; };
 		0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0102C999278EDF7500A2637B /* Flashcards.xcdatamodeld */; };
 		0102C99D278EDF7600A2637B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0102C99C278EDF7600A2637B /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 		0102C98D278EDF7500A2637B /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0102C990278EDF7500A2637B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0102C992278EDF7500A2637B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0102C994278EDF7500A2637B /* DeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		0102C997278EDF7500A2637B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0102C99A278EDF7500A2637B /* Flashcards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flashcards.xcdatamodel; sourceTree = "<group>"; };
 		0102C99C278EDF7600A2637B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,10 +121,8 @@
 		0102C9B92792CE3300A2637B /* Decks */ = {
 			isa = PBXGroup;
 			children = (
-				01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */,
-				0102C9AA278EE27F00A2637B /* DecksListViewController.swift */,
-				0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */,
-				0102C994278EDF7500A2637B /* DeckViewController.swift */,
+				01A6A6E52796C5A4001A1E46 /* Elements */,
+				01A6A6E42796C599001A1E46 /* Lists */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -134,12 +130,45 @@
 		0102C9BA2792CE4200A2637B /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */,
-				01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */,
+				01A6A6E72796C609001A1E46 /* Elements */,
+				01A6A6E62796C5FF001A1E46 /* Lists */,
+			);
+			path = Flashcards;
+			sourceTree = "<group>";
+		};
+		01A6A6E42796C599001A1E46 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				0102C9AA278EE27F00A2637B /* DecksListViewController.swift */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		01A6A6E52796C5A4001A1E46 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */,
+				0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		01A6A6E62796C5FF001A1E46 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
 				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
 				0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */,
 			);
-			path = Flashcards;
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		01A6A6E72796C609001A1E46 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */,
+				01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +242,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0102C995278EDF7500A2637B /* DeckViewController.swift in Sources */,
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
 				0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */,
