@@ -29,8 +29,8 @@ class DeckTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupElements()
         setupButtons()
+        setupElements()
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
@@ -80,17 +80,26 @@ class DeckTableViewController: UITableViewController {
     private func setupElements() {
         
         guard let deck = deck else {
-            for index in 1..<buttonsIcon.count {
-                buttonsIcon[index].alpha = inactiveAlpha
-            }
-            for index in 1..<buttonsColor.count {
-                buttonsColor[index].alpha = inactiveAlpha
-            }
+            setupElementsForNewDeck()
             return
         }
         
         deckTitleTextField.text = deck.title
+        deckDescriptionTextField.text = deck.deckDescription
         
+        for button in buttonsIcon {
+            button.alpha = (buttonsImages[button] == deck.iconName ? 1 : inactiveAlpha)
+        }
+        
+    }
+    
+    private func setupElementsForNewDeck() {
+        for index in 1..<buttonsIcon.count {
+            buttonsIcon[index].alpha = inactiveAlpha
+        }
+        for index in 1..<buttonsColor.count {
+            buttonsColor[index].alpha = inactiveAlpha
+        }
     }
 
 }
