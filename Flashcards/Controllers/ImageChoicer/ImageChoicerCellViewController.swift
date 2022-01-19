@@ -13,14 +13,14 @@ class ImageChoicerCellViewController: UICollectionViewCell {
     
     func configure(with urlImage: String) {
         
-        DispatchQueue.global().async {
-            guard let url = URL(string: urlImage) else { return }
-            guard let data = try? Data(contentsOf: url) else { return }
+        guard let url = URL(string: urlImage) else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let data = data else { return }
             let image = UIImage(data: data)
             DispatchQueue.main.async {
                 self.webImage.image = image
             }
-        }
+        }.resume()
     }
     
 }
