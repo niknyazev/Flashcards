@@ -7,9 +7,9 @@
 
 import Foundation
 
-class NetworkImagesFetcher {
+class NetworkUrlImagesFetcher {
     
-    let shared = NetworkImagesFetcher()
+    static let shared = NetworkUrlImagesFetcher()
     
     private init() {}
     
@@ -32,7 +32,7 @@ class NetworkImagesFetcher {
     
     private func queryHeaders() -> [String: String] {
         var headers: [String: String] = [:]
-        headers[""] = ""
+        headers["Authorization"] = "Client-ID EENjn6vCuLOltg5kUPDwfubrcy6dvJGOj-SeDQlXoJs"
         return headers
     }
     

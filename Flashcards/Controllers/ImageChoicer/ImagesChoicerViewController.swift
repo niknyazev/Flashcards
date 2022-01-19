@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ChoicerImagesViewController: UICollectionViewController {
+class ImagesChoicerViewController: UICollectionViewController {
 
     var delegate: FlashcardImageUpdaterDelegate!
     var query = ""
     
+    
+    private var imagesUrls: [String] = []
     private let itemsPerRow: CGFloat = 2
     private let sectionInserts = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
@@ -21,12 +23,40 @@ class ChoicerImagesViewController: UICollectionViewController {
     }
     
     private func fetchImages() {
+        NetworkUrlImagesFetcher.shared.request(query: "hello") { data, _ in
+            
+            guard let date = data else { return }
+            
+//            print(data?.first?.description)
+            
+            let imagesData = self.decodeJSON(type: ImagesUrlList.self, from: data)
+            
+            imagesData?.results.forEach { photoData in
+                self.imagesUrls.append(photoData.urls.regular)
+            }
+            
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
+        let decoder = JSONDecoder()
+        guard let data = from else { return nil }
         
+        do {
+            let objects = try decoder.decode(type.self, from: data)
+            return objects
+        } catch let jsonError {
+            print("Failed to decode JSON", jsonError)
+            return nil
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        delegate.updateImage(image: UIImage(systemName: "photo.artframe"))
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageChoicerCellViewController else { return }
+        
+        delegate.updateImage(image: cell.webImage.image)
         
         dismiss(animated: true)
         
@@ -45,19 +75,19 @@ class ChoicerImagesViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 30
+        imagesUrls.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath)
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ImageChoicerCellViewController else { return UICollectionViewCell()}
+        
+        cell.configure(with: imagesUrls[indexPath.row])
+        
         cell.backgroundColor = .red
     
         return cell
@@ -96,7 +126,7 @@ class ChoicerImagesViewController: UICollectionViewController {
 
 }
 
-extension ChoicerImagesViewController: UICollectionViewDelegateFlowLayout {
+extension ImagesChoicerViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

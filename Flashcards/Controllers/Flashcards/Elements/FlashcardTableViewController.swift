@@ -34,7 +34,7 @@ class FlashcardTableViewController: UITableViewController {
         
         if segue.identifier == "choiceImage" {
             
-            guard let imagesVC = segue.destination as? ChoicerImagesViewController else { return }
+            guard let imagesVC = segue.destination as? ImagesChoicerViewController else { return }
             
             imagesVC.query = frontSideTextField.text ?? ""
             imagesVC.delegate = self
@@ -140,6 +140,7 @@ extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavig
 
 extension FlashcardTableViewController: FlashcardImageUpdaterDelegate {
     func updateImage(image: UIImage?) {
+        flashcard?.image = image?.pngData()
         flashcardImage.image = image
     }
 }
