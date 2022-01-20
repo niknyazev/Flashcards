@@ -13,7 +13,7 @@ class NetworkUrlImagesFetcher {
     
     private init() {}
     
-    func request(query: String, completion: @escaping (Data?, Error?) -> Void)  {
+    func request(query: String, completion: @escaping ([String]?, Error?) -> Void)  {
         
         let queryParameters = queryParameters(query: query)
         let url = url(queryItems: queryParameters)
@@ -23,8 +23,12 @@ class NetworkUrlImagesFetcher {
         request.httpMethod = "get"
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
+           
+            let imagesUrls = JSONWorker.shared.decodeJSON(type: ImagesUrlList.self, from: data)
+            let result = imagesUrls?.results.map { $0.urls.regular }
+        
             DispatchQueue.main.async {
-                completion(data, error)
+                completion(result, error)
             }
         }.resume()
         

@@ -23,34 +23,15 @@ class ImageChoicerViewController: UICollectionViewController {
     }
     
     private func fetchImages() {
-        NetworkUrlImagesFetcher.shared.request(query: "hello") { data, _ in
+        NetworkUrlImagesFetcher.shared.request(query: "hello") { urls, _ in
             
-            guard let date = data else { return }
-            
-//            print(data?.first?.description)
-            
-            let imagesData = self.decodeJSON(type: ImagesUrlList.self, from: data)
-            
-            imagesData?.results.forEach { photoData in
-                self.imagesUrls.append(photoData.urls.regular)
-            }
-            
+            guard let urls = urls else { return }
+
+            self.imagesUrls = urls
             self.collectionView.reloadData()
         }
     }
     
-    func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
-        let decoder = JSONDecoder()
-        guard let data = from else { return nil }
-        
-        do {
-            let objects = try decoder.decode(type.self, from: data)
-            return objects
-        } catch let jsonError {
-            print("Failed to decode JSON", jsonError)
-            return nil
-        }
-    }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -62,22 +43,9 @@ class ImageChoicerViewController: UICollectionViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         imagesUrls.count
