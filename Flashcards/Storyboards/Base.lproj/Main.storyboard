@@ -356,10 +356,10 @@
             </objects>
             <point key="canvasLocation" x="3651" y="-204"/>
         </scene>
-        <!--Images Choicer View Controller-->
+        <!--Image Choicer View Controller-->
         <scene sceneID="1ta-bH-0JR">
             <objects>
-                <collectionViewController id="hB9-nB-GV2" customClass="ImagesChoicerViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="hB9-nB-GV2" customClass="ImageChoicerViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="q42-Jh-hgt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

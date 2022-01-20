@@ -34,7 +34,7 @@ class FlashcardTableViewController: UITableViewController {
         
         if segue.identifier == "choiceImage" {
             
-            guard let imagesVC = segue.destination as? ImagesChoicerViewController else { return }
+            guard let imagesVC = segue.destination as? ImageChoicerViewController else { return }
             
             imagesVC.query = frontSideTextField.text ?? ""
             imagesVC.delegate = self

@@ -19,7 +19,7 @@
 		0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */; };
 		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
 		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
-		0198F66727972C1400B13C90 /* ImagesChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImagesChoicerViewController.swift */; };
+		0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */; };
 		0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F6692797462300B13C90 /* ImagesUrlList.swift */; };
 		0198F66C27974C4600B13C90 /* ImageChoicerCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */; };
 		01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */; };
@@ -43,7 +43,7 @@
 		0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewerViewController.swift; sourceTree = "<group>"; };
 		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
-		0198F66627972C1400B13C90 /* ImagesChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesChoicerViewController.swift; sourceTree = "<group>"; };
+		0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerViewController.swift; sourceTree = "<group>"; };
 		0198F6692797462300B13C90 /* ImagesUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesUrlList.swift; sourceTree = "<group>"; };
 		0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerCellViewController.swift; sourceTree = "<group>"; };
 		01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		0198F66D2798206300B13C90 /* ImageChoicer */ = {
 			isa = PBXGroup;
 			children = (
-				0198F66627972C1400B13C90 /* ImagesChoicerViewController.swift */,
+				0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */,
 				0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */,
 			);
 			path = ImageChoicer;
@@ -283,7 +283,7 @@
 				01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */,
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
-				0198F66727972C1400B13C90 /* ImagesChoicerViewController.swift in Sources */,
+				0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */,
 				01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */,
 				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
 				01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */,

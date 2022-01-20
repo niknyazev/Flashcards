@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImagesChoicerViewController: UICollectionViewController {
+class ImageChoicerViewController: UICollectionViewController {
 
     var delegate: FlashcardImageUpdaterDelegate!
     var query = ""
@@ -126,7 +126,7 @@ class ImagesChoicerViewController: UICollectionViewController {
 
 }
 
-extension ImagesChoicerViewController: UICollectionViewDelegateFlowLayout {
+extension ImageChoicerViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
