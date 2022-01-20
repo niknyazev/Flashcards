@@ -12,7 +12,6 @@ class ImageChoicerViewController: UICollectionViewController {
     var delegate: FlashcardImageUpdaterDelegate!
     var query = ""
     
-    
     private var imagesUrls: [String] = []
     private let itemsPerRow: CGFloat = 2
     private let sectionInserts = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -23,7 +22,7 @@ class ImageChoicerViewController: UICollectionViewController {
     }
     
     private func fetchImages() {
-        UrlImagesFetcher.shared.request(query: "hello") { urls, _ in
+        NetworkUrlImagesFetcher.shared.request(query: query) { urls, _ in
             
             guard let urls = urls else { return }
 

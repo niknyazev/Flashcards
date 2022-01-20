@@ -7,15 +7,17 @@
 
 import Foundation
 
-class UrlImagesFetcher {
+class NetworkUrlImagesFetcher {
     
-    static let shared = UrlImagesFetcher()
+    static let shared = NetworkUrlImagesFetcher()
     
     private init() {}
     
     func request(query: String, completion: @escaping ([String]?, Error?) -> Void)  {
+    
+        guard let encodingQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
-        let queryParameters = queryParameters(query: query)
+        let queryParameters = queryParameters(query: encodingQuery)
         let url = url(queryItems: queryParameters)
        
         var request = URLRequest(url: url)
