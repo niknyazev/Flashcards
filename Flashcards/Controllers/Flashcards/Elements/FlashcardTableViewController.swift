@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol FlashcardImageUpdaterDelegate {
     func updateImage(image: UIImage?)
@@ -18,6 +19,7 @@ class FlashcardTableViewController: UITableViewController {
     var flashcard: Flashcard?
     
     private let storageManager = StorageManager.shared
+    private let translator = NetworkTranslator.shared
 
     @IBOutlet weak var frontSideTextField: UITextField!
     @IBOutlet weak var backSideTextField: UITextField!
@@ -71,6 +73,17 @@ class FlashcardTableViewController: UITableViewController {
 
         present(alertController, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func translatePressed(_ sender: Any) {
+        
+        guard let text = frontSideTextField.text else {
+            return
+        }
+    
+        translator.request(query: text) { result, error in
+            self.backSideTextField.text = result
+        }
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {

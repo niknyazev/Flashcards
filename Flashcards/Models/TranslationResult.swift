@@ -8,5 +8,9 @@
 import Foundation
 
 struct TranslationResult: Decodable {
-    let result: String?
+    let translations: [TextData]
+}
+
+struct TextData: Decodable {
+    let text: String?
 }
