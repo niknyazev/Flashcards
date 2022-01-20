@@ -127,9 +127,8 @@
 		0102C9B0278EF0D600A2637B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				0102C9AE278EF0CD00A2637B /* StorageManager.swift */,
-				01A6A6E82796CD99001A1E46 /* UserDefaultsManager.swift */,
-				0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */,
+				01EAAFD4279950DA006951B6 /* Network */,
+				01EAAFD5279950FA006951B6 /* Storages */,
 				01EAAFD227994C75006951B6 /* JSONWorker.swift */,
 			);
 			path = Managers;
@@ -203,6 +202,23 @@
 				01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		01EAAFD4279950DA006951B6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		01EAAFD5279950FA006951B6 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				01A6A6E82796CD99001A1E46 /* UserDefaultsManager.swift */,
+				0102C9AE278EF0CD00A2637B /* StorageManager.swift */,
+			);
+			path = Storages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
