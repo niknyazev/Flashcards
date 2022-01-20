@@ -29,6 +29,8 @@
 		01EAAFD327994C75006951B6 /* JSONWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD227994C75006951B6 /* JSONWorker.swift */; };
 		01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD627995848006951B6 /* NetworkTranslator.swift */; };
 		01EAAFD927995896006951B6 /* TranslationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD827995896006951B6 /* TranslationResult.swift */; };
+		01EAAFDB2799C349006951B6 /* DecksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFDA2799C349006951B6 /* DecksListViewModel.swift */; };
+		01EAAFDD2799EF28006951B6 /* FlashcardsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFDC2799EF28006951B6 /* FlashcardsListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		01EAAFD227994C75006951B6 /* JSONWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONWorker.swift; sourceTree = "<group>"; };
 		01EAAFD627995848006951B6 /* NetworkTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTranslator.swift; sourceTree = "<group>"; };
 		01EAAFD827995896006951B6 /* TranslationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResult.swift; sourceTree = "<group>"; };
+		01EAAFDA2799C349006951B6 /* DecksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksListViewModel.swift; sourceTree = "<group>"; };
+		01EAAFDC2799EF28006951B6 /* FlashcardsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				0102C9AA278EE27F00A2637B /* DecksListViewController.swift */,
+				01EAAFDA2799C349006951B6 /* DecksListViewModel.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
+				01EAAFDC2799EF28006951B6 /* FlashcardsListViewModel.swift */,
 				0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */,
 			);
 			path = Lists;
@@ -303,6 +309,7 @@
 				01EAAFD327994C75006951B6 /* JSONWorker.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
 				01A6A6E92796CD99001A1E46 /* UserDefaultsManager.swift in Sources */,
+				01EAAFDB2799C349006951B6 /* DecksListViewModel.swift in Sources */,
 				0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */,
 				0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */,
 				0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */,
@@ -311,6 +318,7 @@
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
 				01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
+				01EAAFDD2799EF28006951B6 /* FlashcardsListViewModel.swift in Sources */,
 				0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */,
 				01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */,
 				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
