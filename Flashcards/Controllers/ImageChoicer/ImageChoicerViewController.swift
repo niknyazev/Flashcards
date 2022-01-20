@@ -23,7 +23,7 @@ class ImageChoicerViewController: UICollectionViewController {
     }
     
     private func fetchImages() {
-        NetworkUrlImagesFetcher.shared.request(query: "hello") { urls, _ in
+        UrlImagesFetcher.shared.request(query: "hello") { urls, _ in
             
             guard let urls = urls else { return }
 

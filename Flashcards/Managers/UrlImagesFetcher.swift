@@ -7,9 +7,9 @@
 
 import Foundation
 
-class NetworkUrlImagesFetcher {
+class UrlImagesFetcher {
     
-    static let shared = NetworkUrlImagesFetcher()
+    static let shared = UrlImagesFetcher()
     
     private init() {}
     

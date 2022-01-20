@@ -18,7 +18,7 @@
 		0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9AE278EF0CD00A2637B /* StorageManager.swift */; };
 		0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */; };
 		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
-		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
+		0198F665279721FA00B13C90 /* UrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* UrlImagesFetcher.swift */; };
 		0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */; };
 		0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F6692797462300B13C90 /* ImagesUrlList.swift */; };
 		0198F66C27974C4600B13C90 /* ImageChoicerCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */; };
@@ -43,7 +43,7 @@
 		0102C9AE278EF0CD00A2637B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewerViewController.swift; sourceTree = "<group>"; };
-		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
+		0198F664279721FA00B13C90 /* UrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImagesFetcher.swift; sourceTree = "<group>"; };
 		0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerViewController.swift; sourceTree = "<group>"; };
 		0198F6692797462300B13C90 /* ImagesUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesUrlList.swift; sourceTree = "<group>"; };
 		0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerCellViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		01EAAFD4279950DA006951B6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */,
+				0198F664279721FA00B13C90 /* UrlImagesFetcher.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 				01EAAFD327994C75006951B6 /* JSONWorker.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
 				01A6A6E92796CD99001A1E46 /* UserDefaultsManager.swift in Sources */,
-				0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */,
+				0198F665279721FA00B13C90 /* UrlImagesFetcher.swift in Sources */,
 				0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */,
 				0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */,
 				0102C9AB278EE27F00A2637B /* DecksListViewController.swift in Sources */,
