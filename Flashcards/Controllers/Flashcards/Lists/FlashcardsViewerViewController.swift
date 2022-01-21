@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class FlashcardsViewerViewController: UIViewController {
     
@@ -60,16 +59,8 @@ class FlashcardsViewerViewController: UIViewController {
     }
         
     private func pronounceFlashcard() {
-        
         guard let text = flashcards[currentIndex].frontSide else { return }
-        
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-        utterance.rate = 0.5
-        
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
-        
+        SpeechSynthesizer.shared.pronounce(text: text)
     }
     
     private func setupFlashcardView() {
