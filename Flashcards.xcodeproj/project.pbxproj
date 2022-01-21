@@ -31,6 +31,9 @@
 		01EAAFD927995896006951B6 /* TranslationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD827995896006951B6 /* TranslationResult.swift */; };
 		01EAAFDB2799C349006951B6 /* DecksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFDA2799C349006951B6 /* DecksListViewModel.swift */; };
 		01EAAFDD2799EF28006951B6 /* FlashcardsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFDC2799EF28006951B6 /* FlashcardsListViewModel.swift */; };
+		01F14665279A9F9900D205F8 /* DeckCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F14664279A9F9900D205F8 /* DeckCellViewModel.swift */; };
+		01F14667279A9FE600D205F8 /* DeckDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F14666279A9FE600D205F8 /* DeckDetailsViewModel.swift */; };
+		01F1466A279ADB3D00D205F8 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F14669279ADB3D00D205F8 /* SpeechSynthesizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		01EAAFD827995896006951B6 /* TranslationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResult.swift; sourceTree = "<group>"; };
 		01EAAFDA2799C349006951B6 /* DecksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksListViewModel.swift; sourceTree = "<group>"; };
 		01EAAFDC2799EF28006951B6 /* FlashcardsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsListViewModel.swift; sourceTree = "<group>"; };
+		01F14664279A9F9900D205F8 /* DeckCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCellViewModel.swift; sourceTree = "<group>"; };
+		01F14666279A9FE600D205F8 /* DeckDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailsViewModel.swift; sourceTree = "<group>"; };
+		01F14669279ADB3D00D205F8 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 				01EAAFD4279950DA006951B6 /* Network */,
 				01EAAFD5279950FA006951B6 /* Storages */,
 				01EAAFD227994C75006951B6 /* JSONWorker.swift */,
+				01F14669279ADB3D00D205F8 /* SpeechSynthesizer.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -145,8 +152,9 @@
 		0102C9B92792CE3300A2637B /* Decks */ = {
 			isa = PBXGroup;
 			children = (
-				01A6A6E52796C5A4001A1E46 /* Elements */,
 				01A6A6E42796C599001A1E46 /* Lists */,
+				01F14663279A9F5C00D205F8 /* Cell */,
+				01A6A6E52796C5A4001A1E46 /* Details */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -154,7 +162,8 @@
 		0102C9BA2792CE4200A2637B /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				01A6A6E72796C609001A1E46 /* Elements */,
+				01F14668279AB34500D205F8 /* Viewer */,
+				01A6A6E72796C609001A1E46 /* Details */,
 				01A6A6E62796C5FF001A1E46 /* Lists */,
 			);
 			path = Flashcards;
@@ -187,32 +196,31 @@
 			path = Lists;
 			sourceTree = "<group>";
 		};
-		01A6A6E52796C5A4001A1E46 /* Elements */ = {
+		01A6A6E52796C5A4001A1E46 /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */,
-				0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */,
+				01F14666279A9FE600D205F8 /* DeckDetailsViewModel.swift */,
 			);
-			path = Elements;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		01A6A6E62796C5FF001A1E46 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
 				01EAAFDC2799EF28006951B6 /* FlashcardsListViewModel.swift */,
 				0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
 		};
-		01A6A6E72796C609001A1E46 /* Elements */ = {
+		01A6A6E72796C609001A1E46 /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */,
 				01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */,
 			);
-			path = Elements;
+			path = Details;
 			sourceTree = "<group>";
 		};
 		01EAAFD4279950DA006951B6 /* Network */ = {
@@ -231,6 +239,23 @@
 				0102C9AE278EF0CD00A2637B /* StorageManager.swift */,
 			);
 			path = Storages;
+			sourceTree = "<group>";
+		};
+		01F14663279A9F5C00D205F8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */,
+				01F14664279A9F9900D205F8 /* DeckCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		01F14668279AB34500D205F8 /* Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
+			);
+			path = Viewer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,13 +331,16 @@
 			files = (
 				01EAAFD927995896006951B6 /* TranslationResult.swift in Sources */,
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
+				01F1466A279ADB3D00D205F8 /* SpeechSynthesizer.swift in Sources */,
 				01EAAFD327994C75006951B6 /* JSONWorker.swift in Sources */,
 				0102C99B278EDF7500A2637B /* Flashcards.xcdatamodeld in Sources */,
 				01A6A6E92796CD99001A1E46 /* UserDefaultsManager.swift in Sources */,
 				01EAAFDB2799C349006951B6 /* DecksListViewModel.swift in Sources */,
 				0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */,
+				01F14665279A9F9900D205F8 /* DeckCellViewModel.swift in Sources */,
 				0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */,
 				0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */,
+				01F14667279A9FE600D205F8 /* DeckDetailsViewModel.swift in Sources */,
 				0102C9AB278EE27F00A2637B /* DecksListViewController.swift in Sources */,
 				01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */,
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
