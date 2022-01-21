@@ -11,9 +11,11 @@ class FlashcardsViewerViewController: UIViewController {
     
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var frontSideLabel: UILabel!
+    @IBOutlet weak var backSideLabel: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var flashcardContentView: UIView!
     @IBOutlet weak var levelOfComplexity: UISegmentedControl!
+    @IBOutlet weak var allIsLearnedLabel: UILabel!
     
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
@@ -25,11 +27,7 @@ class FlashcardsViewerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchFlashcards()
-        
-        if let flashcard = flashcards.first {
-            setupElements(with: flashcard)
-        }
-        
+        setupElements(with: flashcards.first)
         setupProgressView(animated: false)
         setupFlashcardView()
         pronounceFlashcard()
@@ -59,6 +57,11 @@ class FlashcardsViewerViewController: UIViewController {
     }
         
     private func pronounceFlashcard() {
+        
+        if flashcards.isEmpty {
+            return
+        }
+        
         guard let text = flashcards[currentIndex].frontSide else { return }
         SpeechSynthesizer.shared.pronounce(text: text)
     }
@@ -87,7 +90,18 @@ class FlashcardsViewerViewController: UIViewController {
         progressView.setProgress(progress, animated: animated)
     }
     
-    private func setupElements(with flashcard: Flashcard) {
+    private func setupElements(with flashcard: Flashcard?) {
+       
+        let allIsLearned = flashcard == nil
+        
+        allIsLearnedLabel.isHidden = !allIsLearned
+        frontSideLabel.isHidden = allIsLearned
+        backSideLabel.isHidden = allIsLearned
+        levelOfComplexity.isHidden = allIsLearned
+        flashcardImage.isHidden = allIsLearned
+        
+        guard let flashcard = flashcard else { return }
+        
         frontSideLabel.text = flashcard.frontSide
         levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity)
         
