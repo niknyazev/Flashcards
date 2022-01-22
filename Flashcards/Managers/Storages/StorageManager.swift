@@ -79,7 +79,11 @@ class StorageManager {
     }
     
     func saveSessionSettings(deck: Deck, complexity: Int16, count: Int16, areLearned: Bool) {
-        let settings = SessionSettings(context: viewContext)
+        
+        let settings = deck.sessionSettings == nil
+            ? SessionSettings(context: viewContext)
+            : deck.sessionSettings!
+            
         settings.deck = deck
         settings.flashcardsAreLearned = areLearned
         settings.flashcardsCount = count
@@ -101,6 +105,11 @@ class StorageManager {
         saveContext()
     }
 
+    func delete(sessionSettings: SessionSettings) {
+        viewContext.delete(sessionSettings)
+        saveContext()
+    }
+    
     func saveContext() {
         if viewContext.hasChanges {
             do {
