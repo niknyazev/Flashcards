@@ -72,7 +72,7 @@ class DecksListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "desk", for: indexPath) as! DeckTableViewCell
         
-        cell.configure(with: decks[indexPath.row])
+        cell.viewModel = DeckCellViewModel(deck: decks[indexPath.row])
         cell.delegate = self
         cell.accessoryType = .disclosureIndicator
     
