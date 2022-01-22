@@ -42,9 +42,9 @@ class DecksListViewController: UITableViewController {
             flashcardsVC.deck = decks[currentRow]
             flashcardsVC.delegate = self
             
-        } else if segue.identifier == "flashcardsViewer" {
+        } else if segue.identifier == "settingsSession" {
          
-            guard let viewerVC = segue.destination as? FlashcardsViewerViewController,
+            guard let viewerVC = segue.destination as? SettingsSessionViewController,
                   let deck = sender as? Deck else { return }
             
             viewerVC.delegate = self
@@ -146,6 +146,6 @@ extension DecksListViewController: DecksUpdaterDelegate {
 extension DecksListViewController: FlashcardViewerDelegate {
     func openFlashcardViewer(for deck: Deck) {
         // TODO: figure out about this trick
-        performSegue(withIdentifier: "flashcardsViewer", sender: deck)
+        performSegue(withIdentifier: "settingsSession", sender: deck)
     }
 }
