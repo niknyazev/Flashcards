@@ -9,6 +9,14 @@ import UIKit
 
 class SettingsSessionViewController: UITableViewController {
 
+    @IBOutlet weak var saveResultSwitch: UISwitch!
+    @IBOutlet weak var isLearnedSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var countTextField: UITextField!
+    
+    var deck: Deck!
+    var delegate: DecksUpdaterDelegate!
+    
     private lazy var startSessionButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 21/255, green: 101/255, blue: 192/255, alpha: 1)
@@ -20,9 +28,6 @@ class SettingsSessionViewController: UITableViewController {
 
         return button
     }()
-    
-    var deck: Deck!
-    var delegate: DecksUpdaterDelegate!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -63,6 +68,14 @@ class SettingsSessionViewController: UITableViewController {
     }
     
     @objc func startSessionPressed() {
+        
+        StorageManager.shared.saveSessionSettings(
+            deck: deck,
+            complexity: Int16(complexitySegmentedControl.selectedSegmentIndex),
+            count: Int16(countTextField.text ?? String(0)) ?? 0,
+            areLearned: isLearnedSegmentedControl.selectedSegmentIndex == 0 ? false : true
+        )
+        
         performSegue(withIdentifier: "flashcardsViewer", sender: nil)
     }
 

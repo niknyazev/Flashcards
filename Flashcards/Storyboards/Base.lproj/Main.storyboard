@@ -791,10 +791,9 @@
             </objects>
             <point key="canvasLocation" x="1312" y="475"/>
         </scene>
-        <!--Settings Session View Controller-->
+        <!--Session settings-->
         <scene sceneID="sqC-Be-H83">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-7G-iT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController modalPresentationStyle="fullScreen" id="9CH-Ll-gBT" customClass="SettingsSessionViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="691-On-TYZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -903,7 +902,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="56y-Ad-mg9"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -922,11 +921,16 @@
                             <outlet property="delegate" destination="9CH-Ll-gBT" id="eM8-fQ-5mz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qVy-ty-EdI"/>
+                    <navigationItem key="navigationItem" title="Session settings" id="qVy-ty-EdI"/>
                     <connections>
+                        <outlet property="complexitySegmentedControl" destination="bDm-n2-3hH" id="bGf-Oa-Aag"/>
+                        <outlet property="countTextField" destination="fZl-AH-YlJ" id="g4G-Cg-WM1"/>
+                        <outlet property="isLearnedSegmentedControl" destination="Kh0-So-iVn" id="9Qb-Zq-Rek"/>
+                        <outlet property="saveResultSwitch" destination="UA7-NP-fTK" id="5ua-qR-eCk"/>
                         <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="zOa-Gj-qDq"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-7G-iT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-354" y="913"/>
         </scene>

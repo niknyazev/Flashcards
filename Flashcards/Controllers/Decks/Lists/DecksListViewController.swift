@@ -144,8 +144,55 @@ extension DecksListViewController: DecksUpdaterDelegate {
 }
 
 extension DecksListViewController: FlashcardViewerDelegate {
+    
     func openFlashcardViewer(for deck: Deck) {
-        // TODO: figure out about this trick
-        performSegue(withIdentifier: "settingsSession", sender: deck)
+
+        if deck.sessionSettings == nil {
+            performSegue(withIdentifier: "settingsSession", sender: deck)
+            return
+        }
+        
+        askAboutResumeSession() { result in
+           
+            guard let result = result else { return }
+            
+            if result {
+                self.performSegue(withIdentifier: "settingsSession", sender: deck)
+            } else {
+                self.performSegue(withIdentifier: "settingsSession", sender: deck)
+            }
+                
+        }
+        
+        
     }
+    
+    private func askAboutResumeSession(completion: @escaping (Bool?) -> Void) {
+        
+        let alertController = UIAlertController(
+            title: "Active session detected",
+            message: "Continue learning session?",
+            preferredStyle: .alert
+        )
+  
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            completion(true)
+        }
+        
+        let startNewSession = UIAlertAction(title: "Start new session", style: .default) { _ in
+            completion(false)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+            completion(nil)
+        }
+        
+        alertController.addAction(yesAction)
+        alertController.addAction(startNewSession)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
 }

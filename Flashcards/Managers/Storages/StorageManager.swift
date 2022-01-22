@@ -78,6 +78,15 @@ class StorageManager {
         saveContext()
     }
     
+    func saveSessionSettings(deck: Deck, complexity: Int16, count: Int16, areLearned: Bool) {
+        let settings = SessionSettings(context: viewContext)
+        settings.deck = deck
+        settings.flashcardsAreLearned = areLearned
+        settings.flashcardsCount = count
+        settings.flashcardsComplexity = complexity
+        saveContext()
+    }
+    
     func editDeck(_ entity: Deck, newName: String) {
         entity.title = newName
         saveContext()
