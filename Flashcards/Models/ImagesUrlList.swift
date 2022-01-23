@@ -19,4 +19,7 @@ struct PhotoData: Decodable {
 
 struct PhotoUrl: Decodable {
     let regular: String
+    let small: String
+    let thumb: String
+    
 }

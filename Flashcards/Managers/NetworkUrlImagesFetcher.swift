@@ -27,7 +27,7 @@ class NetworkUrlImagesFetcher {
         URLSession.shared.dataTask(with: request) { (data, _, error) in
            
             let imagesUrls = JSONWorker.shared.decodeJSON(type: ImagesUrlList.self, from: data)
-            let result = imagesUrls?.results.map { $0.urls.regular }
+            let result = imagesUrls?.results.map { $0.urls.small }
         
             DispatchQueue.main.async {
                 completion(result, error)
@@ -46,7 +46,8 @@ class NetworkUrlImagesFetcher {
         let parameters = [
             URLQueryItem(name: "query", value: query),
             URLQueryItem(name: "page", value: String(1)),
-            URLQueryItem(name: "per_page", value: String(30))
+            URLQueryItem(name: "per_page", value: String(20)),
+            URLQueryItem(name: "per_page", value: String(20))
         ]
         return parameters
     }
