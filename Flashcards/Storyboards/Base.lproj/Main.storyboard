@@ -360,7 +360,7 @@
                         <outlet property="flashcardImage" destination="pO8-zX-YLU" id="cbZ-2C-XOJ"/>
                         <outlet property="frontSideTextField" destination="vSu-5u-d6N" id="Bg8-Wp-iKU"/>
                         <outlet property="needPronunciationSwitch" destination="ALa-gm-fG9" id="6Kp-4L-r3V"/>
-                        <segue destination="hB9-nB-GV2" kind="presentation" identifier="choiceImage" id="4VV-Cl-GAz"/>
+                        <segue destination="hB9-nB-GV2" kind="show" identifier="choiceImage" id="4VV-Cl-GAz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zJ-nb-Q4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -389,7 +389,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wfE-mU-Ikv">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wfE-mU-Ikv">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
                                     </subviews>
@@ -937,7 +937,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M50-tY-utT"/>
+        <segue reference="zOa-Gj-qDq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="character.book.closed.zh" catalog="system" width="115" height="128"/>

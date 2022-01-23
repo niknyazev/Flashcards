@@ -55,8 +55,6 @@ class ImageChoicerViewController: UICollectionViewController {
         
         cell.configure(with: imagesUrls[indexPath.row])
         
-        cell.backgroundColor = .red
-    
         return cell
     }
 
