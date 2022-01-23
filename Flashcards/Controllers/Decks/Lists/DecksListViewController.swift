@@ -71,7 +71,9 @@ class DecksListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "desk", for: indexPath) as! DeckTableViewCell
-        
+                
+        guard let flashcards = decks[indexPath.row].flashcards else { return UITableViewCell()}
+                
         cell.viewModel = DeckCellViewModel(deck: decks[indexPath.row])
         cell.delegate = self
         cell.accessoryType = .disclosureIndicator
@@ -159,12 +161,30 @@ extension DecksListViewController: FlashcardViewerDelegate {
             if result {
                 self.performSegue(withIdentifier: "settingsSession", sender: deck)
             } else {
-                self.performSegue(withIdentifier: "settingsSession", sender: deck)
+                self.resetSessionFlag(deck: deck) {
+                    self.performSegue(withIdentifier: "settingsSession", sender: deck)
+                }
             }
                 
         }
+    }
+    
+    func resetSessionFlag(deck: Deck, completion: @escaping () -> Void) {
         
+        DispatchQueue.global().async {
         
+            deck.flashcards?.forEach { element in
+                guard let flashcard = element as? Flashcard, !flashcard.isSession else { return }
+                flashcard.isSession = false
+                
+            }
+            
+            StorageManager.shared.saveContext()
+            
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
     }
     
     private func askAboutResumeSession(completion: @escaping (Bool?) -> Void) {

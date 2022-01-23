@@ -38,17 +38,25 @@ class StorageManager {
         }
     }
     
-    func fetchFlashcards(deck: Deck, isLearned: Bool? = nil, completion: (Result<[Flashcard], Error>) -> Void) {
+    func fetchFlashcards(deck: Deck,
+                         isLearned: Bool? = nil,
+                         complexity: Bool? = nil,
+                         completion: (Result<[Flashcard], Error>) -> Void) {
        
-        let fetchRequest = Flashcard.fetchRequest()
-       
+        var predicates = [
+            NSPredicate(format: "deck == %@", deck)
+        ]
+        
         if let isLearned = isLearned {
-            fetchRequest.predicate = NSPredicate(format: "deck == %@ AND isLearned == %@",
-                                                 deck,
-                                                 isLearned)
-        } else {
-            fetchRequest.predicate = NSPredicate(format: "deck == %@", deck)
+            predicates.append(NSPredicate(format: "isLearned == %@", isLearned))
         }
+        
+        if let complexity = complexity {
+            predicates.append(NSPredicate(format: "levelOfComplexity == %@", complexity))
+        }
+                
+        let fetchRequest = Flashcard.fetchRequest()
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         
         do {
             let entities = try viewContext.fetch(fetchRequest)
