@@ -108,7 +108,13 @@ class FlashcardsViewerViewController: UIViewController {
     }
     
     private func fetchFlashcards() {
-        storageManager.fetchFlashcards(deck: deck, isLearned: false) { result in
+       
+        let settings = deck.sessionSettings
+        let complexity = settings?.flashcardsComplexity ?? 0
+        
+        storageManager.fetchFlashcards(deck: deck,
+                                       isLearned: settings?.flashcardsAreLearned,
+                                       complexity: complexity) { result in
             switch result {
             case .success(let flashcardsResult):
                 self.flashcards = flashcardsResult

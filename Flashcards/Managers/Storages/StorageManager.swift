@@ -40,7 +40,7 @@ class StorageManager {
     
     func fetchFlashcards(deck: Deck,
                          isLearned: Bool? = nil,
-                         complexity: Bool? = nil,
+                         complexity: Int16? = nil,
                          completion: (Result<[Flashcard], Error>) -> Void) {
        
         var predicates = [
