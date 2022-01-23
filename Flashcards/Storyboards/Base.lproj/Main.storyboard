@@ -104,6 +104,7 @@
                         <outlet property="sortingTypeSegmentedControl" destination="x8M-ws-b1F" id="dIc-BK-laG"/>
                         <segue destination="hbD-7K-YdP" kind="presentation" identifier="deck" id="dHh-WO-YFv"/>
                         <segue destination="9CH-Ll-gBT" kind="show" identifier="settingsSession" id="GBa-RD-oht"/>
+                        <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="M50-tY-utT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWR-IW-LSE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -935,6 +936,9 @@
             <point key="canvasLocation" x="-354" y="913"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="M50-tY-utT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="character.book.closed.zh" catalog="system" width="115" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>

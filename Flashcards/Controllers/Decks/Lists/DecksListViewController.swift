@@ -50,6 +50,14 @@ class DecksListViewController: UITableViewController {
             viewerVC.delegate = self
             viewerVC.deck = deck
     
+        } else if segue.identifier == "flashcardsViewer" {
+            
+            guard let viewerVC = segue.destination as? FlashcardsViewerViewController,
+                  let deck = sender as? Deck else { return }
+            
+            viewerVC.delegate = self
+            viewerVC.deck = deck
+            
         } else {
             fatalError()
         }
@@ -159,9 +167,9 @@ extension DecksListViewController: FlashcardViewerDelegate {
             guard let result = result else { return }
             
             if result {
-                self.performSegue(withIdentifier: "settingsSession", sender: deck)
+                self.performSegue(withIdentifier: "flashcardsViewer", sender: deck)
             } else {
-                self.resetSessionFlag(deck: deck) {
+                self.resetSessionFlag(deck: deck) { //TODO: move to Settings
                     self.performSegue(withIdentifier: "settingsSession", sender: deck)
                 }
             }
