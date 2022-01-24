@@ -392,15 +392,21 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wfE-mU-Ikv">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="eeC-HV-DOv">
+                                            <rect key="frame" x="54" y="54" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="wfE-mU-Ikv" firstAttribute="leading" secondItem="xmB-tv-cBh" secondAttribute="leading" id="9iL-UZ-SIp"/>
+                                        <constraint firstItem="eeC-HV-DOv" firstAttribute="centerX" secondItem="xmB-tv-cBh" secondAttribute="centerX" id="UQs-9f-nhj"/>
                                         <constraint firstAttribute="trailing" secondItem="wfE-mU-Ikv" secondAttribute="trailing" id="lsC-A4-DxC"/>
                                         <constraint firstAttribute="bottom" secondItem="wfE-mU-Ikv" secondAttribute="bottom" id="oK2-Jh-qHm"/>
+                                        <constraint firstItem="eeC-HV-DOv" firstAttribute="centerY" secondItem="xmB-tv-cBh" secondAttribute="centerY" id="xMm-gp-efB"/>
                                         <constraint firstItem="wfE-mU-Ikv" firstAttribute="top" secondItem="xmB-tv-cBh" secondAttribute="top" id="z6V-O3-fwg"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="eeC-HV-DOv" id="H15-D8-ESw"/>
                                     <outlet property="webImage" destination="wfE-mU-Ikv" id="lG5-kw-Qfh"/>
                                 </connections>
                             </collectionViewCell>
