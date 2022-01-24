@@ -11,9 +11,11 @@ protocol FlashcardsUpdater {
     func updateFlashcards()
 }
 
-class FlashcardsListViewController: UITableViewController {
+class FlashcardsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var progressLearning: UIProgressView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
@@ -23,21 +25,23 @@ class FlashcardsListViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         fetchFlashcards()
         setProgressLearning()
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         flashcards.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath) as! FlashcardTableViewCell
         cell.configure(with: flashcards[indexPath.row])
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
     }
         
@@ -54,7 +58,7 @@ class FlashcardsListViewController: UITableViewController {
         
     }
         
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
             performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
