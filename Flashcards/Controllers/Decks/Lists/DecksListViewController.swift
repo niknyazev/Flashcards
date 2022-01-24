@@ -103,6 +103,42 @@ class DecksListViewController: UITableViewController {
         performSegue(withIdentifier: "deck", sender: nil)
     }
 
+    
+    @IBAction func sortingTypePressed(_ sender: UIBarButtonItem) {
+        
+        let alertController = UIAlertController(
+            title: "Sort",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+  
+        let byTitle = UIAlertAction(title: "Title", style: .default) { _ in
+            self.sortDecks(sortingType: 0)
+            self.tableView.reloadData()
+        }
+                
+        let byFlashcards = UIAlertAction(title: "Flashcards count", style: .default) { _ in
+            self.sortDecks(sortingType: 1)
+            self.tableView.reloadData()
+        }
+        
+        let byColor = UIAlertAction(title: "Color", style: .default) { _ in
+            self.sortDecks(sortingType: 2)
+            self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(byTitle)
+        alertController.addAction(byFlashcards)
+        alertController.addAction(byColor)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        
+    }
+    
     @IBAction func sortChanged(_ sender: UISegmentedControl) {
         
         sortDecks(sortingType: sender.selectedSegmentIndex)
@@ -120,6 +156,7 @@ class DecksListViewController: UITableViewController {
     private func sortDecks(sortingType: Int) {
         
         //TODO: remove optional type for fields
+        //TODO: change int type to enum
        
         if sortingType == 0 {
             decks = decks.sorted { $0.title ?? "" < $1.title ?? ""}

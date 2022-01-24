@@ -81,7 +81,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Decks" largeTitleDisplayMode="never" id="kbj-ST-ByB">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="aK8-uJ-k24"/>
+                        <barButtonItem key="leftBarButtonItem" title="by title" image="arrow.up.arrow.down" catalog="system" id="aK8-uJ-k24" userLabel="Sort">
+                            <connections>
+                                <action selector="sortingTypePressed:" destination="k2t-Zc-nUF" id="5vZ-zj-eyH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vLP-pE-va3">
                             <connections>
                                 <action selector="addDeck:" destination="k2t-Zc-nUF" id="ybk-EV-zs8"/>
