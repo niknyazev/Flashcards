@@ -149,9 +149,9 @@
 		0102C9B92792CE3300A2637B /* Decks */ = {
 			isa = PBXGroup;
 			children = (
-				01FB3E5B279B312600C4CA71 /* Cell */,
-				01A6A6E52796C5A4001A1E46 /* Details */,
 				01A6A6E42796C599001A1E46 /* Lists */,
+				01A6A6E52796C5A4001A1E46 /* Details */,
+				01FB3E5B279B312600C4CA71 /* Cell */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -159,8 +159,10 @@
 		0102C9BA2792CE4200A2637B /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				01A6A6E72796C609001A1E46 /* Elements */,
 				01A6A6E62796C5FF001A1E46 /* Lists */,
+				01B2FCC5279F17B50065F23D /* Cell */,
+				01A6A6E72796C609001A1E46 /* Details */,
+				01B2FCC6279F17C80065F23D /* Viewer */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -185,8 +187,8 @@
 		0198F66D2798206300B13C90 /* ImageChoicer */ = {
 			isa = PBXGroup;
 			children = (
-				0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */,
-				0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */,
+				01B2FCC3279F17790065F23D /* List */,
+				01B2FCC4279F17890065F23D /* Cell */,
 			);
 			path = ImageChoicer;
 			sourceTree = "<group>";
@@ -210,19 +212,49 @@
 		01A6A6E62796C5FF001A1E46 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
 				0102C9AC278EE4C800A2637B /* FlashcardsListViewController.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
 		};
-		01A6A6E72796C609001A1E46 /* Elements */ = {
+		01A6A6E72796C609001A1E46 /* Details */ = {
 			isa = PBXGroup;
 			children = (
 				01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		01B2FCC3279F17790065F23D /* List */ = {
+			isa = PBXGroup;
+			children = (
+				0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		01B2FCC4279F17890065F23D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		01B2FCC5279F17B50065F23D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 				01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */,
 			);
-			path = Elements;
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		01B2FCC6279F17C80065F23D /* Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
+			);
+			path = Viewer;
 			sourceTree = "<group>";
 		};
 		01EAAFD4279950DA006951B6 /* Network */ = {
