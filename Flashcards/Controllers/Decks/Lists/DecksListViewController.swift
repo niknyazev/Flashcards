@@ -16,9 +16,7 @@ protocol FlashcardViewerDelegate {
 }
 
 class DecksListViewController: UITableViewController {
-    
-    @IBOutlet weak var sortingTypeSegmentedControl: UISegmentedControl!
-    
+        
     private let userDefaults = UserDefaultsManager.shared
     private var decks: [Deck] = []
     
@@ -115,7 +113,6 @@ class DecksListViewController: UITableViewController {
     
     private func setupSortingType() {
         let sortingType = userDefaults.fetchSortingType()
-        sortingTypeSegmentedControl.selectedSegmentIndex = sortingType
         sortDecks(sortingType: sortingType)
         tableView.reloadData()
     }

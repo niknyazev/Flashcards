@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Decks List View Controller-->
+        <!--Decks-->
         <scene sceneID="mIJ-Mj-qo6">
             <objects>
                 <tableViewController id="k2t-Zc-nUF" customClass="DecksListViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,20 +80,8 @@
                             <outlet property="delegate" destination="k2t-Zc-nUF" id="zw3-ai-bSy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kbj-ST-ByB">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="x8M-ws-b1F">
-                            <rect key="frame" x="122" y="5.5" width="170" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Name"/>
-                                <segment title="Count"/>
-                                <segment title="Color"/>
-                            </segments>
-                            <connections>
-                                <action selector="sortChanged:" destination="k2t-Zc-nUF" eventType="valueChanged" id="Kg9-z8-wJ9"/>
-                            </connections>
-                        </segmentedControl>
+                    <navigationItem key="navigationItem" title="Decks" largeTitleDisplayMode="never" id="kbj-ST-ByB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="aK8-uJ-k24"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vLP-pE-va3">
                             <connections>
                                 <action selector="addDeck:" destination="k2t-Zc-nUF" id="ybk-EV-zs8"/>
@@ -101,7 +89,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="sortingTypeSegmentedControl" destination="x8M-ws-b1F" id="dIc-BK-laG"/>
                         <segue destination="hbD-7K-YdP" kind="presentation" identifier="deck" id="dHh-WO-YFv"/>
                         <segue destination="9CH-Ll-gBT" kind="show" identifier="settingsSession" id="GBa-RD-oht"/>
                         <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="M50-tY-utT"/>
@@ -969,6 +956,7 @@
         <segue reference="M50-tY-utT"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="character.book.closed.zh" catalog="system" width="115" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
