@@ -118,10 +118,11 @@
 		0102C9A8278EE09400A2637B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				011FA2A2279C438500EDD388 /* SettingsSession */,
-				0198F66D2798206300B13C90 /* ImageChoicer */,
 				0102C9B92792CE3300A2637B /* Decks */,
 				0102C9BA2792CE4200A2637B /* Flashcards */,
+				011FA2A2279C438500EDD388 /* SettingsSession */,
+				0198F66D2798206300B13C90 /* ImageChoicer */,
+				01B2FCC7279F189F0065F23D /* FlashcardsViewer */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,7 +163,6 @@
 				01A6A6E62796C5FF001A1E46 /* Lists */,
 				01B2FCC5279F17B50065F23D /* Cell */,
 				01A6A6E72796C609001A1E46 /* Details */,
-				01B2FCC6279F17C80065F23D /* Viewer */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -249,12 +249,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		01B2FCC6279F17C80065F23D /* Viewer */ = {
+		01B2FCC7279F189F0065F23D /* FlashcardsViewer */ = {
 			isa = PBXGroup;
 			children = (
 				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
 			);
-			path = Viewer;
+			path = FlashcardsViewer;
 			sourceTree = "<group>";
 		};
 		01EAAFD4279950DA006951B6 /* Network */ = {
