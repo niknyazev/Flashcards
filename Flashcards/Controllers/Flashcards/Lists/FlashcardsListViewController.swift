@@ -11,10 +11,9 @@ protocol FlashcardsUpdater {
     func updateFlashcards()
 }
 
-class FlashcardsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FlashcardsListViewController: UIViewController {
 
     @IBOutlet weak var progressLearning: UIProgressView!
-    
     @IBOutlet weak var tableView: UITableView!
     
     var deck: Deck!
@@ -22,29 +21,14 @@ class FlashcardsListViewController: UIViewController, UITableViewDelegate, UITab
     
     private var flashcards: [Flashcard]!
     private let storageManager = StorageManager.shared
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        setupTableView()
         fetchFlashcards()
         setProgressLearning()
     }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        flashcards.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath) as! FlashcardTableViewCell
-        cell.configure(with: flashcards[indexPath.row])
-        return cell
-    }
-    
-func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
-    }
-        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigationController = segue.destination as? UINavigationController,
               let flashcardVC = navigationController.viewControllers.first as? FlashcardTableViewController else { return }
@@ -58,18 +42,6 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
         
     }
         
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
-            performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
-        }
-        
-        let actions = UISwipeActionsConfiguration(actions: [action])
-        
-        return actions
-        
-    }
-    
     private func fetchFlashcards() {
         storageManager.fetchFlashcards(deck: deck) { result in
             switch result {
@@ -89,6 +61,38 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
         progressLearning.setProgress(progress, animated: false)
     }
 
+}
+
+extension FlashcardsListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        flashcards.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath) as! FlashcardTableViewCell
+        cell.configure(with: flashcards[indexPath.row])
+        return cell
+    }
+                    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
+            performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
+        }
+        
+        let actions = UISwipeActionsConfiguration(actions: [action])
+        
+        return actions
+        
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 80
+    }
+    
 }
 
 extension FlashcardsListViewController: FlashcardsUpdater {
