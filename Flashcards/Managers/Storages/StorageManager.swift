@@ -48,7 +48,7 @@ class StorageManager {
         ]
         
         if let isLearned = isLearned {
-            predicates.append(NSPredicate(format: "isLearned == %@", isLearned))
+            predicates.append(NSPredicate(format: "isLearned == %@", NSNumber(booleanLiteral: isLearned)))
         }
         
         if let complexity = complexity {

@@ -41,9 +41,26 @@ class FlashcardsListViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func filterChanged(_ sender: UISegmentedControl) {
+    
+        fetchFlashcards(filterType: sender.selectedSegmentIndex)
+        tableView.reloadData()
+    
+    }
+    
+    private func fetchFlashcards(filterType: Int = 0) {
+        //TODO: replace filterType from Int to Enum
         
-    private func fetchFlashcards() {
-        storageManager.fetchFlashcards(deck: deck) { result in
+        var filter: Bool? = nil
+        
+        if filterType == 1 {
+            filter = true
+        } else if filterType == 2 {
+            filter = false
+        }
+        
+        storageManager.fetchFlashcards(deck: deck, isLearned: filter) { result in
             switch result {
             case .success(let flashcardsResult):
                 self.flashcards = flashcardsResult

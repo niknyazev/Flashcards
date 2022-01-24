@@ -13,7 +13,7 @@
         <attribute name="backSide" optional="YES" attributeType="String"/>
         <attribute name="frontSide" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
-        <attribute name="isLearned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isLearned" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isSession" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="levelOfComplexity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="needPronounce" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
