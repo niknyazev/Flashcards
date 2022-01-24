@@ -124,8 +124,10 @@ class FlashcardTableViewController: UITableViewController {
         
         if let imageData = flashcard.image {
             flashcardImage.image = UIImage(data: imageData)
+            flashcardImage.contentMode = .scaleAspectFill
         } else {
             flashcardImage.image = UIImage(systemName: "photo.artframe")
+            flashcardImage.contentMode = .scaleAspectFit
         }
         
     }
@@ -155,5 +157,6 @@ extension FlashcardTableViewController: FlashcardImageUpdaterDelegate {
     func updateImage(image: UIImage?) {
         flashcard?.image = image?.pngData()
         flashcardImage.image = image
+        flashcardImage.contentMode = .scaleAspectFill
     }
 }
