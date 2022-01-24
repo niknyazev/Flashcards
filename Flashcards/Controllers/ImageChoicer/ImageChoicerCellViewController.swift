@@ -11,14 +11,13 @@ class ImageChoicerCellViewController: UICollectionViewCell {
     
     @IBOutlet weak var webImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        webImage.image = nil
-    }
-    
+ 
     func configure(with urlImage: String) {
+        //TODO: should i config default cell properties here?
+        webImage.image = nil
+        contentView.layer.cornerRadius = 30
         contentView.backgroundColor = .lightGray
+        //
         guard let url = URL(string: urlImage) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }
