@@ -60,19 +60,16 @@ class DecksListViewController: UITableViewController {
             fatalError()
         }
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         fetchDecks()
         setupSortingType()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         decks.count
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -145,6 +142,10 @@ class DecksListViewController: UITableViewController {
         tableView.reloadData()
         userDefaults.saveSortingType(sortingType: sender.selectedSegmentIndex)
         
+    }
+    
+    private func setupTableView() {
+        tableView.rowHeight = 80
     }
     
     private func setupSortingType() {
@@ -237,7 +238,7 @@ extension DecksListViewController: FlashcardViewerDelegate {
             preferredStyle: .alert
         )
   
-        let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
+        let yesAction = UIAlertAction(title: "Continue session", style: .default) { _ in
             completion(true)
         }
         
@@ -245,7 +246,7 @@ extension DecksListViewController: FlashcardViewerDelegate {
             completion(false)
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             completion(nil)
         }
         
