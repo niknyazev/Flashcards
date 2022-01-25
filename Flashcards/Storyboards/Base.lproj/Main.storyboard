@@ -27,8 +27,9 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5Y-7z-a5N">
                                             <rect key="frame" x="333.5" y="24.5" width="60.5" height="31"/>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Learn"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Learn" buttonSize="medium"/>
                                             <connections>
                                                 <action selector="startStudy" destination="5h4-AJ-oF9" eventType="touchUpInside" id="zZb-Fa-QaO"/>
                                             </connections>
@@ -1014,7 +1015,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zOa-Gj-qDq"/>
+        <segue reference="M50-tY-utT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
@@ -1039,6 +1040,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
