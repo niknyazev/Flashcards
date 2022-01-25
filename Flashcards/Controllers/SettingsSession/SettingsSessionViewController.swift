@@ -17,27 +17,6 @@ class SettingsSessionViewController: UITableViewController {
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
     
-    private lazy var startSessionButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 21/255, green: 101/255, blue: 192/255, alpha: 1)
-        button.setTitle("Start session", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 4
-        button.addTarget(self, action: #selector(startSessionPressed), for: .touchUpInside)
-
-        return button
-    }()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        constrainFloatingButtonToWindow()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        startSessionButton.removeFromSuperview()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "flashcardsViewer" {
@@ -51,24 +30,18 @@ class SettingsSessionViewController: UITableViewController {
         
     }
     
-    private func constrainFloatingButtonToWindow() {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let keyWindow = UIApplication.shared.keyWindow else { return }
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        startSessionButton.translatesAutoresizingMaskIntoConstraints = false
-        keyWindow.addSubview(startSessionButton)
+        if indexPath == IndexPath(row: 0, section: 1) {
+            startSession()
+        }
         
-        NSLayoutConstraint.activate([
-            startSessionButton.bottomAnchor.constraint(equalTo: keyWindow.bottomAnchor, constant: -50),
-            startSessionButton.centerXAnchor.constraint(equalTo: keyWindow.centerXAnchor),
-            startSessionButton.widthAnchor.constraint(equalToConstant: 200),
-            startSessionButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-
     }
-    
-    @objc func startSessionPressed() {
         
+    func startSession() {
+    
         StorageManager.shared.saveSessionSettings(
             deck: deck,
             complexity: Int16(complexitySegmentedControl.selectedSegmentIndex),
@@ -77,6 +50,7 @@ class SettingsSessionViewController: UITableViewController {
         )
         
         performSegue(withIdentifier: "flashcardsViewer", sender: nil)
+    
     }
-
+    
 }
