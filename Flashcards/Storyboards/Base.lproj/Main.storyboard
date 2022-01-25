@@ -82,11 +82,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Decks" largeTitleDisplayMode="never" id="kbj-ST-ByB">
-                        <barButtonItem key="leftBarButtonItem" title="by title" image="arrow.up.arrow.down" catalog="system" id="aK8-uJ-k24" userLabel="Sort">
-                            <connections>
-                                <action selector="sortingTypePressed:" destination="k2t-Zc-nUF" id="5vZ-zj-eyH"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="by title" image="arrow.up.arrow.down" catalog="system" id="aK8-uJ-k24" userLabel="Sort">
+                                <connections>
+                                    <action selector="sortingTypePressed:" destination="k2t-Zc-nUF" id="5vZ-zj-eyH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="PNi-bW-rNQ">
+                                <connections>
+                                    <action selector="searchPressed:" destination="k2t-Zc-nUF" id="gnw-dd-ngB"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vLP-pE-va3">
                             <connections>
                                 <action selector="addDeck:" destination="k2t-Zc-nUF" id="ybk-EV-zs8"/>
@@ -1024,6 +1031,7 @@
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="doc.richtext.he" catalog="system" width="115" height="128"/>
         <image name="doc.text.below.ecg" catalog="system" width="115" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="record.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="linkColor">

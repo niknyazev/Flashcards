@@ -69,7 +69,7 @@ class DecksListViewController: UITableViewController {
         setupSortingType()
         setupSearchController()
     }
-    
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         decks.count
     }
@@ -102,6 +102,10 @@ class DecksListViewController: UITableViewController {
         performSegue(withIdentifier: "deck", sender: nil)
     }
 
+    
+    @IBAction func searchPressed(_ sender: Any) {
+        searchController.searchBar.searchTextField.becomeFirstResponder()
+    }
     
     @IBAction func sortingTypePressed(_ sender: UIBarButtonItem) {
         
@@ -161,7 +165,6 @@ class DecksListViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search flashcards"
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         
     }
