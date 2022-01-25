@@ -920,7 +920,7 @@
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bDm-n2-3hH">
                                                     <rect key="frame" x="164" y="6.5" width="190" height="32"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="190" placeholder="YES" id="29k-U8-xMN"/>
+                                                        <constraint firstAttribute="width" constant="190" id="Kya-yL-aKB"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="Easy"/>
