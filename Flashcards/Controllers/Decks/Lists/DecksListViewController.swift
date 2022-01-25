@@ -16,9 +16,10 @@ protocol FlashcardViewerDelegate {
 }
 
 class DecksListViewController: UITableViewController {
-        
+ 
     private let userDefaults = UserDefaultsManager.shared
     private var decks: [Deck] = []
+    private let searchController = UISearchController(searchResultsController: nil)
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -66,6 +67,7 @@ class DecksListViewController: UITableViewController {
         setupTableView()
         fetchDecks()
         setupSortingType()
+        setupSearchController()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -154,6 +156,16 @@ class DecksListViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search flashcards"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        
+    }
+    
     private func sortDecks(sortingType: Int) {
         
         //TODO: remove optional type for fields
@@ -179,6 +191,12 @@ class DecksListViewController: UITableViewController {
         }
     }
 
+}
+
+extension DecksListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
 }
 
 extension DecksListViewController: DecksUpdaterDelegate {
