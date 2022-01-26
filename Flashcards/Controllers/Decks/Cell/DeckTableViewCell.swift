@@ -14,7 +14,7 @@ class DeckTableViewCell: UITableViewCell {
     @IBOutlet weak var flashcardCount: UILabel!
     
     var delegate: FlashcardViewerDelegate!
-    
+        
     var viewModel: DeckCellViewModelProtocol! {
         didSet {
             deckImage.image = UIImage(systemName: viewModel.iconName)
