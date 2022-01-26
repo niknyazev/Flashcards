@@ -490,7 +490,7 @@
             </objects>
             <point key="canvasLocation" x="-658" y="94"/>
         </scene>
-        <!--Flashcards List View Controller-->
+        <!--Flashcards-->
         <scene sceneID="dGN-lE-vHI">
             <objects>
                 <tableViewController id="EOc-bA-xmQ" customClass="FlashcardsListViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
@@ -555,10 +555,10 @@
                             <outlet property="delegate" destination="EOc-bA-xmQ" id="h3c-0s-6lt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kDh-aa-MKM">
+                    <navigationItem key="navigationItem" title="Flashcards" id="kDh-aa-MKM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GmY-M9-2cG">
                             <connections>
-                                <segue destination="OkT-y1-1p1" kind="presentation" id="EJW-bz-AT4"/>
+                                <segue destination="OkT-y1-1p1" kind="presentation" identifier="flashcard" id="EJW-bz-AT4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

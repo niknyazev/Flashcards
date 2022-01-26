@@ -25,6 +25,7 @@ class FlashcardsListViewController: UITableViewController {
             
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupTableView()
         fetchFlashcards()
         setProgressLearning()
@@ -80,6 +81,12 @@ class FlashcardsListViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    private func setupView() {
+        if searchIsActive {
+            title = "All Flashcards"
         }
     }
     
