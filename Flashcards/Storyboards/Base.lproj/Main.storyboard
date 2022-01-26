@@ -556,18 +556,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="kDh-aa-MKM">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="GmY-M9-2cG">
-                                <connections>
-                                    <segue destination="OkT-y1-1p1" kind="presentation" id="EJW-bz-AT4"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Search" image="magnifyingglass" catalog="system" id="ej0-J5-gAg">
-                                <connections>
-                                    <action selector="searchPressed:" destination="EOc-bA-xmQ" id="mEl-Oi-hne"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GmY-M9-2cG">
+                            <connections>
+                                <segue destination="OkT-y1-1p1" kind="presentation" id="EJW-bz-AT4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="progressLearning" destination="VD8-05-XCK" id="Bq8-ol-XKm"/>

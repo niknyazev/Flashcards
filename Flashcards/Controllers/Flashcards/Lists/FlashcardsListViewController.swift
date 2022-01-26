@@ -30,7 +30,7 @@ class FlashcardsListViewController: UITableViewController {
         setProgressLearning()
         setupSearchController()
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated) //TODO: need call this?
         if searchIsActive {
@@ -90,8 +90,10 @@ class FlashcardsListViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.scopeButtonTitles = ["All", "New", "Learned"]
         searchController.searchBar.delegate = self
+        searchController.searchBar.showsScopeBar = true
         
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         
     }
@@ -125,11 +127,6 @@ class FlashcardsListViewController: UITableViewController {
         
         return actions
         
-    }
-    
-    
-    @IBAction func searchPressed(_ sender: Any) {
-        searchController.searchBar.searchTextField.becomeFirstResponder()
     }
     
     private func setupTableView() {
