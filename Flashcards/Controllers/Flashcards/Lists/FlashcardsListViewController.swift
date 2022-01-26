@@ -11,22 +11,33 @@ protocol FlashcardsUpdater {
     func updateFlashcards()
 }
 
-class FlashcardsListViewController: UIViewController {
+class FlashcardsListViewController: UITableViewController {
 
     @IBOutlet weak var progressLearning: UIProgressView!
-    @IBOutlet weak var tableView: UITableView!
     
-    var deck: Deck!
+    var deck: Deck?
     var delegate: DecksUpdaterDelegate!
+    var searchIsActive = false
     
     private var flashcards: [Flashcard]!
     private let storageManager = StorageManager.shared
+    private let searchController = UISearchController(searchResultsController: nil)
             
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         fetchFlashcards()
         setProgressLearning()
+        setupSearchController()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated) //TODO: need call this?
+        if searchIsActive {
+            searchController.isActive = true
+            searchController.isEditing = true
+            searchController.searchBar.searchTextField.becomeFirstResponder()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,7 +60,7 @@ class FlashcardsListViewController: UIViewController {
     
     }
     
-    private func fetchFlashcards(filterType: Int = 0) {
+    private func fetchFlashcards(text: String? = nil, filterType: Int = 0) {
         //TODO: replace filterType from Int to Enum
         
         var filter: Bool? = nil
@@ -60,7 +71,9 @@ class FlashcardsListViewController: UIViewController {
             filter = false
         }
         
-        storageManager.fetchFlashcards(deck: deck, isLearned: filter) { result in
+        let textString = text?.isEmpty ?? true ? nil : text //TODO: bad code
+        
+        storageManager.fetchFlashcards(deck: deck, isLearned: filter, text: textString) { result in
             switch result {
             case .success(let flashcardsResult):
                 self.flashcards = flashcardsResult
@@ -68,6 +81,19 @@ class FlashcardsListViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    private func setupSearchController() {
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.scopeButtonTitles = ["All", "New", "Learned"]
+        searchController.searchBar.delegate = self
+        
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
     }
     
     private func setProgressLearning() {
@@ -78,21 +104,18 @@ class FlashcardsListViewController: UIViewController {
         progressLearning.setProgress(progress, animated: false)
     }
 
-}
-
-extension FlashcardsListViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         flashcards.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath) as! FlashcardTableViewCell
         cell.configure(with: flashcards[indexPath.row])
         return cell
     }
                     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
             performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
@@ -104,12 +127,38 @@ extension FlashcardsListViewController: UITableViewDelegate, UITableViewDataSour
         
     }
     
+    
+    @IBAction func searchPressed(_ sender: Any) {
+        searchController.searchBar.searchTextField.becomeFirstResponder()
+    }
+    
     private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.rowHeight = 80
     }
     
+}
+
+extension FlashcardsListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        fetchFlashcards(text: searchBar.text, filterType: selectedScope)
+        tableView.reloadData()
+    }
+}
+
+extension FlashcardsListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+       
+        guard let text = searchController.searchBar.text else { return }
+        
+        if text.count < 3 {
+            return
+        }
+        
+        fetchFlashcards(text: text, filterType: searchController.searchBar.selectedScopeButtonIndex)
+        tableView.reloadData()
+    
+    }
 }
 
 extension FlashcardsListViewController: FlashcardsUpdater {

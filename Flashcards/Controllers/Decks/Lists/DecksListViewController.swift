@@ -19,7 +19,10 @@ class DecksListViewController: UITableViewController {
  
     private let userDefaults = UserDefaultsManager.shared
     private var decks: [Deck] = []
-    private let searchController = UISearchController(searchResultsController: nil)
+    private struct FlashcardsListParameters {
+        let deck: Deck?
+        let searchIsActive: Bool
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -35,10 +38,16 @@ class DecksListViewController: UITableViewController {
             }
             
         } else if segue.identifier == "flashcards" {
-            guard let flashcardsVC = segue.destination as? FlashcardsListViewController,
-                  let currentRow = tableView.indexPathForSelectedRow?.row else { return }
+            guard let flashcardsVC = segue.destination as? FlashcardsListViewController else { return }
                        
-            flashcardsVC.deck = decks[currentRow]
+            if let sender = sender as? FlashcardsListParameters {
+                flashcardsVC.deck = sender.deck
+                flashcardsVC.searchIsActive = sender.searchIsActive
+            } else {
+                guard let currentRow = tableView.indexPathForSelectedRow?.row else { return }
+                flashcardsVC.deck = decks[currentRow]
+            }
+            
             flashcardsVC.delegate = self
             
         } else if segue.identifier == "settingsSession" {
@@ -67,7 +76,6 @@ class DecksListViewController: UITableViewController {
         setupTableView()
         fetchDecks()
         setupSortingType()
-        setupSearchController()
     }
         
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,7 +112,7 @@ class DecksListViewController: UITableViewController {
 
     
     @IBAction func searchPressed(_ sender: Any) {
-        searchController.searchBar.searchTextField.becomeFirstResponder()
+        performSegue(withIdentifier: "flashcards", sender: FlashcardsListParameters(deck: nil, searchIsActive: true))
     }
     
     @IBAction func sortingTypePressed(_ sender: UIBarButtonItem) {
@@ -159,16 +167,7 @@ class DecksListViewController: UITableViewController {
         sortDecks(sortingType: sortingType)
         tableView.reloadData()
     }
-    
-    private func setupSearchController() {
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search flashcards"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
         
-    }
-    
     private func sortDecks(sortingType: Int) {
         
         //TODO: remove optional type for fields
@@ -194,29 +193,6 @@ class DecksListViewController: UITableViewController {
         }
     }
 
-}
-
-extension DecksListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-       
-        guard let text = searchController.searchBar.text else { return }
-        
-        if text.count < 3 {
-            return
-        }
-        
-        StorageManager.shared.fetchFlashcards(text: text) { result in
-            switch result {
-            case .success(let flashcardsResult):
-                flashcardsResult.forEach {
-                    print($0.frontSide)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-    }
 }
 
 extension DecksListViewController: DecksUpdaterDelegate {
