@@ -20,8 +20,9 @@ class DeckTableViewController: UITableViewController {
     private let inactiveAlpha = 0.3
     private let storageManager = StorageManager.shared
     private var buttonsImages: [UIButton: String] = [:]
-    private var chosenIconName = "doc.richtext.he" //TODO: need to find best way how to cache image
+    private var chosenIconName = "circle" //TODO: need to find best way how to cache image
     private let imageNames = [
+        "circle",
         "doc.richtext.he",
         "doc.plaintext",
         "doc.text.below.ecg"

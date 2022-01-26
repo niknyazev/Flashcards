@@ -35,14 +35,14 @@
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KFc-85-3Ee">
-                                            <rect key="frame" x="20" y="12.5" width="55" height="55"/>
+                                            <rect key="frame" x="20" y="15" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="55" id="MaB-AE-mf1"/>
-                                                <constraint firstAttribute="width" constant="55" id="bqg-xQ-bex"/>
+                                                <constraint firstAttribute="height" constant="50" id="MaB-AE-mf1"/>
+                                                <constraint firstAttribute="width" constant="50" id="bqg-xQ-bex"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cTW-IB-Hdn">
-                                            <rect key="frame" x="90" y="16" width="149" height="48"/>
+                                            <rect key="frame" x="85" y="16" width="149" height="48"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-02-LYS">
                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
@@ -708,30 +708,38 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eUv-Xl-fWr">
-                                                    <rect key="frame" x="260" y="19.5" width="134" height="31"/>
+                                                    <rect key="frame" x="214" y="19.5" width="180" height="31"/>
                                                     <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fu5-4k-86k">
+                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="31"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system" title=""/>
+                                                            <connections>
+                                                                <action selector="iconPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="KUQ-Lf-DHK"/>
+                                                            </connections>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTw-ty-5HG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="31"/>
+                                                            <rect key="frame" x="46" y="0.0" width="44" height="31"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="doc.richtext.he" catalog="system" title=""/>
                                                             <connections>
-                                                                <action selector="iconPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="hUl-c9-mRZ"/>
+                                                                <action selector="iconPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="d8y-MC-hAP"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIj-wc-r7K">
-                                                            <rect key="frame" x="45" y="0.0" width="44" height="31"/>
+                                                            <rect key="frame" x="91" y="0.0" width="44" height="31"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="doc.plaintext" catalog="system"/>
                                                             <connections>
-                                                                <action selector="iconPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="gu7-67-sf3"/>
+                                                                <action selector="iconPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="fof-Hh-3jl"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gx-6k-cBA">
-                                                            <rect key="frame" x="90" y="0.0" width="44" height="31"/>
+                                                            <rect key="frame" x="136" y="0.0" width="44" height="31"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="doc.text.below.ecg" catalog="system"/>
                                                             <connections>
-                                                                <action selector="iconPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="ACD-gm-TXQ"/>
+                                                                <action selector="iconPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="X03-nN-Fqn"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -768,12 +776,13 @@
                     <connections>
                         <outlet property="deckDescriptionTextField" destination="p4A-jj-ZBJ" id="7qe-Kh-q9o"/>
                         <outlet property="deckTitleTextField" destination="SYT-XL-tEP" id="F2f-v8-1CC"/>
-                        <outletCollection property="buttonsIcon" destination="gTw-ty-5HG" collectionClass="NSMutableArray" id="Lhk-xG-V3f"/>
-                        <outletCollection property="buttonsIcon" destination="TIj-wc-r7K" collectionClass="NSMutableArray" id="Mrx-mm-NFc"/>
-                        <outletCollection property="buttonsIcon" destination="1Gx-6k-cBA" collectionClass="NSMutableArray" id="BHn-h9-6KI"/>
                         <outletCollection property="buttonsColor" destination="y2U-p1-Hqu" collectionClass="NSMutableArray" id="ZyS-nH-4F2"/>
                         <outletCollection property="buttonsColor" destination="Jgh-nv-lG2" collectionClass="NSMutableArray" id="D1z-Ii-1X4"/>
                         <outletCollection property="buttonsColor" destination="4iV-lX-dcy" collectionClass="NSMutableArray" id="JjR-hO-5uc"/>
+                        <outletCollection property="buttonsIcon" destination="fu5-4k-86k" collectionClass="NSMutableArray" id="irp-M2-ylK"/>
+                        <outletCollection property="buttonsIcon" destination="gTw-ty-5HG" collectionClass="NSMutableArray" id="acd-up-qYk"/>
+                        <outletCollection property="buttonsIcon" destination="TIj-wc-r7K" collectionClass="NSMutableArray" id="gcH-gq-mMD"/>
+                        <outletCollection property="buttonsIcon" destination="1Gx-6k-cBA" collectionClass="NSMutableArray" id="Rws-XT-ahW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kiv-6i-TfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1004,6 +1013,7 @@
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="character.book.closed.zh" catalog="system" width="115" height="128"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="doc.richtext.he" catalog="system" width="115" height="128"/>
