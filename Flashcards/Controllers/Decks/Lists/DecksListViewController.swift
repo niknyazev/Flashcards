@@ -198,6 +198,23 @@ class DecksListViewController: UITableViewController {
 
 extension DecksListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+       
+        guard let text = searchController.searchBar.text else { return }
+        
+        if text.count < 3 {
+            return
+        }
+        
+        StorageManager.shared.fetchFlashcards(text: text) { result in
+            switch result {
+            case .success(let flashcardsResult):
+                flashcardsResult.forEach {
+                    print($0.frontSide)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
         
     }
 }

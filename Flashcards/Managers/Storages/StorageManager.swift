@@ -38,17 +38,24 @@ class StorageManager {
         }
     }
     
-    func fetchFlashcards(deck: Deck,
+    func fetchFlashcards(deck: Deck? = nil,
                          isLearned: Bool? = nil,
                          complexity: Int16? = nil,
+                         text: String? = nil,
                          completion: (Result<[Flashcard], Error>) -> Void) {
        
-        var predicates = [
-            NSPredicate(format: "deck == %@", deck)
-        ]
+        var predicates: [NSPredicate] = []
+ 
+        if let deck = deck {
+            predicates.append(NSPredicate(format: "deck == %@", deck))
+        }
         
         if let isLearned = isLearned {
             predicates.append(NSPredicate(format: "isLearned == %@", NSNumber(booleanLiteral: isLearned)))
+        }
+        
+        if let text = text {
+            predicates.append(NSPredicate(format: "(frontSide contains[c] %@ or backSide contains[c] %@)", text, text))
         }
         
         if let complexity = complexity {
