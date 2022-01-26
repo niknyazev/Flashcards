@@ -12,6 +12,7 @@ class DeckTableViewCell: UITableViewCell {
     @IBOutlet weak var deckImage: UIImageView!
     @IBOutlet weak var deckName: UILabel!
     @IBOutlet weak var flashcardCount: UILabel!
+    @IBOutlet weak var learnButton: UIButton!
     
     var delegate: FlashcardViewerDelegate!
         
@@ -20,6 +21,7 @@ class DeckTableViewCell: UITableViewCell {
             deckImage.image = UIImage(systemName: viewModel.iconName)
             deckName.text = viewModel.title
             flashcardCount.text = viewModel.flashcardCount
+            learnButton.layer.cornerRadius = 7
         }
     }
     
