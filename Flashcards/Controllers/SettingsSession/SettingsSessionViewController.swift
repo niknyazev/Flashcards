@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ValueUpdaterProtocol {
+    func updateValue(value: String)
+}
+
 class SettingsSessionViewController: UITableViewController {
 
     @IBOutlet weak var saveResultSwitch: UISwitch!
@@ -16,10 +20,28 @@ class SettingsSessionViewController: UITableViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var complexityLabel: UILabel!
     @IBOutlet weak var directionLabel: UILabel!
-    
+        
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
-        
+     
+    //TODO: substitute to enum
+    
+    private let complexity = [
+        "All",
+        "Hard",
+        "Easy"
+    ]
+    private let status = [
+        "All",
+        "New",
+        "Learned"
+    ]
+    private var direction = [
+        "All",
+        "Forward",
+        "Reverse"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
@@ -34,6 +56,12 @@ class SettingsSessionViewController: UITableViewController {
             viewerVC.delegate = delegate
             viewerVC.deck = deck
         
+        } else if segue.identifier == "valueChoicer" {
+            guard let viewerVC = segue.destination as? ValueChoicerViewController,
+                let values = sender as? [String] else { return }
+            
+            viewerVC.delegate = self
+            viewerVC.values = values
         }
         
     }
@@ -42,13 +70,25 @@ class SettingsSessionViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath == IndexPath(row: 0, section: 1) {
+        switch indexPath {
+        case IndexPath(row: 0, section: 1):
             startSession()
+        case IndexPath(row: 2, section: 0):
+            performSegue(withIdentifier: "valueChoicer", sender: status)
+        case IndexPath(row: 3, section: 0):
+            performSegue(withIdentifier: "valueChoicer", sender: complexity)
+        case IndexPath(row: 4, section: 0):
+            performSegue(withIdentifier: "valueChoicer", sender: direction)
+        default:
+            break
         }
         
     }
            
     private func setupElements() {
+        
+        //TODO: need refactoring
+        
         if let status = deck.sessionSettings?.flashcardsAreLearned {
             statusLabel.text = status ? "Learned" : "New"
         } else {
@@ -75,4 +115,10 @@ class SettingsSessionViewController: UITableViewController {
     
     }
     
+}
+
+extension SettingsSessionViewController: ValueUpdaterProtocol {
+    func updateValue(value: String) {
+        guard let currentRow = tableView.indexPathForSelectedRow else { return }
+    }
 }

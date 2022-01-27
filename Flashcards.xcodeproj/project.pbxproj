@@ -19,6 +19,7 @@
 		0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */; };
 		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
 		011FA2A1279C436F00EDD388 /* SettingsSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */; };
+		013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */; };
 		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
 		0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */; };
 		0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F6692797462300B13C90 /* ImagesUrlList.swift */; };
@@ -49,6 +50,7 @@
 		0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewerViewController.swift; sourceTree = "<group>"; };
 		011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSessionViewController.swift; sourceTree = "<group>"; };
+		013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChoicerViewController.swift; sourceTree = "<group>"; };
 		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
 		0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerViewController.swift; sourceTree = "<group>"; };
 		0198F6692797462300B13C90 /* ImagesUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesUrlList.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		011FA2A2279C438500EDD388 /* SettingsSession */ = {
 			isa = PBXGroup;
 			children = (
+				013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */,
 				011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */,
 			);
 			path = SettingsSession;
@@ -368,6 +371,7 @@
 				0102C9AB278EE27F00A2637B /* DecksListViewController.swift in Sources */,
 				01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */,
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
+				013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */,
 				01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 				0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */,
