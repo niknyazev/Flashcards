@@ -13,9 +13,17 @@ class SettingsSessionViewController: UITableViewController {
     @IBOutlet weak var isLearnedSegmentedControl: UISegmentedControl!
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var countTextField: UITextField!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var complexityLabel: UILabel!
+    @IBOutlet weak var directionLabel: UILabel!
     
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupElements()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -39,8 +47,22 @@ class SettingsSessionViewController: UITableViewController {
         }
         
     }
+           
+    private func setupElements() {
+        if let status = deck.sessionSettings?.flashcardsAreLearned {
+            statusLabel.text = status ? "Learned" : "New"
+        } else {
+            statusLabel.text = "All"
+        }
         
-    func startSession() {
+        if let complexity = deck.sessionSettings?.flashcardsComplexity {
+            complexityLabel.text = complexity == 0 ? "Easy" : "Hard"
+        } else {
+            complexityLabel.text = "All"
+        }
+    }
+    
+    private func startSession() {
     
         StorageManager.shared.saveSessionSettings(
             deck: deck,
