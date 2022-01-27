@@ -936,8 +936,41 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="93X-7W-Vpx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5R9-TZ-OAG">
                                         <rect key="frame" x="20" y="192" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5R9-TZ-OAG" id="GjD-HD-Tcr">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvE-Rb-Rqy">
+                                                    <rect key="frame" x="20" y="11.5" width="69" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w9G-hA-SHB">
+                                                    <rect key="frame" x="164" y="6.5" width="190" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="190" id="WZK-HR-uSu"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="All"/>
+                                                        <segment title="Forward"/>
+                                                        <segment title="Reverse"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="w9G-hA-SHB" firstAttribute="centerY" secondItem="GjD-HD-Tcr" secondAttribute="centerY" id="06Q-fm-lCv"/>
+                                                <constraint firstItem="HvE-Rb-Rqy" firstAttribute="centerY" secondItem="GjD-HD-Tcr" secondAttribute="centerY" id="aRe-Dy-yiZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="w9G-hA-SHB" secondAttribute="trailing" constant="20" symbolic="YES" id="bF5-GS-jPR"/>
+                                                <constraint firstItem="HvE-Rb-Rqy" firstAttribute="leading" secondItem="GjD-HD-Tcr" secondAttribute="leadingMargin" id="q7J-z0-TvH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="93X-7W-Vpx">
+                                        <rect key="frame" x="20" y="235.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="93X-7W-Vpx" id="r7W-JO-bGU">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -971,7 +1004,7 @@
                             <tableViewSection id="QGh-Jf-22o" userLabel="Settings session">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HoG-6X-23l">
-                                        <rect key="frame" x="20" y="271.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="315" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HoG-6X-23l" id="Jrd-0t-sTg">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -1013,7 +1046,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M50-tY-utT"/>
+        <segue reference="zOa-Gj-qDq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
