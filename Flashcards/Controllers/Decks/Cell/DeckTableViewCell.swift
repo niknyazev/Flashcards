@@ -22,7 +22,6 @@ class DeckTableViewCell: UITableViewCell {
             deckName.text = viewModel.title
             flashcardCount.text = viewModel.flashcardCount
             learnButton.layer.cornerRadius = 7
-            iconView.backgroundColor = .white
             addIcon(flashcardsLearned: viewModel.flashcardsLearned)
         }
     }
