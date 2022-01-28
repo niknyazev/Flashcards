@@ -9,7 +9,7 @@ import UIKit
 
 class ValueChoicerViewController: UITableViewController {
 
-    var values: [String]!
+    var value: ValuesExtractProtocol!
     var delegate: ValueUpdaterProtocol!
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class ValueChoicerViewController: UITableViewController {
 
   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return values.count
+        return value.allValues().count
     }
 
     
@@ -29,11 +29,20 @@ class ValueChoicerViewController: UITableViewController {
 
 
         var content = cell.defaultContentConfiguration()
-        content.text = values[indexPath.row]
+        content.text = value.allValues()[indexPath.row]
+        
+        if indexPath.row == value.currentIndex() {
+            cell.accessoryType = .checkmark
+        }
         
         cell.contentConfiguration = content
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate.updateValue(for: value.valueByIndex(index: indexPath.row))
+        navigationController?.popViewController(animated: true)
     }
     
 

@@ -113,7 +113,7 @@ class FlashcardsViewerViewController: UIViewController {
         let complexity = settings?.flashcardsComplexity ?? 0
         
         storageManager.fetchFlashcards(deck: deck,
-                                       isLearned: settings?.flashcardsAreLearned,
+                                       isLearned: true,
                                        complexity: complexity) { result in
             switch result {
             case .success(let flashcardsResult):
