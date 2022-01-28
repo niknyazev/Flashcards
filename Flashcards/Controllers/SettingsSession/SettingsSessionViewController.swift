@@ -107,17 +107,25 @@ class SettingsSessionViewController: UITableViewController {
 
 extension SettingsSessionViewController: ValueUpdaterProtocol {
    
-    //TODO: move to special class
+    //TODO: need refactoring
     
     func updateValue(for value: ValuesExtractProtocol) {
 
-        if value is FlashcardComplexity {
-            
-        } else if value is FlashcardStatus {
-            
-        } else if value is FlashcardDirection {
-            
+        if let value = value as? FlashcardComplexity {
+            complexityLabel.text = value.rawValue
+            deck.sessionSettings?.flashcardsComplexity = Int16(value.currentIndex())
         }
+        
+        if let value = value as? FlashcardStatus {
+            statusLabel.text = value.rawValue
+            deck.sessionSettings?.flashcardsStatus = Int16(value.currentIndex())
+        }
+        
+        if let value = value as? FlashcardDirection {
+            directionLabel.text = value.rawValue
+            deck.sessionSettings?.direction = Int16(value.currentIndex())
+        }
+       
         
     }
     
