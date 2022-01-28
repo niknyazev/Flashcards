@@ -20,6 +20,7 @@
 		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
 		011FA2A1279C436F00EDD388 /* SettingsSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */; };
 		013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */; };
+		013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */; };
 		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
 		0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */; };
 		0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F6692797462300B13C90 /* ImagesUrlList.swift */; };
@@ -51,6 +52,7 @@
 		0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewerViewController.swift; sourceTree = "<group>"; };
 		011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSessionViewController.swift; sourceTree = "<group>"; };
 		013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChoicerViewController.swift; sourceTree = "<group>"; };
+		013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChoicerCollectionViewController.swift; sourceTree = "<group>"; };
 		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
 		0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerViewController.swift; sourceTree = "<group>"; };
 		0198F6692797462300B13C90 /* ImagesUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesUrlList.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		0102C9A8278EE09400A2637B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */,
 				0102C9B92792CE3300A2637B /* Decks */,
 				0102C9BA2792CE4200A2637B /* Flashcards */,
 				011FA2A2279C438500EDD388 /* SettingsSession */,
@@ -378,6 +381,7 @@
 				01FB3E5A279B11F800C4CA71 /* SpeechSynthesizer.swift in Sources */,
 				01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */,
 				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
+				013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */,
 				01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */,
 				0198F66C27974C4600B13C90 /* ImageChoicerCellViewController.swift in Sources */,
 				0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */,

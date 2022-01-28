@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ColorUpdaterProtocol {
+    func updateColor(with color: UIColor?)
+}
+
 class DeckTableViewController: UITableViewController {
 
     var delegate: DecksUpdaterDelegate!
@@ -14,8 +18,8 @@ class DeckTableViewController: UITableViewController {
     
     @IBOutlet weak var deckTitleTextField: UITextField!
     @IBOutlet weak var deckDescriptionTextField: UITextField!
-    @IBOutlet var buttonsColor: [UIButton]!
     @IBOutlet var buttonsIcon: [UIButton]!
+    @IBOutlet weak var colorView: UIView!
     
     private let inactiveAlpha = 0.3
     private let storageManager = StorageManager.shared
@@ -28,10 +32,21 @@ class DeckTableViewController: UITableViewController {
         "doc.text.below.ecg"
     ]
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let colorChoicer = segue.destination as? ColorChoicerCollectionViewController else { return }
+        colorChoicer.delegate = self
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
         setupElements()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        colorView.layer.cornerRadius = colorView.frame.height / 2
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
@@ -53,12 +68,6 @@ class DeckTableViewController: UITableViewController {
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
-    }
-    
-    @IBAction func colorPressed(_ sender: UIButton) {
-        for button in buttonsColor {
-            button.alpha = (button == sender ? 1 : inactiveAlpha)
-        }
     }
     
     @IBAction func iconPressed(_ sender: UIButton) {
@@ -98,9 +107,12 @@ class DeckTableViewController: UITableViewController {
         for index in 1..<buttonsIcon.count {
             buttonsIcon[index].alpha = inactiveAlpha
         }
-        for index in 1..<buttonsColor.count {
-            buttonsColor[index].alpha = inactiveAlpha
-        }
     }
 
+}
+
+extension DeckTableViewController: ColorUpdaterProtocol {
+    func updateColor(with color: UIColor?) {
+        colorView.backgroundColor = color
+    }
 }

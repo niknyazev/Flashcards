@@ -647,11 +647,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kG0-es-PaS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="kG0-es-PaS">
                                         <rect key="frame" x="0.0" y="165.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kG0-es-PaS" id="bd9-AN-xla">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezh-vb-2OE">
@@ -660,45 +660,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rMH-Ho-f8Y">
-                                                    <rect key="frame" x="257" y="6.5" width="137" height="31"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2U-p1-Hqu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="31"/>
-                                                            <color key="tintColor" red="0.90980392160000001" green="0.35294117650000001" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system" title=""/>
-                                                            <connections>
-                                                                <action selector="colorPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="0kN-rh-uUS"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgh-nv-lG2">
-                                                            <rect key="frame" x="46" y="0.0" width="45" height="31"/>
-                                                            <color key="tintColor" systemColor="systemGreenColor"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system"/>
-                                                            <connections>
-                                                                <action selector="colorPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="xb6-Ha-2v0"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iV-lX-dcy">
-                                                            <rect key="frame" x="92" y="0.0" width="45" height="31"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system"/>
-                                                            <connections>
-                                                                <action selector="colorPressed:" destination="1xC-9P-TC2" eventType="touchUpInside" id="w8N-Fj-8wy"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u23-NW-A3b">
+                                                    <rect key="frame" x="340.5" y="9.5" width="25" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="ZxT-c2-ZnS"/>
+                                                        <constraint firstAttribute="height" constant="25" id="wpv-f8-kBM"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ezh-vb-2OE" firstAttribute="centerY" secondItem="bd9-AN-xla" secondAttribute="centerY" id="EuK-zA-csB"/>
-                                                <constraint firstAttribute="trailing" secondItem="rMH-Ho-f8Y" secondAttribute="trailing" constant="20" id="FH1-du-LJj"/>
-                                                <constraint firstItem="rMH-Ho-f8Y" firstAttribute="centerY" secondItem="bd9-AN-xla" secondAttribute="centerY" id="GS5-j8-jPe"/>
+                                                <constraint firstAttribute="trailing" secondItem="u23-NW-A3b" secondAttribute="trailing" constant="20" id="KcD-MM-fis"/>
                                                 <constraint firstItem="ezh-vb-2OE" firstAttribute="leading" secondItem="bd9-AN-xla" secondAttribute="leadingMargin" id="M7q-gl-Lxn"/>
+                                                <constraint firstItem="u23-NW-A3b" firstAttribute="centerY" secondItem="bd9-AN-xla" secondAttribute="centerY" id="rv5-bQ-BhV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cA7-cD-CDQ" kind="presentation" id="4QB-3i-A5u"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="4BV-0A-Ste">
                                         <rect key="frame" x="0.0" y="209" width="414" height="70"/>
@@ -780,11 +760,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="colorView" destination="u23-NW-A3b" id="Pv6-0I-zyp"/>
                         <outlet property="deckDescriptionTextField" destination="p4A-jj-ZBJ" id="7qe-Kh-q9o"/>
                         <outlet property="deckTitleTextField" destination="SYT-XL-tEP" id="F2f-v8-1CC"/>
-                        <outletCollection property="buttonsColor" destination="y2U-p1-Hqu" collectionClass="NSMutableArray" id="ZyS-nH-4F2"/>
-                        <outletCollection property="buttonsColor" destination="Jgh-nv-lG2" collectionClass="NSMutableArray" id="D1z-Ii-1X4"/>
-                        <outletCollection property="buttonsColor" destination="4iV-lX-dcy" collectionClass="NSMutableArray" id="JjR-hO-5uc"/>
                         <outletCollection property="buttonsIcon" destination="fu5-4k-86k" collectionClass="NSMutableArray" id="irp-M2-ylK"/>
                         <outletCollection property="buttonsIcon" destination="gTw-ty-5HG" collectionClass="NSMutableArray" id="acd-up-qYk"/>
                         <outletCollection property="buttonsIcon" destination="TIj-wc-r7K" collectionClass="NSMutableArray" id="gcH-gq-mMD"/>
@@ -794,6 +772,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kiv-6i-TfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2198.5507246376815" y="474.77678571428567"/>
+        </scene>
+        <!--Color Choicer Collection View Controller-->
+        <scene sceneID="DA1-dA-g9L">
+            <objects>
+                <collectionViewController id="cA7-cD-CDQ" customClass="ColorChoicerCollectionViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="YZc-sE-R8w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gVI-gl-EHK">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="colorCell" id="vmK-Tj-DCa">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yL6-sS-Q8O">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="cA7-cD-CDQ" id="u0L-mv-Jxr"/>
+                            <outlet property="delegate" destination="cA7-cD-CDQ" id="i8J-mZ-Sd9"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gY-li-4uu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3043" y="475"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cdv-c9-vVm">
@@ -1061,7 +1073,6 @@
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="character.book.closed.zh" catalog="system" width="115" height="128"/>
         <image name="circle" catalog="system" width="128" height="121"/>
-        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="doc.richtext.he" catalog="system" width="115" height="128"/>
         <image name="doc.text.below.ecg" catalog="system" width="115" height="128"/>
@@ -1089,8 +1100,8 @@
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
