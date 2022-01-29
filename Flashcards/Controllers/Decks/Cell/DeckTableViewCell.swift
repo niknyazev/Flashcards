@@ -43,7 +43,7 @@ class DeckTableViewCell: UITableViewCell {
             arcCenter: center,
             radius: radius,
             startAngle: -(.pi / 2),
-            endAngle: .pi * 2,
+            endAngle: .pi * 1.5,
             clockwise: true
         )
         
@@ -60,7 +60,7 @@ class DeckTableViewCell: UITableViewCell {
         fill.lineWidth = 7
         fill.strokeColor = color.cgColor
         fill.strokeStart = 0
-        fill.strokeEnd = CGFloat(flashcardsLearned - 0.1) //TODO: uncorrect working
+        fill.strokeEnd = CGFloat(flashcardsLearned)
         fill.lineCap = .round
        
         iconView.layer.addSublayer(fill)
