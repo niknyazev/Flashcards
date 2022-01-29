@@ -29,7 +29,7 @@ class ColorChoicerCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       
         if let cell = collectionView.cellForItem(at: indexPath) {
-            delegate.updateColor(with: cell.contentView.backgroundColor)
+            delegate.updateColor(with: cell.backgroundColor)
         }
         
         dismiss(animated: true)
@@ -42,9 +42,10 @@ class ColorChoicerCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCell", for: indexPath)
-        
-        cell.contentView.backgroundColor = colors[indexPath.row]
-        
+
+        cell.layer.cornerRadius = cell.frame.height / 2
+        cell.backgroundColor = colors[indexPath.row]
+                
         return cell
     }
 

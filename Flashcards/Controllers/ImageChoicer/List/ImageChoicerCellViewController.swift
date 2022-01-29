@@ -15,8 +15,8 @@ class ImageChoicerCellViewController: UICollectionViewCell {
     func configure(with urlImage: String) {
         //TODO: should i config default cell properties here?
         webImage.image = nil
-        contentView.layer.cornerRadius = 30
-        contentView.backgroundColor = .lightGray
+        layer.cornerRadius = 30
+        backgroundColor = .lightGray
         //
         guard let url = URL(string: urlImage) else { return }
         
