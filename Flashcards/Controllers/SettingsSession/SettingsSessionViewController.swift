@@ -14,8 +14,6 @@ protocol ValueUpdaterProtocol {
 class SettingsSessionViewController: UITableViewController {
 
     @IBOutlet weak var saveResultSwitch: UISwitch!
-    @IBOutlet weak var isLearnedSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var countTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var complexityLabel: UILabel!
