@@ -37,7 +37,11 @@ class FlashcardsListViewController: UITableViewController {
         if searchIsActive {
             searchController.isActive = true
             searchController.isEditing = true
-            searchController.searchBar.searchTextField.becomeFirstResponder()
+           
+            // The search text field is not activated without this:
+            DispatchQueue.main.async {
+                self.searchController.searchBar.searchTextField.becomeFirstResponder()
+            }
         }
     }
     
