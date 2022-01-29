@@ -376,9 +376,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-3V-K8s">
-                                        <rect key="frame" x="124.5" y="277.5" width="125" height="31"/>
+                                        <rect key="frame" x="97" y="277.5" width="180" height="41.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Show back side"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show back side">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="showPressed:" destination="j7n-Tl-lnD" eventType="touchUpInside" id="u2D-1G-wsV"/>
                                         </connections>

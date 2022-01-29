@@ -97,10 +97,10 @@ class FlashcardsListViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.scopeButtonTitles = ["All", "New", "Learned"]
         searchController.searchBar.delegate = self
-        searchController.searchBar.showsScopeBar = true
+//        searchController.searchBar.showsScopeBar = false
         
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = true
         definesPresentationContext = true
         
     }
