@@ -129,6 +129,7 @@
 				0102C9BA2792CE4200A2637B /* Flashcards */,
 				011FA2A2279C438500EDD388 /* SettingsSession */,
 				0198F66D2798206300B13C90 /* ImageChoicer */,
+				013DFBE027A58F2800531E89 /* ValueChoicer */,
 				013DFBDF27A58BEC00531E89 /* ColorChoicer */,
 				01B2FCC7279F189F0065F23D /* FlashcardsViewer */,
 			);
@@ -178,7 +179,6 @@
 		011FA2A2279C438500EDD388 /* SettingsSession */ = {
 			isa = PBXGroup;
 			children = (
-				013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */,
 				011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */,
 			);
 			path = SettingsSession;
@@ -198,6 +198,14 @@
 				013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */,
 			);
 			name = ColorChoicer;
+			sourceTree = "<group>";
+		};
+		013DFBE027A58F2800531E89 /* ValueChoicer */ = {
+			isa = PBXGroup;
+			children = (
+				013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */,
+			);
+			path = ValueChoicer;
 			sourceTree = "<group>";
 		};
 		0198F6682797460000B13C90 /* Models */ = {
