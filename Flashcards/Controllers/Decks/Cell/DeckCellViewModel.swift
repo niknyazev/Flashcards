@@ -44,7 +44,9 @@ class DeckCellViewModel: DeckCellViewModelProtocol {
             .filter { $0.isLearned }
             .count
 
-        return Float(learnedCount) / Float(flashcards.count)
+        let result = Float(learnedCount) / Float(flashcards.count)
+        
+        return result
         
     }
     

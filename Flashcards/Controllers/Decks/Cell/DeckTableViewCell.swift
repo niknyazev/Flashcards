@@ -59,7 +59,9 @@ class DeckTableViewCell: UITableViewCell {
         fill.fillColor = UIColor.clear.cgColor
         fill.lineWidth = 7
         fill.strokeColor = color.cgColor
-        fill.strokeEnd = CGFloat(flashcardsLearned)
+        fill.strokeStart = 0
+        fill.strokeEnd = CGFloat(flashcardsLearned - 0.1) //TODO: uncorrect working
+        fill.lineCap = .round
        
         iconView.layer.addSublayer(fill)
        
