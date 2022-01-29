@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "DeckCellViewModel.flashcardsLearned.getter:DeckCellViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Float(learnedCount) / Float(flashcards.count)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DecksListViewController.setupSortingType():DecksListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sortingTypeSegmentedControl.selectedSegmentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeckTableViewCell.configure(with:):DeckTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deck.iconName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlashcardsViewerViewController.viewDidLoad():FlashcardsViewerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deck">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StorageManager.saveSessionSettings(deck:complexity:count:areLearned:):StorageManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deck.sessionSettings&#10;&#10;&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DecksListViewController.prepare(for:sender:):DecksListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.indexPathForSelectedRow">
+            </PersistentString>
+            <PersistentString
+               value = "segue.destination as? FlashcardsViewerViewController">
+            </PersistentString>
+            <PersistentString
+               value = "tableView">
+            </PersistentString>
+            <PersistentString
+               value = "segue.destination as? SettingsSessionViewController">
+            </PersistentString>
+            <PersistentString
+               value = "sender as? UIButton">
+            </PersistentString>
+            <PersistentString
+               value = "segue.destination as? UINavigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DecksListViewController.sortChanged(_:):DecksListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.selectedSegmentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DecksListViewController.tableView(_:cellForRowAt:):DecksListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "anyDeck.flashcards?.">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeckTableViewController.updateColor(with:):DeckTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deck?.color">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeckTableViewCell.addIcon(flashcardsLearned:color:):DeckTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fill.strokeEnd">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StorageManager.fetchFlashcards(deck:isLearned:complexity:completion:):StorageManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchRequest.predicate?.description">
+            </PersistentString>
+            <PersistentString
+               value = "fetchRequest.predicate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FlashcardsViewerViewController.fetchFlashcards():FlashcardsViewerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deck">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeckTableViewCell.viewModel.didset:DeckTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.flashcardsLearned">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SettingsSessionViewController.prepare(for:sender:):SettingsSessionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewerVC">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
