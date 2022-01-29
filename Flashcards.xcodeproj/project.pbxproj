@@ -125,11 +125,11 @@
 		0102C9A8278EE09400A2637B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */,
 				0102C9B92792CE3300A2637B /* Decks */,
 				0102C9BA2792CE4200A2637B /* Flashcards */,
 				011FA2A2279C438500EDD388 /* SettingsSession */,
 				0198F66D2798206300B13C90 /* ImageChoicer */,
+				013DFBDF27A58BEC00531E89 /* ColorChoicer */,
 				01B2FCC7279F189F0065F23D /* FlashcardsViewer */,
 			);
 			path = Controllers;
@@ -190,6 +190,14 @@
 				013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		013DFBDF27A58BEC00531E89 /* ColorChoicer */ = {
+			isa = PBXGroup;
+			children = (
+				013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */,
+			);
+			name = ColorChoicer;
 			sourceTree = "<group>";
 		};
 		0198F6682797460000B13C90 /* Models */ = {

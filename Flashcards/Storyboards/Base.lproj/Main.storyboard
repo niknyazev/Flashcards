@@ -469,9 +469,11 @@
                     <connections>
                         <outlet property="allIsLearnedLabel" destination="u4S-ne-pdo" id="xNQ-2T-Uge"/>
                         <outlet property="backSideLabel" destination="H0s-3V-K8s" id="XgX-Bk-N0S"/>
+                        <outlet property="dontKnowButton" destination="yVV-UB-Bjr" id="sDU-hs-6Iu"/>
                         <outlet property="flashcardContentView" destination="PaU-4c-srU" id="FpZ-jt-6oP"/>
                         <outlet property="flashcardImage" destination="Kpe-sz-iwj" id="Pie-bH-rk7"/>
                         <outlet property="frontSideLabel" destination="qNR-Yd-JqW" id="Hc5-yA-Dw5"/>
+                        <outlet property="knowButton" destination="1S2-kj-ciV" id="Z2t-yg-r94"/>
                         <outlet property="levelOfComplexity" destination="SU2-xI-L7i" id="Gvn-t2-dm4"/>
                         <outlet property="progressView" destination="dZK-4k-IV8" id="iVg-ie-Te3"/>
                     </connections>

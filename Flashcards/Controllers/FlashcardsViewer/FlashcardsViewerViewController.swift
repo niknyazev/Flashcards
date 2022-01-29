@@ -16,6 +16,8 @@ class FlashcardsViewerViewController: UIViewController {
     @IBOutlet weak var flashcardContentView: UIView!
     @IBOutlet weak var levelOfComplexity: UISegmentedControl!
     @IBOutlet weak var allIsLearnedLabel: UILabel!
+    @IBOutlet weak var dontKnowButton: UIButton!
+    @IBOutlet weak var knowButton: UIButton!
     
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
@@ -99,6 +101,9 @@ class FlashcardsViewerViewController: UIViewController {
         backSideLabel.isHidden = allIsLearned
         levelOfComplexity.isHidden = allIsLearned
         flashcardImage.isHidden = allIsLearned
+        
+        dontKnowButton.layer.cornerRadius = 10
+        knowButton.layer.cornerRadius = 10
         
         guard let flashcard = flashcard else { return }
         
