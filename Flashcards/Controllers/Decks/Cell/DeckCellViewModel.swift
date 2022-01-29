@@ -13,6 +13,7 @@ protocol DeckCellViewModelProtocol {
     var title: String  { get }
     var iconName: String  { get }
     var deck: Deck { get }
+    var color: Int { get }
     var flashcardsLearned: Float { get }
     
 }
@@ -25,6 +26,10 @@ class DeckCellViewModel: DeckCellViewModelProtocol {
     
     var title: String {
         deck.title ?? ""
+    }
+    
+    var color: Int {
+        Int(deck.color ?? 0)
     }
     
     var iconName: String {

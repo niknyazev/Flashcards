@@ -21,6 +21,7 @@
 		011FA2A1279C436F00EDD388 /* SettingsSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */; };
 		013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */; };
 		013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */; };
+		013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */; };
 		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
 		0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */; };
 		0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F6692797462300B13C90 /* ImagesUrlList.swift */; };
@@ -53,6 +54,7 @@
 		011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSessionViewController.swift; sourceTree = "<group>"; };
 		013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChoicerViewController.swift; sourceTree = "<group>"; };
 		013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChoicerCollectionViewController.swift; sourceTree = "<group>"; };
+		013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
 		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
 		0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerViewController.swift; sourceTree = "<group>"; };
 		0198F6692797462300B13C90 /* ImagesUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesUrlList.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		0102C98F278EDF7500A2637B /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
+				013DFBDC27A55AA400531E89 /* Extensions */,
 				0198F6682797460000B13C90 /* Models */,
 				0102C9B0278EF0D600A2637B /* Managers */,
 				0102C9A8278EE09400A2637B /* Controllers */,
@@ -179,6 +182,14 @@
 				011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */,
 			);
 			path = SettingsSession;
+			sourceTree = "<group>";
+		};
+		013DFBDC27A55AA400531E89 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0198F6682797460000B13C90 /* Models */ = {
@@ -375,6 +386,7 @@
 				01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */,
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
 				013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */,
+				013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */,
 				01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 				0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */,

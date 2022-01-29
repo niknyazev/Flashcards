@@ -22,7 +22,9 @@ class DeckTableViewCell: UITableViewCell {
             deckName.text = viewModel.title
             flashcardCount.text = viewModel.flashcardCount
             learnButton.layer.cornerRadius = 7
-            addIcon(flashcardsLearned: viewModel.flashcardsLearned)
+            let color = UIColor(hex: viewModel.color)
+            learnButton.tintColor = color
+            addIcon(flashcardsLearned: viewModel.flashcardsLearned, color: color)
         }
     }
     
@@ -30,7 +32,7 @@ class DeckTableViewCell: UITableViewCell {
         delegate.openFlashcardViewer(for: viewModel.deck)
     }
     
-    private func addIcon(flashcardsLearned: Float) {
+    private func addIcon(flashcardsLearned: Float, color: UIColor) {
                 
         //TODO: figure out why dont work arcCenter: iconView.center. - this value is 45, 40
         
@@ -56,7 +58,7 @@ class DeckTableViewCell: UITableViewCell {
         fill.path = circle.cgPath
         fill.fillColor = UIColor.clear.cgColor
         fill.lineWidth = 7
-        fill.strokeColor = UIColor.blue.cgColor
+        fill.strokeColor = color.cgColor
         fill.strokeEnd = CGFloat(flashcardsLearned)
        
         iconView.layer.addSublayer(fill)
