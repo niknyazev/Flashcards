@@ -23,6 +23,12 @@ class DecksListViewController: UITableViewController {
         let deck: Deck?
         let searchIsActive: Bool
     }
+    private let mainColor = UIColor(
+        displayP3Red: 21/255,
+        green: 101/255,
+        blue: 192/255,
+        alpha: 194/255
+    )
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -76,6 +82,7 @@ class DecksListViewController: UITableViewController {
         setupTableView()
         fetchDecks()
         setupSortingType()
+        setupNavigationBar()
     }
         
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -156,6 +163,21 @@ class DecksListViewController: UITableViewController {
         tableView.reloadData()
         userDefaults.saveSortingType(sortingType: sender.selectedSegmentIndex)
         
+    }
+    
+    private func setupNavigationBar() {
+        title = "Task List"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = mainColor
+       
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = .white
     }
     
     private func setupTableView() {
