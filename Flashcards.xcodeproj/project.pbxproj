@@ -22,6 +22,7 @@
 		013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */; };
 		013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */; };
 		013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */; };
+		013DFC0327A6DCDD00531E89 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFC0227A6DCDD00531E89 /* Colors.swift */; };
 		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
 		0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */; };
 		0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F6692797462300B13C90 /* ImagesUrlList.swift */; };
@@ -55,6 +56,7 @@
 		013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChoicerViewController.swift; sourceTree = "<group>"; };
 		013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChoicerCollectionViewController.swift; sourceTree = "<group>"; };
 		013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
+		013DFC0227A6DCDD00531E89 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
 		0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerViewController.swift; sourceTree = "<group>"; };
 		0198F6692797462300B13C90 /* ImagesUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesUrlList.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		0102C98F278EDF7500A2637B /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
+				013DFC0127A6DC7000531E89 /* Constants */,
 				013DFBDC27A55AA400531E89 /* Extensions */,
 				0198F6682797460000B13C90 /* Models */,
 				0102C9B0278EF0D600A2637B /* Managers */,
@@ -206,6 +209,14 @@
 				013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */,
 			);
 			path = ValueChoicer;
+			sourceTree = "<group>";
+		};
+		013DFC0127A6DC7000531E89 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				013DFC0227A6DCDD00531E89 /* Colors.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		0198F6682797460000B13C90 /* Models */ = {
@@ -409,6 +420,7 @@
 				01FB3E5A279B11F800C4CA71 /* SpeechSynthesizer.swift in Sources */,
 				01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */,
 				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
+				013DFC0327A6DCDD00531E89 /* Colors.swift in Sources */,
 				013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */,
 				01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */,
 				0198F66C27974C4600B13C90 /* ImageChoicerCellViewController.swift in Sources */,
