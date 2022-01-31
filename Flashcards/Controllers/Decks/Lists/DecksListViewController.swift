@@ -221,72 +221,7 @@ extension DecksListViewController: DecksUpdaterDelegate {
 extension DecksListViewController: FlashcardViewerDelegate {
     
     func openFlashcardViewer(for deck: Deck) {
-
-        if deck.sessionSettings == nil {
-            performSegue(withIdentifier: "settingsSession", sender: deck)
-            return
-        }
-        
-        askAboutResumeSession() { result in
-           
-            guard let result = result else { return }
-            
-            if result {
-                self.performSegue(withIdentifier: "flashcardsViewer", sender: deck)
-            } else {
-                self.resetSessionFlag(deck: deck) { //TODO: move to Settings
-                    self.performSegue(withIdentifier: "settingsSession", sender: deck)
-                }
-            }
-                
-        }
-    }
-    
-    func resetSessionFlag(deck: Deck, completion: @escaping () -> Void) {
-        
-        DispatchQueue.global().async {
-        
-            deck.flashcards?.forEach { element in
-                guard let flashcard = element as? Flashcard, !flashcard.isSession else { return }
-                flashcard.isSession = false
-                
-            }
-            
-            
-            StorageManager.shared.saveContext()
-            
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
-    }
-    
-    private func askAboutResumeSession(completion: @escaping (Bool?) -> Void) {
-        
-        let alertController = UIAlertController(
-            title: "Active session detected",
-            message: "Continue learning session?",
-            preferredStyle: .alert
-        )
-  
-        let yesAction = UIAlertAction(title: "Continue session", style: .default) { _ in
-            completion(true)
-        }
-        
-        let startNewSession = UIAlertAction(title: "Start new session", style: .default) { _ in
-            completion(false)
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            completion(nil)
-        }
-        
-        alertController.addAction(yesAction)
-        alertController.addAction(startNewSession)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
-        
+        performSegue(withIdentifier: "settingsSession", sender: deck)
     }
     
 }
