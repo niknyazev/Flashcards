@@ -252,6 +252,7 @@ extension DecksListViewController: FlashcardViewerDelegate {
                 
             }
             
+            
             StorageManager.shared.saveContext()
             
             DispatchQueue.main.async {

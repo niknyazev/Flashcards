@@ -761,8 +761,8 @@
             filePath = "Flashcards/Managers/Storages/StorageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "saveSessionSettings(deck:complexity:count:status:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1042,22 +1042,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D7882B80-BA46-402E-AD4E-906870A23D0B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flashcards/Controllers/Decks/Cell/DeckCellViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "iconName"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DF3B0DA0-19D7-4E9A-932C-D2B32D102A81"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1164,38 +1148,6 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "hexValue"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "60BF79FC-E58F-46C2-909A-8F613037B959"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flashcards/Controllers/Decks/Cell/DeckCellViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "flashcardsLearned"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1D6DE223-E8C7-48F3-856C-4052ACE29278"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flashcards/Controllers/Decks/Cell/DeckCellViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "flashcardsLearned"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

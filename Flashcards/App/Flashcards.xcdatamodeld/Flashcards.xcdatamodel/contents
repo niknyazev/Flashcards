@@ -3,10 +3,10 @@
     <entity name="Deck" representedClassName="Deck" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="deckDescription" optional="YES" attributeType="String"/>
-        <attribute name="flashcardsCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="flashcardsCount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="iconName" optional="YES" attributeType="String"/>
         <attribute name="isDeactived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="persentageOfLearned" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="percentageOfLearned" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flashcard" inverseName="deck" inverseEntity="Flashcard"/>
         <relationship name="sessionSettings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SessionSettings" inverseName="deck" inverseEntity="SessionSettings"/>

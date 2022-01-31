@@ -21,7 +21,7 @@ protocol DeckCellViewModelProtocol {
 class DeckCellViewModel: DeckCellViewModelProtocol {
    
     var flashcardCount: String {
-        "Flashcard: \(deck.flashcards?.count ?? 0)"
+        "Flashcard: \(deck.flashcardsCount)"
     }
     
     var title: String {
@@ -37,17 +37,7 @@ class DeckCellViewModel: DeckCellViewModelProtocol {
     }
     
     var flashcardsLearned: Float {
-     
-        guard let flashcards = deck.flashcards?.allObjects as? [Flashcard] else { return 0 }
-        
-        let learnedCount = flashcards
-            .filter { $0.isLearned }
-            .count
-
-        let result = Float(learnedCount) / Float(flashcards.count)
-        
-        return result
-        
+        deck.percentageOfLearned
     }
     
     

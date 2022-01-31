@@ -91,7 +91,7 @@ class FlashcardTableViewController: UITableViewController {
         if let flashcard = flashcard {
             flashcard.frontSide = frontSideTextField.text ?? ""
             flashcard.backSide = backSideTextField.text ?? ""
-            storageManager.saveContext()
+            storageManager.updateFlashcard(deck: deck)
             
         } else {
             storageManager.saveFlashcard(
