@@ -827,6 +827,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UA7-NP-fTK">
                                                     <rect key="frame" x="305" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="saveResultsChanged" destination="9CH-Ll-gBT" eventType="valueChanged" id="RD9-2c-F78"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>

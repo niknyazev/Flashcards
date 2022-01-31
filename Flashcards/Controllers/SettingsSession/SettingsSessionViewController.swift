@@ -78,7 +78,11 @@ class SettingsSessionViewController: UITableViewController {
         }
         
     }
-           
+    
+    @IBAction func saveResultsChanged() {
+        deck.sessionSettings?.saveResults.toggle()
+    }
+    
     private func setupElements() {
         
         //TODO: need refactoring
@@ -87,6 +91,7 @@ class SettingsSessionViewController: UITableViewController {
             return
         }
         
+        saveResultSwitch.isOn = sessionSettings.saveResults
         statusLabel.text = FlashcardStatus.allCases[Int(sessionSettings.flashcardsStatus)].rawValue
         complexityLabel.text = FlashcardComplexity.allCases[Int(sessionSettings.flashcardsComplexity)].rawValue
         directionLabel.text = FlashcardComplexity.allCases[Int(sessionSettings.direction)].rawValue

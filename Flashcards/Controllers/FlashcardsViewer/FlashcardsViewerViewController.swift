@@ -130,12 +130,20 @@ class FlashcardsViewerViewController: UIViewController {
     }
     
     private func markFlashcardAsLearned() {
-        flashcards[currentIndex].isLearned = true
+       
+        let flashcard = flashcards[currentIndex]
+        
+        if flashcard.deck?.sessionSettings?.saveResults ?? false {
+            flashcard.isLearned = true
+            storageManager.updateFlashcard(deck: flashcard.deck)
+        }
+        
+        flashcards.remove(at: currentIndex)
+        
         currentIndex = currentIndex == 0
             ? 0
             : currentIndex - 1
-        storageManager.updateFlashcard(deck: flashcards[currentIndex].deck)
-        flashcards = flashcards.filter{ !$0.isLearned }
+        
     }
 
 }
