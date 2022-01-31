@@ -46,34 +46,14 @@ class FlashcardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row != 2 {
-            return
+        if indexPath.row == 2 {
+            choiceImage()
+        } else if indexPath.row == 5 {
+            choiceDeck()
         }
-        
-        let alertController = UIAlertController(
-            title: "Choose source of image",
-            message: nil,
-            preferredStyle: .actionSheet
-        )
-
-        let photosAction = UIAlertAction(title: "Photos", style: .default) { _ in
-            self.choosePhoto()
-        }
-        
-        let webAction = UIAlertAction(title: "Web", style: .default) { _ in
-            self.performSegue(withIdentifier: "choiceImage", sender: nil)
-        }
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
-
-        alertController.addAction(photosAction)
-        alertController.addAction(webAction)
-        alertController.addAction(cancelAction)
-
-        present(alertController, animated: true, completion: nil)
         
     }
-    
+        
     @IBAction func translatePressed(_ sender: Any) {
         
         guard let text = frontSideTextField.text else {
@@ -109,6 +89,39 @@ class FlashcardTableViewController: UITableViewController {
         dismiss(animated: true)
     }
     
+    private func choiceDeck() {
+        
+        let choicerVC = ValueChoicerViewController()
+        choicerVC.delegate = self
+        choicerVC.value = TestValues.test01 //TODO: replace for Array
+        navigationController?.pushViewController(choicerVC, animated: true)
+
+    }
+    
+    private func choiceImage() {
+        let alertController = UIAlertController(
+            title: "Choose source of image",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        let photosAction = UIAlertAction(title: "Photos", style: .default) { _ in
+            self.choosePhoto()
+        }
+        
+        let webAction = UIAlertAction(title: "Web", style: .default) { _ in
+            self.performSegue(withIdentifier: "choiceImage", sender: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        alertController.addAction(photosAction)
+        alertController.addAction(webAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     private func setupElements() {
         
         flashcardImage.contentMode = .scaleAspectFit
@@ -131,6 +144,31 @@ class FlashcardTableViewController: UITableViewController {
         
     }
 
+}
+
+extension FlashcardTableViewController: ValueUpdaterProtocol {
+    func updateValue(for value: ValuesExtractProtocol) {
+        
+    }
+}
+
+enum TestValues: String, CaseIterable, ValuesExtractProtocol {
+
+    func currentIndex() -> Int {
+        type(of: self).allCases.firstIndex(of: self) ?? 0
+    }
+    
+    func allValues() -> [String] {
+        type(of: self).allCases.map {
+            $0.rawValue
+        }
+    }
+    
+    func valueByIndex(index: Int) -> ValuesExtractProtocol {
+        type(of: self).allCases[index]
+    }
+    
+    case test01, test02
 }
 
 extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
