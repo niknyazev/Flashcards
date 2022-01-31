@@ -18,7 +18,6 @@
         <attribute name="isLearned" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isSession" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="levelOfComplexity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="needPronounce" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashcards" inverseEntity="Deck"/>
     </entity>
     <entity name="SessionSettings" representedClassName="SessionSettings" syncable="YES" codeGenerationType="class">
@@ -31,7 +30,7 @@
     </entity>
     <elements>
         <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="164"/>
-        <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="149"/>
+        <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="134"/>
         <element name="SessionSettings" positionX="-171" positionY="-90" width="128" height="119"/>
     </elements>
 </model>

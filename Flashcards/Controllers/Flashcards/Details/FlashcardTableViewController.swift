@@ -24,7 +24,6 @@ class FlashcardTableViewController: UITableViewController {
     @IBOutlet weak var frontSideTextField: UITextField!
     @IBOutlet weak var backSideTextField: UITextField!
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
-    @IBOutlet weak var needPronunciationSwitch: UISwitch!
     @IBOutlet weak var flashcardImage: UIImageView!
     
     override func viewDidLoad() {

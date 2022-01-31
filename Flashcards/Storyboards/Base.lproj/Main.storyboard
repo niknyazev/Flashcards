@@ -234,31 +234,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7ht-wf-Usf">
-                                        <rect key="frame" x="0.0" y="428" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ht-wf-Usf" id="7VD-0b-G1S">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronunciation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGT-h1-mvy">
-                                                    <rect key="frame" x="20" y="11" width="105" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALa-gm-fG9">
-                                                    <rect key="frame" x="345" y="6" width="51" height="31"/>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="kGT-h1-mvy" firstAttribute="top" secondItem="7VD-0b-G1S" secondAttribute="topMargin" id="Oep-hx-FX9"/>
-                                                <constraint firstItem="ALa-gm-fG9" firstAttribute="top" secondItem="7VD-0b-G1S" secondAttribute="top" constant="6" id="qzT-zJ-Wyj"/>
-                                                <constraint firstAttribute="trailing" secondItem="ALa-gm-fG9" secondAttribute="trailing" constant="20" id="ra1-D0-3bi"/>
-                                                <constraint firstItem="kGT-h1-mvy" firstAttribute="leading" secondItem="7VD-0b-G1S" secondAttribute="leadingMargin" id="txS-pg-QEa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -284,7 +259,6 @@
                         <outlet property="complexitySegmentedControl" destination="hmw-Ac-5rV" id="B6R-yC-zaF"/>
                         <outlet property="flashcardImage" destination="pO8-zX-YLU" id="cbZ-2C-XOJ"/>
                         <outlet property="frontSideTextField" destination="vSu-5u-d6N" id="Bg8-Wp-iKU"/>
-                        <outlet property="needPronunciationSwitch" destination="ALa-gm-fG9" id="6Kp-4L-r3V"/>
                         <segue destination="hB9-nB-GV2" kind="presentation" identifier="choiceImage" id="4VV-Cl-GAz"/>
                     </connections>
                 </tableViewController>
