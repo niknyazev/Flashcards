@@ -92,8 +92,12 @@ class FlashcardTableViewController: UITableViewController {
     private func choiceDeck() {
         
         let choicerVC = ValueChoicerViewController()
-        choicerVC.delegate = self
-        choicerVC.value = TestValues.test01 //TODO: replace for Array
+        let values = ["test01", "test02"]
+        choicerVC.delegate = {currentIndex in
+            print(values[currentIndex])
+        }
+        choicerVC.values = values //TODO: replace for Array
+        choicerVC.currentIndex = 0
         navigationController?.pushViewController(choicerVC, animated: true)
 
     }

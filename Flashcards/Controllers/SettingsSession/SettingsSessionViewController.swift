@@ -31,20 +31,20 @@ class SettingsSessionViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "flashcardsViewer" {
-         
-            guard let viewerVC = segue.destination as? FlashcardsViewerViewController else { return }
-            
-            viewerVC.delegate = delegate
-            viewerVC.deck = deck
-        
-        } else if segue.identifier == "valueChoicer" {
-            guard let viewerVC = segue.destination as? ValueChoicerViewController,
-                let value = sender as? ValuesExtractProtocol else { return }
-            
-            viewerVC.delegate = self
-            viewerVC.value = value
-        }
+//        if segue.identifier == "flashcardsViewer" {
+//         
+//            guard let viewerVC = segue.destination as? FlashcardsViewerViewController else { return }
+//            
+//            viewerVC.delegate = delegate
+//            viewerVC.deck = deck
+//        
+//        } else if segue.identifier == "valueChoicer" {
+//            guard let viewerVC = segue.destination as? ValueChoicerViewController,
+//                let value = sender as? ValuesExtractProtocol else { return }
+//            
+//            viewerVC.delegate = self
+//            viewerVC.value = value
+//        }
         
     }
     
