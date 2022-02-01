@@ -11,15 +11,15 @@ class FlashcardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var frontSideLabel: UILabel!
     @IBOutlet weak var backSideLabel: UILabel!
-    @IBOutlet weak var isLearnedImage: UIImageView!
+    @IBOutlet weak var verticalLineView: UIView!
     
     func configure(with flashcard: Flashcard) {
         
         frontSideLabel.text = flashcard.frontSide
         backSideLabel.text = flashcard.backSide
-        isLearnedImage.tintColor = flashcard.isLearned
-            ? UIColor(ciColor: .gray)
-            : UIColor(ciColor: .blue)
+        verticalLineView.backgroundColor = flashcard.isLearned
+            ? verticalLineView.backgroundColor
+            : Colors.mainColor
 
     }
 }
