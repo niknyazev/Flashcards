@@ -140,7 +140,7 @@ class FlashcardsListViewController: UITableViewController {
     }
     
     private func setupTableView() {
-        tableView.rowHeight = 100
+        tableView.rowHeight = 110
     }
     
 }
