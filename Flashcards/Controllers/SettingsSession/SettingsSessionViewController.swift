@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ValueUpdaterProtocol {
-    func updateValue(for value: ValuesExtractProtocol)
-}
-
 class SettingsSessionViewController: UITableViewController {
 
     @IBOutlet weak var saveResultSwitch: UISwitch!
@@ -21,61 +17,57 @@ class SettingsSessionViewController: UITableViewController {
         
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
-     
-    //TODO: substitute to enum
-        
+    let statuses = ["All", "New", "Learned"]
+    let complexities = ["All", "Easy", "Hard"]
+    let directions = ["All", "Forward", "Backward"]
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-//        if segue.identifier == "flashcardsViewer" {
-//         
-//            guard let viewerVC = segue.destination as? FlashcardsViewerViewController else { return }
-//            
-//            viewerVC.delegate = delegate
-//            viewerVC.deck = deck
-//        
-//        } else if segue.identifier == "valueChoicer" {
-//            guard let viewerVC = segue.destination as? ValueChoicerViewController,
-//                let value = sender as? ValuesExtractProtocol else { return }
-//            
-//            viewerVC.delegate = self
-//            viewerVC.value = value
-//        }
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let choicerVC = ValueChoicerViewController()
+        
         switch indexPath {
         case IndexPath(row: 0, section: 1):
             startSession()
         case IndexPath(row: 2, section: 0):
-            let index = Int(deck.sessionSettings?.flashcardsStatus ?? 0)
-            performSegue(
-                withIdentifier: "valueChoicer",
-                sender: FlashcardStatus.allCases[index]
-            )
+            
+            choicerVC.delegate = {currentIndex in
+                self.deck.sessionSettings?.flashcardsStatus = Int16(currentIndex)
+                self.statusLabel.text = choicerVC.values[currentIndex]
+            }
+            choicerVC.values = statuses
+            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsStatus ?? 0)
+            
         case IndexPath(row: 3, section: 0):
-            let index = Int(deck.sessionSettings?.flashcardsComplexity ?? 0)
-            performSegue(
-                withIdentifier: "valueChoicer",
-                sender: FlashcardComplexity.allCases[index]
-            )
+            
+            choicerVC.delegate = {currentIndex in
+                self.deck.sessionSettings?.flashcardsComplexity = Int16(currentIndex)
+                self.complexityLabel.text = choicerVC.values[currentIndex]
+            }
+            choicerVC.values = complexities
+            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsComplexity ?? 0)
+      
         case IndexPath(row: 4, section: 0):
-            let index = Int(deck.sessionSettings?.direction ?? 0)
-            performSegue(
-                withIdentifier: "valueChoicer",
-                sender: FlashcardDirection.allCases[index]
-            )
+            
+            choicerVC.delegate = {currentIndex in
+                self.deck.sessionSettings?.direction = Int16(currentIndex)
+                self.directionLabel.text = choicerVC.values[currentIndex]
+            }
+           
+            choicerVC.values = directions
+            choicerVC.currentIndex = Int(deck.sessionSettings?.direction ?? 0)
+            
         default:
             break
         }
+        
+        navigationController?.pushViewController(choicerVC, animated: true)
         
     }
     
@@ -92,9 +84,9 @@ class SettingsSessionViewController: UITableViewController {
         }
         
         saveResultSwitch.isOn = sessionSettings.saveResults
-        statusLabel.text = FlashcardStatus.allCases[Int(sessionSettings.flashcardsStatus)].rawValue
-        complexityLabel.text = FlashcardComplexity.allCases[Int(sessionSettings.flashcardsComplexity)].rawValue
-        directionLabel.text = FlashcardComplexity.allCases[Int(sessionSettings.direction)].rawValue
+        statusLabel.text = statuses[Int(sessionSettings.flashcardsStatus)]
+        complexityLabel.text = complexities[Int(sessionSettings.flashcardsComplexity)]
+        directionLabel.text = directions[Int(sessionSettings.direction)]
         
     }
     
@@ -108,105 +100,5 @@ class SettingsSessionViewController: UITableViewController {
     
 }
 
-extension SettingsSessionViewController: ValueUpdaterProtocol {
-   
-    //TODO: need refactoring
-    
-    func updateValue(for value: ValuesExtractProtocol) {
 
-        if let value = value as? FlashcardComplexity {
-            complexityLabel.text = value.rawValue
-            deck.sessionSettings?.flashcardsComplexity = Int16(value.currentIndex())
-        }
-        
-        if let value = value as? FlashcardStatus {
-            statusLabel.text = value.rawValue
-            deck.sessionSettings?.flashcardsStatus = Int16(value.currentIndex())
-        }
-        
-        if let value = value as? FlashcardDirection {
-            directionLabel.text = value.rawValue
-            deck.sessionSettings?.direction = Int16(value.currentIndex())
-        }
-       
-        
-    }
-    
-}
 
-//TODO: need to incapsulate in Flashcard entity
-
-protocol ValuesExtractProtocol {
-    
-    func currentIndex() -> Int
-    func allValues() -> [String]
-    func valueByIndex(index: Int) -> ValuesExtractProtocol
-    
-}
-
-//TODO: remove code dublicate
-
-enum FlashcardComplexity: String, CaseIterable, ValuesExtractProtocol {
-   
-    case All
-    case Easy
-    case Hard
-    
-    func currentIndex() -> Int {
-        type(of: self).allCases.firstIndex(of: self) ?? 0
-    }
-    
-    func allValues() -> [String] {
-        type(of: self).allCases.map {
-            $0.rawValue
-        }
-    }
-    
-    func valueByIndex(index: Int) -> ValuesExtractProtocol {
-        type(of: self).allCases[index]
-    }
-    
-}
-
-enum FlashcardStatus: String, CaseIterable, ValuesExtractProtocol {
-    case All
-    case New
-    case Learned
-    
-    func currentIndex() -> Int {
-        type(of: self).allCases.firstIndex(of: self) ?? 0
-    }
-    
-    func allValues() -> [String] {
-        type(of: self).allCases.map {
-            $0.rawValue
-        }
-    }
-    
-    func valueByIndex(index: Int) -> ValuesExtractProtocol {
-        type(of: self).allCases[index]
-    }
-    
-}
-
-enum FlashcardDirection: String, CaseIterable, ValuesExtractProtocol {
-    
-    case All
-    case Forward
-    case Reverse
-    
-    func currentIndex() -> Int {
-        type(of: self).allCases.firstIndex(of: self) ?? 0
-    }
-    
-    func allValues() -> [String] {
-        type(of: self).allCases.map {
-            $0.rawValue
-        }
-    }
-    
-    func valueByIndex(index: Int) -> ValuesExtractProtocol {
-        type(of: self).allCases[index]
-    }
-    
-}

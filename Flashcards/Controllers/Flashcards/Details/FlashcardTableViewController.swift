@@ -150,31 +150,6 @@ class FlashcardTableViewController: UITableViewController {
 
 }
 
-extension FlashcardTableViewController: ValueUpdaterProtocol {
-    func updateValue(for value: ValuesExtractProtocol) {
-        
-    }
-}
-
-enum TestValues: String, CaseIterable, ValuesExtractProtocol {
-
-    func currentIndex() -> Int {
-        type(of: self).allCases.firstIndex(of: self) ?? 0
-    }
-    
-    func allValues() -> [String] {
-        type(of: self).allCases.map {
-            $0.rawValue
-        }
-    }
-    
-    func valueByIndex(index: Int) -> ValuesExtractProtocol {
-        type(of: self).allCases[index]
-    }
-    
-    case test01, test02
-}
-
 extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func choosePhoto() {
