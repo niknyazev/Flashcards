@@ -527,28 +527,27 @@
         <scene sceneID="dGN-lE-vHI">
             <objects>
                 <tableViewController id="EOc-bA-xmQ" customClass="FlashcardsListViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="RDg-v2-HI3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="RDg-v2-HI3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="VD8-05-XCK">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="4"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flashcard" rowHeight="80" id="K67-KA-9XC" customClass="FlashcardTableViewCell" customModule="Flashcards" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="53.5" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="48.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K67-KA-9XC" id="B4q-vg-HxR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oG-zQ-yy2">
-                                            <rect key="frame" x="0.0" y="7" width="414" height="66"/>
+                                            <rect key="frame" x="0.0" y="7" width="404" height="66"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbj-uk-Mkj">
                                                     <rect key="frame" x="0.0" y="0.0" width="10" height="66"/>
-                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="h31-To-fO9"/>
                                                     </constraints>
@@ -583,7 +582,7 @@
                                     <constraints>
                                         <constraint firstItem="9oG-zQ-yy2" firstAttribute="leading" secondItem="B4q-vg-HxR" secondAttribute="leading" id="2fu-Af-LZB"/>
                                         <constraint firstItem="9oG-zQ-yy2" firstAttribute="top" secondItem="B4q-vg-HxR" secondAttribute="top" constant="7" id="61k-7u-zOm"/>
-                                        <constraint firstAttribute="trailing" secondItem="9oG-zQ-yy2" secondAttribute="trailing" id="jq4-Bj-R9v"/>
+                                        <constraint firstAttribute="trailing" secondItem="9oG-zQ-yy2" secondAttribute="trailing" constant="10" id="jq4-Bj-R9v"/>
                                         <constraint firstAttribute="bottom" secondItem="9oG-zQ-yy2" secondAttribute="bottom" constant="7" id="osT-Df-O2U"/>
                                     </constraints>
                                 </tableViewCellContentView>

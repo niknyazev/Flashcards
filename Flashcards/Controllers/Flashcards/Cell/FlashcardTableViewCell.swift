@@ -31,7 +31,7 @@ class FlashcardTableViewCell: UITableViewCell {
         )
         mainView.layer.shadowRadius = 3
         mainView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        mainView.layer.shadowOpacity = 0.4
+        mainView.layer.shadowOpacity = 0.2
 
     }
 }
