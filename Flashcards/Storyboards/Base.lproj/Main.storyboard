@@ -535,25 +535,25 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flashcard" rowHeight="80" id="K67-KA-9XC" customClass="FlashcardTableViewCell" customModule="Flashcards" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="48.5" width="414" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flashcard" rowHeight="120" id="K67-KA-9XC" customClass="FlashcardTableViewCell" customModule="Flashcards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="48.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K67-KA-9XC" id="B4q-vg-HxR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oG-zQ-yy2">
-                                            <rect key="frame" x="15" y="10" width="384" height="60"/>
+                                            <rect key="frame" x="15" y="10" width="384" height="100"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbj-uk-Mkj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="10" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="10" height="100"/>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="h31-To-fO9"/>
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="XJN-pN-LqB">
-                                                    <rect key="frame" x="30" y="2.5" width="81.5" height="55"/>
+                                                    <rect key="frame" x="30" y="22.5" width="81.5" height="55"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR9-wl-4he">
                                                             <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
@@ -569,9 +569,18 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sVc-2E-jM2">
+                                                    <rect key="frame" x="294" y="15" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="Dpq-sb-Pmq"/>
+                                                        <constraint firstAttribute="width" constant="70" id="Vde-Xx-y6Z"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="XJN-pN-LqB" firstAttribute="leading" secondItem="Fbj-uk-Mkj" secondAttribute="trailing" constant="20" id="FiJ-QC-Nok"/>
+                                                <constraint firstItem="sVc-2E-jM2" firstAttribute="centerY" secondItem="9oG-zQ-yy2" secondAttribute="centerY" id="e4V-9N-2Cq"/>
+                                                <constraint firstAttribute="trailing" secondItem="sVc-2E-jM2" secondAttribute="trailing" constant="20" id="ojk-Bv-2tY"/>
                                                 <constraint firstItem="XJN-pN-LqB" firstAttribute="centerY" secondItem="9oG-zQ-yy2" secondAttribute="centerY" id="ops-ZO-1ox"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fbj-uk-Mkj" secondAttribute="bottom" id="r69-eN-ECG"/>
                                                 <constraint firstItem="Fbj-uk-Mkj" firstAttribute="leading" secondItem="9oG-zQ-yy2" secondAttribute="leading" id="vkb-4X-y81"/>
@@ -588,6 +597,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backSideLabel" destination="vDe-mK-fDW" id="po4-bC-Qza"/>
+                                    <outlet property="flashcardImage" destination="sVc-2E-jM2" id="dfp-cq-h2c"/>
                                     <outlet property="frontSideLabel" destination="NR9-wl-4he" id="KYe-f8-TJM"/>
                                     <outlet property="mainView" destination="9oG-zQ-yy2" id="ZfJ-eN-i1n"/>
                                     <outlet property="verticalLineView" destination="Fbj-uk-Mkj" id="6Ze-7p-H0G"/>

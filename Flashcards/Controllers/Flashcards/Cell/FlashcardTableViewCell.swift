@@ -13,6 +13,7 @@ class FlashcardTableViewCell: UITableViewCell {
     @IBOutlet weak var backSideLabel: UILabel!
     @IBOutlet weak var verticalLineView: UIView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var flashcardImage: UIImageView!
     
     func configure(with flashcard: Flashcard) {
         
@@ -21,6 +22,12 @@ class FlashcardTableViewCell: UITableViewCell {
         verticalLineView.backgroundColor = flashcard.isLearned
             ? verticalLineView.backgroundColor
             : Colors.mainColor
+        if let imageData = flashcard.image {
+            flashcardImage.image = UIImage(data: imageData)
+            flashcardImage.layer.cornerRadius = flashcardImage.frame.height / 2
+        } else {
+            flashcardImage.isHidden = true
+        }
        
         mainView.backgroundColor = .white
         mainView.layer.shadowColor = CGColor(
