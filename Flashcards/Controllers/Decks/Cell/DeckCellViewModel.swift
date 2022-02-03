@@ -29,7 +29,7 @@ class DeckCellViewModel: DeckCellViewModelProtocol {
     }
     
     var color: Int {
-        return deck.color == 0 ? Colors.mainColor.hexValue : Int(deck.color)
+        return deck.color == 0 ? Colors.mainColor.hexValue : deck.color
     }
     
     var iconName: String {

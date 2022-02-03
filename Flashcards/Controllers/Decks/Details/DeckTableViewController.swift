@@ -96,7 +96,7 @@ class DeckTableViewController: UITableViewController {
         
         deckTitleTextField.text = deck.title
         deckDescriptionTextField.text = deck.deckDescription
-        colorView.backgroundColor = UIColor(hex: Int(deck.color))
+        colorView.backgroundColor = UIColor(hex: deck.color)
         
         for button in buttonsIcon {
             button.alpha = (buttonsImages[button] == deck.iconName ? 1 : inactiveAlpha)
@@ -115,6 +115,6 @@ class DeckTableViewController: UITableViewController {
 extension DeckTableViewController: ColorUpdaterProtocol {
     func updateColor(with color: UIColor?) {
         colorView.backgroundColor = color
-        deck?.colorToStore = color?.hexValue ?? 0
+        deck?.color = color?.hexValue ?? 0
     }
 }

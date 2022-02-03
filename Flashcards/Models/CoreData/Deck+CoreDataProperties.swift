@@ -16,9 +16,9 @@ extension Deck {
         return NSFetchRequest<Deck>(entityName: "Deck")
     }
 
-    @NSManaged public var color: Int64
+    @NSManaged public var colorData: Int64
     @NSManaged public var deckDescription: String?
-    @NSManaged public var flashcardsCount: Int64
+    @NSManaged public var flashcardsCountData: Int64
     @NSManaged public var iconName: String?
     @NSManaged public var isDeactived: Bool
     @NSManaged public var percentageOfLearned: Float
@@ -26,21 +26,21 @@ extension Deck {
     @NSManaged public var flashcards: NSSet?
     @NSManaged public var sessionSettings: SessionSettings?
     
-    var colorToStore: Int {
+    var color: Int {
         set {
-            color = Int64(newValue)
+            colorData = Int64(newValue)
         }
         get {
-            Int(color)
+            Int(colorData)
         }
     }
     
-    var flashcardsCountToStore: Int {
+    var flashcardsCount: Int {
         set {
-            flashcardsCount = Int64(newValue)
+            flashcardsCountData = Int64(newValue)
         }
         get {
-            Int(flashcardsCount)
+            Int(flashcardsCountData)
         }
     }
 
