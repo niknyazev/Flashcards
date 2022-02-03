@@ -31,6 +31,12 @@
 		01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */; };
 		01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */; };
 		01A6A6E92796CD99001A1E46 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E82796CD99001A1E46 /* UserDefaultsManager.swift */; };
+		01E404A827AC40E400E6A6DB /* SessionSettings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A227AC40E400E6A6DB /* SessionSettings+CoreDataClass.swift */; };
+		01E404A927AC40E400E6A6DB /* SessionSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A327AC40E400E6A6DB /* SessionSettings+CoreDataProperties.swift */; };
+		01E404AA27AC40E400E6A6DB /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A427AC40E400E6A6DB /* Deck+CoreDataClass.swift */; };
+		01E404AB27AC40E400E6A6DB /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A527AC40E400E6A6DB /* Deck+CoreDataProperties.swift */; };
+		01E404AC27AC40E400E6A6DB /* Flashcard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A627AC40E400E6A6DB /* Flashcard+CoreDataClass.swift */; };
+		01E404AD27AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A727AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift */; };
 		01EAAFD327994C75006951B6 /* JSONWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD227994C75006951B6 /* JSONWorker.swift */; };
 		01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD627995848006951B6 /* NetworkTranslator.swift */; };
 		01EAAFD927995896006951B6 /* TranslationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD827995896006951B6 /* TranslationResult.swift */; };
@@ -65,6 +71,12 @@
 		01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewController.swift; sourceTree = "<group>"; };
 		01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewController.swift; sourceTree = "<group>"; };
 		01A6A6E82796CD99001A1E46 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		01E404A227AC40E400E6A6DB /* SessionSettings+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionSettings+CoreDataClass.swift"; sourceTree = "<group>"; };
+		01E404A327AC40E400E6A6DB /* SessionSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		01E404A427AC40E400E6A6DB /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		01E404A527AC40E400E6A6DB /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		01E404A627AC40E400E6A6DB /* Flashcard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flashcard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		01E404A727AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flashcard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		01EAAFD227994C75006951B6 /* JSONWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONWorker.swift; sourceTree = "<group>"; };
 		01EAAFD627995848006951B6 /* NetworkTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTranslator.swift; sourceTree = "<group>"; };
 		01EAAFD827995896006951B6 /* TranslationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResult.swift; sourceTree = "<group>"; };
@@ -222,6 +234,7 @@
 		0198F6682797460000B13C90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01E404AE27AC4B5B00E6A6DB /* CoreData */,
 				0198F6692797462300B13C90 /* ImagesUrlList.swift */,
 				01EAAFD827995896006951B6 /* TranslationResult.swift */,
 			);
@@ -299,6 +312,19 @@
 				0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */,
 			);
 			path = FlashcardsViewer;
+			sourceTree = "<group>";
+		};
+		01E404AE27AC4B5B00E6A6DB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				01E404A227AC40E400E6A6DB /* SessionSettings+CoreDataClass.swift */,
+				01E404A327AC40E400E6A6DB /* SessionSettings+CoreDataProperties.swift */,
+				01E404A427AC40E400E6A6DB /* Deck+CoreDataClass.swift */,
+				01E404A527AC40E400E6A6DB /* Deck+CoreDataProperties.swift */,
+				01E404A627AC40E400E6A6DB /* Flashcard+CoreDataClass.swift */,
+				01E404A727AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		01EAAFD4279950DA006951B6 /* Network */ = {
@@ -399,6 +425,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E404AD27AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift in Sources */,
+				01E404AA27AC40E400E6A6DB /* Deck+CoreDataClass.swift in Sources */,
 				01EAAFD927995896006951B6 /* TranslationResult.swift in Sources */,
 				01FB3E5D279B314700C4CA71 /* DeckCellViewModel.swift in Sources */,
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
@@ -407,6 +435,7 @@
 				01A6A6E92796CD99001A1E46 /* UserDefaultsManager.swift in Sources */,
 				0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */,
 				0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */,
+				01E404AC27AC40E400E6A6DB /* Flashcard+CoreDataClass.swift in Sources */,
 				011FA2A1279C436F00EDD388 /* SettingsSessionViewController.swift in Sources */,
 				0102C9AF278EF0CD00A2637B /* StorageManager.swift in Sources */,
 				0102C9AB278EE27F00A2637B /* DecksListViewController.swift in Sources */,
@@ -414,13 +443,16 @@
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
 				013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */,
 				013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */,
+				01E404A827AC40E400E6A6DB /* SessionSettings+CoreDataClass.swift in Sources */,
 				01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 				0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */,
 				01FB3E5A279B11F800C4CA71 /* SpeechSynthesizer.swift in Sources */,
 				01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */,
+				01E404AB27AC40E400E6A6DB /* Deck+CoreDataProperties.swift in Sources */,
 				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
 				013DFC0327A6DCDD00531E89 /* Colors.swift in Sources */,
+				01E404A927AC40E400E6A6DB /* SessionSettings+CoreDataProperties.swift in Sources */,
 				013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */,
 				01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */,
 				0198F66C27974C4600B13C90 /* ImageChoicerCellViewController.swift in Sources */,

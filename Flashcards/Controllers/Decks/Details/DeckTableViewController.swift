@@ -115,6 +115,6 @@ class DeckTableViewController: UITableViewController {
 extension DeckTableViewController: ColorUpdaterProtocol {
     func updateColor(with color: UIColor?) {
         colorView.backgroundColor = color
-        deck?.color = Int64(color?.hexValue ?? 0)
+        deck?.colorToStore = color?.hexValue ?? 0
     }
 }

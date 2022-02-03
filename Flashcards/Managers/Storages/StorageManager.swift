@@ -110,7 +110,7 @@ class StorageManager {
 
         let percentageOfLearned = Float(learnedCount) / Float(flashcards.count)
         
-        deck.flashcardsCount = Int64(deck.flashcards?.count ?? 0)
+        deck.flashcardsCountToStore = deck.flashcards?.count ?? 0
         deck.percentageOfLearned = percentageOfLearned
         
     }
