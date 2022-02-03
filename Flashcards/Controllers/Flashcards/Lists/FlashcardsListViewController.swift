@@ -78,13 +78,17 @@ class FlashcardsListViewController: UITableViewController {
         
         let textString = text?.isEmpty ?? true ? nil : text //TODO: bad code
         
-        storageManager.fetchFlashcards(deck: deck, isLearned: filter, text: textString) { result in
-            switch result {
-            case .success(let flashcardsResult):
-                self.flashcards = flashcardsResult
-            case .failure(let error):
-                print(error)
-            }
+        storageManager.fetchFlashcards(
+            deck: deck,
+            isLearned: filter,
+            text: textString) { result in
+            
+                switch result {
+                case .success(let flashcardsResult):
+                    self.flashcards = flashcardsResult
+                case .failure(let error):
+                    print(error)
+                }
         }
     }
     

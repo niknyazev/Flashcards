@@ -116,10 +116,17 @@ class FlashcardsViewerViewController: UIViewController {
        
         let settings = deck.sessionSettings
         let complexity = settings?.flashcardsComplexity ?? 0
+        var isLearned: Bool? = nil
+        if settings?.flashcardsStatus == 1 {
+            isLearned = true
+        } else if settings?.flashcardsStatus == 2 {
+            isLearned = false
+        }
         
-        storageManager.fetchFlashcards(deck: deck,
-                                       isLearned: true,
-                                       complexity: complexity) { result in
+        storageManager.fetchFlashcards(
+            deck: deck,
+            isLearned: isLearned,
+            complexity: complexity) { result in
             switch result {
             case .success(let flashcardsResult):
                 self.flashcards = flashcardsResult
