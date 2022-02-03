@@ -25,6 +25,7 @@ class FlashcardTableViewCell: UITableViewCell {
         if let imageData = flashcard.image {
             flashcardImage.image = UIImage(data: imageData)
             flashcardImage.layer.cornerRadius = flashcardImage.frame.height / 2
+            flashcardImage.isHidden = false
         } else {
             flashcardImage.isHidden = true
         }
