@@ -14,6 +14,7 @@ class FlashcardTableViewCell: UITableViewCell {
     @IBOutlet weak var verticalLineView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var flashcardImage: UIImageView!
+    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
     func configure(with flashcard: Flashcard) {
         
@@ -26,8 +27,10 @@ class FlashcardTableViewCell: UITableViewCell {
             flashcardImage.image = UIImage(data: imageData)
             flashcardImage.layer.cornerRadius = flashcardImage.frame.height / 2
             flashcardImage.isHidden = false
+            trailingConstraint.constant = flashcardImage.frame.width + 40
         } else {
             flashcardImage.isHidden = true
+            trailingConstraint.constant = 20
         }
        
         mainView.backgroundColor = .white

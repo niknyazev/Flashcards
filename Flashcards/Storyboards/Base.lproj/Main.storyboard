@@ -554,10 +554,10 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XJN-pN-LqB">
-                                                    <rect key="frame" x="30" y="0.0" width="244" height="100"/>
+                                                    <rect key="frame" x="30" y="0.0" width="334" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR9-wl-4he">
-                                                            <rect key="frame" x="0.0" y="0.0" width="244" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="hGD-Q2-dMl"/>
                                                             </constraints>
@@ -566,7 +566,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back side" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDe-mK-fDW">
-                                                            <rect key="frame" x="0.0" y="50" width="244" height="50"/>
+                                                            <rect key="frame" x="0.0" y="50" width="334" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="tIf-rW-srB"/>
                                                             </constraints>
@@ -586,8 +586,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="XJN-pN-LqB" firstAttribute="leading" secondItem="Fbj-uk-Mkj" secondAttribute="trailing" constant="20" id="FiJ-QC-Nok"/>
+                                                <constraint firstAttribute="trailing" secondItem="XJN-pN-LqB" secondAttribute="trailing" constant="20" id="Mlm-gX-XT0"/>
                                                 <constraint firstItem="sVc-2E-jM2" firstAttribute="centerY" secondItem="9oG-zQ-yy2" secondAttribute="centerY" id="e4V-9N-2Cq"/>
-                                                <constraint firstItem="sVc-2E-jM2" firstAttribute="leading" secondItem="XJN-pN-LqB" secondAttribute="trailing" constant="20" id="hTk-1f-rFD"/>
                                                 <constraint firstAttribute="bottom" secondItem="XJN-pN-LqB" secondAttribute="bottom" id="n78-w4-4qL"/>
                                                 <constraint firstAttribute="trailing" secondItem="sVc-2E-jM2" secondAttribute="trailing" constant="20" id="ojk-Bv-2tY"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fbj-uk-Mkj" secondAttribute="bottom" id="r69-eN-ECG"/>
@@ -609,6 +609,7 @@
                                     <outlet property="flashcardImage" destination="sVc-2E-jM2" id="dfp-cq-h2c"/>
                                     <outlet property="frontSideLabel" destination="NR9-wl-4he" id="KYe-f8-TJM"/>
                                     <outlet property="mainView" destination="9oG-zQ-yy2" id="ZfJ-eN-i1n"/>
+                                    <outlet property="trailingConstraint" destination="Mlm-gX-XT0" id="mb0-ei-cPA"/>
                                     <outlet property="verticalLineView" destination="Fbj-uk-Mkj" id="6Ze-7p-H0G"/>
                                 </connections>
                             </tableViewCell>
