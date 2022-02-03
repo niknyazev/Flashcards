@@ -17,7 +17,7 @@
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isLearned" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isSession" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="levelOfComplexity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="levelOfComplexityValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashcards" inverseEntity="Deck"/>
     </entity>
     <entity name="SessionSettings" representedClassName="SessionSettings" syncable="YES">

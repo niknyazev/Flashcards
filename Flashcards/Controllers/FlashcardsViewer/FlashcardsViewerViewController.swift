@@ -43,7 +43,7 @@ class FlashcardsViewerViewController: UIViewController {
     }
     
     @IBAction func changeLevelOfComplexity(_ sender: UISegmentedControl) {
-        flashcards[currentIndex].levelOfComplexity = Int16(sender.selectedSegmentIndex)
+        flashcards[currentIndex].levelOfComplexity = sender.selectedSegmentIndex
         storageManager.updateFlashcard(deck: flashcards[currentIndex].deck)
     }
     
