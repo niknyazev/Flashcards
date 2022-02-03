@@ -26,6 +26,18 @@ class SettingsSessionViewController: UITableViewController {
         setupElements()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "flashcardsViewer" {
+            
+            guard let viewerVC = segue.destination as? FlashcardsViewerViewController else { return }
+         
+            viewerVC.deck = deck
+            
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -35,6 +47,7 @@ class SettingsSessionViewController: UITableViewController {
         switch indexPath {
         case IndexPath(row: 0, section: 1):
             startSession()
+            return
         case IndexPath(row: 2, section: 0):
             
             choicerVC.delegate = {currentIndex in
