@@ -554,16 +554,16 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XJN-pN-LqB">
-                                                    <rect key="frame" x="30" y="0.0" width="334" height="100"/>
+                                                    <rect key="frame" x="30" y="10" width="334" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR9-wl-4he">
-                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back side" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDe-mK-fDW">
-                                                            <rect key="frame" x="0.0" y="50" width="334" height="50"/>
+                                                            <rect key="frame" x="0.0" y="40" width="334" height="40"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -582,10 +582,10 @@
                                                 <constraint firstItem="XJN-pN-LqB" firstAttribute="leading" secondItem="Fbj-uk-Mkj" secondAttribute="trailing" constant="20" id="FiJ-QC-Nok"/>
                                                 <constraint firstAttribute="trailing" secondItem="XJN-pN-LqB" secondAttribute="trailing" constant="20" id="Mlm-gX-XT0"/>
                                                 <constraint firstItem="sVc-2E-jM2" firstAttribute="centerY" secondItem="9oG-zQ-yy2" secondAttribute="centerY" id="e4V-9N-2Cq"/>
-                                                <constraint firstAttribute="bottom" secondItem="XJN-pN-LqB" secondAttribute="bottom" id="n78-w4-4qL"/>
+                                                <constraint firstAttribute="bottom" secondItem="XJN-pN-LqB" secondAttribute="bottom" constant="10" id="n78-w4-4qL"/>
                                                 <constraint firstAttribute="trailing" secondItem="sVc-2E-jM2" secondAttribute="trailing" constant="20" id="ojk-Bv-2tY"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fbj-uk-Mkj" secondAttribute="bottom" id="r69-eN-ECG"/>
-                                                <constraint firstItem="XJN-pN-LqB" firstAttribute="top" secondItem="9oG-zQ-yy2" secondAttribute="top" id="uwm-38-geW"/>
+                                                <constraint firstItem="XJN-pN-LqB" firstAttribute="top" secondItem="9oG-zQ-yy2" secondAttribute="top" constant="10" id="uwm-38-geW"/>
                                                 <constraint firstItem="Fbj-uk-Mkj" firstAttribute="leading" secondItem="9oG-zQ-yy2" secondAttribute="leading" id="vkb-4X-y81"/>
                                                 <constraint firstItem="Fbj-uk-Mkj" firstAttribute="top" secondItem="9oG-zQ-yy2" secondAttribute="top" id="vyx-bz-X2U"/>
                                             </constraints>
