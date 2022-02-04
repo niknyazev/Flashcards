@@ -59,7 +59,7 @@ class StorageManager {
         }
         
         if let complexity = complexity {
-            predicates.append(NSPredicate(format: "levelOfComplexity == %i", complexity))
+            predicates.append(NSPredicate(format: "levelOfComplexityValue == %i", complexity))
         }
                 
         let fetchRequest = Flashcard.fetchRequest()

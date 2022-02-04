@@ -14,7 +14,8 @@ class SettingsSessionViewController: UITableViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var complexityLabel: UILabel!
     @IBOutlet weak var directionLabel: UILabel!
-        
+    @IBOutlet weak var needPronounce: UISwitch!
+    
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
             
@@ -85,6 +86,10 @@ class SettingsSessionViewController: UITableViewController {
         deck.sessionSettings?.saveResults.toggle()
     }
     
+    @IBAction func needPronounceChanged(_ sender: Any) {
+        deck.sessionSettings?.needPronounce.toggle()
+    }
+    
     private func setupElements() {
         
         //TODO: need refactoring
@@ -94,9 +99,12 @@ class SettingsSessionViewController: UITableViewController {
         }
         
         saveResultSwitch.isOn = sessionSettings.saveResults
+        needPronounce.isOn = sessionSettings.needPronounce
         statusLabel.text = SettingsStatuses.allCases[Int(sessionSettings.flashcardsStatus)].rawValue
         complexityLabel.text = SettingsComplexity.allCases[Int(sessionSettings.flashcardsComplexity)].rawValue
         directionLabel.text = SettingsDirections.allCases[Int(sessionSettings.direction)].rawValue
+        
+        
         
     }
     

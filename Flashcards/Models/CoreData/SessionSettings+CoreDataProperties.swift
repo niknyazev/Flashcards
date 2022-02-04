@@ -22,6 +22,7 @@ extension SessionSettings {
     @NSManaged public var flashcardsStatus: Int16
     @NSManaged public var saveResults: Bool
     @NSManaged public var deck: Deck?
+    @NSManaged public var needPronounce: Bool
 
 }
 

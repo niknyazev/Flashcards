@@ -929,6 +929,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edr-Sz-9Qr">
                                                     <rect key="frame" x="305" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="needPronounceChanged:" destination="9CH-Ll-gBT" eventType="valueChanged" id="cDz-j2-nT5"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -1078,6 +1081,7 @@
                         <outlet property="complexityLabel" destination="dxs-9T-SaG" id="mOE-OO-MEm"/>
                         <outlet property="countTextField" destination="fZl-AH-YlJ" id="g4G-Cg-WM1"/>
                         <outlet property="directionLabel" destination="uaH-Qn-7YR" id="ZM5-hV-yiG"/>
+                        <outlet property="needPronounce" destination="edr-Sz-9Qr" id="uDJ-8O-GZA"/>
                         <outlet property="saveResultSwitch" destination="UA7-NP-fTK" id="5ua-qR-eCk"/>
                         <outlet property="statusLabel" destination="beT-Q8-hv0" id="Bfa-2M-Fpd"/>
                         <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="zOa-Gj-qDq"/>

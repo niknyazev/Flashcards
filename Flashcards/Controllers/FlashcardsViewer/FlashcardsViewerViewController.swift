@@ -64,6 +64,8 @@ class FlashcardsViewerViewController: UIViewController {
             return
         }
         
+        guard let settings = deck.sessionSettings, settings.needPronounce else { return }
+        
         guard let text = flashcards[currentIndex].frontSide else { return }
         SpeechSynthesizer.shared.pronounce(text: text)
     }
