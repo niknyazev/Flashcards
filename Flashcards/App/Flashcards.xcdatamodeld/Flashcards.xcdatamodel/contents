@@ -23,7 +23,7 @@
     <entity name="SessionSettings" representedClassName="SessionSettings" syncable="YES">
         <attribute name="direction" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="flashcardsComplexity" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="flashcardsCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="flashcardsLimit" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="flashcardsStatus" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="needPronounce" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="saveResults" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>

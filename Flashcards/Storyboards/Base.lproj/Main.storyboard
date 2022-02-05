@@ -1034,6 +1034,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="countChanged:" destination="9CH-Ll-gBT" eventType="editingDidEnd" id="QGv-sh-NvX"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>

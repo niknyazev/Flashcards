@@ -18,7 +18,7 @@ extension SessionSettings {
 
     @NSManaged public var direction: Int16
     @NSManaged public var flashcardsComplexity: Int16
-    @NSManaged public var flashcardsCount: Int16
+    @NSManaged public var flashcardsLimit: Int16
     @NSManaged public var flashcardsStatus: Int16
     @NSManaged public var saveResults: Bool
     @NSManaged public var deck: Deck?

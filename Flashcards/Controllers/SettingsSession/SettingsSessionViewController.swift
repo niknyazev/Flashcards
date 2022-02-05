@@ -18,7 +18,7 @@ class SettingsSessionViewController: UITableViewController {
     
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
-            
+          
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
@@ -82,6 +82,10 @@ class SettingsSessionViewController: UITableViewController {
         
     }
     
+    @IBAction func countChanged(_ sender: Any) {
+        deck.sessionSettings?.flashcardsLimit = Int16(countTextField.text ?? "0") ?? 0
+    }
+    
     @IBAction func saveResultsChanged() {
         deck.sessionSettings?.saveResults.toggle()
     }
@@ -103,6 +107,7 @@ class SettingsSessionViewController: UITableViewController {
         statusLabel.text = SettingsStatuses.allCases[Int(sessionSettings.flashcardsStatus)].rawValue
         complexityLabel.text = SettingsComplexity.allCases[Int(sessionSettings.flashcardsComplexity)].rawValue
         directionLabel.text = SettingsDirections.allCases[Int(sessionSettings.direction)].rawValue
+        countTextField.text = String(sessionSettings.flashcardsLimit)
         
         
         

@@ -42,6 +42,7 @@ class StorageManager {
                          isLearned: Bool? = nil,
                          complexity: Int16? = nil,
                          text: String? = nil,
+                         limit: Int16? = nil,
                          completion: (Result<[Flashcard], Error>) -> Void) {
        
         var predicates: [NSPredicate] = []
@@ -49,7 +50,7 @@ class StorageManager {
         if let deck = deck {
             predicates.append(NSPredicate(format: "deck == %@", deck))
         }
-        
+       
         if let isLearned = isLearned {
             predicates.append(NSPredicate(format: "isLearned == %@", NSNumber(booleanLiteral: isLearned)))
         }
@@ -64,6 +65,11 @@ class StorageManager {
                 
         let fetchRequest = Flashcard.fetchRequest()
         fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        
+        if let limit = limit, limit > 0 {
+            fetchRequest.fetchLimit = Int(limit)
+        }
+        
         
         do {
             let entities = try viewContext.fetch(fetchRequest)
@@ -123,7 +129,7 @@ class StorageManager {
             
         settings.deck = deck
         settings.flashcardsStatus = status
-        settings.flashcardsCount = count
+        settings.flashcardsLimit = count
         settings.flashcardsComplexity = complexity
         saveContext()
     }
