@@ -470,7 +470,9 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="SU2-xI-L7i" secondAttribute="bottom" constant="30" id="108-Fz-Gge"/>
                                     <constraint firstItem="u4S-ne-pdo" firstAttribute="centerX" secondItem="PaU-4c-srU" secondAttribute="centerX" id="5zD-xD-S9B"/>
+                                    <constraint firstItem="Kpe-sz-iwj" firstAttribute="height" secondItem="PaU-4c-srU" secondAttribute="height" multiplier="0.224215" id="6gi-Yi-pJo"/>
                                     <constraint firstItem="Kpe-sz-iwj" firstAttribute="centerX" secondItem="PaU-4c-srU" secondAttribute="centerX" id="EET-H8-vaz"/>
+                                    <constraint firstItem="Kpe-sz-iwj" firstAttribute="width" secondItem="PaU-4c-srU" secondAttribute="height" multiplier="50:223" id="J7J-Mw-gds"/>
                                     <constraint firstItem="SU2-xI-L7i" firstAttribute="centerX" secondItem="PaU-4c-srU" secondAttribute="centerX" id="LXy-Oh-dMD"/>
                                     <constraint firstItem="VCu-1P-hMr" firstAttribute="leading" secondItem="PaU-4c-srU" secondAttribute="leading" constant="30" id="Nbt-N1-xcu"/>
                                     <constraint firstItem="u4S-ne-pdo" firstAttribute="centerY" secondItem="PaU-4c-srU" secondAttribute="centerY" id="QS8-70-rFz"/>
