@@ -387,10 +387,6 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-sz-iwj">
                                         <rect key="frame" x="112" y="41" width="150" height="147.5"/>
                                         <color key="tintColor" systemColor="systemGray4Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="Mbo-LF-gh3"/>
-                                            <constraint firstAttribute="height" constant="150" id="Oyy-Gh-lDo"/>
-                                        </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kec-g0-ow5" userLabel="Front View">
                                         <rect key="frame" x="30" y="200" width="314" height="130"/>
