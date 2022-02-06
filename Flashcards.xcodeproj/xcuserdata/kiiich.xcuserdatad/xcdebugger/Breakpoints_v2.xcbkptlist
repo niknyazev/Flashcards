@@ -1113,8 +1113,8 @@
             filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "markFlashcardAsLearned()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1132,6 +1132,22 @@
             startingLineNumber = "70"
             endingLineNumber = "70"
             landmarkName = "fetchFlashcards(deck:isLearned:complexity:text:limit:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "577D1F68-B4A5-4610-A74B-01A5C46516AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "pronounceFlashcard()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

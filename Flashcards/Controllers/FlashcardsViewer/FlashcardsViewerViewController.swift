@@ -11,13 +11,14 @@ class FlashcardsViewerViewController: UIViewController {
     
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var frontSideLabel: UILabel!
-    @IBOutlet weak var backSideLabel: UIButton!
+    @IBOutlet weak var backSideLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var flashcardContentView: UIView!
     @IBOutlet weak var levelOfComplexity: UISegmentedControl!
     @IBOutlet weak var allIsLearnedLabel: UILabel!
     @IBOutlet weak var dontKnowButton: UIButton!
     @IBOutlet weak var knowButton: UIButton!
+    @IBOutlet weak var showButton: UIButton!
     
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
@@ -55,7 +56,8 @@ class FlashcardsViewerViewController: UIViewController {
     }
     
     @IBAction func showPressed(_ sender: UIButton) {
-        sender.setTitle(flashcards[currentIndex].backSide, for: .normal)
+        backSideLabel.isHidden = false
+        showButton.isHidden = true
     }
         
     private func pronounceFlashcard() {
@@ -101,6 +103,7 @@ class FlashcardsViewerViewController: UIViewController {
         allIsLearnedLabel.isHidden = !allIsLearned
         frontSideLabel.isHidden = allIsLearned
         backSideLabel.isHidden = allIsLearned
+        showButton.isHidden = allIsLearned
         levelOfComplexity.isHidden = allIsLearned
         flashcardImage.isHidden = allIsLearned
         
@@ -110,6 +113,11 @@ class FlashcardsViewerViewController: UIViewController {
         guard let flashcard = flashcard else { return }
         
         frontSideLabel.text = flashcard.frontSide
+        backSideLabel.text = flashcard.backSide
+        
+        backSideLabel.isHidden = true
+        showButton.isHidden = false
+        
         levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity)
         
     }
