@@ -38,6 +38,12 @@ class FlashcardsViewerViewController: UIViewController {
     
     @IBAction func knowPressed() {
         markFlashcardAsLearned()
+        
+        if flashcards.isEmpty {
+            setupElements(with: nil)
+            return
+        }
+        
         setupElements(with: flashcards[currentIndex])
         setupProgressView()
         pronounceFlashcard()
