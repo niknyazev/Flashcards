@@ -103,8 +103,14 @@ class FlashcardsListViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.tintColor = .white
         searchController.searchBar.scopeButtonTitles = ["All", "New", "Learned"]
         searchController.searchBar.delegate = self
+        
+        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.tintColor = Colors.mainColor
+            textField.backgroundColor = .white
+        }
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
