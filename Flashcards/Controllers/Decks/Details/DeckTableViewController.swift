@@ -23,14 +23,6 @@ class DeckTableViewController: UITableViewController {
     
     private let inactiveAlpha = 0.3
     private let storageManager = StorageManager.shared
-    private var buttonsImages: [UIButton: String] = [:]
-    private var chosenIconName = "circle" //TODO: need to find best way how to cache image
-    private let imageNames = [
-        "circle",
-        "doc.richtext.he",
-        "doc.plaintext",
-        "doc.text.below.ecg"
-    ]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -41,7 +33,6 @@ class DeckTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
         setupElements()
     }
     
@@ -56,7 +47,6 @@ class DeckTableViewController: UITableViewController {
         } else {
             storageManager.saveDeck(
                 deckTitleTextField.text ?? "",
-                iconName: chosenIconName,
                 completion: nil
             )
         }
@@ -69,24 +59,7 @@ class DeckTableViewController: UITableViewController {
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
-    
-    @IBAction func iconPressed(_ sender: UIButton) {
-        for button in buttonsIcon {
-            button.alpha = (button == sender ? 1 : inactiveAlpha)
-        }
-        chosenIconName = buttonsImages[sender] ?? chosenIconName
-        deck?.iconName = chosenIconName
-    }
-    
-    private func setupButtons() {
-        
-        for (index, button) in buttonsIcon.enumerated() {
-            buttonsImages[button] = imageNames[index]
-            button.imageView?.image = UIImage(systemName: imageNames[index])
-        }
-        
-    }
-    
+            
     private func setupElements() {
         
         guard let deck = deck else {
@@ -97,10 +70,7 @@ class DeckTableViewController: UITableViewController {
         deckTitleTextField.text = deck.title
         deckDescriptionTextField.text = deck.deckDescription
         colorView.backgroundColor = UIColor(hex: deck.color)
-        
-        for button in buttonsIcon {
-            button.alpha = (buttonsImages[button] == deck.iconName ? 1 : inactiveAlpha)
-        }
+
         
     }
     

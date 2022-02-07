@@ -24,14 +24,7 @@ class DeckTableViewCell: UITableViewCell {
             learnButton.layer.cornerRadius = 7
             let color = UIColor(hex: viewModel.color)
             learnButton.tintColor = color
-            if viewModel.iconName == "circle" {
-                imageIconView.isHidden = true
-                addProgressCircle(flashcardsLearned: viewModel.flashcardsLearned, color: color)
-            } else {
-                imageIconView.image = UIImage(systemName: viewModel.iconName)
-                imageIconView.tintColor = color
-            }
-           
+            addProgressCircle(flashcardsLearned: viewModel.flashcardsLearned, color: color)
         }
     }
     
@@ -42,6 +35,8 @@ class DeckTableViewCell: UITableViewCell {
     private func addProgressCircle(flashcardsLearned: Float, color: UIColor) {
                 
         //TODO: figure out why dont work arcCenter: iconView.center. - this value is 45, 40
+        
+        iconView.layer.sublayers?.removeAll(keepingCapacity: false)
         
         let center = CGPoint(x: iconView.frame.height / 2, y: iconView.frame.width / 2)
         let radius = iconView.frame.height / 2 - 10
