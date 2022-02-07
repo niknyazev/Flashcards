@@ -9,11 +9,11 @@ import UIKit
 
 class DeckTableViewCell: UITableViewCell {
 
-//    @IBOutlet weak var deckImage: UIImageView!
     @IBOutlet weak var deckName: UILabel!
     @IBOutlet weak var flashcardCount: UILabel!
     @IBOutlet weak var learnButton: UIButton!
     @IBOutlet weak var iconView: UIView!
+    @IBOutlet weak var imageIconView: UIImageView!
     
     var delegate: FlashcardViewerDelegate!
         
@@ -24,7 +24,14 @@ class DeckTableViewCell: UITableViewCell {
             learnButton.layer.cornerRadius = 7
             let color = UIColor(hex: viewModel.color)
             learnButton.tintColor = color
-            addIcon(flashcardsLearned: viewModel.flashcardsLearned, color: color)
+            if viewModel.iconName == "circle" {
+                imageIconView.isHidden = true
+                addProgressCircle(flashcardsLearned: viewModel.flashcardsLearned, color: color)
+            } else {
+                imageIconView.image = UIImage(systemName: viewModel.iconName)
+                imageIconView.tintColor = color
+            }
+           
         }
     }
     
@@ -32,7 +39,7 @@ class DeckTableViewCell: UITableViewCell {
         delegate.openFlashcardViewer(for: viewModel.deck)
     }
     
-    private func addIcon(flashcardsLearned: Float, color: UIColor) {
+    private func addProgressCircle(flashcardsLearned: Float, color: UIColor) {
                 
         //TODO: figure out why dont work arcCenter: iconView.center. - this value is 45, 40
         

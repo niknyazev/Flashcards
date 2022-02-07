@@ -745,8 +745,8 @@
             filePath = "Flashcards/Managers/Storages/StorageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "saveSessionSettings(deck:complexity:count:status:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -937,10 +937,10 @@
             filePath = "Flashcards/Controllers/Flashcards/Lists/FlashcardsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "FlashcardsListViewController"
-            landmarkType = "21">
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -953,9 +953,9 @@
             filePath = "Flashcards/Controllers/Flashcards/Lists/FlashcardsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "fetchFlashcards(text:filterType:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1097,9 +1097,9 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "addIcon(flashcardsLearned:color:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "addProgressCircle(flashcardsLearned:color:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

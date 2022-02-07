@@ -58,9 +58,18 @@
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKH-Ot-Fa3">
                                             <rect key="frame" x="20" y="10" width="60" height="60"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aXF-k1-SgR">
+                                                    <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="aXF-k1-SgR" secondAttribute="bottom" constant="5" id="2F3-Pa-acq"/>
                                                 <constraint firstAttribute="width" constant="60" id="8nM-wE-xFd"/>
+                                                <constraint firstAttribute="trailing" secondItem="aXF-k1-SgR" secondAttribute="trailing" constant="5" id="XDW-iT-HT8"/>
+                                                <constraint firstItem="aXF-k1-SgR" firstAttribute="top" secondItem="kKH-Ot-Fa3" secondAttribute="top" constant="5" id="hJy-OY-W7Z"/>
                                                 <constraint firstAttribute="height" constant="60" id="i2t-Qc-s6n"/>
+                                                <constraint firstItem="aXF-k1-SgR" firstAttribute="leading" secondItem="kKH-Ot-Fa3" secondAttribute="leading" constant="5" id="zLG-nX-HI8"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -77,6 +86,7 @@
                                     <outlet property="deckName" destination="hZg-02-LYS" id="JpB-OR-kmD"/>
                                     <outlet property="flashcardCount" destination="OzO-MX-SbM" id="72L-LV-Zir"/>
                                     <outlet property="iconView" destination="kKH-Ot-Fa3" id="KDx-b4-mLp"/>
+                                    <outlet property="imageIconView" destination="aXF-k1-SgR" id="kIt-bT-IAe"/>
                                     <outlet property="learnButton" destination="t5Y-7z-a5N" id="cck-5F-QBO"/>
                                     <segue destination="EOc-bA-xmQ" kind="show" identifier="flashcards" id="KBK-rf-WAH"/>
                                 </connections>
@@ -1135,7 +1145,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zOa-Gj-qDq"/>
+        <segue reference="M50-tY-utT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
