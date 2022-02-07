@@ -18,10 +18,8 @@ class DeckTableViewController: UITableViewController {
     
     @IBOutlet weak var deckTitleTextField: UITextField!
     @IBOutlet weak var deckDescriptionTextField: UITextField!
-    @IBOutlet var buttonsIcon: [UIButton]!
     @IBOutlet weak var colorView: UIView!
     
-    private let inactiveAlpha = 0.3
     private let storageManager = StorageManager.shared
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,23 +61,15 @@ class DeckTableViewController: UITableViewController {
     private func setupElements() {
         
         guard let deck = deck else {
-            setupElementsForNewDeck()
             return
         }
         
         deckTitleTextField.text = deck.title
         deckDescriptionTextField.text = deck.deckDescription
         colorView.backgroundColor = UIColor(hex: deck.color)
-
         
     }
     
-    private func setupElementsForNewDeck() {
-        for index in 1..<buttonsIcon.count {
-            buttonsIcon[index].alpha = inactiveAlpha
-        }
-    }
-
 }
 
 extension DeckTableViewController: ColorUpdaterProtocol {
