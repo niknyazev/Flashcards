@@ -25,6 +25,7 @@ class FlashcardTableViewController: UITableViewController {
     @IBOutlet weak var backSideTextField: UITextField!
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var flashcardImage: UIImageView!
+    @IBOutlet weak var isLearnedSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,10 @@ class FlashcardTableViewController: UITableViewController {
         translator.request(query: text) { result, error in
             self.backSideTextField.text = result
         }
+    }
+    
+    @IBAction func isLearnedChanged() {
+        flashcard?.isLearned.toggle()
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
@@ -137,6 +142,7 @@ class FlashcardTableViewController: UITableViewController {
         
         frontSideTextField.text = flashcard.frontSide
         backSideTextField.text = flashcard.backSide
+        isLearnedSwitch.isOn = flashcard.isLearned
         
         if let imageData = flashcard.image {
             flashcardImage.image = UIImage(data: imageData)

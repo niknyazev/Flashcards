@@ -181,7 +181,7 @@ extension FlashcardsListViewController: UISearchResultsUpdating {
 extension FlashcardsListViewController: FlashcardsUpdater {
     func updateFlashcards() {
         delegate.updateDecksList()
-        fetchFlashcards()
+        fetchFlashcards(text: nil, filterType: searchController.searchBar.selectedScopeButtonIndex)
         setProgressLearning()
         tableView.reloadData()
     }
