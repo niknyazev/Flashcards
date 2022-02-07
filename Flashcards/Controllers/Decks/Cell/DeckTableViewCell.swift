@@ -15,20 +15,24 @@ class DeckTableViewCell: UITableViewCell {
     @IBOutlet weak var iconView: UIView!
     
     var delegate: FlashcardViewerDelegate!
-        
     var viewModel: DeckCellViewModelProtocol! {
         didSet {
             deckName.text = viewModel.title
             flashcardCount.text = viewModel.flashcardCount
-            learnButton.layer.cornerRadius = 7
             let color = UIColor(hex: viewModel.color)
-            learnButton.tintColor = color
+            setupButton(color: color)
             addProgressCircle(flashcardsLearned: viewModel.flashcardsLearned, color: color)
         }
     }
     
     @IBAction func startStudy() {
         delegate.openFlashcardViewer(for: viewModel.deck)
+    }
+    
+    private func setupButton(color: UIColor) {
+        learnButton.layer.cornerRadius = 7
+        learnButton.backgroundColor = color
+        learnButton.tintColor = .white
     }
     
     private func addProgressCircle(flashcardsLearned: Float, color: UIColor) {
@@ -53,6 +57,7 @@ class DeckTableViewCell: UITableViewCell {
         track.fillColor = UIColor.clear.cgColor
         track.lineWidth = 7
         track.strokeColor = UIColor.lightGray.cgColor
+        
         iconView.layer.addSublayer(track)
         
         let fill = CAShapeLayer()
