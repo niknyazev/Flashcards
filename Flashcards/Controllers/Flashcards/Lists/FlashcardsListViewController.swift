@@ -71,9 +71,9 @@ class FlashcardsListViewController: UITableViewController {
         var filter: Bool? = nil
         
         if filterType == 1 {
-            filter = true
-        } else if filterType == 2 {
             filter = false
+        } else if filterType == 2 {
+            filter = true
         }
         
         let textString = text?.isEmpty ?? true ? nil : text //TODO: bad code

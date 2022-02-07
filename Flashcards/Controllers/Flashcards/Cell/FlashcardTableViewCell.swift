@@ -21,8 +21,8 @@ class FlashcardTableViewCell: UITableViewCell {
         frontSideLabel.text = flashcard.frontSide
         backSideLabel.text = flashcard.backSide
         verticalLineView.backgroundColor = flashcard.isLearned
-            ? verticalLineView.backgroundColor
-            : Colors.mainColor
+            ? Colors.mainColor
+            : .systemGray2
         if let imageData = flashcard.image {
             flashcardImage.image = UIImage(data: imageData)
             flashcardImage.layer.cornerRadius = flashcardImage.frame.height / 2
