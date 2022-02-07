@@ -19,7 +19,6 @@ extension Deck {
     @NSManaged public var colorData: Int64
     @NSManaged public var deckDescription: String?
     @NSManaged public var flashcardsCountData: Int64
-    @NSManaged public var iconName: String?
     @NSManaged public var isDeactived: Bool
     @NSManaged public var percentageOfLearned: Float
     @NSManaged public var title: String?

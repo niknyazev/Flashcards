@@ -4,7 +4,6 @@
         <attribute name="colorData" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="deckDescription" optional="YES" attributeType="String"/>
         <attribute name="flashcardsCountData" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="iconName" optional="YES" attributeType="String"/>
         <attribute name="isDeactived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="percentageOfLearned" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -30,7 +29,7 @@
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="sessionSettings" inverseEntity="Deck"/>
     </entity>
     <elements>
-        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="164"/>
+        <element name="Deck" positionX="-44.171875" positionY="-84.59765625" width="128" height="149"/>
         <element name="Flashcard" positionX="-295.91015625" positionY="-207.8203125" width="128" height="134"/>
         <element name="SessionSettings" positionX="-171" positionY="-90" width="128" height="134"/>
     </elements>

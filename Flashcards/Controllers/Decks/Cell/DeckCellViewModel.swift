@@ -11,7 +11,6 @@ protocol DeckCellViewModelProtocol {
 
     var flashcardCount: String { get }
     var title: String  { get }
-    var iconName: String  { get }
     var deck: Deck { get }
     var color: Int { get }
     var flashcardsLearned: Float { get }
@@ -32,14 +31,9 @@ class DeckCellViewModel: DeckCellViewModelProtocol {
         return deck.color == 0 ? Colors.mainColor.hexValue : deck.color
     }
     
-    var iconName: String {
-        deck.iconName ?? "rectangle.portrait"
-    }
-    
     var flashcardsLearned: Float {
         deck.percentageOfLearned
     }
-    
     
     var deck: Deck
     

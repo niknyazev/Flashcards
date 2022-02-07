@@ -13,7 +13,6 @@ class DeckTableViewCell: UITableViewCell {
     @IBOutlet weak var flashcardCount: UILabel!
     @IBOutlet weak var learnButton: UIButton!
     @IBOutlet weak var iconView: UIView!
-    @IBOutlet weak var imageIconView: UIImageView!
     
     var delegate: FlashcardViewerDelegate!
         
