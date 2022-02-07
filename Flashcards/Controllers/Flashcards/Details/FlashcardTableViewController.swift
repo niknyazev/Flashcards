@@ -26,6 +26,7 @@ class FlashcardTableViewController: UITableViewController {
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var isLearnedSwitch: UISwitch!
+    @IBOutlet weak var flashcardDeck: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,15 +97,30 @@ class FlashcardTableViewController: UITableViewController {
     
     private func choiceDeck() {
         
-        let choicerVC = ValueChoicerViewController()
-        let values = ["test01", "test02"]
-        choicerVC.delegate = {currentIndex in
-            print(values[currentIndex])
+        StorageManager.shared.fetchDecks { result in
+            switch result {
+            case .success(let decksResult):
+                self.openDeckChoicer(decks: decksResult)
+            case .failure(let error):
+                print(error)
+            }
         }
-        choicerVC.values = values //TODO: replace for Array
+    }
+    
+    private func openDeckChoicer(decks: [Deck]) {
+        
+        let choicerVC = ValueChoicerViewController()
+        
+        choicerVC.delegate = {currentIndex in
+            self.deck = decks[currentIndex]
+            self.flashcardDeck.text = decks[currentIndex].title
+        }
+        choicerVC.values = decks.map {
+            $0.title ?? ""
+        }
         choicerVC.currentIndex = 0
+        
         navigationController?.pushViewController(choicerVC, animated: true)
-
     }
     
     private func choiceImage() {
