@@ -9,7 +9,8 @@ import Foundation
 
 protocol DeckCellViewModelProtocol {
 
-    var flashcardCount: String { get }
+    var flashcardCountDescription: String { get }
+    var flashcardCount: Int { get }
     var title: String  { get }
     var deck: Deck { get }
     var color: Int { get }
@@ -19,8 +20,12 @@ protocol DeckCellViewModelProtocol {
 
 class DeckCellViewModel: DeckCellViewModelProtocol {
    
-    var flashcardCount: String {
+    var flashcardCountDescription: String {
         "Flashcard: \(deck.flashcardsCount)"
+    }
+    
+    var flashcardCount: Int {
+        deck.flashcardsCount
     }
     
     var title: String {

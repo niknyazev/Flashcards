@@ -18,9 +18,9 @@ class DeckTableViewCell: UITableViewCell {
     var viewModel: DeckCellViewModelProtocol! {
         didSet {
             deckName.text = viewModel.title
-            flashcardCount.text = viewModel.flashcardCount
+            flashcardCount.text = viewModel.flashcardCountDescription
             let color = UIColor(hex: viewModel.color)
-            setupButton(color: color)
+            setupButton(color: color, count: viewModel.flashcardCount)
             addProgressCircle(flashcardsLearned: viewModel.flashcardsLearned, color: color)
         }
     }
@@ -29,9 +29,10 @@ class DeckTableViewCell: UITableViewCell {
         delegate.openFlashcardViewer(for: viewModel.deck)
     }
     
-    private func setupButton(color: UIColor) {
-        learnButton.layer.cornerRadius = 7
+    private func setupButton(color: UIColor, count: Int) {
+        learnButton.layer.cornerRadius = learnButton.frame.height / 2
         learnButton.backgroundColor = color
+        learnButton.layer.opacity = count == 0 ? 0.2 : 1
         learnButton.tintColor = .white
     }
     
