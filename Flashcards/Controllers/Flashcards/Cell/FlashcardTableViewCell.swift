@@ -16,6 +16,8 @@ class FlashcardTableViewCell: UITableViewCell {
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var containerView: UIView!
+    
     func configure(with flashcard: Flashcard) {
         
         frontSideLabel.text = flashcard.frontSide
@@ -34,15 +36,20 @@ class FlashcardTableViewCell: UITableViewCell {
         }
        
         mainView.backgroundColor = .white
-        mainView.layer.shadowColor = CGColor(
+        mainView.layer.cornerRadius = 15
+        mainView.layer.masksToBounds = true
+        
+        containerView.backgroundColor = .white
+        containerView.layer.shadowColor = CGColor(
             red: 30/255,
             green: 30/255,
             blue: 30/255,
             alpha: 1
         )
-        mainView.layer.shadowRadius = 3
-        mainView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        mainView.layer.shadowOpacity = 0.3
+        containerView.layer.shadowRadius = 3
+        containerView.layer.cornerRadius = 15
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        containerView.layer.shadowOpacity = 0.3
 
     }
 }
