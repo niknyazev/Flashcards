@@ -380,21 +380,21 @@
             <objects>
                 <viewController id="j7n-Tl-lnD" customClass="FlashcardsViewerViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x7C-d2-oJV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-4k-IV8">
-                                <rect key="frame" x="0.0" y="20" width="414" height="4"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="4"/>
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-4c-srU">
-                                <rect key="frame" x="20" y="44" width="374" height="669"/>
+                                <rect key="frame" x="20" y="132" width="374" height="635"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-sz-iwj">
-                                        <rect key="frame" x="112" y="41" width="150" height="147.5"/>
+                                        <rect key="frame" x="116" y="41" width="142" height="140"/>
                                         <color key="tintColor" systemColor="systemGray4Color"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kec-g0-ow5" userLabel="Front View">
-                                        <rect key="frame" x="30" y="200" width="314" height="130"/>
+                                        <rect key="frame" x="30" y="192.5" width="314" height="130"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-Yd-JqW">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="130"/>
@@ -412,7 +412,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-1P-hMr" userLabel="Back View">
-                                        <rect key="frame" x="30" y="350" width="314" height="130"/>
+                                        <rect key="frame" x="30" y="342.5" width="314" height="130"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back side" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu2-Fw-lw8">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="130"/>
@@ -448,7 +448,7 @@
                                         </constraints>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-xI-L7i">
-                                        <rect key="frame" x="122" y="608" width="130" height="32"/>
+                                        <rect key="frame" x="122" y="574" width="130" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="7pM-eD-5X6"/>
                                         </constraints>
@@ -461,7 +461,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All flashcard are learned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-ne-pdo">
-                                        <rect key="frame" x="58.5" y="319.5" width="257" height="30"/>
+                                        <rect key="frame" x="58.5" y="302.5" width="257" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -486,7 +486,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="RM8-hC-UGz">
-                                <rect key="frame" x="47" y="743" width="320" height="50"/>
+                                <rect key="frame" x="47" y="797" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-UB-Bjr">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
@@ -533,7 +533,9 @@
                             <constraint firstItem="RM8-hC-UGz" firstAttribute="top" secondItem="PaU-4c-srU" secondAttribute="bottom" constant="30" id="pek-IO-yWH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="abc-0O-iff"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="abc-0O-iff">
+                        <barButtonItem key="backBarButtonItem" title="Settings 111" id="RKk-M6-ecu" userLabel="Settings"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="allIsLearnedLabel" destination="u4S-ne-pdo" id="xNQ-2T-Uge"/>
                         <outlet property="backSideLabel" destination="Iu2-Fw-lw8" id="9Cn-HV-YdX"/>
@@ -715,14 +717,14 @@
                             <tableViewSection headerTitle="Deck description" id="57B-qT-2Bt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UE3-6W-jDf">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="41"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="41.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UE3-6W-jDf" id="lsZ-7p-Rxf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYT-XL-tEP">
-                                                    <rect key="frame" x="20" y="11" width="374" height="19"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                                 </textField>
@@ -736,7 +738,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Id3-wb-xx8">
-                                        <rect key="frame" x="0.0" y="85.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="86" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Id3-wb-xx8" id="OMu-dS-1qA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -757,7 +759,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="kG0-es-PaS">
-                                        <rect key="frame" x="0.0" y="165.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="166" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kG0-es-PaS" id="bd9-AN-xla">
                                             <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
@@ -870,7 +872,7 @@
             </objects>
             <point key="canvasLocation" x="1312" y="475"/>
         </scene>
-        <!--Session settings-->
+        <!--Settings-->
         <scene sceneID="sqC-Be-H83">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="9CH-Ll-gBT" customClass="SettingsSessionViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
@@ -1073,7 +1075,7 @@
                             <outlet property="delegate" destination="9CH-Ll-gBT" id="eM8-fQ-5mz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Session settings" id="qVy-ty-EdI"/>
+                    <navigationItem key="navigationItem" title="Settings" id="qVy-ty-EdI"/>
                     <connections>
                         <outlet property="complexityLabel" destination="dxs-9T-SaG" id="mOE-OO-MEm"/>
                         <outlet property="countTextField" destination="fZl-AH-YlJ" id="g4G-Cg-WM1"/>
@@ -1081,7 +1083,7 @@
                         <outlet property="needPronounce" destination="edr-Sz-9Qr" id="uDJ-8O-GZA"/>
                         <outlet property="saveResultSwitch" destination="UA7-NP-fTK" id="5ua-qR-eCk"/>
                         <outlet property="statusLabel" destination="beT-Q8-hv0" id="Bfa-2M-Fpd"/>
-                        <segue destination="j7n-Tl-lnD" kind="presentation" identifier="flashcardsViewer" id="zOa-Gj-qDq"/>
+                        <segue destination="j7n-Tl-lnD" kind="show" identifier="flashcardsViewer" id="zOa-Gj-qDq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-7G-iT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1090,7 +1092,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M50-tY-utT"/>
+        <segue reference="zOa-Gj-qDq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
