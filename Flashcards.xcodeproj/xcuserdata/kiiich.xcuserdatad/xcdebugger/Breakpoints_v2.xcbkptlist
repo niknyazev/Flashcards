@@ -1197,5 +1197,128 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "FlashcardTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA - 91a830f367392c23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flashcards.FlashcardTableViewController.flashcard.getter : Swift.Optional&lt;Flashcards.Flashcard&gt;"
+                  moduleName = "Flashcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiiich/Private/Projects/SwiftProjects/Swift%20recipies/Flashcards/Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA - d62dfa226a93dc37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flashcards.FlashcardTableViewController.flashcard.setter : Swift.Optional&lt;Flashcards.Flashcard&gt;"
+                  moduleName = "Flashcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiiich/Private/Projects/SwiftProjects/Swift%20recipies/Flashcards/Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA - 874ddeed404e57bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flashcards.FlashcardTableViewController.flashcard.modify : Swift.Optional&lt;Flashcards.Flashcard&gt;"
+                  moduleName = "Flashcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiiich/Private/Projects/SwiftProjects/Swift%20recipies/Flashcards/Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA - c5deaee167009628"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flashcards.FlashcardTableViewController.flashcard.modify : Swift.Optional&lt;Flashcards.Flashcard&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Flashcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiiich/Private/Projects/SwiftProjects/Swift%20recipies/Flashcards/Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA - ce89f61130e91ae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flashcards.FlashcardTableViewController.init(style: __C.UITableViewStyle) -&gt; Flashcards.FlashcardTableViewController"
+                  moduleName = "Flashcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiiich/Private/Projects/SwiftProjects/Swift%20recipies/Flashcards/Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA - 6ee576f4904e7a5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flashcards.FlashcardTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Flashcards.FlashcardTableViewController"
+                  moduleName = "Flashcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiiich/Private/Projects/SwiftProjects/Swift%20recipies/Flashcards/Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "BBD853A9-C1D8-4F18-84E5-D57EBE4479AA - fc5d3df2f74497e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flashcards.FlashcardTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Flashcards.FlashcardTableViewController&gt;"
+                  moduleName = "Flashcards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiiich/Private/Projects/SwiftProjects/Swift%20recipies/Flashcards/Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

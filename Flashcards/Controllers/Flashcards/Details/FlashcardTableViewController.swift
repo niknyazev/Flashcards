@@ -14,7 +14,7 @@ protocol FlashcardImageUpdaterDelegate {
 
 class FlashcardTableViewController: UITableViewController {
     
-    var deck: Deck!
+    var deck: Deck?
     var delegate: FlashcardsUpdater!
     var flashcard: Flashcard?
     
@@ -70,7 +70,7 @@ class FlashcardTableViewController: UITableViewController {
     @IBAction func isLearnedChanged() {
         flashcard?.isLearned.toggle()
     }
-    
+        
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
         if let flashcard = flashcard {
@@ -79,6 +79,12 @@ class FlashcardTableViewController: UITableViewController {
             storageManager.updateFlashcard(deck: deck)
             
         } else {
+            
+            guard let deck = deck else {
+                notifyAboutDeck()
+                return
+            }
+            
             storageManager.saveFlashcard(
                 deck: deck,
                 frontSide: frontSideTextField.text ?? "",
@@ -105,6 +111,21 @@ class FlashcardTableViewController: UITableViewController {
                 print(error)
             }
         }
+    }
+    
+    private func notifyAboutDeck() {
+        
+        let alertController = UIAlertController(
+            title: "Deck is not chosen",
+            message: "Choose the deck",
+            preferredStyle: .alert
+        )
+        
+        let OkButton = UIAlertAction(title: "OK", style: .default)
+        
+        alertController.addAction(OkButton)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     private func openDeckChoicer(decks: [Deck]) {
@@ -151,6 +172,7 @@ class FlashcardTableViewController: UITableViewController {
         
         flashcardImage.contentMode = .scaleAspectFit
         flashcardImage.clipsToBounds = true
+        flashcardDeck.text = deck?.title
         
         guard let flashcard = flashcard else {
             return
