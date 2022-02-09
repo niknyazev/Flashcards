@@ -14,19 +14,24 @@ protocol FlashcardImageUpdaterDelegate {
 
 class FlashcardTableViewController: UITableViewController {
     
+    //MARK: Properties
+    
     var deck: Deck?
     var delegate: FlashcardsUpdater!
     var flashcard: Flashcard?
     
     private let storageManager = StorageManager.shared
     private let translator = NetworkTranslator.shared
+    private let placeHolderColor = UIColor.systemGray4
 
-    @IBOutlet weak var frontSideTextField: UITextField!
-    @IBOutlet weak var backSideTextField: UITextField!
+    @IBOutlet weak var frontSideTextView: UITextView!
+    @IBOutlet weak var backSideTextView: UITextView!
     @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var isLearnedSwitch: UISwitch!
     @IBOutlet weak var flashcardDeck: UILabel!
+    
+    //MARK: Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +44,7 @@ class FlashcardTableViewController: UITableViewController {
             
             guard let imagesVC = segue.destination as? ImageChoicerViewController else { return }
             
-            imagesVC.query = frontSideTextField.text ?? ""
+            imagesVC.query = frontSideTextView.text ?? ""
             imagesVC.delegate = self
             
         }
@@ -58,12 +63,12 @@ class FlashcardTableViewController: UITableViewController {
         
     @IBAction func translatePressed(_ sender: Any) {
         
-        guard let text = frontSideTextField.text else {
+        guard let text = frontSideTextView.text else {
             return
         }
     
         translator.request(query: text) { result, error in
-            self.backSideTextField.text = result
+            self.backSideTextView.text = result
         }
     }
     
@@ -74,8 +79,8 @@ class FlashcardTableViewController: UITableViewController {
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
         if let flashcard = flashcard {
-            flashcard.frontSide = frontSideTextField.text ?? ""
-            flashcard.backSide = backSideTextField.text ?? ""
+            flashcard.frontSide = frontSideTextView.text ?? ""
+            flashcard.backSide = backSideTextView.text ?? ""
             storageManager.updateFlashcard(deck: deck)
             
         } else {
@@ -87,8 +92,8 @@ class FlashcardTableViewController: UITableViewController {
             
             storageManager.saveFlashcard(
                 deck: deck,
-                frontSide: frontSideTextField.text ?? "",
-                backSide: backSideTextField.text ?? ""
+                frontSide: frontSideTextView.text ?? "",
+                backSide: backSideTextView.text ?? ""
             )
         }
         
@@ -173,13 +178,19 @@ class FlashcardTableViewController: UITableViewController {
         flashcardImage.contentMode = .scaleAspectFit
         flashcardImage.clipsToBounds = true
         flashcardDeck.text = deck?.title
-        
+        frontSideTextView.delegate = self
+        backSideTextView.delegate = self
+    
         guard let flashcard = flashcard else {
+            frontSideTextView.text = "Front side text"
+            frontSideTextView.textColor = placeHolderColor
+            backSideTextView.text = "Back side text"
+            backSideTextView.textColor = placeHolderColor
             return
         }
         
-        frontSideTextField.text = flashcard.frontSide
-        backSideTextField.text = flashcard.backSide
+        frontSideTextView.text = flashcard.frontSide
+        backSideTextView.text = flashcard.backSide
         isLearnedSwitch.isOn = flashcard.isLearned
         
         if let imageData = flashcard.image {
@@ -209,6 +220,24 @@ extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavig
         flashcardImage.image = image
         flashcard?.image = image?.pngData()
         dismiss(animated: true)
+    }
+    
+}
+
+extension FlashcardTableViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == placeHolderColor {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Placeholder"
+            textView.textColor = placeHolderColor
+        }
     }
     
 }
