@@ -797,7 +797,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="cA7-cD-CDQ" kind="presentation" id="4QB-3i-A5u"/>
+                                            <segue destination="cA7-cD-CDQ" kind="show" id="4QB-3i-A5u"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -830,7 +830,7 @@
             </objects>
             <point key="canvasLocation" x="2198.5507246376815" y="474.77678571428567"/>
         </scene>
-        <!--Color Choicer Collection View Controller-->
+        <!--Deck color-->
         <scene sceneID="DA1-dA-g9L">
             <objects>
                 <collectionViewController id="cA7-cD-CDQ" customClass="ColorChoicerCollectionViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
@@ -859,6 +859,7 @@
                             <outlet property="delegate" destination="cA7-cD-CDQ" id="i8J-mZ-Sd9"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Deck color" id="xM3-iF-9ym"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gY-li-4uu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

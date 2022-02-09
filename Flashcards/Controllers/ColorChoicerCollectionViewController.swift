@@ -22,7 +22,8 @@ class ColorChoicerCollectionViewController: UICollectionViewController {
         UIColor(hex: 0x00B4D8),
         UIColor(hex: 0x0096C7),
         UIColor(hex: 0x0077B6),
-        UIColor(hex: 0x023E8A)
+        UIColor(hex: 0x023E8A),
+        UIColor(hex: 0x03045E)
     ]
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -31,7 +32,7 @@ class ColorChoicerCollectionViewController: UICollectionViewController {
             delegate.updateColor(with: cell.backgroundColor)
         }
         
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
