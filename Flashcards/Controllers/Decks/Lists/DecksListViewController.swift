@@ -95,9 +95,11 @@ class DecksListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
+        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
             performSegue(withIdentifier: "deck", sender: decks[indexPath.row])
+            actionPerformed(true)
         }
+        action.backgroundColor = Colors.editColor
         
         let actions = UISwipeActionsConfiguration(actions: [action])
         

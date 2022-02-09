@@ -8,10 +8,7 @@
 import UIKit
 
 struct Colors {
-    static let mainColor = UIColor(
-        red: 21/255,
-        green: 101/255,
-        blue: 192/255,
-        alpha: 1
-    )
+    static let mainColor = UIColor(hex: 0x0077B6)
+    static let editColor = UIColor(hex: 0x99ca3c)
+    static let progressTintColor = UIColor(hex: 0xffb950)
 }

@@ -28,7 +28,7 @@ class FlashcardsListViewController: UITableViewController {
         setupView()
         setupTableView()
         fetchFlashcards()
-        setProgressLearning()
+        setupProgressLearning()
         setupSearchController()
     }
         
@@ -118,12 +118,13 @@ class FlashcardsListViewController: UITableViewController {
         
     }
     
-    private func setProgressLearning() {
+    private func setupProgressLearning() {
         let progress =
             Float(flashcards.filter { $0.isLearned }.count) /
                 Float(flashcards.count)
         
         progressLearning.setProgress(progress, animated: false)
+        progressLearning.progressTintColor = Colors.progressTintColor
     }
 
     
@@ -139,9 +140,11 @@ class FlashcardsListViewController: UITableViewController {
                     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, _ in
+        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
             performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
+            actionPerformed(true)
         }
+        action.backgroundColor = Colors.editColor
         
         let actions = UISwipeActionsConfiguration(actions: [action])
         
@@ -182,7 +185,7 @@ extension FlashcardsListViewController: FlashcardsUpdater {
     func updateFlashcards() {
         delegate.updateDecksList()
         fetchFlashcards(text: nil, filterType: searchController.searchBar.selectedScopeButtonIndex)
-        setProgressLearning()
+        setupProgressLearning()
         tableView.reloadData()
     }
 }
