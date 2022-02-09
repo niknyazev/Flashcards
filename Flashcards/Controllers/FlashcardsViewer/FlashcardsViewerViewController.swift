@@ -10,6 +10,7 @@ import UIKit
 class FlashcardsViewerViewController: UIViewController {
     
     @IBOutlet weak var flashcardImage: UIImageView!
+    @IBOutlet weak var progressDescription: UILabel!
     @IBOutlet weak var frontSideLabel: UILabel!
     @IBOutlet weak var backSideLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
@@ -34,7 +35,10 @@ class FlashcardsViewerViewController: UIViewController {
         setupProgressView(animated: false)
         setupFlashcardView()
         pronounceFlashcard()
+        setupButtons()
     }
+    
+    // MARK: Private methods
     
     @IBAction func knowPressed() {
         markFlashcardAsLearned()
@@ -65,7 +69,22 @@ class FlashcardsViewerViewController: UIViewController {
         backSideLabel.isHidden = false
         showButton.isHidden = true
     }
+    
+    // MARK: Private methods
         
+    private func setupButtons() {
+        
+        dontKnowButton.layer.cornerRadius = 10
+        dontKnowButton.backgroundColor = UIColor(hex: 0xD00000)
+        
+        knowButton.layer.cornerRadius = 10
+        knowButton.backgroundColor = UIColor(hex: 0xFAA307)
+        
+        showButton.layer.cornerRadius = 10
+        showButton.backgroundColor = UIColor(hex: 0x219EBC)
+        
+    }
+    
     private func pronounceFlashcard() {
         
         if flashcards.isEmpty {
@@ -100,6 +119,7 @@ class FlashcardsViewerViewController: UIViewController {
     private func setupProgressView(animated: Bool = true) {
         let progress = Float(currentIndex + 1) / Float(flashcards.count)
         progressView.setProgress(progress, animated: animated)
+        progressView.progressTintColor = Colors.progressTintColor
     }
     
     private func setupElements(with flashcard: Flashcard?) {
@@ -112,9 +132,7 @@ class FlashcardsViewerViewController: UIViewController {
         showButton.isHidden = allIsLearned
         levelOfComplexity.isHidden = allIsLearned
         flashcardImage.isHidden = allIsLearned
-        
-        dontKnowButton.layer.cornerRadius = 10
-        knowButton.layer.cornerRadius = 10
+        progressDescription.isHidden = allIsLearned
         
         guard let flashcard = flashcard else { return }
         
@@ -125,6 +143,7 @@ class FlashcardsViewerViewController: UIViewController {
         showButton.isHidden = false
         
         levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity)
+        progressDescription.text = "Flashcard: \(currentIndex + 1) of \(flashcards.count)"
         
     }
     
