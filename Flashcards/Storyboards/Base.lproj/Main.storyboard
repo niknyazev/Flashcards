@@ -380,22 +380,22 @@
             <objects>
                 <viewController id="j7n-Tl-lnD" customClass="FlashcardsViewerViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x7C-d2-oJV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-4k-IV8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="4"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="4"/>
                                 <color key="progressTintColor" systemColor="systemGreenColor"/>
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-4c-srU">
-                                <rect key="frame" x="20" y="142" width="374" height="625"/>
+                                <rect key="frame" x="20" y="54" width="374" height="659"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-sz-iwj">
-                                        <rect key="frame" x="117" y="41" width="140" height="137.5"/>
+                                        <rect key="frame" x="113" y="41" width="148" height="145.5"/>
                                         <color key="tintColor" systemColor="systemGray4Color"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kec-g0-ow5" userLabel="Front View">
-                                        <rect key="frame" x="30" y="190" width="314" height="120"/>
+                                        <rect key="frame" x="30" y="198" width="314" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-Yd-JqW">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="120"/>
@@ -413,7 +413,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-1P-hMr" userLabel="Back View">
-                                        <rect key="frame" x="30" y="330" width="314" height="120"/>
+                                        <rect key="frame" x="30" y="338" width="314" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back side" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu2-Fw-lw8">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="120"/>
@@ -449,7 +449,7 @@
                                         </constraints>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-xI-L7i">
-                                        <rect key="frame" x="122" y="564" width="130" height="32"/>
+                                        <rect key="frame" x="122" y="598" width="130" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="7pM-eD-5X6"/>
                                         </constraints>
@@ -462,7 +462,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All flashcard are learned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-ne-pdo">
-                                        <rect key="frame" x="58.5" y="297.5" width="257" height="30"/>
+                                        <rect key="frame" x="58.5" y="314.5" width="257" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -487,7 +487,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="RM8-hC-UGz">
-                                <rect key="frame" x="47" y="797" width="320" height="50"/>
+                                <rect key="frame" x="47" y="743" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-UB-Bjr">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
@@ -520,7 +520,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashcard 1 of 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7n-43-msC">
-                                <rect key="frame" x="138" y="107" width="138" height="20.5"/>
+                                <rect key="frame" x="138" y="19" width="138" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
@@ -1101,7 +1101,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zOa-Gj-qDq"/>
+        <segue reference="M50-tY-utT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>

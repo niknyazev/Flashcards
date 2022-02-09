@@ -14,16 +14,15 @@ class ColorChoicerCollectionViewController: UICollectionViewController {
     private let itemsPerRow: CGFloat = 3
     private let sectionInserts = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
     private let colors = [
-        UIColor.red,
-        UIColor.blue,
-        UIColor.cyan,
-        UIColor.brown,
-        UIColor.darkGray,
-        UIColor.black,
-        UIColor.lightGray,
-        UIColor.green,
-        UIColor.magenta
-        
+        UIColor(hex: 0xFF5400),
+        UIColor(hex: 0xFF6D00),
+        UIColor(hex: 0xFF8500),
+        UIColor(hex: 0xFF9100),
+        UIColor(hex: 0xFF9E00),
+        UIColor(hex: 0x00B4D8),
+        UIColor(hex: 0x0096C7),
+        UIColor(hex: 0x0077B6),
+        UIColor(hex: 0x023E8A)
     ]
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

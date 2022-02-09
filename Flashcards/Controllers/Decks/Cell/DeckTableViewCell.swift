@@ -57,7 +57,7 @@ class DeckTableViewCell: UITableViewCell {
         track.path = circle.cgPath
         track.fillColor = UIColor.clear.cgColor
         track.lineWidth = 7
-        track.strokeColor = UIColor.lightGray.cgColor
+        track.strokeColor = UIColor.systemGray5.cgColor
         
         iconView.layer.addSublayer(track)
         
