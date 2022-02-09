@@ -38,7 +38,7 @@ class ImageChoicerViewController: UICollectionViewController {
         
         delegate.updateImage(image: cell.webImage.image)
         
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
         
     }
 

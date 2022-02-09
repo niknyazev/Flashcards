@@ -9,6 +9,8 @@ import UIKit
 
 class FlashcardsViewerViewController: UIViewController {
     
+    // MARK: Properties
+    
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var progressDescription: UILabel!
     @IBOutlet weak var frontSideLabel: UILabel!
@@ -28,6 +30,8 @@ class FlashcardsViewerViewController: UIViewController {
     private var currentIndex = 0
     private let storageManager = StorageManager.shared
         
+    // MARK: Override methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchFlashcards()
@@ -38,7 +42,7 @@ class FlashcardsViewerViewController: UIViewController {
         setupButtons()
     }
     
-    // MARK: Private methods
+    // MARK: IBAction methods
     
     @IBAction func knowPressed() {
         markFlashcardAsLearned()
