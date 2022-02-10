@@ -168,11 +168,11 @@ class FlashcardsViewerViewController: UIViewController {
             isLearned: isLearned,
             complexity: complexity,
             limit: limit) { result in
-            switch result {
-            case .success(let flashcardsResult):
-                self.flashcards = flashcardsResult
-            case .failure(let error):
-                print(error)
+                switch result {
+                case .success(let flashcards):
+                    self.flashcards = flashcards
+                case .failure(let error):
+                    print(error)
             }
         }
     }

@@ -13,6 +13,8 @@ protocol ColorUpdaterProtocol {
 
 class DeckTableViewController: UITableViewController {
 
+    // MARK: Properties
+    
     var delegate: DecksUpdaterDelegate!
     var deck: Deck?
     
@@ -21,6 +23,8 @@ class DeckTableViewController: UITableViewController {
     @IBOutlet weak var colorView: UIView!
     
     private let storageManager = StorageManager.shared
+    
+    // MARK: Override methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -38,15 +42,17 @@ class DeckTableViewController: UITableViewController {
         colorView.layer.cornerRadius = colorView.frame.height / 2
     }
     
+    // MARK: IBAction methods
+    
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
-        if let deck = deck {
-            storageManager.editDeck(deck, newName: deckTitleTextField.text ?? "")
-        } else {
+        if deck == nil {
             storageManager.saveDeck(
                 deckTitleTextField.text ?? "",
-                completion: nil
+                color: colorView.backgroundColor?.hexValue ?? Colors.defaultCircleColor.hexValue
             )
+        } else {
+            storageManager.saveContext()
         }
         
         delegate.updateDecksList()
@@ -58,9 +64,12 @@ class DeckTableViewController: UITableViewController {
         dismiss(animated: true)
     }
             
+    // MARK: Private methods
+    
     private func setupElements() {
         
         guard let deck = deck else {
+            colorView.backgroundColor = Colors.defaultCircleColor
             return
         }
         

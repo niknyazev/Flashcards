@@ -70,7 +70,6 @@ class StorageManager {
             fetchRequest.fetchLimit = Int(limit)
         }
         
-        
         do {
             let entities = try viewContext.fetch(fetchRequest)
             completion(.success(entities))
@@ -79,14 +78,13 @@ class StorageManager {
         }
     }
     
-    func saveDeck(_ entityName: String, completion: ((Deck) -> Void)?) {
-        let entity = Deck(context: viewContext)
-        entity.title = entityName
+    func saveDeck(_ entityName: String, color: Int) {
         
-        if let completion = completion {
-            completion(entity)
-        }
-                
+        let entity = Deck(context: viewContext)
+        
+        entity.title = entityName
+        entity.color = color
+        
         saveContext()
     }
     
