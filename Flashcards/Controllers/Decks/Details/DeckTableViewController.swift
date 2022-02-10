@@ -13,7 +13,7 @@ protocol ColorUpdaterProtocol {
 
 class DeckTableViewController: UITableViewController {
 
-    // MARK: Properties
+    // MARK: - Properties
     
     var delegate: DecksUpdaterDelegate!
     var deck: Deck?
@@ -24,7 +24,7 @@ class DeckTableViewController: UITableViewController {
     
     private let storageManager = StorageManager.shared
     
-    // MARK: Override methods
+    // MARK: - Override methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -42,7 +42,7 @@ class DeckTableViewController: UITableViewController {
         colorView.layer.cornerRadius = colorView.frame.height / 2
     }
     
-    // MARK: IBAction methods
+    // MARK: - IBAction methods
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
@@ -64,7 +64,7 @@ class DeckTableViewController: UITableViewController {
         dismiss(animated: true)
     }
             
-    // MARK: Private methods
+    // MARK: - Private methods
     
     private func setupElements() {
         
@@ -80,6 +80,8 @@ class DeckTableViewController: UITableViewController {
     }
     
 }
+
+// MARK: - Delegates
 
 extension DeckTableViewController: ColorUpdaterProtocol {
     func updateColor(with color: UIColor?) {
