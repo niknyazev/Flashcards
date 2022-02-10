@@ -153,13 +153,14 @@ class FlashcardsViewerViewController: UIViewController {
     
     private func fetchFlashcards() {
        
-        let settings = deck.sessionSettings
-        let limit = settings?.flashcardsLimit
-        let complexity = settings?.flashcardsComplexity ?? 0
+        guard let settings = deck.sessionSettings else { return }
+        
+        let limit = settings.flashcardsLimit
+        let complexity = settings.flashcardsComplexity
         var isLearned: Bool? = nil
-        if settings?.flashcardsStatus == 1 {
+        if settings.flashcardsStatus == 1 {
             isLearned = true
-        } else if settings?.flashcardsStatus == 2 {
+        } else if settings.flashcardsStatus == 2 {
             isLearned = false
         }
         

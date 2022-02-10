@@ -1111,8 +1111,8 @@
             filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "markFlashcardAsLearned()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1143,8 +1143,8 @@
             filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "pronounceFlashcard()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1330,8 +1330,8 @@
             filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "markFlashcardAsLearned()"
             landmarkType = "7">
          </BreakpointContent>
