@@ -59,7 +59,7 @@ class FlashcardsViewerViewController: UIViewController {
     
     @IBAction func changeLevelOfComplexity(_ sender: UISegmentedControl) {
         flashcards[currentIndex].levelOfComplexity = sender.selectedSegmentIndex
-        storageManager.updateFlashcard(deck: flashcards[currentIndex].deck)
+        storageManager.saveContext()
     }
     
     @IBAction func dontKnowPressed() {
@@ -184,7 +184,7 @@ class FlashcardsViewerViewController: UIViewController {
         
         if flashcard.deck?.sessionSettings?.saveResults ?? false {
             flashcard.isLearned = true
-            storageManager.updateFlashcard(deck: flashcard.deck)
+            storageManager.saveContext()
         }
         
         flashcards.remove(at: currentIndex)

@@ -18,7 +18,7 @@ extension Deck {
 
     @NSManaged public var colorData: Int64
     @NSManaged public var deckDescription: String?
-    @NSManaged public var flashcardsCountData: Int64
+    @NSManaged public var flashcardsCount: Int
     @NSManaged public var isDeactived: Bool
     @NSManaged public var percentageOfLearned: Float
     @NSManaged public var title: String?
@@ -34,15 +34,6 @@ extension Deck {
         }
     }
     
-    var flashcardsCount: Int {
-        set {
-            flashcardsCountData = Int64(newValue)
-        }
-        get {
-            Int(flashcardsCountData)
-        }
-    }
-
 }
 
 // MARK: Generated accessors for flashcards

@@ -25,7 +25,7 @@ class DeckCellViewModel: DeckCellViewModelProtocol {
     }
     
     var flashcardCount: Int {
-        deck.flashcards?.count ?? 0
+        deck.flashcardsCount
     }
     
     var title: String {

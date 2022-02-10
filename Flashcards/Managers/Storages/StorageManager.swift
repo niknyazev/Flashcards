@@ -97,27 +97,9 @@ class StorageManager {
     }
     
     func updateFlashcard(deck: Deck?) {
-        if let deck = deck {
-            updateFlashcardsStatistic(for: deck)
-        }
         saveContext()
     }
-    
-    private func updateFlashcardsStatistic(for deck: Deck) {
-       
-        guard let flashcards = deck.flashcards?.allObjects as? [Flashcard] else { return }
         
-        let learnedCount = flashcards
-            .filter { $0.isLearned }
-            .count
-
-        let percentageOfLearned = Float(learnedCount) / Float(flashcards.count)
-        
-        deck.flashcardsCount = deck.flashcards?.count ?? 0
-        deck.percentageOfLearned = percentageOfLearned
-        
-    }
-    
     func saveSessionSettings(deck: Deck, complexity: Int16, count: Int16, status: Int16) {
         
         let settings = deck.sessionSettings == nil

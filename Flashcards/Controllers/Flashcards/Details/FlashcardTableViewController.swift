@@ -81,7 +81,7 @@ class FlashcardTableViewController: UITableViewController {
         if let flashcard = flashcard {
             flashcard.frontSide = frontSideTextView.text ?? ""
             flashcard.backSide = backSideTextView.text ?? ""
-            storageManager.updateFlashcard(deck: deck)
+            storageManager.saveContext()
             
         } else {
             
@@ -138,6 +138,7 @@ class FlashcardTableViewController: UITableViewController {
         let choicerVC = ValueChoicerViewController()
         
         choicerVC.delegate = {currentIndex in
+            self.flashcard?.deck = decks[currentIndex]
             self.deck = decks[currentIndex]
             self.flashcardDeck.text = decks[currentIndex].title
         }
