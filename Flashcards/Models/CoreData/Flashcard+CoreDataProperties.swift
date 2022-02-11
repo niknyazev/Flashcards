@@ -11,27 +11,23 @@ import CoreData
 
 
 extension Flashcard {
+    
+    @objc enum Complexity: Int16 {
+        case Easy
+        case Hard
+    }
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Flashcard> {
         return NSFetchRequest<Flashcard>(entityName: "Flashcard")
     }
 
+    @NSManaged var levelOfComplexity: Complexity
     @NSManaged public var backSide: String?
     @NSManaged public var frontSide: String?
     @NSManaged public var image: Data?
     @NSManaged public var isLearned: Bool
     @NSManaged public var isSession: Bool
-    @NSManaged public var levelOfComplexityValue: Int16
     @NSManaged public var deck: Deck?
-    
-    var levelOfComplexity: Int {
-        get {
-            Int(levelOfComplexityValue)
-        }
-        set {
-            levelOfComplexityValue = Int16(newValue)
-        }
-    }
 
 }
 

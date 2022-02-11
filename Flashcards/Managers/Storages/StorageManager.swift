@@ -40,7 +40,7 @@ class StorageManager {
     
     func fetchFlashcards(deck: Deck? = nil,
                          isLearned: Bool? = nil,
-                         complexity: Int16? = nil,
+                         complexity: Flashcard.Complexity? = nil,
                          text: String? = nil,
                          limit: Int16? = nil,
                          completion: (Result<[Flashcard], Error>) -> Void) {
@@ -60,7 +60,7 @@ class StorageManager {
         }
         
         if let complexity = complexity {
-            predicates.append(NSPredicate(format: "levelOfComplexityValue == %i", complexity))
+            predicates.append(NSPredicate(format: "levelOfComplexityValue == %i", complexity.rawValue))
         }
                 
         let fetchRequest = Flashcard.fetchRequest()

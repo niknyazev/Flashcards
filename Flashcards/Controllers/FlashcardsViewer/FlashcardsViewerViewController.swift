@@ -58,7 +58,8 @@ class FlashcardsViewerViewController: UIViewController {
     }
     
     @IBAction func changeLevelOfComplexity(_ sender: UISegmentedControl) {
-        flashcards[currentIndex].levelOfComplexity = sender.selectedSegmentIndex
+        flashcards[currentIndex].levelOfComplexity
+            = Flashcard.Complexity.init(rawValue: Int16(sender.selectedSegmentIndex)) ?? .Easy
         storageManager.saveContext()
     }
     
@@ -146,7 +147,7 @@ class FlashcardsViewerViewController: UIViewController {
         backSideLabel.isHidden = true
         showButton.isHidden = false
         
-        levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity)
+        levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity.rawValue)
         progressDescription.text = "Flashcard: \(currentIndex + 1) of \(flashcards.count)"
         
     }
@@ -156,8 +157,14 @@ class FlashcardsViewerViewController: UIViewController {
         guard let settings = deck.sessionSettings else { return }
         
         let limit = settings.flashcardsLimit
-        let complexity = settings.flashcardsComplexity.rawValue
        
+        var complexity: Flashcard.Complexity?
+        if settings.flashcardsComplexity == .Easy {
+            complexity = .Easy
+        } else if settings.flashcardsComplexity == .Hard {
+            complexity = .Hard
+        }
+               
         var isLearned: Bool?
         if settings.flashcardsStatus == .Learned {
             isLearned = true
@@ -168,7 +175,7 @@ class FlashcardsViewerViewController: UIViewController {
         storageManager.fetchFlashcards(
             deck: deck,
             isLearned: isLearned,
-            complexity: Int16(complexity),
+            complexity: complexity,
             limit: limit) { result in
                 switch result {
                 case .success(let flashcards):

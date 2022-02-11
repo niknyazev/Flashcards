@@ -65,7 +65,7 @@ extension SessionSettings {
         case All
         case Forward
         case Backward
-       
+        
         var title: String {
             switch self {
             case .All:
