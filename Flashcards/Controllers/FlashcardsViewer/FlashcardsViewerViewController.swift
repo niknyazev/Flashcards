@@ -45,6 +45,12 @@ class FlashcardsViewerViewController: UIViewController {
     // MARK: - IBAction methods
     
     @IBAction func knowPressed() {
+        
+        if flashcards.isEmpty {
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        
         markFlashcardAsLearned()
         
         if flashcards.isEmpty {
@@ -130,15 +136,21 @@ class FlashcardsViewerViewController: UIViewController {
     private func setupElements(with flashcard: Flashcard?) {
        
         let allIsLearned = flashcard == nil
-        
+           
+        if allIsLearned {
+            let views: [UIView] = flashcardContentView.subviews + [
+               dontKnowButton,
+               progressDescription
+            ]
+            
+            views.forEach {
+                $0.isHidden = true
+            }
+        }
+       
         allIsLearnedLabel.isHidden = !allIsLearned
-        frontSideLabel.isHidden = allIsLearned
-        backSideLabel.isHidden = allIsLearned
-        showButton.isHidden = allIsLearned
-        levelOfComplexity.isHidden = allIsLearned
-        flashcardImage.isHidden = allIsLearned
-        progressDescription.isHidden = allIsLearned
-        
+        knowButton.setTitle(allIsLearned ? "New session" : "Know", for: .normal)
+            
         guard let flashcard = flashcard else { return }
         
         frontSideLabel.text = flashcard.frontSide
