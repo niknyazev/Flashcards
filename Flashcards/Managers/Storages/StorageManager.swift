@@ -107,9 +107,9 @@ class StorageManager {
             : deck.sessionSettings!
             
         settings.deck = deck
-        settings.flashcardsStatus = status
+        settings.flashcardsStatus = SessionSettings.Statuses.init(rawValue: status) ?? .All
         settings.flashcardsLimit = count
-        settings.flashcardsComplexity = complexity
+        settings.flashcardsComplexity = SessionSettings.Complexity.init(rawValue: complexity) ?? .All
         saveContext()
     }
     

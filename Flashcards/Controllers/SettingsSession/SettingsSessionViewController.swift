@@ -49,30 +49,34 @@ class SettingsSessionViewController: UITableViewController {
         case IndexPath(row: 2, section: 0):
             
             choicerVC.delegate = {currentIndex in
-                self.deck.sessionSettings?.flashcardsStatus = Int16(currentIndex)
-                self.statusLabel.text = SettingsStatuses.allCases[currentIndex].rawValue
+                guard let value = SessionSettings.Statuses.init(rawValue: Int16(currentIndex)) else { return }
+                self.deck.sessionSettings?.flashcardsStatus = value
+                self.statusLabel.text = value.title
             }
-            choicerVC.values = SettingsStatuses.allCases.map { $0.rawValue }
-            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsStatus ?? 0)
+            choicerVC.values = SessionSettings.Statuses.allCases.map { $0.title }
+            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsStatus.rawValue ?? 0)
             
         case IndexPath(row: 3, section: 0):
             
             choicerVC.delegate = {currentIndex in
-                self.deck.sessionSettings?.flashcardsComplexity = Int16(currentIndex)
-                self.complexityLabel.text = SettingsComplexity.allCases[currentIndex].rawValue
+                guard let value = SessionSettings.Complexity.init(rawValue: Int16(currentIndex)) else { return }
+                self.deck.sessionSettings?.flashcardsComplexity = value
+                self.complexityLabel.text = value.title
             }
-            choicerVC.values = SettingsComplexity.allCases.map { $0.rawValue }
-            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsComplexity ?? 0)
-      
+            
+            choicerVC.values = SessionSettings.Complexity.allCases.map { $0.title }
+            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsComplexity.rawValue ?? 0)
+            
         case IndexPath(row: 4, section: 0):
             
             choicerVC.delegate = {currentIndex in
-                self.deck.sessionSettings?.direction = Int16(currentIndex)
-                self.directionLabel.text = SettingsDirections.allCases[currentIndex].rawValue
+                guard let value = SessionSettings.Directions.init(rawValue: Int16(currentIndex)) else { return }
+                self.deck.sessionSettings?.direction = value
+                self.directionLabel.text = value.title
             }
            
-            choicerVC.values = SettingsDirections.allCases.map { $0.rawValue }
-            choicerVC.currentIndex = Int(deck.sessionSettings?.direction ?? 0)
+            choicerVC.values = SessionSettings.Directions.allCases.map { $0.title }
+            choicerVC.currentIndex = Int(deck.sessionSettings?.direction.rawValue ?? 0)
             
         default:
             break
@@ -104,9 +108,9 @@ class SettingsSessionViewController: UITableViewController {
         
         saveResultSwitch.isOn = sessionSettings.saveResults
         needPronounce.isOn = sessionSettings.needPronounce
-        statusLabel.text = SettingsStatuses.allCases[Int(sessionSettings.flashcardsStatus)].rawValue
-        complexityLabel.text = SettingsComplexity.allCases[Int(sessionSettings.flashcardsComplexity)].rawValue
-        directionLabel.text = SettingsDirections.allCases[Int(sessionSettings.direction)].rawValue
+        statusLabel.text = sessionSettings.flashcardsStatus.title
+        complexityLabel.text = sessionSettings.flashcardsComplexity.title
+        directionLabel.text = sessionSettings.direction.title
         countTextField.text = String(sessionSettings.flashcardsLimit)
         
         
@@ -122,27 +126,4 @@ class SettingsSessionViewController: UITableViewController {
     }
     
 }
-
-// TODO: move to Settings Entity
-
-enum SettingsStatuses: String, CaseIterable {
-    case All
-    case New
-    case Learned
-}
-
-enum SettingsComplexity: String, CaseIterable  {
-    case All
-    case Easy
-    case Hard
-    
-}
-
-enum SettingsDirections: String, CaseIterable  {
-    case All
-    case Forward
-    case Backward
-}
-
-
 
