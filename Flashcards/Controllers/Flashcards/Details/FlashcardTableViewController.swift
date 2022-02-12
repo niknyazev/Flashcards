@@ -14,7 +14,7 @@ protocol FlashcardImageUpdaterDelegate {
 
 class FlashcardTableViewController: UITableViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     
     var deck: Deck?
     var delegate: FlashcardsUpdater!
@@ -31,7 +31,7 @@ class FlashcardTableViewController: UITableViewController {
     @IBOutlet weak var isLearnedSwitch: UISwitch!
     @IBOutlet weak var flashcardDeck: UILabel!
     
-    //MARK: Override methods
+    // MARK: - Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +76,8 @@ class FlashcardTableViewController: UITableViewController {
         flashcard?.isLearned.toggle()
     }
         
+    // MARK: - IBAction methods
+    
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
         if let flashcard = flashcard {
@@ -105,6 +107,12 @@ class FlashcardTableViewController: UITableViewController {
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
+    
+    @IBAction func complexityChanged(_ sender: UISegmentedControl) {
+        flashcard?.levelOfComplexity = Flashcard.Complexity.init(rawValue: Int16(sender.selectedSegmentIndex)) ?? .Easy
+    }
+    
+    // MARK: - Private methods
     
     private func choiceDeck() {
         
@@ -193,6 +201,7 @@ class FlashcardTableViewController: UITableViewController {
         frontSideTextView.text = flashcard.frontSide
         backSideTextView.text = flashcard.backSide
         isLearnedSwitch.isOn = flashcard.isLearned
+        complexitySegmentedControl.selectedSegmentIndex = Int(flashcard.levelOfComplexity.rawValue)
         
         if let imageData = flashcard.image {
             flashcardImage.image = UIImage(data: imageData)
