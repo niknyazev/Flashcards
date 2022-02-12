@@ -16,6 +16,8 @@ protocol FlashcardViewerDelegate {
 }
 
 class DecksListViewController: UITableViewController {
+    
+    // MARK: - Propertied
  
     private let userDefaults = UserDefaultsManager.shared
     private var decks: [Deck] = []
@@ -23,6 +25,8 @@ class DecksListViewController: UITableViewController {
         let deck: Deck?
         let searchIsActive: Bool
     }
+    
+    // MARK: - Override methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -106,6 +110,8 @@ class DecksListViewController: UITableViewController {
         return actions
         
     }
+    
+    // MARK: - IBAction methods
 
     @IBAction func addDeck(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "deck", sender: nil)
@@ -158,6 +164,8 @@ class DecksListViewController: UITableViewController {
         userDefaults.saveSortingType(sortingType: sender.selectedSegmentIndex)
         
     }
+    
+    // MARK: - Private methods
     
     private func setupNavigationBar() {
         title = "Task List"
@@ -213,7 +221,10 @@ class DecksListViewController: UITableViewController {
 
 extension DecksListViewController: DecksUpdaterDelegate {
     func updateDecksList() {
+        // TODO: Need gathering fetching and sort
         fetchDecks()
+        let sortingType = userDefaults.fetchSortingType()
+        sortDecks(sortingType: sortingType)
         tableView.reloadData()
     }
 }
