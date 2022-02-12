@@ -9,6 +9,8 @@ import UIKit
 
 class DeckTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+    
     @IBOutlet weak var deckName: UILabel!
     @IBOutlet weak var flashcardCount: UILabel!
     @IBOutlet weak var learnButton: UIButton!
@@ -25,9 +27,13 @@ class DeckTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - IBAction methodsz
+    
     @IBAction func startStudy() {
         delegate.openFlashcardViewer(for: viewModel.deck)
     }
+    
+    // MARK: - Private methods
     
     private func setupButton(color: UIColor, count: Int) {
         learnButton.layer.cornerRadius = learnButton.frame.height / 2

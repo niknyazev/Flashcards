@@ -38,6 +38,10 @@ class FlashcardTableViewController: UITableViewController {
         setupElements()
     }
     
+    override func viewDidLayoutSubviews() {
+        flashcardImage.layer.cornerRadius = 20
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "choiceImage" {
@@ -60,6 +64,8 @@ class FlashcardTableViewController: UITableViewController {
         }
         
     }
+    
+    //MARK: - IBAction methods
         
     @IBAction func translatePressed(_ sender: Any) {
         
@@ -75,9 +81,7 @@ class FlashcardTableViewController: UITableViewController {
     @IBAction func isLearnedChanged() {
         flashcard?.isLearned.toggle()
     }
-        
-    // MARK: - IBAction methods
-    
+            
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
         if let flashcard = flashcard {
