@@ -36,6 +36,7 @@ class FlashcardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
+        setupNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -117,6 +118,20 @@ class FlashcardTableViewController: UITableViewController {
     }
     
     // MARK: - Private methods
+    
+    private func setupNavigationBar() {
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = UIColor(hex: deck?.color ?? Colors.defaultCircleColor.hexValue)
+       
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = .white
+        
+    }
     
     private func choiceDeck() {
         

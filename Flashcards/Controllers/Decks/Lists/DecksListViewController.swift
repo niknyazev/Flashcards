@@ -168,8 +168,7 @@ class DecksListViewController: UITableViewController {
     // MARK: - Private methods
     
     private func setupNavigationBar() {
-        title = "Task List"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Decks"
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

@@ -77,6 +77,22 @@ class DeckTableViewController: UITableViewController {
         deckDescriptionTextField.text = deck.deckDescription
         colorView.backgroundColor = UIColor(hex: deck.color)
         
+        setupNavigationBar()
+         
+    }
+    
+    private func setupNavigationBar() {
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = colorView.backgroundColor
+       
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = .white
+        
     }
     
 }
@@ -87,5 +103,6 @@ extension DeckTableViewController: ColorUpdaterProtocol {
     func updateColor(with color: UIColor?) {
         colorView.backgroundColor = color
         deck?.color = color?.hexValue ?? 0
+        setupNavigationBar()
     }
 }
