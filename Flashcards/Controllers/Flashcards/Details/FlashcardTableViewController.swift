@@ -14,7 +14,7 @@ protocol FlashcardImageUpdaterDelegate {
 
 class FlashcardTableViewController: UITableViewController {
     
-    //MARK: - Properties
+    // MARK: - Properties
     
     var deck: Deck?
     var delegate: FlashcardsUpdater!
@@ -65,7 +65,7 @@ class FlashcardTableViewController: UITableViewController {
         
     }
     
-    //MARK: - IBAction methods
+    // MARK: - IBAction methods
         
     @IBAction func translatePressed(_ sender: Any) {
         
