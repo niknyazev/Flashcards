@@ -27,7 +27,15 @@ class DeckTableViewCell: UITableViewCell {
         }
     }
     
-    // MARK: - IBAction methodsz
+    
+    // MARK: - Override methods
+    
+    override func prepareForReuse() {
+        // Remove progress circles
+        iconView.layer.sublayers?.removeAll(keepingCapacity: false)
+    }
+    
+    // MARK: - IBAction methods
     
     @IBAction func startStudy() {
         delegate.openFlashcardViewer(for: viewModel.deck)
@@ -45,8 +53,6 @@ class DeckTableViewCell: UITableViewCell {
     private func addProgressCircle(flashcardsLearned: Float, color: UIColor) {
                 
         //TODO: figure out why dont work arcCenter: iconView.center. - this value is 45, 40
-        
-        iconView.layer.sublayers?.removeAll(keepingCapacity: false)
         
         let center = CGPoint(x: iconView.frame.height / 2, y: iconView.frame.width / 2)
         let radius = iconView.frame.height / 2 - 10

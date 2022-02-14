@@ -1081,10 +1081,10 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "DeckTableViewCell"
-            landmarkType = "3">
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "addProgressCircle(flashcardsLearned:color:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1097,8 +1097,8 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87">
+            startingLineNumber = "99"
+            endingLineNumber = "99">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1159,9 +1159,9 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "startStudy()"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "addProgressCircle(flashcardsLearned:color:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1395,6 +1395,38 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "setupElements()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F5B6926-9402-42B8-8C3F-7204E24383D4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setupButton(color:count:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7377B2F-2CCF-4F37-B9F3-31E5FA75A9ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "addProgressCircle(flashcardsLearned:color:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
