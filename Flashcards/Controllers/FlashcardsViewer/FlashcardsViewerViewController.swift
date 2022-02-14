@@ -153,8 +153,21 @@ class FlashcardsViewerViewController: UIViewController {
             
         guard let flashcard = flashcard else { return }
         
-        frontSideLabel.text = flashcard.frontSide
-        backSideLabel.text = flashcard.backSide
+        if let direction = deck.sessionSettings?.direction {
+            switch direction {
+            case .All:
+                let random = Int.random(in: 0...1)
+                if random == 0 {
+                    setFlashcardText(direction: .Forward, flashcard: flashcard)
+                } else {
+                    setFlashcardText(direction: .Backward, flashcard: flashcard)
+                }
+            case .Backward:
+                setFlashcardText(direction: .Backward, flashcard: flashcard)
+            case .Forward:
+                setFlashcardText(direction: .Forward, flashcard: flashcard)
+            }
+        }
         
         backSideLabel.isHidden = true
         showButton.isHidden = false
@@ -162,6 +175,16 @@ class FlashcardsViewerViewController: UIViewController {
         levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity.rawValue)
         progressDescription.text = "Flashcard: \(currentIndex + 1) of \(flashcards.count)"
         
+    }
+    
+    func setFlashcardText(direction: SessionSettings.Directions, flashcard: Flashcard) {
+        if direction == .Forward {
+            frontSideLabel.text = flashcard.frontSide
+            backSideLabel.text = flashcard.backSide
+        } else {
+            frontSideLabel.text = flashcard.backSide
+            backSideLabel.text = flashcard.frontSide
+        }
     }
     
     private func fetchFlashcards() {
