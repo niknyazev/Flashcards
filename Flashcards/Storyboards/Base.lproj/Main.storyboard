@@ -571,7 +571,7 @@
                         <outlet property="backSideLabel" destination="Iu2-Fw-lw8" id="9Cn-HV-YdX"/>
                         <outlet property="dontKnowButton" destination="yVV-UB-Bjr" id="sDU-hs-6Iu"/>
                         <outlet property="flashcardContentView" destination="PaU-4c-srU" id="FpZ-jt-6oP"/>
-                        <outlet property="flashcardImage" destination="Kpe-sz-iwj" id="Pie-bH-rk7"/>
+                        <outlet property="flashcardImage" destination="Kpe-sz-iwj" id="7QM-Hx-cji"/>
                         <outlet property="frontSideLabel" destination="qNR-Yd-JqW" id="Hc5-yA-Dw5"/>
                         <outlet property="knowButton" destination="1S2-kj-ciV" id="Z2t-yg-r94"/>
                         <outlet property="levelOfComplexity" destination="SU2-xI-L7i" id="Gvn-t2-dm4"/>

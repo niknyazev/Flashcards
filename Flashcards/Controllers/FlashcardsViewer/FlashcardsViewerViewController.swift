@@ -22,7 +22,7 @@ class FlashcardsViewerViewController: UIViewController {
     @IBOutlet weak var dontKnowButton: UIButton!
     @IBOutlet weak var knowButton: UIButton!
     @IBOutlet weak var showButton: UIButton!
-    
+        
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
     
@@ -158,6 +158,16 @@ class FlashcardsViewerViewController: UIViewController {
         
         levelOfComplexity.selectedSegmentIndex = Int(flashcard.levelOfComplexity.rawValue)
         progressDescription.text = "Flashcard: \(currentIndex + 1) of \(flashcards.count)"
+        
+        if let image = flashcard.image {
+            flashcardImage.image = UIImage(data: image)
+            flashcardImage.contentMode = .scaleAspectFill
+            flashcardImage.layer.cornerRadius = 20
+        } else {
+            flashcardImage.image = UIImage(systemName: "photo.artframe")
+            flashcardImage.contentMode = .scaleAspectFit
+            flashcardImage.layer.cornerRadius = 0
+        }
         
     }
     
