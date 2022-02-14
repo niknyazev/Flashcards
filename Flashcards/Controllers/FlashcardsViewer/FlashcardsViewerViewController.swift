@@ -110,12 +110,7 @@ class FlashcardsViewerViewController: UIViewController {
     
     private func setupFlashcardView() {
         flashcardContentView.layer.cornerRadius = 20
-        flashcardContentView.layer.shadowColor = CGColor(
-            red: 30/255,
-            green: 30/255,
-            blue: 30/255,
-            alpha: 1
-        )
+        flashcardContentView.layer.shadowColor = Colors.shadowColor
         flashcardContentView.layer.shadowRadius = 6
         flashcardContentView.layer.shadowOffset = CGSize(width: 0, height: 2)
         flashcardContentView.layer.shadowOpacity = 0.3
@@ -132,41 +127,30 @@ class FlashcardsViewerViewController: UIViewController {
         progressView.setProgress(progress, animated: animated)
         progressView.progressTintColor = Colors.progressTintColor
     }
+        
+    private func setupWhenAllLearned() {
+        let views: [UIView] = flashcardContentView.subviews + [
+            dontKnowButton,
+            progressDescription
+        ]
+        
+        views.forEach {
+            $0.isHidden = true
+        }
+        
+        allIsLearnedLabel.isHidden = false
+        knowButton.setTitle("New session", for: .normal)
+    }
     
     private func setupElements(with flashcard: Flashcard?) {
-       
-        let allIsLearned = flashcard == nil
-           
-        if allIsLearned {
-            let views: [UIView] = flashcardContentView.subviews + [
-               dontKnowButton,
-               progressDescription
-            ]
-            
-            views.forEach {
-                $0.isHidden = true
-            }
+                     
+        guard let flashcard = flashcard else {
+            setupWhenAllLearned()
+            return
         }
-       
-        allIsLearnedLabel.isHidden = !allIsLearned
-        knowButton.setTitle(allIsLearned ? "New session" : "Know", for: .normal)
-            
-        guard let flashcard = flashcard else { return }
         
         if let direction = deck.sessionSettings?.direction {
-            switch direction {
-            case .All:
-                let random = Int.random(in: 0...1)
-                if random == 0 {
-                    setFlashcardText(direction: .Forward, flashcard: flashcard)
-                } else {
-                    setFlashcardText(direction: .Backward, flashcard: flashcard)
-                }
-            case .Backward:
-                setFlashcardText(direction: .Backward, flashcard: flashcard)
-            case .Forward:
-                setFlashcardText(direction: .Forward, flashcard: flashcard)
-            }
+            setFlashcardText(direction, flashcard)
         }
         
         backSideLabel.isHidden = true
@@ -177,16 +161,27 @@ class FlashcardsViewerViewController: UIViewController {
         
     }
     
-    func setFlashcardText(direction: SessionSettings.Directions, flashcard: Flashcard) {
-        if direction == .Forward {
+    private func setFlashcardText(_ direction: SessionSettings.Directions, _ flashcard: Flashcard) {
+        
+        switch direction {
+        case .All:
+            let random = Int.random(in: 0...1)
+            if random == 0 {
+                frontSideLabel.text = flashcard.frontSide
+                backSideLabel.text = flashcard.backSide
+            } else {
+                frontSideLabel.text = flashcard.backSide
+                backSideLabel.text = flashcard.frontSide
+            }
+        case .Backward:
             frontSideLabel.text = flashcard.frontSide
             backSideLabel.text = flashcard.backSide
-        } else {
+        case .Forward:
             frontSideLabel.text = flashcard.backSide
             backSideLabel.text = flashcard.frontSide
         }
     }
-    
+        
     private func fetchFlashcards() {
        
         guard let settings = deck.sessionSettings else { return }

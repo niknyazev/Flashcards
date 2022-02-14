@@ -12,4 +12,10 @@ struct Colors {
     static let editColor = UIColor(hex: 0x99ca3c)
     static let progressTintColor = UIColor(hex: 0xffb950)
     static let defaultCircleColor = UIColor(hex: 0xFF8500)
+    static let shadowColor = CGColor(
+        red: 30/255,
+        green: 30/255,
+        blue: 30/255,
+        alpha: 1
+    )
 }

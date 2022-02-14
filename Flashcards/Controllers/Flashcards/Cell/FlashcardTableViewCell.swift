@@ -40,12 +40,7 @@ class FlashcardTableViewCell: UITableViewCell {
         mainView.layer.masksToBounds = true
         
         containerView.backgroundColor = .white
-        containerView.layer.shadowColor = CGColor(
-            red: 30/255,
-            green: 30/255,
-            blue: 30/255,
-            alpha: 1
-        )
+        containerView.layer.shadowColor = Colors.shadowColor
         containerView.layer.shadowRadius = 3
         containerView.layer.cornerRadius = 15
         containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
