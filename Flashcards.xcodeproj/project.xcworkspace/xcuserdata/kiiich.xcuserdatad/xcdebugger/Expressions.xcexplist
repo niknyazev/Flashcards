@@ -141,6 +141,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "FlashcardTableViewController.setupElements():FlashcardTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "frontSideTextView.frame.width">
+            </PersistentString>
+            <PersistentString
+               value = "frontSideTextView.frame.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DeckTableViewCell.viewModel.didset:DeckTableViewCell.swift">
          <PersistentStrings>
             <PersistentString

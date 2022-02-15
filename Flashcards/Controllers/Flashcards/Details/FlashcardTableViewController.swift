@@ -22,6 +22,7 @@ class FlashcardTableViewController: UITableViewController {
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var isLearnedSwitch: UISwitch!
     @IBOutlet weak var flashcardDeck: UILabel!
+    @IBOutlet weak var translateButton: UIButton!
     
     var deck: Deck?
     var delegate: FlashcardsUpdater!
@@ -203,7 +204,18 @@ class FlashcardTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    private func setupTranslateButton() {
+        translateButton.backgroundColor = .white
+        translateButton.tintColor = UIColor(hex: deck?.color ?? Colors.defaultCircleColor.hexValue)
+        translateButton.layer.borderColor = translateButton.tintColor.cgColor
+        translateButton.layer.borderWidth = 1
+        translateButton.layer.cornerRadius = translateButton.frame.height / 2
+        translateButton.layer.opacity = 0.7
+    }
+    
     private func setupElements() {
+        
+        setupTranslateButton()
         
         flashcardImage.contentMode = .scaleAspectFit
         flashcardImage.clipsToBounds = true
@@ -218,6 +230,7 @@ class FlashcardTableViewController: UITableViewController {
             backSideTextView.textColor = placeHolderColor
             return
         }
+                
         frontSideTextView.text = flashcard.frontSide
         backSideTextView.text = flashcard.backSide
         isLearnedSwitch.isOn = flashcard.isLearned
