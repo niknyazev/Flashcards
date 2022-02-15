@@ -11,7 +11,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Flashcard.willSave():Flashcard+CoreDataProperties.swift">
+         contextName = "SettingsSessionViewController.prepare(for:sender:):SettingsSessionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewerVC">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "DecksListViewController.setupSortingType():DecksListViewController.swift">
@@ -69,6 +74,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SettingsSessionViewController.setupElements():SettingsSessionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sessionSettings.flashcardsStatus.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DecksListViewController.sortChanged(_:):DecksListViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -101,10 +114,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SettingsSessionViewController.setupElements():SettingsSessionViewController.swift">
+         contextName = "SettingsSessionViewController.textField(_:shouldChangeCharactersIn:replacementString:):SettingsSessionViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sessionSettings.flashcardsStatus.title">
+               value = "String(allowedCharacters)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -136,12 +149,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SettingsSessionViewController.prepare(for:sender:):SettingsSessionViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewerVC">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "Flashcard.willSave():Flashcard+CoreDataProperties.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

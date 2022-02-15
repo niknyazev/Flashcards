@@ -112,13 +112,13 @@ class SettingsSessionViewController: UITableViewController {
         complexityLabel.text = sessionSettings.flashcardsComplexity.title
         directionLabel.text = sessionSettings.direction.title
         countTextField.text = String(sessionSettings.flashcardsLimit)
-        
-        
+        countTextField.delegate = self
         
     }
     
     private func startSession() {
     
+        view.endEditing(true)
         StorageManager.shared.saveContext()
         
         performSegue(withIdentifier: "flashcardsViewer", sender: nil)
@@ -127,3 +127,12 @@ class SettingsSessionViewController: UITableViewController {
     
 }
 
+extension SettingsSessionViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
+
+}
