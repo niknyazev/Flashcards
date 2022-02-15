@@ -15,6 +15,13 @@ protocol FlashcardImageUpdaterDelegate {
 class FlashcardTableViewController: UITableViewController {
     
     // MARK: - Properties
+
+    @IBOutlet weak var frontSideTextView: UITextView!
+    @IBOutlet weak var backSideTextView: UITextView!
+    @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var flashcardImage: UIImageView!
+    @IBOutlet weak var isLearnedSwitch: UISwitch!
+    @IBOutlet weak var flashcardDeck: UILabel!
     
     var deck: Deck?
     var delegate: FlashcardsUpdater!
@@ -23,13 +30,6 @@ class FlashcardTableViewController: UITableViewController {
     private let storageManager = StorageManager.shared
     private let translator = NetworkTranslator.shared
     private let placeHolderColor = UIColor.systemGray4
-
-    @IBOutlet weak var frontSideTextView: UITextView!
-    @IBOutlet weak var backSideTextView: UITextView!
-    @IBOutlet weak var complexitySegmentedControl: UISegmentedControl!
-    @IBOutlet weak var flashcardImage: UIImageView!
-    @IBOutlet weak var isLearnedSwitch: UISwitch!
-    @IBOutlet weak var flashcardDeck: UILabel!
     
     // MARK: - Override methods
     
@@ -164,7 +164,7 @@ class FlashcardTableViewController: UITableViewController {
         
         let choicerVC = ValueChoicerViewController()
         
-        choicerVC.delegate = {currentIndex in
+        choicerVC.delegate = { currentIndex in
             self.flashcard?.deck = decks[currentIndex]
             self.deck = decks[currentIndex]
             self.flashcardDeck.text = decks[currentIndex].title
@@ -172,7 +172,12 @@ class FlashcardTableViewController: UITableViewController {
         choicerVC.values = decks.map {
             $0.title ?? ""
         }
-        choicerVC.currentIndex = 0
+        
+        if let deck = deck {
+            choicerVC.currentIndex = decks.firstIndex(of: deck) ?? 0
+        } else {
+            choicerVC.currentIndex = 0
+        }
         
         navigationController?.pushViewController(choicerVC, animated: true)
     }
