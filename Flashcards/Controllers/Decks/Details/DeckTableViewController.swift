@@ -15,13 +15,13 @@ class DeckTableViewController: UITableViewController {
 
     // MARK: - Properties
     
-    var delegate: DecksUpdaterDelegate!
-    var deck: Deck?
-    
     @IBOutlet weak var deckTitleTextField: UITextField!
     @IBOutlet weak var deckDescriptionTextField: UITextField!
     @IBOutlet weak var colorView: UIView!
     
+    var delegate: DecksUpdaterDelegate!
+    var deck: Deck?
+        
     private let storageManager = StorageManager.shared
     
     // MARK: - Override methods
@@ -69,7 +69,8 @@ class DeckTableViewController: UITableViewController {
     private func setupElements() {
         
         guard let deck = deck else {
-            colorView.backgroundColor = Colors.defaultCircleColor
+            colorView.backgroundColor = Colors.decksColors.randomElement()
+            setupNavigationBar()
             return
         }
         

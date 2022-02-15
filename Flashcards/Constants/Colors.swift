@@ -18,4 +18,15 @@ struct Colors {
         blue: 30/255,
         alpha: 1
     )
+    static let decksColors = [
+        UIColor(hex: 0xFF5400),
+        UIColor(hex: 0xFF6D00),
+        UIColor(hex: 0xFF8500),
+        UIColor(hex: 0xFF9100),
+        UIColor(hex: 0xFF9E00),
+        UIColor(hex: 0x00B4D8),
+        UIColor(hex: 0x0096C7),
+        UIColor(hex: 0x0077B6),
+        UIColor(hex: 0x023E8A)
+    ]
 }

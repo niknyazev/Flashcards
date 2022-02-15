@@ -46,14 +46,11 @@ class FlashcardTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "choiceImage" {
-            
             guard let imagesVC = segue.destination as? ImageChoicerViewController else { return }
             
             imagesVC.query = frontSideTextView.text ?? ""
             imagesVC.delegate = self
-            
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -221,7 +218,6 @@ class FlashcardTableViewController: UITableViewController {
             backSideTextView.textColor = placeHolderColor
             return
         }
-        
         frontSideTextView.text = flashcard.frontSide
         backSideTextView.text = flashcard.backSide
         isLearnedSwitch.isOn = flashcard.isLearned
