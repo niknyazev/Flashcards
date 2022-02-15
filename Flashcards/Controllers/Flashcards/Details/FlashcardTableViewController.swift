@@ -114,7 +114,7 @@ class FlashcardTableViewController: UITableViewController {
     }
     
     @IBAction func complexityChanged(_ sender: UISegmentedControl) {
-        flashcard?.levelOfComplexity = Flashcard.Complexity.init(rawValue: Int16(sender.selectedSegmentIndex)) ?? .Easy
+        flashcard?.levelOfComplexity = Flashcard.Complexity.init(rawValue: Int16(sender.selectedSegmentIndex)) ?? .easy
     }
     
     // MARK: - Private methods

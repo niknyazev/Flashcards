@@ -99,9 +99,7 @@ class SettingsSessionViewController: UITableViewController {
     }
     
     private func setupElements() {
-        
-        //TODO: need refactoring
-        
+                
         guard let sessionSettings = deck.sessionSettings else {
             return
         }
@@ -120,7 +118,6 @@ class SettingsSessionViewController: UITableViewController {
     
         view.endEditing(true)
         StorageManager.shared.saveContext()
-        
         performSegue(withIdentifier: "flashcardsViewer", sender: nil)
     
     }

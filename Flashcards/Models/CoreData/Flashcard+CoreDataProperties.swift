@@ -13,8 +13,8 @@ import CoreData
 extension Flashcard {
     
     @objc enum Complexity: Int16 {
-        case Easy
-        case Hard
+        case easy
+        case hard
     }
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Flashcard> {

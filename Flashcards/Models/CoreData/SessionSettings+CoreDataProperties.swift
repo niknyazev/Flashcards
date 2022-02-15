@@ -28,51 +28,51 @@ extension SessionSettings {
     @NSManaged public var needPronounce: Bool
     
     @objc enum Statuses: Int16, Titleble, CaseIterable {
-        case All
-        case New
-        case Learned
+        case all
+        case new
+        case learned
        
         var title: String {
             switch self {
-            case .All:
+            case .all:
                 return "All"
-            case .New:
+            case .new:
                 return "New"
-            case .Learned:
+            case .learned:
                 return "Learned"
             }
         }
     }
 
     @objc enum Complexity: Int16, Titleble, CaseIterable {
-        case All
-        case Easy
-        case Hard
+        case all
+        case easy
+        case hard
        
         var title: String {
             switch self {
-            case .All:
+            case .all:
                 return "All"
-            case .Easy:
+            case .easy:
                 return "Easy"
-            case .Hard:
+            case .hard:
                 return "Hard"
             }
         }
     }
 
     @objc enum Directions: Int16, Titleble, CaseIterable {
-        case All
-        case Forward
-        case Backward
+        case all
+        case forward
+        case backward
         
         var title: String {
             switch self {
-            case .All:
+            case .all:
                 return "All"
-            case .Forward:
+            case .forward:
                 return "Forward"
-            case .Backward:
+            case .backward:
                 return "Backward"
             }
         }

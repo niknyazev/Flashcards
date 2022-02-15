@@ -65,7 +65,7 @@ class FlashcardsViewerViewController: UIViewController {
     
     @IBAction func changeLevelOfComplexity(_ sender: UISegmentedControl) {
         flashcards[currentIndex].levelOfComplexity
-            = Flashcard.Complexity.init(rawValue: Int16(sender.selectedSegmentIndex)) ?? .Easy
+            = Flashcard.Complexity.init(rawValue: Int16(sender.selectedSegmentIndex)) ?? .easy
         storageManager.saveContext()
     }
     
@@ -174,7 +174,7 @@ class FlashcardsViewerViewController: UIViewController {
     private func setFlashcardText(_ direction: SessionSettings.Directions, _ flashcard: Flashcard) {
         
         switch direction {
-        case .All:
+        case .all:
             let random = Int.random(in: 0...1)
             if random == 0 {
                 frontSideLabel.text = flashcard.frontSide
@@ -183,10 +183,10 @@ class FlashcardsViewerViewController: UIViewController {
                 frontSideLabel.text = flashcard.backSide
                 backSideLabel.text = flashcard.frontSide
             }
-        case .Backward:
+        case .backward:
             frontSideLabel.text = flashcard.frontSide
             backSideLabel.text = flashcard.backSide
-        case .Forward:
+        case .forward:
             frontSideLabel.text = flashcard.backSide
             backSideLabel.text = flashcard.frontSide
         }
@@ -199,16 +199,16 @@ class FlashcardsViewerViewController: UIViewController {
         let limit = settings.flashcardsLimit
        
         var complexity: Flashcard.Complexity?
-        if settings.flashcardsComplexity == .Easy {
-            complexity = .Easy
-        } else if settings.flashcardsComplexity == .Hard {
-            complexity = .Hard
+        if settings.flashcardsComplexity == .easy {
+            complexity = .easy
+        } else if settings.flashcardsComplexity == .hard {
+            complexity = .hard
         }
                
         var isLearned: Bool?
-        if settings.flashcardsStatus == .Learned {
+        if settings.flashcardsStatus == .learned {
             isLearned = true
-        } else if settings.flashcardsStatus == .New {
+        } else if settings.flashcardsStatus == .new {
             isLearned = false
         }
         
