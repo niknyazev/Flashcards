@@ -937,9 +937,9 @@
             filePath = "Flashcards/Controllers/Flashcards/Lists/FlashcardsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "updateSearchResults(for:)"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "updateFlashcards()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -953,9 +953,9 @@
             filePath = "Flashcards/Controllers/Flashcards/Lists/FlashcardsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "setupView()"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "setupSearchController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

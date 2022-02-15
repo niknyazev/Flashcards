@@ -13,16 +13,20 @@ protocol FlashcardsUpdater {
 
 class FlashcardsListViewController: UITableViewController {
 
-    @IBOutlet weak var progressLearning: UIProgressView!
+    // MARK: - Properties
     
     var deck: Deck?
     var delegate: DecksUpdaterDelegate!
     var searchIsActive = false
+
+    @IBOutlet weak var progressLearning: UIProgressView!
     
     private var flashcards: [Flashcard]!
     private let storageManager = StorageManager.shared
     private let searchController = UISearchController(searchResultsController: nil)
             
+    // MARK: - Override methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -35,13 +39,7 @@ class FlashcardsListViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated) //TODO: need call this?
         if searchIsActive {
-            searchController.isActive = true
-            searchController.isEditing = true
-           
-            // The search text field is not activated without this:
-            DispatchQueue.main.async {
-                self.searchController.searchBar.searchTextField.becomeFirstResponder()
-            }
+            showSearchController()
         }
     }
     
@@ -58,6 +56,28 @@ class FlashcardsListViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
+            performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
+            actionPerformed(true)
+        }
+        action.backgroundColor = Colors.editColor
+        
+        let actions = UISwipeActionsConfiguration(actions: [action])
+        
+        return actions
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath) as! FlashcardTableViewCell
+        cell.configure(with: flashcards[indexPath.row])
+        return cell
+    }
+    
+    // MARK: - IBAction methods
+    
     @IBAction func filterChanged(_ sender: UISegmentedControl) {
     
         fetchFlashcards(filterType: sender.selectedSegmentIndex)
@@ -65,22 +85,33 @@ class FlashcardsListViewController: UITableViewController {
     
     }
     
+    // MARK: - Private methods
+    
+    private func showSearchController() {
+        searchController.isActive = true
+        searchController.isEditing = true
+        
+        // The search text field is not activated without this:
+        DispatchQueue.main.async {
+            self.searchController.searchBar.searchTextField.becomeFirstResponder()
+        }
+    }
+    
     private func fetchFlashcards(text: String? = nil, filterType: Int = 0) {
-        //TODO: replace filterType from Int to Enum
         
-        var filter: Bool? = nil
+        var isLearned: Bool? = nil
         
-        if filterType == 1 {
-            filter = false
-        } else if filterType == 2 {
-            filter = true
+        if filterType == SessionSettings.Statuses.learned.rawValue {
+            isLearned = true
+        } else if filterType == SessionSettings.Statuses.new.rawValue {
+            isLearned = false
         }
         
-        let textString = text?.isEmpty ?? true ? nil : text //TODO: bad code
+        let textString = (text?.isEmpty ?? true) ? nil : text
         
         storageManager.fetchFlashcards(
             deck: deck,
-            isLearned: filter,
+            isLearned: isLearned,
             text: textString) { result in
             
                 switch result {
@@ -104,7 +135,7 @@ class FlashcardsListViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.tintColor = .white
-        searchController.searchBar.scopeButtonTitles = ["All", "New", "Learned"]
+        searchController.searchBar.scopeButtonTitles = SessionSettings.Statuses.allCases.map { $0.title }
         searchController.searchBar.delegate = self
         
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
@@ -113,7 +144,7 @@ class FlashcardsListViewController: UITableViewController {
         }
         
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = true
+        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         
     }
@@ -131,27 +162,7 @@ class FlashcardsListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         flashcards.count
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "flashcard", for: indexPath) as! FlashcardTableViewCell
-        cell.configure(with: flashcards[indexPath.row])
-        return cell
-    }
-                    
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
-            performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
-            actionPerformed(true)
-        }
-        action.backgroundColor = Colors.editColor
-        
-        let actions = UISwipeActionsConfiguration(actions: [action])
-        
-        return actions
-        
-    }
-    
+                            
     private func setupTableView() {
         tableView.rowHeight = 140
     }
