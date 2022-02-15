@@ -9,6 +9,8 @@ import UIKit
 
 class SettingsSessionViewController: UITableViewController {
 
+    // MARK: - Properties
+    
     @IBOutlet weak var saveResultSwitch: UISwitch!
     @IBOutlet weak var countTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
@@ -18,6 +20,8 @@ class SettingsSessionViewController: UITableViewController {
     
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
+    
+    // MARK: - Override methods
           
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +29,10 @@ class SettingsSessionViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "flashcardsViewer" {
-            
             guard let viewerVC = segue.destination as? FlashcardsViewerViewController else { return }
-         
             viewerVC.deck = deck
-            
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -48,6 +47,8 @@ class SettingsSessionViewController: UITableViewController {
             return
         case IndexPath(row: 2, section: 0):
             
+            // Choosing Flashcards statuses
+            
             choicerVC.delegate = {currentIndex in
                 guard let value = SessionSettings.Statuses.init(rawValue: Int16(currentIndex)) else { return }
                 self.deck.sessionSettings?.flashcardsStatus = value
@@ -57,6 +58,8 @@ class SettingsSessionViewController: UITableViewController {
             choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsStatus.rawValue ?? 0)
             
         case IndexPath(row: 3, section: 0):
+            
+            // Choosing Flashcards complexity of learning
             
             choicerVC.delegate = {currentIndex in
                 guard let value = SessionSettings.Complexity.init(rawValue: Int16(currentIndex)) else { return }
@@ -68,6 +71,8 @@ class SettingsSessionViewController: UITableViewController {
             choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsComplexity.rawValue ?? 0)
             
         case IndexPath(row: 4, section: 0):
+            
+            // Choosing which side of Flashcard will be shown
             
             choicerVC.delegate = {currentIndex in
                 guard let value = SessionSettings.Directions.init(rawValue: Int16(currentIndex)) else { return }
@@ -86,6 +91,8 @@ class SettingsSessionViewController: UITableViewController {
         
     }
     
+    // MARK: - IBAction methods
+    
     @IBAction func countChanged(_ sender: Any) {
         deck.sessionSettings?.flashcardsLimit = Int16(countTextField.text ?? "0") ?? 0
     }
@@ -97,6 +104,8 @@ class SettingsSessionViewController: UITableViewController {
     @IBAction func needPronounceChanged(_ sender: Any) {
         deck.sessionSettings?.needPronounce.toggle()
     }
+    
+    // MARK: - Private methods
     
     private func setupElements() {
                 
