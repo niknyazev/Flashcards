@@ -65,7 +65,7 @@ class FlashcardsListViewController: UITableViewController {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, actionPerformed in
             
-            let alertController = UIAlertController {
+            let alertController = UIAlertController(recordType: "flashcard") {
                 StorageManager.shared.delete(self.flashcards[indexPath.row])
                 self.flashcards.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)

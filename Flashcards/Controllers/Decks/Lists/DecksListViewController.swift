@@ -106,7 +106,7 @@ class DecksListViewController: UITableViewController {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, actionPerformed in
             
-            let alertController = UIAlertController {
+            let alertController = UIAlertController(recordType: "deck") {
                 StorageManager.shared.delete(self.decks[indexPath.row])
                 self.decks.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)

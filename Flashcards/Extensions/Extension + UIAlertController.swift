@@ -9,10 +9,10 @@ import UIKit
 
 extension UIAlertController {
     
-    convenience init(completion: @escaping () -> Void) {
+    convenience init(recordType: String, completion: @escaping () -> Void) {
         self.init(
-            title: "Removal record",
-            message: "Do you really want to delete the record?",
+            title: "Deleting the \(recordType)",
+            message: "Do you really want to delete the \(recordType)?",
             preferredStyle: .alert
         )
                 
