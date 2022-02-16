@@ -99,13 +99,26 @@ class DecksListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
             performSegue(withIdentifier: "deck", sender: decks[indexPath.row])
             actionPerformed(true)
         }
-        action.backgroundColor = Colors.editColor
         
-        let actions = UISwipeActionsConfiguration(actions: [action])
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, actionPerformed in
+            
+            self.askBeforeDelete {
+                StorageManager.shared.delete(self.decks[indexPath.row])
+                self.decks.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        
+            actionPerformed(true)
+        }
+        
+        editAction.backgroundColor = Colors.editColor
+        deleteAction.backgroundColor = Colors.deleteColor
+        
+        let actions = UISwipeActionsConfiguration(actions: [editAction, deleteAction])
         
         return actions
         
@@ -166,6 +179,27 @@ class DecksListViewController: UITableViewController {
     }
     
     // MARK: - Private methods
+    
+    private func askBeforeDelete(closer: @escaping () -> Void) {
+        
+        let alertController = UIAlertController(
+            title: "Removal record",
+            message: "Do you really want to delete the record?",
+            preferredStyle: .alert
+        )
+
+        let saveAction = UIAlertAction(title: "No", style: .default)
+
+        let cancelAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
+            closer()
+        }
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
+        
+    }
     
     private func setupNavigationBar() {
         title = "Decks"

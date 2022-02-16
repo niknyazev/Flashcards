@@ -122,7 +122,7 @@ class StorageManager {
         saveContext()
     }
     
-    func delete(_ entity: Deck) {
+    func delete<T: NSManagedObject>(_ entity: T) {
         viewContext.delete(entity)
         saveContext()
     }

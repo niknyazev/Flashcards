@@ -10,6 +10,7 @@ import UIKit
 struct Colors {
     static let mainColor = UIColor(hex: 0x0077B6)
     static let editColor = UIColor(hex: 0x99ca3c)
+    static let deleteColor = UIColor(hex: 0xd00000)
     static let progressTintColor = UIColor(hex: 0xffb950)
     static let defaultCircleColor = UIColor(hex: 0xFF8500)
     static let shadowColor = CGColor(
