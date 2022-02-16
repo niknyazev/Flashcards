@@ -345,8 +345,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "sortChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -361,8 +361,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "setupSortingType()"
             landmarkType = "7">
          </BreakpointContent>
@@ -505,8 +505,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "DecksListViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -521,8 +521,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -729,8 +729,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -921,8 +921,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -937,9 +937,9 @@
             filePath = "Flashcards/Controllers/Flashcards/Lists/FlashcardsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "updateFlashcards()"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "updateSearchResults(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -953,9 +953,9 @@
             filePath = "Flashcards/Controllers/Flashcards/Lists/FlashcardsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "setupSearchController()"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -969,8 +969,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -985,8 +985,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "searchPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1001,8 +1001,8 @@
             filePath = "Flashcards/Controllers/Decks/Lists/DecksListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1049,8 +1049,8 @@
             filePath = "Flashcards/Controllers/Decks/Details/DeckTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "updateColor(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1081,8 +1081,8 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "addProgressCircle(flashcardsLearned:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1111,8 +1111,8 @@
             filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "markFlashcardAsLearned()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1143,8 +1143,8 @@
             filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "pronounceFlashcard()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1159,8 +1159,8 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "addProgressCircle(flashcardsLearned:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1175,8 +1175,8 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "viewModel"
             landmarkType = "24">
          </BreakpointContent>
@@ -1191,8 +1191,8 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "viewModel"
             landmarkType = "24">
          </BreakpointContent>
@@ -1207,8 +1207,8 @@
             filePath = "Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "FlashcardTableViewController"
             landmarkType = "3">
             <Locations>
@@ -1330,8 +1330,8 @@
             filePath = "Flashcards/Controllers/FlashcardsViewer/FlashcardsViewerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "markFlashcardAsLearned()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1376,10 +1376,10 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "SettingsSessionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1392,8 +1392,8 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "setupElements()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1408,8 +1408,8 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "setupButton(color:count:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1424,8 +1424,8 @@
             filePath = "Flashcards/Controllers/Decks/Cell/DeckTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "addProgressCircle(flashcardsLearned:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1440,10 +1440,10 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "saveResultsChanged()"
-            landmarkType = "7">
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "SettingsSessionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1456,10 +1456,10 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "countChanged(_:)"
-            landmarkType = "7">
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "SettingsSessionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1472,10 +1472,10 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "startSession()"
-            landmarkType = "7">
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "SettingsSessionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1488,8 +1488,8 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "setupElements()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1504,10 +1504,10 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "SettingsSessionViewController"
-            landmarkType = "21">
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1520,9 +1520,41 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12CB62E6-89E8-4C04-8DCF-30BEE4E9D06A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "setupElements()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D14A7661-2B1D-4A01-9375-3AC88E67DE47"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

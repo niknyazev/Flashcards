@@ -56,9 +56,10 @@ class FlashcardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 2 {
+        if indexPath.row == 3 {
+            tableView.deselectRow(at: indexPath, animated: false)
             choiceImage()
-        } else if indexPath.row == 5 {
+        } else if indexPath.row == 6 {
             choiceDeck()
         }
         

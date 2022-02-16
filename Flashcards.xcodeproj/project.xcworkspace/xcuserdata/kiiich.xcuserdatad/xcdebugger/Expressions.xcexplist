@@ -11,10 +11,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SettingsSessionViewController.prepare(for:sender:):SettingsSessionViewController.swift">
+         contextName = "Flashcard.willSave():Flashcard+CoreDataProperties.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FlashcardTableViewController.tableView(_:didSelectRowAt:):FlashcardTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewerVC">
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -74,18 +77,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SettingsSessionViewController.setupElements():SettingsSessionViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "sessionSettings.flashcardsStatus.title">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "DecksListViewController.sortChanged(_:):DecksListViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "sender.selectedSegmentIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SettingsSessionViewController.setupElements():SettingsSessionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sessionSettings.flashcardsStatus.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -98,18 +101,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DeckTableViewController.updateColor(with:):DeckTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "deck?.color">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "DeckTableViewCell.addIcon(flashcardsLearned:color:):DeckTableViewCell.swift">
          <PersistentStrings>
             <PersistentString
                value = "fill.strokeEnd">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeckTableViewController.updateColor(with:):DeckTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deck?.color">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -149,6 +152,9 @@
             <PersistentString
                value = "frontSideTextView.frame.height">
             </PersistentString>
+            <PersistentString
+               value = "flashcardImage">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -160,7 +166,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Flashcard.willSave():Flashcard+CoreDataProperties.swift">
+         contextName = "SettingsSessionViewController.prepare(for:sender:):SettingsSessionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewerVC">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
