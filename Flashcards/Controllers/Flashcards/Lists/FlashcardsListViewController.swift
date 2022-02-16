@@ -58,13 +58,27 @@ class FlashcardsListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let action = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, actionPerformed in
             performSegue(withIdentifier: "flashcard", sender: flashcards[indexPath.row])
             actionPerformed(true)
         }
-        action.backgroundColor = Colors.editColor
         
-        let actions = UISwipeActionsConfiguration(actions: [action])
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, actionPerformed in
+            
+            let alertController = UIAlertController {
+                StorageManager.shared.delete(self.flashcards[indexPath.row])
+                self.flashcards.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            
+            present(alertController, animated: true, completion: nil)
+            actionPerformed(true)
+        }
+        
+        editAction.backgroundColor = Colors.editColor
+        deleteAction.backgroundColor = Colors.deleteColor
+        
+        let actions = UISwipeActionsConfiguration(actions: [editAction, deleteAction])
         
         return actions
         

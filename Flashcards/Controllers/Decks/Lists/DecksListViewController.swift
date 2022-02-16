@@ -106,12 +106,13 @@ class DecksListViewController: UITableViewController {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, actionPerformed in
             
-            self.askBeforeDelete {
+            let alertController = UIAlertController {
                 StorageManager.shared.delete(self.decks[indexPath.row])
                 self.decks.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }
-        
+            
+            present(alertController, animated: true, completion: nil)
             actionPerformed(true)
         }
         
@@ -179,27 +180,6 @@ class DecksListViewController: UITableViewController {
     }
     
     // MARK: - Private methods
-    
-    private func askBeforeDelete(closer: @escaping () -> Void) {
-        
-        let alertController = UIAlertController(
-            title: "Removal record",
-            message: "Do you really want to delete the record?",
-            preferredStyle: .alert
-        )
-
-        let saveAction = UIAlertAction(title: "No", style: .default)
-
-        let cancelAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
-            closer()
-        }
-
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-
-        present(alertController, animated: true, completion: nil)
-        
-    }
     
     private func setupNavigationBar() {
         title = "Decks"
