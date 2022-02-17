@@ -23,6 +23,7 @@ class FlashcardTableViewController: UITableViewController {
     @IBOutlet weak var isLearnedSwitch: UISwitch!
     @IBOutlet weak var flashcardDeck: UILabel!
     @IBOutlet weak var translateButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var deck: Deck?
     var delegate: FlashcardsUpdater!
@@ -72,9 +73,12 @@ class FlashcardTableViewController: UITableViewController {
         guard let text = frontSideTextView.text else {
             return
         }
+        
+        activityIndicator.startAnimating()
     
         translator.request(query: text) { result, error in
             self.backSideTextView.text = result
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -217,6 +221,8 @@ class FlashcardTableViewController: UITableViewController {
     private func setupElements() {
         
         setupTranslateButton()
+        
+        activityIndicator.hidesWhenStopped = true
         
         flashcardImage.contentMode = .scaleAspectFit
         flashcardImage.clipsToBounds = true
