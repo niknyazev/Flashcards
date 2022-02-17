@@ -150,6 +150,8 @@ class FlashcardsListViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.tintColor = .white
         searchController.searchBar.scopeButtonTitles = SessionSettings.Statuses.allCases.map { $0.title }
+        searchController.searchBar.setScopeBarButtonTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        searchController.searchBar.setScopeBarButtonTitleTextAttributes([.foregroundColor: Colors.mainColor], for: .selected)
         searchController.searchBar.delegate = self
         
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
