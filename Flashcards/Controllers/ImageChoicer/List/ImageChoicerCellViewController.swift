@@ -9,15 +9,19 @@ import UIKit
 
 class ImageChoicerCellViewController: UICollectionViewCell {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var webImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - Public methods
  
     func configure(with urlImage: String) {
-        //TODO: should i config default cell properties here?
+        
         webImage.image = nil
         layer.cornerRadius = 30
         backgroundColor = .lightGray
-        //
+        
         guard let url = URL(string: urlImage) else { return }
         
         if let image = getCachedImage(from: url) {
@@ -40,6 +44,8 @@ class ImageChoicerCellViewController: UICollectionViewCell {
             }
         }.resume()
     }
+    
+    // MARK: - Private methods
     
     private func setupImage(image: UIImage?) {
         webImage.image = image
