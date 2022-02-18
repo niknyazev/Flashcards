@@ -33,7 +33,7 @@ class ImageChoicerCellViewController: UICollectionViewCell {
             guard let data = data, let response = response else { return }
             
             if url != response.url {
-                return //TODO: check how it work
+                return
             }
             
             self.storeToCache(response: response, data: data)

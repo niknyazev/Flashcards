@@ -37,7 +37,7 @@ class FlashcardsListViewController: UITableViewController {
     }
         
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated) //TODO: need call this?
+        super.viewDidAppear(animated)
         if searchIsActive {
             showSearchController()
         }
