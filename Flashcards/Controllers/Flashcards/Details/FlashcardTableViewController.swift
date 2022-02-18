@@ -225,6 +225,15 @@ class FlashcardTableViewController: UITableViewController {
         translateButton.layer.opacity = 0.7
     }
     
+    private func prepareNewFlashcard() {
+        frontSideTextView.text = "Front side text"
+        frontSideTextView.textColor = placeHolderColor
+        backSideTextView.text = "Back side text"
+        backSideTextView.textColor = placeHolderColor
+        isLearnedSwitch.isOn = false
+        flashcardImage.contentMode = .scaleAspectFit
+    }
+    
     private func setupElements() {
         
         setupTranslateButton()
@@ -238,11 +247,7 @@ class FlashcardTableViewController: UITableViewController {
         backSideTextView.delegate = self
     
         guard let flashcard = flashcard else {
-            frontSideTextView.text = "Front side text"
-            frontSideTextView.textColor = placeHolderColor
-            backSideTextView.text = "Back side text"
-            backSideTextView.textColor = placeHolderColor
-            isLearnedSwitch.isOn = false
+            prepareNewFlashcard()
             return
         }
                 
