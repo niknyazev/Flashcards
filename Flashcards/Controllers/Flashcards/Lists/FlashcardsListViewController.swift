@@ -78,7 +78,7 @@ class FlashcardsListViewController: UITableViewController {
         editAction.backgroundColor = Colors.editColor
         deleteAction.backgroundColor = Colors.deleteColor
         
-        let actions = UISwipeActionsConfiguration(actions: [editAction, deleteAction])
+        let actions = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         
         return actions
         
