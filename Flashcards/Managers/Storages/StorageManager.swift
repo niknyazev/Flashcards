@@ -27,6 +27,8 @@ class StorageManager {
     
     private init() {}
     
+    // MARK: - Fetching methods
+    
     func fetchDecks(completion: (Result<[Deck], Error>) -> Void) {
         let fetchRequest = Deck.fetchRequest()
         
@@ -78,6 +80,8 @@ class StorageManager {
         }
     }
     
+    // MARK: - Saving methods
+    
     func saveDeck(_ entityName: String, color: Int) {
         
         let entity = Deck(context: viewContext)
@@ -96,10 +100,6 @@ class StorageManager {
         saveContext()
     }
     
-    func updateFlashcard(deck: Deck?) {
-        saveContext()
-    }
-        
     func saveSessionSettings(deck: Deck, complexity: Int16, count: Int16, status: Int16) {
         
         let settings = deck.sessionSettings == nil
@@ -112,23 +112,11 @@ class StorageManager {
         settings.flashcardsComplexity = SessionSettings.Complexity.init(rawValue: complexity) ?? .all
         saveContext()
     }
-    
-    func editDeck(_ entity: Deck, newName: String) {
-        entity.title = newName
-        saveContext()
-    }
-    
-    func editFlashcard(_ entity: Flashcard, newName: String) {
-        saveContext()
-    }
+        
+    // MARK: - Common methods
     
     func delete<T: NSManagedObject>(_ entity: T) {
         viewContext.delete(entity)
-        saveContext()
-    }
-
-    func delete(sessionSettings: SessionSettings) {
-        viewContext.delete(sessionSettings)
         saveContext()
     }
     
