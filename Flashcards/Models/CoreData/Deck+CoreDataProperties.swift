@@ -21,7 +21,7 @@ extension Deck {
     @NSManaged public var flashcardsCount: Int
     @NSManaged public var isDeactived: Bool
     @NSManaged public var percentageOfLearned: Float
-    @NSManaged public var title: String?
+    @NSManaged public var title: String
     @NSManaged public var flashcards: NSSet?
     @NSManaged public var sessionSettings: SessionSettings?
     

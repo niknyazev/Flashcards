@@ -207,11 +207,10 @@ class DecksListViewController: UITableViewController {
         
     private func sortDecks(sortingType: Int) {
         
-        //TODO: remove optional type for fields
         //TODO: change int type to enum
        
         if sortingType == 0 {
-            decks = decks.sorted { $0.title ?? "" < $1.title ?? ""}
+            decks = decks.sorted { $0.title < $1.title }
         } else if sortingType == 1 {
             decks = decks.sorted { $0.flashcards?.count ?? 0 > $1.flashcards?.count ?? 0}
         } else if sortingType == 2 {

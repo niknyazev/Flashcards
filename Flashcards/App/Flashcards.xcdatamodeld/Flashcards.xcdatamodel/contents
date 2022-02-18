@@ -6,7 +6,7 @@
         <attribute name="flashcardsCount" optional="YES" attributeType="Integer 64" derived="YES" derivationExpression="flashcards.@count" usesScalarValueType="YES"/>
         <attribute name="isDeactived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="percentageOfLearned" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
         <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flashcard" inverseName="deck" inverseEntity="Flashcard"/>
         <relationship name="sessionSettings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SessionSettings" inverseName="deck" inverseEntity="SessionSettings"/>
     </entity>
