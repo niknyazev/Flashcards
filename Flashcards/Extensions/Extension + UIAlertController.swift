@@ -16,12 +16,12 @@ extension UIAlertController {
             preferredStyle: .alert
         )
                 
-        let saveAction = UIAlertAction(title: "No", style: .default)
-        let cancelAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
+        let noAction = UIAlertAction(title: "No", style: .default)
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
             completion()
         }
 
-        self.addAction(saveAction)
-        self.addAction(cancelAction)
+        self.addAction(noAction)
+        self.addAction(yesAction)
     }
 }
