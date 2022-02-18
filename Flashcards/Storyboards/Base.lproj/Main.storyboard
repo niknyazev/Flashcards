@@ -241,7 +241,7 @@
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hmw-Ac-5rV">
                                                     <rect key="frame" x="244" y="6" width="150" height="32"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="YZV-fZ-7aD"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="YZV-fZ-7aD"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="Easy"/>
@@ -454,7 +454,7 @@
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="7ck-eP-bfX"/>
-                                                    <constraint firstAttribute="width" constant="120" id="Fwi-jr-Aok"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Fwi-jr-Aok"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
@@ -479,7 +479,7 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-xI-L7i">
                                         <rect key="frame" x="122" y="564" width="130" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="7pM-eD-5X6"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="7pM-eD-5X6"/>
                                         </constraints>
                                         <segments>
                                             <segment title="Easy"/>
@@ -531,7 +531,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                                         <color key="backgroundColor" red="0.5568627451" green="0.55294117649999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="WQE-00-cKF"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="WQE-00-cKF"/>
                                             <constraint firstAttribute="height" constant="50" id="Xu1-kh-vg2"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -547,7 +547,7 @@
                                         <rect key="frame" x="180" y="0.0" width="140" height="50"/>
                                         <color key="backgroundColor" red="0.5568627451" green="0.55294117649999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="JX9-xU-JHv"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="JX9-xU-JHv"/>
                                             <constraint firstAttribute="height" constant="50" id="OOb-k5-Sh8"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -779,14 +779,14 @@
                             <tableViewSection headerTitle="Deck description" id="57B-qT-2Bt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UE3-6W-jDf">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="41"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="41.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UE3-6W-jDf" id="lsZ-7p-Rxf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYT-XL-tEP">
-                                                    <rect key="frame" x="20" y="11" width="374" height="19"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                                 </textField>
@@ -800,7 +800,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Id3-wb-xx8">
-                                        <rect key="frame" x="0.0" y="85.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="86" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Id3-wb-xx8" id="OMu-dS-1qA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -821,7 +821,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="kG0-es-PaS">
-                                        <rect key="frame" x="0.0" y="165.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="166" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kG0-es-PaS" id="bd9-AN-xla">
                                             <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
@@ -1089,7 +1089,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="All" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZl-AH-YlJ">
                                                     <rect key="frame" x="254" y="5" width="100" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="56y-Ad-mg9"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="56y-Ad-mg9"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>

@@ -29,7 +29,7 @@ class DeckCellViewModel: DeckCellViewModelProtocol {
     }
     
     var title: String {
-        deck.title ?? ""
+        deck.title
     }
     
     var color: Int {

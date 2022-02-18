@@ -173,7 +173,7 @@ class FlashcardTableViewController: UITableViewController {
             self.flashcardDeck.text = decks[currentIndex].title
         }
         choicerVC.values = decks.map {
-            $0.title ?? ""
+            $0.title
         }
         
         if let deck = deck {
