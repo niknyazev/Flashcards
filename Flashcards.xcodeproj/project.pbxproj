@@ -201,6 +201,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		011D646327BFE1A10039470B /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				0198F6692797462300B13C90 /* ImagesUrlList.swift */,
+				01EAAFD827995896006951B6 /* TranslationResult.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
 		011FA2A2279C438500EDD388 /* SettingsSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,8 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				01E404AE27AC4B5B00E6A6DB /* CoreData */,
-				0198F6692797462300B13C90 /* ImagesUrlList.swift */,
-				01EAAFD827995896006951B6 /* TranslationResult.swift */,
+				011D646327BFE1A10039470B /* Web */,
 			);
 			path = Models;
 			sourceTree = "<group>";
