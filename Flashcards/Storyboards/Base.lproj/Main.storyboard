@@ -65,6 +65,7 @@
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="t5Y-7z-a5N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cTW-IB-Hdn" secondAttribute="trailing" constant="8" symbolic="YES" id="0jA-nc-TcQ"/>
                                         <constraint firstAttribute="trailing" secondItem="t5Y-7z-a5N" secondAttribute="trailing" constant="20" id="1wm-Df-Ela"/>
                                         <constraint firstItem="t5Y-7z-a5N" firstAttribute="centerY" secondItem="ev5-Tb-8AR" secondAttribute="centerY" id="68f-KI-nqP"/>
                                         <constraint firstItem="cTW-IB-Hdn" firstAttribute="leading" secondItem="kKH-Ot-Fa3" secondAttribute="trailing" constant="15" id="HcM-fJ-G6g"/>
@@ -410,22 +411,22 @@
             <objects>
                 <viewController id="j7n-Tl-lnD" customClass="FlashcardsViewerViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x7C-d2-oJV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dZK-4k-IV8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="4"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="4"/>
                                 <color key="progressTintColor" systemColor="systemGreenColor"/>
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-4c-srU">
-                                <rect key="frame" x="20" y="142" width="374" height="625"/>
+                                <rect key="frame" x="20" y="54" width="374" height="659"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-sz-iwj">
-                                        <rect key="frame" x="117" y="31" width="140" height="137.5"/>
+                                        <rect key="frame" x="113" y="31" width="148" height="145.5"/>
                                         <color key="tintColor" systemColor="systemGray4Color"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kec-g0-ow5" userLabel="Front View">
-                                        <rect key="frame" x="30" y="180" width="314" height="120"/>
+                                        <rect key="frame" x="30" y="188" width="314" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front side" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-Yd-JqW">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="120"/>
@@ -443,7 +444,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-1P-hMr" userLabel="Back View">
-                                        <rect key="frame" x="30" y="320" width="314" height="120"/>
+                                        <rect key="frame" x="30" y="328" width="314" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back side" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu2-Fw-lw8">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="120"/>
@@ -479,7 +480,7 @@
                                         </constraints>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-xI-L7i">
-                                        <rect key="frame" x="122" y="564" width="130" height="32"/>
+                                        <rect key="frame" x="122" y="598" width="130" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="7pM-eD-5X6"/>
                                         </constraints>
@@ -492,14 +493,14 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT3-wg-S1O" userLabel="Line">
-                                        <rect key="frame" x="20" y="304" width="334" height="1"/>
+                                        <rect key="frame" x="20" y="312" width="334" height="1"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="csB-3h-t3s"/>
                                         </constraints>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All flashcard are learned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-ne-pdo">
-                                        <rect key="frame" x="58.5" y="297.5" width="257" height="30"/>
+                                        <rect key="frame" x="58.5" y="314.5" width="257" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -527,7 +528,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="RM8-hC-UGz">
-                                <rect key="frame" x="47" y="797" width="320" height="50"/>
+                                <rect key="frame" x="47" y="743" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-UB-Bjr">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
@@ -564,7 +565,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashcard 1 of 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7n-43-msC">
-                                <rect key="frame" x="138" y="107" width="138" height="20.5"/>
+                                <rect key="frame" x="138" y="19" width="138" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
@@ -848,6 +849,7 @@
                                                 <constraint firstItem="ezh-vb-2OE" firstAttribute="centerY" secondItem="bd9-AN-xla" secondAttribute="centerY" id="EuK-zA-csB"/>
                                                 <constraint firstAttribute="trailing" secondItem="u23-NW-A3b" secondAttribute="trailing" constant="20" id="KcD-MM-fis"/>
                                                 <constraint firstItem="ezh-vb-2OE" firstAttribute="leading" secondItem="bd9-AN-xla" secondAttribute="leadingMargin" id="M7q-gl-Lxn"/>
+                                                <constraint firstItem="u23-NW-A3b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ezh-vb-2OE" secondAttribute="trailing" constant="8" symbolic="YES" id="qIa-Mz-v5M"/>
                                                 <constraint firstItem="u23-NW-A3b" firstAttribute="centerY" secondItem="bd9-AN-xla" secondAttribute="centerY" id="rv5-bQ-BhV"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1160,7 +1162,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zOa-Gj-qDq"/>
+        <segue reference="M50-tY-utT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
