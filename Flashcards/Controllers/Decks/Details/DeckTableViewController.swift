@@ -28,8 +28,8 @@ class DeckTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let colorChoicer = segue.destination as? ColorChoicerCollectionViewController else { return }
-        colorChoicer.delegate = self
+        guard let colorChooser = segue.destination as? ColorChooserCollectionViewController else { return }
+        colorChooser.delegate = self
         
     }
     

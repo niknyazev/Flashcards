@@ -19,15 +19,15 @@
 		0102C9BC2792CFB600A2637B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */; };
 		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
 		011FA2A1279C436F00EDD388 /* SettingsSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */; };
-		013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */; };
-		013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */; };
+		013DFBD927A2D3A600531E89 /* ValueChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */; };
+		013DFBDB27A4412900531E89 /* ColorChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */; };
 		013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */; };
 		013DFC0327A6DCDD00531E89 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFC0227A6DCDD00531E89 /* Colors.swift */; };
 		015CE74027BD5BA40039A51D /* Extension + UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CE73F27BD5BA40039A51D /* Extension + UIAlertController.swift */; };
 		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
-		0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */; };
+		0198F66727972C1400B13C90 /* ImageChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChooserViewController.swift */; };
 		0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F6692797462300B13C90 /* ImagesUrlList.swift */; };
-		0198F66C27974C4600B13C90 /* ImageChoicerCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */; };
+		0198F66C27974C4600B13C90 /* ImageChooserCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66B27974C4600B13C90 /* ImageChooserCellViewController.swift */; };
 		01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */; };
 		01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */; };
 		01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */; };
@@ -60,15 +60,15 @@
 		0102C9BB2792CFB600A2637B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewerViewController.swift; sourceTree = "<group>"; };
 		011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSessionViewController.swift; sourceTree = "<group>"; };
-		013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChoicerViewController.swift; sourceTree = "<group>"; };
-		013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChoicerCollectionViewController.swift; sourceTree = "<group>"; };
+		013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChooserViewController.swift; sourceTree = "<group>"; };
+		013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooserCollectionViewController.swift; sourceTree = "<group>"; };
 		013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
 		013DFC0227A6DCDD00531E89 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		015CE73F27BD5BA40039A51D /* Extension + UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIAlertController.swift"; sourceTree = "<group>"; };
 		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
-		0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerViewController.swift; sourceTree = "<group>"; };
+		0198F66627972C1400B13C90 /* ImageChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChooserViewController.swift; sourceTree = "<group>"; };
 		0198F6692797462300B13C90 /* ImagesUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesUrlList.swift; sourceTree = "<group>"; };
-		0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChoicerCellViewController.swift; sourceTree = "<group>"; };
+		0198F66B27974C4600B13C90 /* ImageChooserCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChooserCellViewController.swift; sourceTree = "<group>"; };
 		01A6A6DE27933AFC001A1E46 /* FlashcardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewCell.swift; sourceTree = "<group>"; };
 		01A6A6E027947984001A1E46 /* FlashcardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewController.swift; sourceTree = "<group>"; };
 		01A6A6E22795995E001A1E46 /* DeckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewController.swift; sourceTree = "<group>"; };
@@ -145,9 +145,9 @@
 				0102C9B92792CE3300A2637B /* Decks */,
 				0102C9BA2792CE4200A2637B /* Flashcards */,
 				011FA2A2279C438500EDD388 /* SettingsSession */,
-				0198F66D2798206300B13C90 /* ImageChoicer */,
-				013DFBE027A58F2800531E89 /* ValueChoicer */,
-				013DFBDF27A58BEC00531E89 /* ColorChoicer */,
+				0198F66D2798206300B13C90 /* ImageChooser */,
+				013DFBE027A58F2800531E89 /* ValueChooser */,
+				013DFBDF27A58BEC00531E89 /* ColorChooser */,
 				01B2FCC7279F189F0065F23D /* FlashcardsViewer */,
 			);
 			path = Controllers;
@@ -227,20 +227,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		013DFBDF27A58BEC00531E89 /* ColorChoicer */ = {
+		013DFBDF27A58BEC00531E89 /* ColorChooser */ = {
 			isa = PBXGroup;
 			children = (
-				013DFBDA27A4412900531E89 /* ColorChoicerCollectionViewController.swift */,
+				013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */,
 			);
-			name = ColorChoicer;
+			name = ColorChooser;
 			sourceTree = "<group>";
 		};
-		013DFBE027A58F2800531E89 /* ValueChoicer */ = {
+		013DFBE027A58F2800531E89 /* ValueChooser */ = {
 			isa = PBXGroup;
 			children = (
-				013DFBD827A2D3A600531E89 /* ValueChoicerViewController.swift */,
+				013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */,
 			);
-			path = ValueChoicer;
+			path = ValueChooser;
 			sourceTree = "<group>";
 		};
 		013DFC0127A6DC7000531E89 /* Constants */ = {
@@ -260,13 +260,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0198F66D2798206300B13C90 /* ImageChoicer */ = {
+		0198F66D2798206300B13C90 /* ImageChooser */ = {
 			isa = PBXGroup;
 			children = (
 				01B2FCC3279F17790065F23D /* List */,
 				01B2FCC4279F17890065F23D /* Cell */,
 			);
-			path = ImageChoicer;
+			path = ImageChooser;
 			sourceTree = "<group>";
 		};
 		01A6A6E42796C599001A1E46 /* Lists */ = {
@@ -304,7 +304,7 @@
 		01B2FCC3279F17790065F23D /* List */ = {
 			isa = PBXGroup;
 			children = (
-				0198F66B27974C4600B13C90 /* ImageChoicerCellViewController.swift */,
+				0198F66B27974C4600B13C90 /* ImageChooserCellViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 		01B2FCC4279F17890065F23D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				0198F66627972C1400B13C90 /* ImageChoicerViewController.swift */,
+				0198F66627972C1400B13C90 /* ImageChooserViewController.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -460,12 +460,12 @@
 				0102C9AB278EE27F00A2637B /* DecksListViewController.swift in Sources */,
 				01A6A6E32795995E001A1E46 /* DeckTableViewController.swift in Sources */,
 				0102C9AD278EE4C800A2637B /* FlashcardsListViewController.swift in Sources */,
-				013DFBD927A2D3A600531E89 /* ValueChoicerViewController.swift in Sources */,
+				013DFBD927A2D3A600531E89 /* ValueChooserViewController.swift in Sources */,
 				013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */,
 				01E404A827AC40E400E6A6DB /* SessionSettings+CoreDataClass.swift in Sources */,
 				01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
-				0198F66727972C1400B13C90 /* ImageChoicerViewController.swift in Sources */,
+				0198F66727972C1400B13C90 /* ImageChooserViewController.swift in Sources */,
 				01FB3E5A279B11F800C4CA71 /* SpeechSynthesizer.swift in Sources */,
 				01A6A6E127947984001A1E46 /* FlashcardTableViewController.swift in Sources */,
 				01E404AB27AC40E400E6A6DB /* Deck+CoreDataProperties.swift in Sources */,
@@ -473,9 +473,9 @@
 				0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */,
 				013DFC0327A6DCDD00531E89 /* Colors.swift in Sources */,
 				01E404A927AC40E400E6A6DB /* SessionSettings+CoreDataProperties.swift in Sources */,
-				013DFBDB27A4412900531E89 /* ColorChoicerCollectionViewController.swift in Sources */,
+				013DFBDB27A4412900531E89 /* ColorChooserCollectionViewController.swift in Sources */,
 				01A6A6DF27933AFC001A1E46 /* FlashcardTableViewCell.swift in Sources */,
-				0198F66C27974C4600B13C90 /* ImageChoicerCellViewController.swift in Sources */,
+				0198F66C27974C4600B13C90 /* ImageChooserCellViewController.swift in Sources */,
 				0198F66A2797462300B13C90 /* ImagesUrlList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

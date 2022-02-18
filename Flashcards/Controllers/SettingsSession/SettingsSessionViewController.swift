@@ -39,7 +39,7 @@ class SettingsSessionViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let choicerVC = ValueChoicerViewController()
+        let chooserVC = ValueChooserViewController()
         
         switch indexPath {
         case IndexPath(row: 0, section: 1):
@@ -49,45 +49,45 @@ class SettingsSessionViewController: UITableViewController {
             
             // Choosing Flashcards statuses
             
-            choicerVC.delegate = {currentIndex in
+            chooserVC.delegate = {currentIndex in
                 guard let value = SessionSettings.Statuses.init(rawValue: Int16(currentIndex)) else { return }
                 self.deck.sessionSettings?.flashcardsStatus = value
                 self.statusLabel.text = value.title
             }
-            choicerVC.values = SessionSettings.Statuses.allCases.map { $0.title }
-            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsStatus.rawValue ?? 0)
+            chooserVC.values = SessionSettings.Statuses.allCases.map { $0.title }
+            chooserVC.currentIndex = Int(deck.sessionSettings?.flashcardsStatus.rawValue ?? 0)
             
         case IndexPath(row: 3, section: 0):
             
             // Choosing Flashcards complexity of learning
             
-            choicerVC.delegate = {currentIndex in
+            chooserVC.delegate = {currentIndex in
                 guard let value = SessionSettings.Complexity.init(rawValue: Int16(currentIndex)) else { return }
                 self.deck.sessionSettings?.flashcardsComplexity = value
                 self.complexityLabel.text = value.title
             }
             
-            choicerVC.values = SessionSettings.Complexity.allCases.map { $0.title }
-            choicerVC.currentIndex = Int(deck.sessionSettings?.flashcardsComplexity.rawValue ?? 0)
+            chooserVC.values = SessionSettings.Complexity.allCases.map { $0.title }
+            chooserVC.currentIndex = Int(deck.sessionSettings?.flashcardsComplexity.rawValue ?? 0)
             
         case IndexPath(row: 4, section: 0):
             
             // Choosing which side of Flashcard will be shown
             
-            choicerVC.delegate = {currentIndex in
+            chooserVC.delegate = {currentIndex in
                 guard let value = SessionSettings.Directions.init(rawValue: Int16(currentIndex)) else { return }
                 self.deck.sessionSettings?.direction = value
                 self.directionLabel.text = value.title
             }
            
-            choicerVC.values = SessionSettings.Directions.allCases.map { $0.title }
-            choicerVC.currentIndex = Int(deck.sessionSettings?.direction.rawValue ?? 0)
+            chooserVC.values = SessionSettings.Directions.allCases.map { $0.title }
+            chooserVC.currentIndex = Int(deck.sessionSettings?.direction.rawValue ?? 0)
             
         default:
             break
         }
         
-        navigationController?.pushViewController(choicerVC, animated: true)
+        navigationController?.pushViewController(chooserVC, animated: true)
         
     }
     

@@ -47,8 +47,8 @@ class FlashcardTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "choiceImage" {
-            guard let imagesVC = segue.destination as? ImageChoicerViewController else { return }
+        if segue.identifier == "chooseImage" {
+            guard let imagesVC = segue.destination as? ImageChooserViewController else { return }
             
             imagesVC.query = frontSideTextView.text ?? ""
             imagesVC.delegate = self
@@ -59,9 +59,9 @@ class FlashcardTableViewController: UITableViewController {
         
         if indexPath.row == 3 {
             tableView.deselectRow(at: indexPath, animated: false)
-            choiceImage()
+            chooseImage()
         } else if indexPath.row == 6 {
-            choiceDeck()
+            chooseDeck()
         }
         
     }
@@ -136,12 +136,12 @@ class FlashcardTableViewController: UITableViewController {
         
     }
     
-    private func choiceDeck() {
+    private func chooseDeck() {
         
         StorageManager.shared.fetchDecks { result in
             switch result {
             case .success(let decksResult):
-                self.openDeckChoicer(decks: decksResult)
+                self.openDeckChooser(decks: decksResult)
             case .failure(let error):
                 print(error)
             }
@@ -163,29 +163,29 @@ class FlashcardTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    private func openDeckChoicer(decks: [Deck]) {
+    private func openDeckChooser(decks: [Deck]) {
         
-        let choicerVC = ValueChoicerViewController()
+        let chooserVC = ValueChooserViewController()
         
-        choicerVC.delegate = { currentIndex in
+        chooserVC.delegate = { currentIndex in
             self.flashcard?.deck = decks[currentIndex]
             self.deck = decks[currentIndex]
             self.flashcardDeck.text = decks[currentIndex].title
         }
-        choicerVC.values = decks.map {
+        chooserVC.values = decks.map {
             $0.title
         }
         
         if let deck = deck {
-            choicerVC.currentIndex = decks.firstIndex(of: deck) ?? 0
+            chooserVC.currentIndex = decks.firstIndex(of: deck) ?? 0
         } else {
-            choicerVC.currentIndex = 0
+            chooserVC.currentIndex = 0
         }
         
-        navigationController?.pushViewController(choicerVC, animated: true)
+        navigationController?.pushViewController(chooserVC, animated: true)
     }
     
-    private func choiceImage() {
+    private func chooseImage() {
         let alertController = UIAlertController(
             title: "Choose source of image",
             message: nil,
@@ -197,7 +197,7 @@ class FlashcardTableViewController: UITableViewController {
         }
         
         let webAction = UIAlertAction(title: "Web", style: .default) { _ in
-            self.performSegue(withIdentifier: "choiceImage", sender: nil)
+            self.performSegue(withIdentifier: "chooseImage", sender: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)

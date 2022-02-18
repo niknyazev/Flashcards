@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ValueChoicerViewController: UITableViewController {
+class ValueChooserViewController: UITableViewController {
 
     // MARK: - Properties
     

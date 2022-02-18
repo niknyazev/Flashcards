@@ -1,5 +1,5 @@
 //
-//  ImageChoicerCellViewController.swift
+//  ImageChooserCellViewController.swift
 //  Flashcards
 //
 //  Created by Николай on 18.01.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageChoicerCellViewController: UICollectionViewCell {
+class ImageChooserCellViewController: UICollectionViewCell {
     
     // MARK: - Properties
     
