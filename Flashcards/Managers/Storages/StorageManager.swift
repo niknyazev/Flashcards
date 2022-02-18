@@ -117,16 +117,27 @@ class StorageManager {
         saveContext()
     }
     
-    func saveSessionSettings(deck: Deck, complexity: Int16, count: Int16, status: Int16) {
+    func saveSessionSettings(
+        deck: Deck,
+        needPronounce: Bool,
+        saveResults: Bool,
+        complexity: SessionSettings.Complexity,
+        status: SessionSettings.Statuses,
+        direction: SessionSettings.Directions,
+        count: Int16?) {
         
         let settings = deck.sessionSettings == nil
             ? SessionSettings(context: viewContext)
             : deck.sessionSettings!
             
         settings.deck = deck
-        settings.flashcardsStatus = SessionSettings.Statuses.init(rawValue: status) ?? .all
-        settings.flashcardsLimit = count
-        settings.flashcardsComplexity = SessionSettings.Complexity.init(rawValue: complexity) ?? .all
+        settings.needPronounce = needPronounce
+        settings.saveResults = saveResults
+        settings.flashcardsStatus = status
+        settings.flashcardsLimit = count ?? 0
+        settings.flashcardsComplexity = complexity
+        settings.direction = direction
+            
         saveContext()
     }
         

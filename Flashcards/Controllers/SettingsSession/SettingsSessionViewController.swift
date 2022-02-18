@@ -49,7 +49,7 @@ class SettingsSessionViewController: UITableViewController {
             
             // Choosing Flashcards statuses
             
-            chooserVC.delegate = {currentIndex in
+            chooserVC.delegate = { currentIndex in
                 guard let value = SessionSettings.Statuses.init(rawValue: Int16(currentIndex)) else { return }
                 self.deck.sessionSettings?.flashcardsStatus = value
                 self.statusLabel.text = value.title
@@ -61,7 +61,7 @@ class SettingsSessionViewController: UITableViewController {
             
             // Choosing Flashcards complexity of learning
             
-            chooserVC.delegate = {currentIndex in
+            chooserVC.delegate = { currentIndex in
                 guard let value = SessionSettings.Complexity.init(rawValue: Int16(currentIndex)) else { return }
                 self.deck.sessionSettings?.flashcardsComplexity = value
                 self.complexityLabel.text = value.title
@@ -74,7 +74,7 @@ class SettingsSessionViewController: UITableViewController {
             
             // Choosing which side of Flashcard will be shown
             
-            chooserVC.delegate = {currentIndex in
+            chooserVC.delegate = { currentIndex in
                 guard let value = SessionSettings.Directions.init(rawValue: Int16(currentIndex)) else { return }
                 self.deck.sessionSettings?.direction = value
                 self.directionLabel.text = value.title
@@ -109,6 +109,10 @@ class SettingsSessionViewController: UITableViewController {
     
     private func setupElements() {
                 
+        if deck.sessionSettings == nil {
+            saveNewSettings()
+        }
+        
         guard let sessionSettings = deck.sessionSettings else {
             return
         }
@@ -129,6 +133,19 @@ class SettingsSessionViewController: UITableViewController {
         StorageManager.shared.saveContext()
         performSegue(withIdentifier: "flashcardsViewer", sender: nil)
     
+    }
+    
+    private func saveNewSettings() {
+        
+        StorageManager.shared.saveSessionSettings(
+            deck: deck,
+            needPronounce: true,
+            saveResults: true,
+            complexity: .all,
+            status: .all,
+            direction: .all,
+            count: nil
+        )
     }
     
 }

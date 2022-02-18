@@ -729,9 +729,9 @@
             filePath = "Flashcards/Managers/Storages/StorageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "saveSessionSettings(deck:complexity:count:status:)"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "saveSessionSettings(deck:needPronounce:saveResults:complexity:status:direction:count:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1374,8 +1374,8 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "SettingsSessionViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1454,8 +1454,8 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "SettingsSessionViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -1470,8 +1470,8 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "setupElements()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1486,8 +1486,10 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147">
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "SettingsSessionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1500,8 +1502,8 @@
             filePath = "Flashcards/Controllers/SettingsSession/SettingsSessionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "SettingsSessionViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -1518,8 +1520,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "253"
             endingLineNumber = "253"
-            landmarkName = "FlashcardTableViewController"
-            landmarkType = "21">
+            landmarkName = "setupElements()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
