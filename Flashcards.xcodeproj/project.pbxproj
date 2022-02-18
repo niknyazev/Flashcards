@@ -121,6 +121,7 @@
 				0198F6682797460000B13C90 /* Models */,
 				0102C9B0278EF0D600A2637B /* Managers */,
 				0102C9A8278EE09400A2637B /* Controllers */,
+				011D646227BFE0620039470B /* CoreData */,
 				0102C9A7278EE07D00A2637B /* App */,
 				0102C9A9278EE0C100A2637B /* Storyboards */,
 			);
@@ -132,7 +133,6 @@
 			children = (
 				0102C9A1278EDF7600A2637B /* Info.plist */,
 				0102C99C278EDF7600A2637B /* Assets.xcassets */,
-				0102C999278EDF7500A2637B /* Flashcards.xcdatamodeld */,
 				0102C990278EDF7500A2637B /* AppDelegate.swift */,
 				0102C992278EDF7500A2637B /* SceneDelegate.swift */,
 			);
@@ -191,6 +191,14 @@
 				01A6A6E72796C609001A1E46 /* Details */,
 			);
 			path = Flashcards;
+			sourceTree = "<group>";
+		};
+		011D646227BFE0620039470B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0102C999278EDF7500A2637B /* Flashcards.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		011FA2A2279C438500EDD388 /* SettingsSession */ = {
