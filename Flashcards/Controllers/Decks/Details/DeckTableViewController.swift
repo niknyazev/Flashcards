@@ -46,13 +46,16 @@ class DeckTableViewController: UITableViewController {
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
-        if deck == nil {
+        if let deck = deck {
+            deck.title = deckTitleTextField.text ?? ""
+            deck.deckDescription = deckDescriptionTextField.text ?? ""
+            storageManager.saveContext()
+        } else {
             storageManager.saveDeck(
-                deckTitleTextField.text ?? "",
+                title: deckTitleTextField.text ?? "",
+                description: deckDescriptionTextField.text ?? "",
                 color: colorView.backgroundColor?.hexValue ?? Colors.defaultCircleColor.hexValue
             )
-        } else {
-            storageManager.saveContext()
         }
         
         delegate.updateDecksList()

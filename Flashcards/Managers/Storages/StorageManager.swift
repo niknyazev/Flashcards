@@ -86,12 +86,13 @@ class StorageManager {
     
     // MARK: - Saving methods
     
-    func saveDeck(_ entityName: String, color: Int) {
+    func saveDeck(title: String, description: String, color: Int) {
         
-        let entity = Deck(context: viewContext)
+        let deck = Deck(context: viewContext)
         
-        entity.title = entityName
-        entity.color = color
+        deck.title = title
+        deck.deckDescription = description
+        deck.color = color
         
         saveContext()
     }
