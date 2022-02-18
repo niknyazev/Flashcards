@@ -9,9 +9,13 @@ import Foundation
 
 class NetworkUrlImagesFetcher {
     
+    // MARK: - Properties
+    
     static let shared = NetworkUrlImagesFetcher()
     
     private init() {}
+    
+    // MARK: - Public methods
     
     func request(query: String, completion: @escaping ([String]?, Error?) -> Void)  {
     
@@ -35,6 +39,8 @@ class NetworkUrlImagesFetcher {
         }.resume()
         
     }
+    
+    // MARK: - Private methods
     
     private func queryHeaders() -> [String: String] {
         var headers: [String: String] = [:]

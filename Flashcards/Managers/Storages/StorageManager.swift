@@ -9,6 +9,8 @@ import CoreData
 
 class StorageManager {
     
+    // MARK: - Properties
+    
     static let shared = StorageManager()
     
     private let persistentContainer: NSPersistentContainer = {
@@ -26,6 +28,8 @@ class StorageManager {
     }
     
     private init() {}
+    
+    // MARK: - Public methods
     
     // MARK: - Fetching methods
     

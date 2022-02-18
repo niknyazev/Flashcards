@@ -9,12 +9,16 @@ import Foundation
 
 class UserDefaultsManager {
     
+    // MARK: - Properties
+    
     static let shared = UserDefaultsManager()
     
     private let userDefaults = UserDefaults.standard
     private let sortingKey = "sortingType"
     
     private init() {}
+    
+    // MARK: - Public methods
     
     func saveSortingType(sortingType: Int) {
         userDefaults.set(sortingType, forKey: sortingKey)

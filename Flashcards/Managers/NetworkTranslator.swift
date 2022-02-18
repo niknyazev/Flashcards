@@ -9,9 +9,13 @@ import Foundation
 
 class NetworkTranslator {
         
+    // MARK: - Properties
+    
     static let shared = NetworkTranslator()
     
     private init() {}
+    
+    // MARK: - Public methods
     
     func request(query: String, completion: @escaping (String, Error?) -> Void)  {
     
@@ -36,6 +40,8 @@ class NetworkTranslator {
         }.resume()
         
     }
+    
+    // MARK: - Private methods
     
     private func postParameters(query: String) -> Data? {
         let parameters = [["Text": query]]
