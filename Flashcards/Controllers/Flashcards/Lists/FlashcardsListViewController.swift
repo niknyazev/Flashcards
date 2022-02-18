@@ -14,13 +14,13 @@ protocol FlashcardsUpdater {
 class FlashcardsListViewController: UITableViewController {
 
     // MARK: - Properties
+
+    @IBOutlet weak var progressLearning: UIProgressView!
     
     var deck: Deck?
     var delegate: DecksUpdaterDelegate!
     var searchIsActive = false
 
-    @IBOutlet weak var progressLearning: UIProgressView!
-    
     private var flashcards: [Flashcard]!
     private let storageManager = StorageManager.shared
     private let searchController = UISearchController(searchResultsController: nil)
@@ -126,11 +126,11 @@ class FlashcardsListViewController: UITableViewController {
         storageManager.fetchFlashcards(
             deck: deck,
             isLearned: isLearned,
-            text: textString) { result in
+            text: textString) { [unowned self] result in
             
                 switch result {
                 case .success(let flashcardsResult):
-                    self.flashcards = flashcardsResult
+                    flashcards = flashcardsResult
                 case .failure(let error):
                     print(error)
                 }
@@ -174,7 +174,6 @@ class FlashcardsListViewController: UITableViewController {
         progressLearning.progressTintColor = Colors.progressTintColor
     }
 
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         flashcards.count
     }

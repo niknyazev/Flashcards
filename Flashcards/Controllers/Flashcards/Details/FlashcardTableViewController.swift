@@ -76,9 +76,9 @@ class FlashcardTableViewController: UITableViewController {
         
         activityIndicator.startAnimating()
     
-        translator.request(query: text) { result, error in
-            self.backSideTextView.text = result
-            self.activityIndicator.stopAnimating()
+        translator.request(query: text) { [unowned self] result, error in
+            backSideTextView.text = result
+            activityIndicator.stopAnimating()
         }
     }
     

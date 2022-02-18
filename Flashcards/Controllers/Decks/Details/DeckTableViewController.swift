@@ -103,7 +103,7 @@ class DeckTableViewController: UITableViewController {
 extension DeckTableViewController: ColorUpdaterProtocol {
     func updateColor(with color: UIColor?) {
         colorView.backgroundColor = color
-        deck?.color = color?.hexValue ?? 0
+        deck?.color = color?.hexValue ?? Colors.mainColor.hexValue
         setupNavigationBar()
     }
 }

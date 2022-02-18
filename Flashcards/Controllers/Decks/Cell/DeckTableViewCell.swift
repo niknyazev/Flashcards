@@ -27,7 +27,6 @@ class DeckTableViewCell: UITableViewCell {
         }
     }
     
-    
     // MARK: - Override methods
     
     override func prepareForReuse() {
