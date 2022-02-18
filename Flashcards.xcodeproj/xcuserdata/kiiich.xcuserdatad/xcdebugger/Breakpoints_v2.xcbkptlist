@@ -729,8 +729,8 @@
             filePath = "Flashcards/Managers/Storages/StorageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "saveSessionSettings(deck:complexity:count:status:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1516,8 +1516,8 @@
             filePath = "Flashcards/Controllers/Flashcards/Details/FlashcardTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "setupElements()"
             landmarkType = "7">
          </BreakpointContent>

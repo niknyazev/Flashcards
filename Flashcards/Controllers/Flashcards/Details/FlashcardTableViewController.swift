@@ -92,7 +92,6 @@ class FlashcardTableViewController: UITableViewController {
             flashcard.frontSide = frontSideTextView.text ?? ""
             flashcard.backSide = backSideTextView.text ?? ""
             storageManager.saveContext()
-            
         } else {
             
             guard let deck = deck else {
@@ -100,10 +99,18 @@ class FlashcardTableViewController: UITableViewController {
                 return
             }
             
+            // Image was not set
+            let image = flashcardImage.contentMode == .scaleAspectFit
+                ? nil :
+                flashcardImage.image?.pngData()
+            
             storageManager.saveFlashcard(
                 deck: deck,
                 frontSide: frontSideTextView.text ?? "",
-                backSide: backSideTextView.text ?? ""
+                backSide: backSideTextView.text ?? "",
+                image: image,
+                isLearn: isLearnedSwitch.isOn,
+                complexity: Flashcard.Complexity.init(rawValue: Int16(complexitySegmentedControl.selectedSegmentIndex)) ?? .easy
             )
         }
         
@@ -235,6 +242,7 @@ class FlashcardTableViewController: UITableViewController {
             frontSideTextView.textColor = placeHolderColor
             backSideTextView.text = "Back side text"
             backSideTextView.textColor = placeHolderColor
+            isLearnedSwitch.isOn = false
             return
         }
                 

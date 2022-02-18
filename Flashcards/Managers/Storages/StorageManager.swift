@@ -97,11 +97,23 @@ class StorageManager {
         saveContext()
     }
     
-    func saveFlashcard(deck: Deck, frontSide: String, backSide: String) {
+    func saveFlashcard(
+        deck: Deck,
+        frontSide: String,
+        backSide: String,
+        image: Data?,
+        isLearn: Bool,
+        complexity: Flashcard.Complexity) {
+            
         let flashcard = Flashcard(context: viewContext)
+        
         flashcard.frontSide = frontSide
         flashcard.backSide = backSide
+        flashcard.isLearned = isLearn
+        flashcard.image = image
+        flashcard.levelOfComplexity = complexity
         flashcard.deck = deck
+        
         saveContext()
     }
     
