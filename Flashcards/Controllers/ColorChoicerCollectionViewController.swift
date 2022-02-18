@@ -9,11 +9,15 @@ import UIKit
 
 class ColorChoicerCollectionViewController: UICollectionViewController {
 
+    // MARK: - Properties
+    
     var delegate: ColorUpdaterProtocol!
     
     private let itemsPerRow: CGFloat = 3
     private let sectionInserts = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
     private let colors = Colors.decksColors
+    
+    // MARK: - Override methods
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       

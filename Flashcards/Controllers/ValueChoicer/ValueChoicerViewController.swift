@@ -9,9 +9,13 @@ import UIKit
 
 class ValueChoicerViewController: UITableViewController {
 
+    // MARK: - Properties
+    
     var values: [String]!
     var currentIndex: Int!
     var delegate: ((Int) -> Void)!
+    
+    // MARK: - Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()

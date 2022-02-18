@@ -9,6 +9,8 @@ import UIKit
 
 class ImageChoicerViewController: UICollectionViewController {
 
+    // MARK: - Properties
+    
     var delegate: FlashcardImageUpdaterDelegate!
     var query = ""
     
@@ -16,21 +18,7 @@ class ImageChoicerViewController: UICollectionViewController {
     private let itemsPerRow: CGFloat = 2
     private let sectionInserts = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchImages()
-    }
-    
-    private func fetchImages() {
-        NetworkUrlImagesFetcher.shared.request(query: query) { urls, _ in
-            
-            guard let urls = urls else { return }
-
-            self.imagesUrls = urls
-            self.collectionView.reloadData()
-        }
-    }
-    
+    // MARK: - Override methods
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -56,6 +44,23 @@ class ImageChoicerViewController: UICollectionViewController {
         cell.configure(with: imagesUrls[indexPath.row])
         
         return cell
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchImages()
+    }
+    
+    // MARK: - Private methods
+    
+    private func fetchImages() {
+        NetworkUrlImagesFetcher.shared.request(query: query) { urls, _ in
+            
+            guard let urls = urls else { return }
+
+            self.imagesUrls = urls
+            self.collectionView.reloadData()
+        }
     }
 
 }

@@ -9,14 +9,17 @@ import UIKit
 
 class FlashcardTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+    
     @IBOutlet weak var frontSideLabel: UILabel!
     @IBOutlet weak var backSideLabel: UILabel!
     @IBOutlet weak var verticalLineView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var containerView: UIView!
+    
+    // MARK: - Public methods
     
     func configure(with flashcard: Flashcard) {
         
