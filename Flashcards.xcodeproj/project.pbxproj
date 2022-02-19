@@ -23,6 +23,7 @@
 		013DFBDB27A4412900531E89 /* ColorChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */; };
 		013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */; };
 		013DFC0327A6DCDD00531E89 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFC0227A6DCDD00531E89 /* Colors.swift */; };
+		0157A0D627C0DA0200E2C4BB /* ImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157A0D527C0DA0200E2C4BB /* ImagesFetcher.swift */; };
 		015CE74027BD5BA40039A51D /* Extension + UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CE73F27BD5BA40039A51D /* Extension + UIAlertController.swift */; };
 		0198F665279721FA00B13C90 /* NetworkUrlImagesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */; };
 		0198F66727972C1400B13C90 /* ImageChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198F66627972C1400B13C90 /* ImageChooserViewController.swift */; };
@@ -64,6 +65,7 @@
 		013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooserCollectionViewController.swift; sourceTree = "<group>"; };
 		013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
 		013DFC0227A6DCDD00531E89 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0157A0D527C0DA0200E2C4BB /* ImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFetcher.swift; sourceTree = "<group>"; };
 		015CE73F27BD5BA40039A51D /* Extension + UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIAlertController.swift"; sourceTree = "<group>"; };
 		0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUrlImagesFetcher.swift; sourceTree = "<group>"; };
 		0198F66627972C1400B13C90 /* ImageChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChooserViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			children = (
 				0198F664279721FA00B13C90 /* NetworkUrlImagesFetcher.swift */,
 				01EAAFD627995848006951B6 /* NetworkTranslator.swift */,
+				0157A0D527C0DA0200E2C4BB /* ImagesFetcher.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				01E404AD27AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift in Sources */,
 				01E404AA27AC40E400E6A6DB /* Deck+CoreDataClass.swift in Sources */,
 				01EAAFD927995896006951B6 /* TranslationResult.swift in Sources */,
+				0157A0D627C0DA0200E2C4BB /* ImagesFetcher.swift in Sources */,
 				01FB3E5D279B314700C4CA71 /* DeckCellViewModel.swift in Sources */,
 				0102C991278EDF7500A2637B /* AppDelegate.swift in Sources */,
 				01EAAFD327994C75006951B6 /* JSONWorker.swift in Sources */,
