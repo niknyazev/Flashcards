@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  UrlImagesFetcher.swift
 //  Flashcards
 //
 //  Created by Николай on 18.01.2022.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-class NetworkUrlImagesFetcher {
+class UrlImagesFetcher {
     
     // MARK: - Properties
     
-    static let shared = NetworkUrlImagesFetcher()
+    static let shared = UrlImagesFetcher()
     
     private init() {}
     

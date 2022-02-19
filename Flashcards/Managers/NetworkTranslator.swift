@@ -1,5 +1,5 @@
 //
-//  NetworkTranslator.swift
+//  Translator.swift
 //  Flashcards
 //
 //  Created by Николай on 20.01.2022.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-class NetworkTranslator {
+class Translator {
         
     // MARK: - Properties
     
-    static let shared = NetworkTranslator()
+    static let shared = Translator()
     
     private init() {}
     

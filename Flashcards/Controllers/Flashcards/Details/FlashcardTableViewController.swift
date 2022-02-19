@@ -30,7 +30,7 @@ class FlashcardTableViewController: UITableViewController {
     var flashcard: Flashcard?
     
     private let storageManager = StorageManager.shared
-    private let translator = NetworkTranslator.shared
+    private let translator = Translator.shared
     private let placeHolderColor = UIColor.systemGray4
     
     // MARK: - Override methods
