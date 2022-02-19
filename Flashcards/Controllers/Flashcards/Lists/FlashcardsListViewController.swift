@@ -130,7 +130,7 @@ class FlashcardsListViewController: UITableViewController {
         storageManager.fetchFlashcards(
             deck: deck,
             isLearned: isLearned,
-            text: textString) { [unowned self] result in
+            text: textString) { result in
             
                 switch result {
                 case .success(let flashcardsResult):

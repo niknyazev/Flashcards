@@ -154,7 +154,7 @@ class FlashcardTableViewController: UITableViewController {
         StorageManager.shared.fetchDecks { result in
             switch result {
             case .success(let decksResult):
-                self.openDeckChooser(decks: decksResult)
+                openDeckChooser(decks: decksResult)
             case .failure(let error):
                 print(error)
             }

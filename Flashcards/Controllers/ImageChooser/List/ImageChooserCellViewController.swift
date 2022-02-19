@@ -22,7 +22,7 @@ class ImageChooserCellViewController: UICollectionViewCell {
         backgroundColor = .lightGray
         ImagesFetcher.shared.fetchImage(url: urlImage) { [unowned self] data in
             let image = UIImage(data: data)
-            self.setupImage(image: image)
+            setupImage(image: image)
         }
     }
     
