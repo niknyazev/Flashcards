@@ -240,17 +240,19 @@ class FlashcardTableViewController: UITableViewController {
         flashcardImage.contentMode = .scaleAspectFit
     }
     
-    private func setupElements() {
-        
-        setupTranslateButton()
-        
+    private func setupDefaultValuesForView() {
         activityIndicator.hidesWhenStopped = true
-        
         flashcardImage.contentMode = .scaleAspectFit
         flashcardImage.clipsToBounds = true
         flashcardDeck.text = deck?.title
         frontSideTextView.delegate = self
         backSideTextView.delegate = self
+    }
+    
+    private func setupElements() {
+        
+        setupTranslateButton()
+        setupDefaultValuesForView()
     
         guard let flashcard = flashcard else {
             prepareNewFlashcard()

@@ -90,6 +90,10 @@ class FlashcardsListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        flashcards.count
+    }
+    
     // MARK: - IBAction methods
     
     @IBAction func filterChanged(_ sender: UISegmentedControl) {
@@ -172,10 +176,6 @@ class FlashcardsListViewController: UITableViewController {
         
         progressLearning.setProgress(progress, animated: false)
         progressLearning.progressTintColor = Colors.progressTintColor
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        flashcards.count
     }
                             
     private func setupTableView() {
