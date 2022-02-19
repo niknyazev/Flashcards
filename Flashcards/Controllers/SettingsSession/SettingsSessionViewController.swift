@@ -51,10 +51,10 @@ class SettingsSessionViewController: UITableViewController {
             
             // Choosing Flashcards statuses
             
-            chooserVC.delegate = { currentIndex in
+            chooserVC.delegate = { [unowned self] currentIndex in
                 guard let value = SessionSettings.Statuses.init(rawValue: Int16(currentIndex)) else { return }
-                self.deck.sessionSettings?.flashcardsStatus = value
-                self.statusLabel.text = value.title
+                deck.sessionSettings?.flashcardsStatus = value
+                statusLabel.text = value.title
             }
             chooserVC.values = SessionSettings.Statuses.allCases.map { $0.title }
             chooserVC.currentIndex = Int(deck.sessionSettings?.flashcardsStatus.rawValue ?? 0)
@@ -63,10 +63,10 @@ class SettingsSessionViewController: UITableViewController {
             
             // Choosing Flashcards complexity of learning
             
-            chooserVC.delegate = { currentIndex in
+            chooserVC.delegate = { [unowned self] currentIndex in
                 guard let value = SessionSettings.Complexity.init(rawValue: Int16(currentIndex)) else { return }
-                self.deck.sessionSettings?.flashcardsComplexity = value
-                self.complexityLabel.text = value.title
+                deck.sessionSettings?.flashcardsComplexity = value
+                complexityLabel.text = value.title
             }
             
             chooserVC.values = SessionSettings.Complexity.allCases.map { $0.title }
@@ -76,10 +76,10 @@ class SettingsSessionViewController: UITableViewController {
             
             // Choosing which side of Flashcard will be shown
             
-            chooserVC.delegate = { currentIndex in
+            chooserVC.delegate = { [unowned self] currentIndex in
                 guard let value = SessionSettings.Directions.init(rawValue: Int16(currentIndex)) else { return }
-                self.deck.sessionSettings?.direction = value
-                self.directionLabel.text = value.title
+                deck.sessionSettings?.direction = value
+                directionLabel.text = value.title
             }
            
             chooserVC.values = SessionSettings.Directions.allCases.map { $0.title }

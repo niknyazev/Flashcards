@@ -180,10 +180,10 @@ class FlashcardTableViewController: UITableViewController {
         
         let chooserVC = ValueChooserViewController()
         
-        chooserVC.delegate = { currentIndex in
-            self.flashcard?.deck = decks[currentIndex]
-            self.deck = decks[currentIndex]
-            self.flashcardDeck.text = decks[currentIndex].title
+        chooserVC.delegate = { [unowned self] currentIndex in
+            flashcard?.deck = decks[currentIndex]
+            deck = decks[currentIndex]
+            flashcardDeck.text = decks[currentIndex].title
         }
         chooserVC.values = decks.map {
             $0.title
