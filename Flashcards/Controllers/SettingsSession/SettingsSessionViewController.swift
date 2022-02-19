@@ -21,6 +21,8 @@ class SettingsSessionViewController: UITableViewController {
     var deck: Deck!
     var delegate: DecksUpdaterDelegate!
     
+    private let shared = StorageManager.shared
+    
     // MARK: - Override methods
           
     override func viewDidLoad() {
@@ -122,7 +124,9 @@ class SettingsSessionViewController: UITableViewController {
         statusLabel.text = sessionSettings.flashcardsStatus.title
         complexityLabel.text = sessionSettings.flashcardsComplexity.title
         directionLabel.text = sessionSettings.direction.title
-        countTextField.text = String(sessionSettings.flashcardsLimit)
+        countTextField.text = sessionSettings.flashcardsLimit == 0
+            ? "" :
+            String(sessionSettings.flashcardsLimit)
         countTextField.delegate = self
         
     }
@@ -130,14 +134,14 @@ class SettingsSessionViewController: UITableViewController {
     private func startSession() {
     
         view.endEditing(true)
-        StorageManager.shared.saveContext()
+        shared.saveContext()
         performSegue(withIdentifier: "flashcardsViewer", sender: nil)
     
     }
     
     private func saveNewSettings() {
         
-        StorageManager.shared.saveSessionSettings(
+        shared.saveSessionSettings(
             deck: deck,
             needPronounce: true,
             saveResults: true,
