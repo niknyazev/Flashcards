@@ -30,6 +30,23 @@
 
 <img src="https://user-images.githubusercontent.com/92364155/154791258-56159712-84c4-41ba-9a16-ddf62b8e4c5b.png" width="400">
 
+**Редактирование колоды**
+
+<img src="https://user-images.githubusercontent.com/92364155/154791416-fd5a7d27-ec56-4ae2-af9b-a79417b59dae.png" width="400">
+
+<img src="https://user-images.githubusercontent.com/92364155/154791420-033d9fa4-a0c7-4915-a9a3-8e81e95bb012.png" width="400">
+
+**Настройки обучающей сессии**
+
+<img src="https://user-images.githubusercontent.com/92364155/154791429-96559c3b-05dd-4ce6-9b0f-d056de146d75.png" width="400">
+
+**Изучение карточек**
+
+<img src="https://user-images.githubusercontent.com/92364155/154791432-6655a943-7ceb-4f4b-b9e8-c58dbff7052a.png" width="400">
+
+<img src="https://user-images.githubusercontent.com/92364155/154791436-8b63bd11-78bd-4634-8901-84a231d95b8d.png" width="400">
+
+
 
 
 
