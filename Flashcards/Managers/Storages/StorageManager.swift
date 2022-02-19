@@ -97,13 +97,12 @@ class StorageManager {
         saveContext()
     }
     
-    func saveFlashcard(
-        deck: Deck,
-        frontSide: String,
-        backSide: String,
-        image: Data?,
-        isLearn: Bool,
-        complexity: Flashcard.Complexity) {
+    func saveFlashcard(deck: Deck,
+                       frontSide: String,
+                       backSide: String,
+                       image: Data?,
+                       isLearn: Bool,
+                       complexity: Flashcard.Complexity) {
             
         let flashcard = Flashcard(context: viewContext)
         
@@ -117,19 +116,18 @@ class StorageManager {
         saveContext()
     }
     
-    func saveSessionSettings(
-        deck: Deck,
-        needPronounce: Bool,
-        saveResults: Bool,
-        complexity: SessionSettings.Complexity,
-        status: SessionSettings.Statuses,
-        direction: SessionSettings.Directions,
-        count: Int16?) {
+    func saveSessionSettings(deck: Deck,
+                             needPronounce: Bool,
+                             saveResults: Bool,
+                             complexity: SessionSettings.Complexity,
+                             status: SessionSettings.Statuses,
+                             direction: SessionSettings.Directions,
+                             count: Int16?) {
         
         let settings = deck.sessionSettings == nil
             ? SessionSettings(context: viewContext)
             : deck.sessionSettings!
-            
+        
         settings.deck = deck
         settings.needPronounce = needPronounce
         settings.saveResults = saveResults
