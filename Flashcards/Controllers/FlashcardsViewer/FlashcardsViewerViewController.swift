@@ -184,11 +184,11 @@ class FlashcardsViewerViewController: UIViewController {
                 backSideLabel.text = flashcard.frontSide
             }
         case .backward:
-            frontSideLabel.text = flashcard.frontSide
-            backSideLabel.text = flashcard.backSide
-        case .forward:
             frontSideLabel.text = flashcard.backSide
             backSideLabel.text = flashcard.frontSide
+        case .forward:
+            frontSideLabel.text = flashcard.frontSide
+            backSideLabel.text = flashcard.backSide
         }
     }
         
