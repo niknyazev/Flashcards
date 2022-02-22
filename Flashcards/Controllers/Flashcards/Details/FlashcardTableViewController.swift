@@ -78,6 +78,7 @@ class FlashcardTableViewController: UITableViewController {
     
         translator.request(query: text) { [unowned self] result, error in
             backSideTextView.text = result
+            backSideTextView.textColor = .black
             activityIndicator.stopAnimating()
         }
     }
@@ -246,7 +247,9 @@ class FlashcardTableViewController: UITableViewController {
         flashcardImage.clipsToBounds = true
         flashcardDeck.text = deck?.title
         frontSideTextView.delegate = self
+        frontSideTextView.returnKeyType = .done
         backSideTextView.delegate = self
+        backSideTextView.returnKeyType = .done
     }
     
     private func setupElements() {
@@ -297,10 +300,25 @@ extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavig
 
 extension FlashcardTableViewController: UITextViewDelegate {
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+                
+        if text != "\n" {
+            return true
+        }
+        
+        if textView == frontSideTextView {
+            backSideTextView.becomeFirstResponder()
+        } else if textView == backSideTextView {
+            view.endEditing(true)
+        }
+        
+        return false
+    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == placeHolderColor {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = .black
         }
     }
     
