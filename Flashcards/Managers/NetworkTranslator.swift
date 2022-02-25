@@ -17,7 +17,7 @@ class Translator {
     
     // MARK: - Public methods
     
-    func request(query: String, completion: @escaping (String, Error?) -> Void)  {
+    func request(query: String, completion: @escaping (Result<String, NetworkError>) -> Void)  {
     
         guard let encodingQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         guard let postData = postParameters(query: query) else { return }
@@ -29,14 +29,30 @@ class Translator {
         request.httpMethod = "POST"
         request.httpBody = postData
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { (data, _, _) in
            
-            let translation = JSONWorker.shared.decodeJSON(type: [TranslationResult].self, from: data)
-            let result = translation?.first?.translations.first?.text ?? ""
-            
-            DispatchQueue.main.async {
-                completion(result, error)
+            if data == nil {
+                DispatchQueue.main.async {
+                    completion(.failure(.noData))
+                }
+                return
             }
+            
+            let translation = JSONWorker.shared.decodeJSON(type: [TranslationResult].self, from: data)
+                        
+            guard let translation = translation else {
+                DispatchQueue.main.async {
+                    completion(.failure(.decodingError))
+                }
+                return
+            }
+            
+            let result = translation.first?.translations.first?.text ?? ""
+                    
+            DispatchQueue.main.async {
+                completion(.success(result))
+            }
+            
         }.resume()
         
     }

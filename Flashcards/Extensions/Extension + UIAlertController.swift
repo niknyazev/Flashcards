@@ -24,4 +24,16 @@ extension UIAlertController {
         self.addAction(noAction)
         self.addAction(yesAction)
     }
+    
+    convenience init(errorText: String) {
+        self.init(
+            title: "Faliled",
+            message: errorText,
+            preferredStyle: .alert
+        )
+
+        let button = UIAlertAction(title: "OK", style: .default)
+        
+        self.addAction(button)
+    }
 }

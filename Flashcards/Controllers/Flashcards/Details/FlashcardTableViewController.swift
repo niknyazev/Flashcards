@@ -76,10 +76,22 @@ class FlashcardTableViewController: UITableViewController {
         
         activityIndicator.startAnimating()
     
-        translator.request(query: text) { [unowned self] result, error in
-            backSideTextView.text = result
-            backSideTextView.textColor = .black
-            activityIndicator.stopAnimating()
+        translator.request(query: text) { [weak self] result in
+            
+            guard let self = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let translation):
+                self.backSideTextView.text = translation
+                self.backSideTextView.textColor = .black
+                self.activityIndicator.stopAnimating()
+            case .failure(_):
+                let alert = UIAlertController(errorText: "Failed to get data")
+                self.present(alert, animated: true)
+            }
+
         }
     }
     
@@ -108,7 +120,7 @@ class FlashcardTableViewController: UITableViewController {
     }
     
     // MARK: - Private methods
-    
+        
     private func saveData() {
         if let flashcard = flashcard {
             flashcard.frontSide = frontSideTextView.text ?? ""

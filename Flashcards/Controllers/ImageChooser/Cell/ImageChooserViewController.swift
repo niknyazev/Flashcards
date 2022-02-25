@@ -54,31 +54,21 @@ class ImageChooserViewController: UICollectionViewController {
     // MARK: - Private methods
     
     private func fetchImages() {
-        UrlImagesFetcher.shared.request(query: query) { result in
+        UrlImagesFetcher.shared.request(query: query) { [weak self] result in
+            
+            guard let self = self else {
+                return
+            }
+            
             switch result {
             case .success(let urls):
                 self.imagesUrls = urls
                 self.collectionView.reloadData()
             case .failure(_):
-                self.notifyAboutNetworkError()
+                let alert = UIAlertController(errorText: "Failed to get images")
+                self.present(alert, animated: true)
             }
         }
-    }
-
-    private func notifyAboutNetworkError() {
-        
-        let alertController = UIAlertController(
-            title: "Faliled",
-            message: "Failed to get data",
-            preferredStyle: .alert
-        )
-
-        let button = UIAlertAction(title: "Ok", style: .default)
-        
-        alertController.addAction(button)
-
-        present(alertController, animated: true, completion: nil)
-        
     }
 
 }
