@@ -33,7 +33,7 @@ class UrlImagesFetcher {
         request.allHTTPHeaderFields = queryHeaders()
         request.httpMethod = "get"
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { (data, _, _) in
                             
             if data == nil {
                 DispatchQueue.main.async {
