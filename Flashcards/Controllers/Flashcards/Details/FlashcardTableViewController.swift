@@ -279,6 +279,8 @@ class FlashcardTableViewController: UITableViewController {
 
 }
 
+// MARK: - UIImagePickerControllerDelegate
+
 extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func choosePhoto() {
@@ -297,6 +299,8 @@ extension FlashcardTableViewController: UIImagePickerControllerDelegate, UINavig
     }
     
 }
+
+// MARK: - UITextViewDelegate
 
 extension FlashcardTableViewController: UITextViewDelegate {
     
@@ -330,6 +334,8 @@ extension FlashcardTableViewController: UITextViewDelegate {
     }
     
 }
+
+// MARK: - FlashcardImageUpdaterDelegate
 
 extension FlashcardTableViewController: FlashcardImageUpdaterDelegate {
     func updateImage(image: UIImage?) {
