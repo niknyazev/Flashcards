@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    case noData
+    case decodingError
+}
+
 class UrlImagesFetcher {
     
     // MARK: - Properties
@@ -17,7 +22,7 @@ class UrlImagesFetcher {
     
     // MARK: - Public methods
     
-    func request(query: String, completion: @escaping ([String]?, Error?) -> Void)  {
+    func request(query: String, completion: @escaping (Result<[String], NetworkError>) -> Void) {
     
         guard let encodingQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
@@ -29,12 +34,27 @@ class UrlImagesFetcher {
         request.httpMethod = "get"
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
-           
+                            
+            if data == nil {
+                DispatchQueue.main.async {
+                    completion(.failure(.noData))
+                }
+                return
+            }
+            
             let imagesUrls = JSONWorker.shared.decodeJSON(type: ImagesUrlList.self, from: data)
-            let result = imagesUrls?.results.map { $0.urls.small }
+            
+            guard let imagesUrls = imagesUrls else {
+                DispatchQueue.main.async {
+                    completion(.failure(.decodingError))
+                }
+                return
+            }
+            
+            let result = imagesUrls.results.map { $0.urls.small }
         
             DispatchQueue.main.async {
-                completion(result, error)
+                completion(.success(result))
             }
         }.resume()
         
