@@ -22,12 +22,15 @@ class UrlImagesFetcher {
     
     // MARK: - Public methods
     
-    func request(identifier: String, completion: @escaping (Result<[String], NetworkError>) -> Void) {
-            
-        let queryParameters = queryParameters(identifier: identifier)
+    func request(query: String, completion: @escaping (Result<[String], NetworkError>) -> Void) {
+    
+        guard let encodingQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        
+        let queryParameters = queryParameters(query: encodingQuery)
         let url = url(queryItems: queryParameters)
        
         var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = queryHeaders()
         request.httpMethod = "get"
         
         URLSession.shared.dataTask(with: request) { (data, _, _) in
@@ -58,16 +61,19 @@ class UrlImagesFetcher {
     }
     
     // MARK: - Private methods
-    // TODO: remove if does not need
+    
     private func queryHeaders() -> [String: String] {
         var headers: [String: String] = [:]
         headers["Authorization"] = "Client-ID EENjn6vCuLOltg5kUPDwfubrcy6dvJGOj-SeDQlXoJs"
         return headers
     }
     
-    private func queryParameters(identifier: String) -> [URLQueryItem] {
+    private func queryParameters(query: String) -> [URLQueryItem] {
         let parameters = [
-            URLQueryItem(name: "i", value: identifier)
+            URLQueryItem(name: "query", value: query),
+            URLQueryItem(name: "page", value: String(1)),
+            URLQueryItem(name: "per_page", value: String(20)),
+            URLQueryItem(name: "per_page", value: String(20))
         ]
         return parameters
     }
@@ -75,8 +81,8 @@ class UrlImagesFetcher {
     private func url(queryItems: [URLQueryItem]) -> URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "www.thecocktaildb.com"
-        components.path = "/api/json/v1/1/lookup.php"
+        components.host = "api.unsplash.com"
+        components.path = "/search/photos"
         components.queryItems = queryItems
         return components.url!
     }
