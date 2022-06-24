@@ -86,7 +86,7 @@ class StorageManager {
     
     // MARK: - Saving methods
     
-    func saveDeck(title: String, description: String, color: Int) {
+    @discardableResult func saveDeck(title: String, description: String, color: Int) -> Deck {
         
         let deck = Deck(context: viewContext)
         
@@ -95,6 +95,8 @@ class StorageManager {
         deck.color = color
         
         saveContext()
+        
+        return deck
     }
     
     func saveFlashcard(deck: Deck,
