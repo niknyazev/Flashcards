@@ -43,10 +43,12 @@ class StorageManagerTests: XCTestCase {
         
         XCTAssertEqual(decksResult.count, 1)
         
-        let firstDeck = decksResult.first
+        guard let firstDeck = decksResult.first else {
+            fatalError("Decks are empty")
+        }
         
-        XCTAssertEqual(firstDeck?.title, "Test deck")
-        XCTAssertEqual(firstDeck?.deckDescription, "Test deck")
+        XCTAssertEqual(firstDeck.title, "Test deck")
+        XCTAssertEqual(firstDeck.deckDescription, "Test deck")
     }
     
     func testSaveAndEditFlashcard() throws {
@@ -78,13 +80,15 @@ class StorageManagerTests: XCTestCase {
         
         XCTAssertEqual(flashcardsResult.count, 1)
         
-        let firstFlashcard = flashcardsResult.first
+        guard let firstFlashcard = flashcardsResult.first else {
+            fatalError("Flashcards are empty")
+        }
         
-        XCTAssertEqual(firstFlashcard?.deck, deck)
-        XCTAssertEqual(firstFlashcard?.frontSide, "Sky")
-        XCTAssertEqual(firstFlashcard?.backSide, "Небо")
-        XCTAssertEqual(firstFlashcard?.isLearned, true)
-        XCTAssertEqual(firstFlashcard?.levelOfComplexity, .hard)
+        XCTAssertEqual(firstFlashcard.deck, deck)
+        XCTAssertEqual(firstFlashcard.frontSide, "Sky")
+        XCTAssertEqual(firstFlashcard.backSide, "Небо")
+        XCTAssertEqual(firstFlashcard.isLearned, true)
+        XCTAssertEqual(firstFlashcard.levelOfComplexity, .hard)
     }
     
     private func deleteAllDecks() {
