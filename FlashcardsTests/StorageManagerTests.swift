@@ -37,14 +37,15 @@ class StorageManagerTests: XCTestCase {
             case .success(let decks):
                 decksResult = decks
             case .failure(_):
-                XCTFail()
+                XCTFail("Decks are empty")
             }
         }
         
         XCTAssertEqual(decksResult.count, 1)
         
         guard let firstDeck = decksResult.first else {
-            fatalError("Decks are empty")
+            XCTFail("Decks are empty")
+            return
         }
         
         XCTAssertEqual(firstDeck.title, "Test deck")
@@ -74,14 +75,15 @@ class StorageManagerTests: XCTestCase {
             case .success(let flashcards):
                 flashcardsResult = flashcards
             case .failure(_):
-                XCTFail()
+                XCTFail("Flashcards are empty")
             }
         }
         
         XCTAssertEqual(flashcardsResult.count, 1)
         
         guard let firstFlashcard = flashcardsResult.first else {
-            fatalError("Flashcards are empty")
+            XCTFail("Flashcards are empty")
+            return
         }
         
         XCTAssertEqual(firstFlashcard.deck, deck)
