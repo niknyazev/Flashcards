@@ -20,6 +20,7 @@
 		0102C9BE2792D3DF00A2637B /* FlashcardsViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102C9BD2792D3DF00A2637B /* FlashcardsViewerViewController.swift */; };
 		011FA2A1279C436F00EDD388 /* SettingsSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */; };
 		012C81CD2864BB1F00352ECD /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */; };
+		012C81D62873271900352ECD /* UserDefaultsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */; };
 		013DFBD927A2D3A600531E89 /* ValueChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */; };
 		013DFBDB27A4412900531E89 /* ColorChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */; };
 		013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */; };
@@ -74,6 +75,7 @@
 		011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSessionViewController.swift; sourceTree = "<group>"; };
 		012C81CA2864BB1F00352ECD /* FlashcardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
+		012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerTests.swift; sourceTree = "<group>"; };
 		013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChooserViewController.swift; sourceTree = "<group>"; };
 		013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooserCollectionViewController.swift; sourceTree = "<group>"; };
 		013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */,
+				012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */,
 			);
 			path = FlashcardsTests;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012C81D62873271900352ECD /* UserDefaultsManagerTests.swift in Sources */,
 				012C81CD2864BB1F00352ECD /* StorageManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
