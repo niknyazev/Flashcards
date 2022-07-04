@@ -21,6 +21,7 @@
 		011FA2A1279C436F00EDD388 /* SettingsSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FA2A0279C436F00EDD388 /* SettingsSessionViewController.swift */; };
 		012C81CD2864BB1F00352ECD /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */; };
 		012C81D62873271900352ECD /* UserDefaultsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */; };
+		012C81D8287335B500352ECD /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81D7287335B500352ECD /* TranslatorTests.swift */; };
 		013DFBD927A2D3A600531E89 /* ValueChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */; };
 		013DFBDB27A4412900531E89 /* ColorChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */; };
 		013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */; };
@@ -42,7 +43,7 @@
 		01E404AC27AC40E400E6A6DB /* Flashcard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A627AC40E400E6A6DB /* Flashcard+CoreDataClass.swift */; };
 		01E404AD27AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E404A727AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift */; };
 		01EAAFD327994C75006951B6 /* JSONWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD227994C75006951B6 /* JSONWorker.swift */; };
-		01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD627995848006951B6 /* NetworkTranslator.swift */; };
+		01EAAFD727995848006951B6 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD627995848006951B6 /* Translator.swift */; };
 		01EAAFD927995896006951B6 /* TranslationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAAFD827995896006951B6 /* TranslationResult.swift */; };
 		01FB3E5A279B11F800C4CA71 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB3E59279B11F800C4CA71 /* SpeechSynthesizer.swift */; };
 		01FB3E5D279B314700C4CA71 /* DeckCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB3E5C279B314700C4CA71 /* DeckCellViewModel.swift */; };
@@ -76,6 +77,7 @@
 		012C81CA2864BB1F00352ECD /* FlashcardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
 		012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerTests.swift; sourceTree = "<group>"; };
+		012C81D7287335B500352ECD /* TranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorTests.swift; sourceTree = "<group>"; };
 		013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChooserViewController.swift; sourceTree = "<group>"; };
 		013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooserCollectionViewController.swift; sourceTree = "<group>"; };
 		013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		01E404A627AC40E400E6A6DB /* Flashcard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flashcard+CoreDataClass.swift"; sourceTree = "<group>"; };
 		01E404A727AC40E400E6A6DB /* Flashcard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flashcard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		01EAAFD227994C75006951B6 /* JSONWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONWorker.swift; sourceTree = "<group>"; };
-		01EAAFD627995848006951B6 /* NetworkTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTranslator.swift; sourceTree = "<group>"; };
+		01EAAFD627995848006951B6 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		01EAAFD827995896006951B6 /* TranslationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResult.swift; sourceTree = "<group>"; };
 		01FB3E59279B11F800C4CA71 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		01FB3E5C279B314700C4CA71 /* DeckCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCellViewModel.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */,
 				012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */,
+				012C81D7287335B500352ECD /* TranslatorTests.swift */,
 			);
 			path = FlashcardsTests;
 			sourceTree = "<group>";
@@ -385,7 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				0198F664279721FA00B13C90 /* UrlImagesFetcher.swift */,
-				01EAAFD627995848006951B6 /* NetworkTranslator.swift */,
+				01EAAFD627995848006951B6 /* Translator.swift */,
 				0157A0D527C0DA0200E2C4BB /* ImagesFetcher.swift */,
 			);
 			name = Network;
@@ -530,7 +533,7 @@
 				013DFBD927A2D3A600531E89 /* ValueChooserViewController.swift in Sources */,
 				013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */,
 				01E404A827AC40E400E6A6DB /* SessionSettings+CoreDataClass.swift in Sources */,
-				01EAAFD727995848006951B6 /* NetworkTranslator.swift in Sources */,
+				01EAAFD727995848006951B6 /* Translator.swift in Sources */,
 				0102C993278EDF7500A2637B /* SceneDelegate.swift in Sources */,
 				0198F66727972C1400B13C90 /* ImageChooserViewController.swift in Sources */,
 				01FB3E5A279B11F800C4CA71 /* SpeechSynthesizer.swift in Sources */,
@@ -551,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012C81D8287335B500352ECD /* TranslatorTests.swift in Sources */,
 				012C81D62873271900352ECD /* UserDefaultsManagerTests.swift in Sources */,
 				012C81CD2864BB1F00352ECD /* StorageManagerTests.swift in Sources */,
 			);
