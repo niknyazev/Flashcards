@@ -24,7 +24,12 @@ class TranslatorTests: XCTestCase {
     
     func testTextTranslation() throws {
         
+        let expectation = expectation(description: "Test translation")
+
         sut.request(query: "This is a new string") { result in
+            
+            expectation.fulfill()
+            
             switch result {
             case .success(let translation):
                 XCTAssertEqual(translation, "Это новая строка")
@@ -32,6 +37,8 @@ class TranslatorTests: XCTestCase {
                 XCTFail("Text is empty")
             }
         }
+        
+        waitForExpectations(timeout: 2)
     }
 
 }
