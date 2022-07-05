@@ -22,6 +22,7 @@
 		012C81CD2864BB1F00352ECD /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */; };
 		012C81D62873271900352ECD /* UserDefaultsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */; };
 		012C81D8287335B500352ECD /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81D7287335B500352ECD /* TranslatorTests.swift */; };
+		012C81DA2874AC8B00352ECD /* UrlImagesFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C81D92874AC8B00352ECD /* UrlImagesFetcherTests.swift */; };
 		013DFBD927A2D3A600531E89 /* ValueChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */; };
 		013DFBDB27A4412900531E89 /* ColorChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */; };
 		013DFBDE27A55B0000531E89 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */; };
@@ -78,6 +79,7 @@
 		012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerTests.swift; sourceTree = "<group>"; };
 		012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManagerTests.swift; sourceTree = "<group>"; };
 		012C81D7287335B500352ECD /* TranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorTests.swift; sourceTree = "<group>"; };
+		012C81D92874AC8B00352ECD /* UrlImagesFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImagesFetcherTests.swift; sourceTree = "<group>"; };
 		013DFBD827A2D3A600531E89 /* ValueChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueChooserViewController.swift; sourceTree = "<group>"; };
 		013DFBDA27A4412900531E89 /* ColorChooserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooserCollectionViewController.swift; sourceTree = "<group>"; };
 		013DFBDD27A55B0000531E89 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				012C81CC2864BB1F00352ECD /* StorageManagerTests.swift */,
 				012C81D52873271900352ECD /* UserDefaultsManagerTests.swift */,
 				012C81D7287335B500352ECD /* TranslatorTests.swift */,
+				012C81D92874AC8B00352ECD /* UrlImagesFetcherTests.swift */,
 			);
 			path = FlashcardsTests;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				012C81D8287335B500352ECD /* TranslatorTests.swift in Sources */,
 				012C81D62873271900352ECD /* UserDefaultsManagerTests.swift in Sources */,
 				012C81CD2864BB1F00352ECD /* StorageManagerTests.swift in Sources */,
+				012C81DA2874AC8B00352ECD /* UrlImagesFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
